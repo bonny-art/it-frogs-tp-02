@@ -6,21 +6,6 @@
 */
 @import url('./reset.css');
 
-@import url('./header.css');
-@import url('./mobile-menu.css');
-
-@import url('./category-list-sec.css');
-@import url('./support-ukraine-sec.css');
-
-@import url('./top-books-sec.css');
-@import url('./selected-category-sec.css');
-@import url('./shopping-list-sec.css');
-
-@import url('./auth-popup.css');
-@import url('./book-popup.css');
-@import url('./btn-scroll-up.css');
-@import url('./loader.css');
-
 :root {
   --col-blue: #4f2ee8;
   --col-black: #111111;
@@ -40,6 +25,7 @@
     #4f2ee8 18.03%,
     #ffffff 100%
   );
+  background: #11111199;
 
   /* font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -52,3 +38,18 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+@import url('./header.css');
+@import url('./mobile-menu.css');
+
+@import url('./category-list-sec.css');
+@import url('./support-ukraine-sec.css');
+
+@import url('./top-books-sec.css');
+@import url('./selected-category-sec.css');
+@import url('./shopping-list-sec.css');
+
+@import url('./auth-popup.css');
+@import url('./book-popup.css');
+@import url('./btn-scroll-up.css');
+@import url('./loader.css');
