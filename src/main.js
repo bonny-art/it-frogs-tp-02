@@ -1,5 +1,6 @@
 import './js/api';
 import './js/auth-popup';
+import './js/auth-firebase';
 import './js/book-popup';
 import './js/btn-scroll-up';
 import './js/category-list-sec';
