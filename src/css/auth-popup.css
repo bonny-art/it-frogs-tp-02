@@ -61,7 +61,14 @@
   gap: 24px;
   margin-bottom: 24px;
 }
-
+.auth-logged-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+}
 .auth-field-input {
   position: relative;
   width: 100%;

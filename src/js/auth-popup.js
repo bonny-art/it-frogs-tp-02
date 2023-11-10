@@ -19,6 +19,7 @@ const authEmail = document.querySelector('#auth-email');
 const authPassword = document.querySelector('#auth-password');
 const authSignUp = document.querySelector('.auth-sign-up');
 const authSignIn = document.querySelector('.auth-sign-in');
+const authIsLogged = document.querySelector('auth-logged-container');
 
 function handlerActionAuth() {
   function removeListenersAuthModal() {
@@ -152,13 +153,12 @@ function handlerActionAuth() {
   };
   authSignUp.addEventListener('click', clickAuthRegistration);
 }
-
 function initAuthModal() {
   authSwitcherSignUp.classList.remove('.auth-toggler-active');
   authSwitcherSignIn.classList.add('.auth-toggler-active');
   authName.classList.add('visually-hidden');
   authSignUp.classList.add('visually-hidden');
-  authSignIn.classList.add('visually-hidden');
+  authSignIn.classList.remove('visually-hidden');
 }
 
 export { handlerActionAuth, initAuthModal };
