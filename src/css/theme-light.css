@@ -35,10 +35,7 @@ body {
     background-color: var(--light-color);
 }
 /* Header */
-header {
-    background-color: var(--header-bg-color);
-    border: 1.5px solid var(--header-border-color);
-}
+
 /* Header Button HOME */
 
 /* -------------- BUTTON -------------- */
