@@ -10,7 +10,7 @@
 }
 
 .main-categories-box::-webkit-scrollbar {
-  width: 22px;
+  width: 16px;
   /* width of the entire scrollbar */
 }
 
@@ -31,7 +31,7 @@
   display: flex;
   flex-direction: column;
   gap: 24;
-  /* height: 100%; */
+
 }
 
 .main-categories-list {
