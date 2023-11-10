@@ -1,1 +1,37 @@
-<p class="auth-popup">auth-popup</p>
+<div class="auth-modal visually-hidden">
+    <div class="auth-container">
+        <button class="auth-logout visually-hidden" type="button">LogOut</button>
+        <button class="auth-close-btn" type="button">X
+            <svg class="auth-close-icon">
+                <use href=""></use>
+            </svg>
+        </button>
+        <form class="auth-form">
+            <div class="auth-form-container">
+                <div class="auth-field-input">
+                    <input type="text" class="auth-input" id="auth-name" placeholder="NAME" />
+                </div>
+                <div class="auth-field-input">
+                    <input type="email" class="auth-input" id="auth-email" placeholder="EMAIL" />
+                    <svg class="auth-input-icon">
+                        <use href=""></use>
+                    </svg>
+                </div>
+                <div class="auth-field-input">
+                    <input type="password" class="auth-input" id="auth-password" placeholder="PASSWORD" />
+                    <svg class="auth-input-icon">
+                        <use href=""></use>
+                    </svg>
+                </div>
+            </div>
+            <button class="auth-sign auth-sign-up visually-hidden" type="button">sign up</button>
+            <button class="auth-sign auth-sign-in" type="button">sign in</button>
+            <div class="auth-toggler">
+                <button class="auth-toggler auth-toggler-sign-up" type="button">sign up</button>
+                <button class="auth-toggler auth-toggler-sign-in auth-toggler-active" type="button">
+                    sign in
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
