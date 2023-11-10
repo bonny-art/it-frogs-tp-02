@@ -14,6 +14,9 @@ async function fetchBookList() {
 }
 fetchBookList();
 
+
+
+
 /**
  * запит на отримання топ 5 книг у кожній категорії
  * @returns Array of top books
@@ -24,6 +27,10 @@ async function fetchTopBooks() {
   return resp;
 }
 fetchTopBooks();
+
+
+
+
 
 /**
  * функція приймає назву категорії (формат стрінг), повертає масив книг з повною інформацією
@@ -38,6 +45,11 @@ async function fetchBooksOfCategory(category) {
 }
 fetchBooksOfCategory('Childrens Middle Grade Hardcover');
 
+
+
+
+
+
 /**
  * функція приймає ID обраної книги у форматі стрінги і повертає масив інфо
  * @param {string} bookId
@@ -49,5 +61,8 @@ async function fetchBookById(bookId) {
   return resp;
 }
 fetchBookById('643282b1e85766588626a0dc');
+
+
+
 
 export { fetchBookById, fetchBookList, fetchTopBooks, fetchBooksOfCategory };
