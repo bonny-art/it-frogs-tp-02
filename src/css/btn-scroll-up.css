@@ -1,3 +1,33 @@
 .btn-scroll-up {
-  background-color: yellowgreen;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  position: fixed;
+  top: 85%;
+  right: 2%;
+  width: 64px;
+  height: 64px;
+  cursor: pointer;
+  background-color: #4F2EE8;
+  border-radius: 50%;
+  border: 10px solid transparent;
+
+  transition: opacity 1500ms cubic-bezier(0.47, 0, 0.75, 0.72);
+  transition: border 500ms cubic-bezier(0.47, 0, 0.75, 0.72);
+
+}
+
+.btn-scroll-up.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+}
+
+.btn-scroll-up:hover {
+  border: 5px solid rgba(213, 184, 255, 0.7);
+}
+
+
+.scroll-up {
+  fill: #fff;
 }
