@@ -1,3 +1,27 @@
-.auth-popup {
-  background-color: turquoise;
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачная подложка */
+  display: none;
+  z-index: 1;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 2;
+}
+
+/* Добавленный стиль для анимации появления модального окна */
+.modal.active {
+  display: block;
 }

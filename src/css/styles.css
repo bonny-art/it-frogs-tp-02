@@ -20,6 +20,8 @@
 @import url('./book-popup.css');
 @import url('./btn-scroll-up.css');
 @import url('./loader.css');
+@import url('./theme-dark.css');
+@import url('./theme-light.css');
 
 :root {
   --col-blue: #4f2ee8;
