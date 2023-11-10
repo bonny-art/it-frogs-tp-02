@@ -2,9 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/it-frogs-tp-02/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home - Bookshelf</title>
+    <link rel="shortcut icon" href="/it-frogs-tp-02/assets/logo-0fa18760.svg" type="image/svg" />
 
     <!-- Normailzer -->
     <link
@@ -23,17 +24,31 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <script type="module" crossorigin src="/it-frogs-tp-02/assets/vendor-26fe51b3.js"></script>
-    <script type="module" crossorigin src="/it-frogs-tp-02/assets/refs-d1bd87b6.js"></script>
-    <link rel="stylesheet" href="/it-frogs-tp-02/assets/refs-33ad57df.css">
+    <script type="module" crossorigin src="/it-frogs-tp-02/assets/vendor-c21e0a22.js"></script>
+    <script type="module" crossorigin src="/it-frogs-tp-02/assets/refs-262ebce8.js"></script>
+    <link rel="stylesheet" href="/it-frogs-tp-02/assets/refs-329511fc.css">
   </head>
   <body>
     <header>
-  <p class="header">header</p>
-  <a class="header-nav-link link" href="./index.html">Home</a>
-  <a class="header-nav-link link" href="./shopping-list.html">Shopping List</a>
+  <div class="menu-box">
+    <div class="menu-logo"><a href="index.html">
+        <svg class="" width="24" height="24">
+          <use href=""></use>
+        </svg>
+        <img src="" alt="logo">
+      </a>
+    </div>
+    <ul class="menu-nav">
+      <li class="nav-item"><a href="index.html">Home</a></li>
+      <li class="nav-item"><a href="shopping-list.html">Shopping list</a></li>
+    </ul>
+    <div class="menu-toggler">togg</div>
+    <button class="menu-auth" type="button">
+      <img class="menu-auth-logo" src="" alt="user logo" />
+      <span class="menu-username"></span>
+    </button>
+  </div>
 </header>
-
 
     <main>
       <div class="side-bar">
@@ -86,8 +101,43 @@
 
     <p class="mobile-menu">mobile-menu</p>
 
-    <p class="auth-popup">auth-popup</p>
-
+    <div class="auth-modal visually-hidden">
+    <div class="auth-container">
+        <button class="auth-logout visually-hidden" type="button">LogOut</button>
+        <button class="auth-close-btn" type="button">X
+            <svg class="auth-close-icon">
+                <use href=""></use>
+            </svg>
+        </button>
+        <form class="auth-form">
+            <div class="auth-form-container">
+                <div class="auth-field-input">
+                    <input type="text" class="auth-input" id="auth-name" placeholder="NAME" />
+                </div>
+                <div class="auth-field-input">
+                    <input type="email" class="auth-input" id="auth-email" placeholder="EMAIL" />
+                    <svg class="auth-input-icon">
+                        <use href=""></use>
+                    </svg>
+                </div>
+                <div class="auth-field-input">
+                    <input type="password" class="auth-input" id="auth-password" placeholder="PASSWORD" />
+                    <svg class="auth-input-icon">
+                        <use href=""></use>
+                    </svg>
+                </div>
+            </div>
+            <button class="auth-sign auth-sign-up visually-hidden" type="button">sign up</button>
+            <button class="auth-sign auth-sign-in" type="button">sign in</button>
+            <div class="auth-toggler">
+                <button class="auth-toggler auth-toggler-sign-up" type="button">sign up</button>
+                <button class="auth-toggler auth-toggler-sign-in auth-toggler-active" type="button">
+                    sign in
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
     <p class="book-popup">book-popup</p>
 
     <p class="btn-scroll-up">btn-scroll-up</p>
