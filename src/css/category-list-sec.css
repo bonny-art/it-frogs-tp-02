@@ -4,9 +4,9 @@
 
 
 .main-categories-box {
+  display: block;
   overflow-y: scroll;
   height: 228px;
-  display: block;
 }
 
 .main-categories-box::-webkit-scrollbar {
@@ -53,7 +53,7 @@
   font-weight: 700;
 }
 
-/* @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .main-categories-box {
     height: 472px;
   }
@@ -71,4 +71,4 @@
     gap: 32;
   }
 
-} */
+}
