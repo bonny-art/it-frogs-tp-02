@@ -1,5 +1,5 @@
-import { el } from './refs';
-const list = document.querySelector('.js-shopping-list');
+import { el } from './refs.js';
+const shoppingList = document.querySelector('.js-shopping-list');
 const emptyPage = document.querySelector('.js-empty-page');
 
 const myArray = [
@@ -188,7 +188,7 @@ function renderShoppingList() {
   if (!temp_book_list) {
     emptyPage.classList.remove('hidden');
   } else {
-    list.insertAdjacentHTML('afterbegin', createBookTemplate());
+    shoppingList.insertAdjacentHTML('afterbegin', createBookTemplate());
   }
 }
 renderShoppingList();
@@ -223,7 +223,7 @@ function createBookTemplate() {
   return template.join('');
 }
 
-list.addEventListener('click', deleteFromCart);
+shoppingList.addEventListener('click', deleteFromCart);
 
 function deleteFromCart(e) {
   if (!e.target.parentNode.classList.contains('js-delete-book')) {
@@ -235,6 +235,6 @@ function deleteFromCart(e) {
   const bookIndex = temp_book_list.find(item => item._id === bookId);
   temp_book_list.splice(temp_book_list.indexOf(bookIndex), 1);
   localStorage.setItem('myArray', JSON.stringify(temp_book_list));
-  list.innerHTML = '';
-  list.insertAdjacentHTML('afterbegin', createBookTemplate());
+  shoppingList.innerHTML = '';
+  shoppingList.insertAdjacentHTML('afterbegin', createBookTemplate());
 }
