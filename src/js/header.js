@@ -1,5 +1,10 @@
 import { handlerActionAuth, initAuthModal } from './auth-popup';
-import { isAuthUser, getUserName, logoutUser } from './auth-firebase';
+import {
+  isAuthUser,
+  getUserName,
+  logoutUser,
+  checkAuthenticationStatus,
+} from './auth-firebase';
 
 const headerUser = document.querySelector('.menu-auth');
 const authModal = document.querySelector('.auth-modal');
@@ -14,12 +19,13 @@ const getNameForUpdateHeaderUser = async () => {
     });
   }
 };
+const isAuthenticated = checkAuthenticationStatus();
 
-(() => {
+function initOnStartUp() {
   headerUserName.textContent = 'Sign In';
   headerUserLogo.classList.add('visually-hidden');
   getNameForUpdateHeaderUser();
-})();
+}
 
 headerUser.addEventListener('click', () => {
   authModal.classList.remove('visually-hidden');
@@ -31,5 +37,5 @@ const updateHeaderUser = userName => {
   headerUserName.textContent = userName;
   headerUserLogo.classList.remove('visually-hidden');
 };
-
+initOnStartUp();
 export { updateHeaderUser };
