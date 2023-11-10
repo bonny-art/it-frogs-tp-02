@@ -49,12 +49,12 @@ const logoutUser = () => {
 };
 
 const removeAccount = async () => {
-  const user = getAuth().currentUser;
+  const user = auth.currentUser;
   return deleteUser(user);
 };
 
 const removeAccountInfo = async () => {
-  const user = getAuth().currentUser;
+  const user = auth.currentUser;
   return deleteDoc(doc(db, 'users', user.uid));
 };
 
