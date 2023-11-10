@@ -1,26 +1,59 @@
 .selected-category-sec {
-  background-color: lightblue;
+  background-color: rgb(93, 105, 109);
 }
 
+.selected-category-title{
+  color: #111;
+  font-family: DMSans-Bold;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 0.11;
+    /* 108.333% */
+  letter-spacing: -1.92px;
+  margin-bottom: 40px;
+}
 
 .selected-category{
   font-size: 48px;
   font-weight: 700;
   line-height: 0.11;
   letter-spacing: -1.92px;
+  padding-top: 40px;
+}
+
+.second-half{
+  color: #4F2EE8;
 }
 
 .selected-category-list{
   display: flex;
-  row-gap: 24px;
-  column-gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  row-gap: 40px;
+  column-gap: 24px;
 }
 
 .card-wrapper{
   display: flex;
-  width: 180px;
   flex-direction: column;
   align-items: flex-start;
+  width: 180px;
+}
+
+.book-img{
+  width: 180px;
+  height: 256px;
+  border-radius: 8px;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.book-img img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .book-title{
