@@ -1,5 +1,5 @@
 import { handlerActionAuth, initAuthModal } from './auth-popup';
-import { isAuthUser, getUserName } from './auth-firebase';
+import { isAuthUser, getUserName, logoutUser } from './auth-firebase';
 
 const headerUser = document.querySelector('.menu-auth');
 const authModal = document.querySelector('.auth-modal');

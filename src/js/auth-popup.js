@@ -58,8 +58,8 @@ function handlerActionAuth() {
   document.addEventListener('keydown', keydownDocumentAuthCallbackForm);
 
   const clickAuthSwitcherSignUp = () => {
-    authSwitcherSignIn.classList.remove('.auth-toggler-active');
-    authSwitcherSignUp.classList.add('.auth-toggler-active');
+    authSwitcherSignIn.classList.remove('auth-toggler-active');
+    authSwitcherSignUp.classList.add('auth-toggler-active');
     authName.classList.remove('visually-hidden');
     authSignUp.classList.remove('visually-hidden');
     authSignIn.classList.add('visually-hidden');
@@ -67,8 +67,8 @@ function handlerActionAuth() {
   authSwitcherSignUp.addEventListener('click', clickAuthSwitcherSignUp);
 
   const clickAuthSwitcherSignIn = () => {
-    authSwitcherSignUp.classList.remove('.auth-toggler-active');
-    authSwitcherSignIn.classList.add('.auth-toggler-active');
+    authSwitcherSignUp.classList.remove('auth-toggler-active');
+    authSwitcherSignIn.classList.add('auth-toggler-active');
     authName.classList.add('visually-hidden');
     authSignUp.classList.add('visually-hidden');
     authSignIn.classList.remove('visually-hidden');
