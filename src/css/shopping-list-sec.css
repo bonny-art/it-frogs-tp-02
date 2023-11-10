@@ -1,3 +1,236 @@
-.shopping-list-sec {
-  background-color: lightcoral;
+/* .shopping-list-sec {
+   background-color: lightcoral; 
+} */
+
+.shopping-title {
+  color: var(--col-black);
+  font-family: DMSans-Bold;
+  margin-bottom: 40px;
+}
+
+@media screen and(min-width: 375px) {
+  .shopping-title {
+    font-size: 32px;
+    line-height: 1.1875;
+    letter-spacing: -1.28px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .shopping-title {
+    font-size: 48px;
+    line-height: 1.083;
+    letter-spacing: -1.92px;
+  }
+}
+
+.accent {
+  color: var(--col-blue);
+}
+
+@media screen and (min-width: 375px) {
+  .shopping-list {
+    padding: 40px 20px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .shopping-list {
+    padding: 40px 32px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .shopping-list {
+    padding: 40px 24px 40px 40px;
+  }
+}
+
+.book-card {
+  background-color: var(--col-white);
+  border: 2px solid rgba(79, 46, 232, 0.4);
+  border-radius: 16px;
+  height: auto;
+  display: flex;
+  position: relative;
+  margin-bottom: 20px;
+  max-width: 335px;
+  padding: 14px;
+}
+
+@media screen and (min-width: 768px) {
+  .book-card {
+    max-width: 704px;
+    padding: 24px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .book-card {
+    max-width: 996px;
+  }
+}
+
+.book-cover {
+  width: 100px;
+  height: 142px;
+}
+@media screen and (min-width: 768px) {
+  .book-cover {
+    width: 116px;
+    height: 165px;
+  }
+}
+
+.image-thumb {
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 100px;
+  max-height: 142px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .image-thumb {
+    max-width: 116px;
+    max-height: 165px;
+  }
+}
+
+.book-title {
+  position: absolute;
+  color: var(--col-black);
+  font-family: DMSans-Bold;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: -0.64px;
+  text-transform: uppercase;
+  left: 128px;
+}
+@media screen and (max-width: 767px) {
+  .book-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 123px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .book-title {
+    top: 24px;
+    left: 164px;
+  }
+}
+
+.book-category {
+  position: absolute;
+  color: var(--col-lt-gray);
+  font-family: DMSans-Regular;
+  font-size: 12px;
+  line-height: 1.1667;
+  letter-spacing: 0.36px;
+}
+@media screen and (max-width: 767px) {
+  .book-category {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    left: 128px;
+    top: 36px;
+    max-width: 144px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .book-category {
+    top: 46px;
+    left: 164px;
+  }
+}
+
+.book-description {
+  position: absolute;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  color: var(--col-black);
+  font-family: DMSans-Regular;
+  font-size: 14px;
+  line-height: 1.286;
+  letter-spacing: -0.56px;
+}
+@media screen and (max-width: 767px) {
+  .book-description {
+    max-width: 178px;
+    max-height: 68px;
+    left: 128px;
+    top: 58px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .book-description {
+    margin-bottom: 48px;
+    max-width: 508px;
+    left: 164px;
+    top: 74px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .book-description {
+    max-width: 808px;
+  }
+}
+
+.book-author {
+  position: absolute;
+  color: var(--col-lt-gray);
+  font-family: DMSans-Regular-Italic;
+  font-size: 12px;
+  line-height: 1.166;
+  letter-spacing: -0.48px;
+}
+@media screen and (max-width: 767px) {
+  .book-author {
+    bottom: 14px;
+    left: 128px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .book-author {
+    bottom: 24px;
+    left: 164px;
+  }
+}
+
+.delete-btn {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  position: absolute;
+  background-color: var(--col-blue);
+  border: none;
+  border-radius: 50%;
+  padding: 6px;
+  top: 14px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (min-width: 768px) {
+  .delete-btn {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    top: 24px;
+    right: 24px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .delete-svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.hidden {
+  display: none;
 }
