@@ -10,7 +10,7 @@
 }
 
 .main-categories-box::-webkit-scrollbar {
-  width: 10px;
+  width: 16px;
   /* width of the entire scrollbar */
 }
 
