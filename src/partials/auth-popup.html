@@ -1,1 +1,25 @@
-<p class="auth-popup">auth-popup</p>
+<div class="overlay" id="overlay">
+    <div class="modal" id="modal">
+        <div class="auth-card">
+            <div class="card-content">
+                <div class="login-form">
+                    <input type="email" placeholder="E-mail">
+                    <input type="password" placeholder="Password">
+                    <button type="submit" class="auth-btn" id="login-btn">Log in</button>
+                </div>
+                <div class="register-form">
+                    <input type="text" placeholder="Name">
+                    <input type="email" placeholder="E-mail">
+                    <input type="password" placeholder="Password">
+                    <input type="password" placeholder="Repeat password">
+                    <button type="submit" class="auth-btn" id="registration-btn">Sign up</button>
+                </div>
+            </div>
+            <div class="card-toggle">
+                <div class="register">Sign up</div>
+                <div class="login active">Sign in</div>
+            </div>
+        </div>
+        <button id="close-modal-btn">Close</button>
+    </div>
+</div>

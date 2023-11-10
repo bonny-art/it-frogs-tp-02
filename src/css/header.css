@@ -1,3 +1,32 @@
-.header {
-  background-color: red;
+.menu-box {
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  padding: 22px 24px;
+}
+.menu-logo a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin-right: 76px;
+}
+.menu-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 24px;
+  margin-right: auto;
+}
+.nav-item {
+  font-family: DM Sans;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+  text-align: left;
+  text-transform: uppercase;
+}
+.menu-toggler {
+  margin-right: 24px;
 }
