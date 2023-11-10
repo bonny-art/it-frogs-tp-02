@@ -5,6 +5,7 @@
   |============================
 */
 @import url('./reset.css');
+@import url('./main-styles.css');
 
 @import url('./header.css');
 @import url('./mobile-menu.css');
@@ -22,35 +23,3 @@
 @import url('./loader.css');
 @import url('./theme-dark.css');
 @import url('./theme-light.css');
-
-:root {
-  --col-blue: #4f2ee8;
-  --col-black: #111111;
-  --col-lt-gray: #b4afaf;
-  --col-bg-light: #f6f6f6;
-  --col-bg-dark: #202024;
-
-  --col-white: #ffffff;
-  --col-yellow: #eac645;
-
-  --grad-toggle-light: linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%);
-  --grad-toggle-dark: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
-
-  --col-lt-gray-scroll-bar: #e0e0e0;
-  --grad-sup-ukr: radial-gradient(
-    183.6% 183.01% at 59.76% -23.42%,
-    #4f2ee8 18.03%,
-    #ffffff 100%
-  );
-
-  /* font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400; */
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
