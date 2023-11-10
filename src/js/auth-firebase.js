@@ -7,8 +7,8 @@ import {
   signOut,
   deleteUser,
 } from 'firebase/auth';
-import { getDatabase, ref, set, get, remove } from 'firebase/database';
-
+import { getFirestore } from 'firebase/firestore';
+import { doc, setDoc, getDoc, updateDoc, deleteDoc } from 'firebase/firestore';
 const firebaseConfig = {
   apiKey: 'AIzaSyCSIOIvaBcm09OifpCpfKPAwnfy_t377rM',
   authDomain: 'testfirebase-422a2.firebaseapp.com',
@@ -21,108 +21,64 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
+const db = getFirestore(app);
 const auth = getAuth(app);
-// const emailInput = document.getElementById('email');
-// const passwordInput = document.getElementById('password');
-// const signOutButton = document.getElementById('signOut');
-// let isAuth = false;
 
-function loginUser() {
-  const email = emailInput.value;
-  const password = passwordInput.value;
+const registrationUser = async (email, password) => {
+  return createUserWithEmailAndPassword(auth, email, password);
+};
 
-  signInWithEmailAndPassword(auth, email, password)
-    .then(userCredential => {
-      alert('Вход успешен');
-      signOutButton.style.display = 'block';
-      //   isAuth = true;
-    })
-    .catch(error => {
-      alert(`Ошибка входа: ${error.message}`);
-    });
-}
-
-function createAccaunt() {
-  const email = emailInput.value;
-  const password = passwordInput.value;
-  const name = document.getElementById('name').value; // Получаем имя из поля ввода
-
-  createUserWithEmailAndPassword(auth, email, password)
-    .then(userCredential => {
-      // После успешной регистрации сохраняем имя пользователя в базе данных
-      const user = userCredential.user;
-      const userRef = ref(db, `users/${user.uid}`);
-      set(userRef, { name: name }); // Сохраняем имя пользователя
-
-      alert('Регистрация успешна');
-      signOutButton.style.display = 'block';
-      //   isAuth = true;
-    })
-    .catch(error => {
-      alert(`Ошибка регистрации: ${error.message}`);
-    });
-}
-
-function deleteAccount() {
-  const user = auth.currentUser;
-
-  if (user) {
-    deleteUser(user)
-      .then(() => {
-        alert('Аккаунт удален');
-        signOutButton.style.display = 'none';
-        // isAuth = false;
-      })
-      .catch(error => {
-        alert(`Ошибка при удалении аккаунта: ${error.message}`);
-      });
-  } else {
-    alert('Пользователь не вошел в систему');
-  }
-}
-
-function logOutUser() {
-  signOut(auth).then(() => {
-    alert('Выход выполнен успешно');
-    signOutButton.style.display = 'none';
-    // isAuth = false;
+const setUserName = async userName => {
+  const docRef = doc(db, 'users', auth.currentUser.uid);
+  return setDoc(docRef, {
+    name: userName,
   });
-}
-let userID = '';
-onAuthStateChanged(auth, user => {
-  if (user) {
-    userID = user.uid;
-    console.log('Пользователь вошел в систему. ID пользователя:', userID);
+};
 
-    // Вы можете передать userId в другие функции для работы с базой данных
-    // Например, для создания подкаталога с именем пользователя и хранения данных.
+const loginUser = async (email, password) => {
+  return signInWithEmailAndPassword(auth, email, password);
+};
 
-    // После успешного входа, загружаем имя пользователя из базы данных
-    const userRef = ref(db, `users/${userID}`);
-    get(userRef).then(snapshot => {
-      if (snapshot.exists()) {
-        const userData = snapshot.val();
-        const userName = userData.name;
-        // Отобразите имя пользователя на странице
-        // Например, вы можете добавить его в какой-то элемент, например, <h2>
-        // document.getElementById(
-        //   'user-name'
-        // ).textContent = `Привет, ${userName}!`;
-      }
-    });
-  } else {
-    console.log('Пользователь вышел из системы.');
-  }
-});
+const isAuthUser = async () => {
+  await auth._initializationPromise;
+  return auth.currentUser === null ? false : true;
+};
+
+const logoutUser = () => {
+  signOut(auth);
+};
+
+const removeAccount = async () => {
+  const user = getAuth().currentUser;
+  return deleteUser(user);
+};
+
+const removeAccountInfo = async () => {
+  const user = getAuth().currentUser;
+  return deleteDoc(doc(db, 'users', user.uid));
+};
+
+const getUserName = async () => {
+  return getDoc(doc(db, 'users', auth.currentUser.uid));
+};
+
+const getUserEmail = () => {
+  return auth.currentUser.email;
+};
+
+const returnAuth = () => {
+  return auth;
+};
 
 export {
-  db,
-  isAuth,
+  registrationUser,
+  setUserName,
   loginUser,
-  logOutUser,
-  createAccaunt,
-  deleteAccount,
-  signOutButton,
-  onAuthStateChanged,
+  isAuthUser,
+  logoutUser,
+  removeAccount,
+  removeAccountInfo,
+  getUserName,
+  getUserEmail,
+  returnAuth,
 };

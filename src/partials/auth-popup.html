@@ -1,25 +1,36 @@
-<div class="overlay" id="overlay">
-    <div class="modal" id="modal">
-        <div class="auth-card">
-            <div class="card-content">
-                <div class="login-form">
-                    <input type="email" placeholder="E-mail">
-                    <input type="password" placeholder="Password">
-                    <button type="submit" class="auth-btn" id="login-btn">Log in</button>
+<div class="auth-modal visually-hidden">
+    <div class="auth-container">
+        <button class="auth-close-btn" type="button">X
+            <svg class="auth-close-icon">
+                <use href=""></use>
+            </svg>
+        </button>
+        <form class="auth-form">
+            <div class="auth-form-container">
+                <div class="auth-field-input">
+                    <input type="text" class="auth-input" id="auth-name" placeholder="NAME" />
                 </div>
-                <div class="register-form">
-                    <input type="text" placeholder="Name">
-                    <input type="email" placeholder="E-mail">
-                    <input type="password" placeholder="Password">
-                    <input type="password" placeholder="Repeat password">
-                    <button type="submit" class="auth-btn" id="registration-btn">Sign up</button>
+                <div class="auth-field-input">
+                    <input type="email" class="auth-input" id="auth-email" placeholder="EMAIL" />
+                    <svg class="auth-input-icon">
+                        <use href=""></use>
+                    </svg>
+                </div>
+                <div class="auth-field-input">
+                    <input type="password" class="auth-input" id="auth-password" placeholder="PASSWORD" />
+                    <svg class="auth-input-icon">
+                        <use href=""></use>
+                    </svg>
                 </div>
             </div>
-            <div class="card-toggle">
-                <div class="register">Sign up</div>
-                <div class="login active">Sign in</div>
+            <button class="auth-sign auth-sign-up visually-hidden" type="button">sign up</button>
+            <button class="auth-sign auth-sign-in" type="button">sign in</button>
+            <div class="auth-toggler">
+                <button class="auth-toggler auth-toggler-sign-up" type="button">sign up</button>
+                <button class="auth-toggler auth-toggler-sign-in auth-toggler-active" type="button">
+                    sign in
+                </button>
             </div>
-        </div>
-        <button id="close-modal-btn">Close</button>
+        </form>
     </div>
 </div>
