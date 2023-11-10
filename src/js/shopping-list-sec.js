@@ -1,3 +1,4 @@
+import { el } from './refs';
 const list = document.querySelector('.js-shopping-list');
 const emptyPage = document.querySelector('.js-empty-page');
 
@@ -179,7 +180,7 @@ const myArray = [
 let jsonString = JSON.stringify(myArray);
 
 localStorage.setItem('myArray', jsonString);
-localStorage.removeItem('myArray');
+// localStorage.removeItem('myArray');
 
 const temp_book_list = JSON.parse(localStorage.getItem('myArray'));
 

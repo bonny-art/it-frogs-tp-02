@@ -3,7 +3,6 @@
 } */
 
 .shopping-title {
-  color: var(--col-black);
   font-family: DMSans-Bold;
   margin-bottom: 40px;
 }
@@ -44,7 +43,6 @@
 }
 
 .book-card {
-  background-color: var(--col-white);
   border: 2px solid rgba(79, 46, 232, 0.4);
   border-radius: 16px;
   height: auto;
@@ -96,7 +94,6 @@
 
 .book-title {
   position: absolute;
-  color: var(--col-black);
   font-family: DMSans-Bold;
   font-size: 16px;
   line-height: 1.25;
@@ -150,7 +147,6 @@
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  color: var(--col-black);
   font-family: DMSans-Regular;
   font-size: 14px;
   line-height: 1.286;
@@ -233,4 +229,18 @@
 
 .hidden {
   display: none;
+}
+
+.page-notification {
+  text-align: center;
+  font-family: DMSans-Regular;
+  font-size: 18px;
+  line-height: 1.33;
+  letter-spacing: -0.36px;
+  margin-bottom: 14px;
+}
+@media screen and (min-width: 768px) {
+  .page-notification {
+    margin-bottom: 20px;
+  }
 }
