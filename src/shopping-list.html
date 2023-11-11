@@ -26,15 +26,22 @@
     />
   </head>
   <body>
-    <load ="partials/header.html" />
-
-    <main>
-      <div class="side-bar">
-        <load ="partials/category-list-sec.html" />
-        <load ="partials/support-ukraine-sec.html" />
+    <header class="header-section section">
+      <div class="header-container container">
+        <load ="partials/header.html" />
       </div>
-      <div class="main-part">
-        <load ="partials/shopping-list-sec.html" />
+    </header>
+
+    <main class="main-section main-shopping section">
+      <div class="main-container container">
+        <div class="sidebar sidebar-shopping">
+          <div class="support-container">
+            <load ="partials/support-ukraine-sec.html" />
+          </div>
+        </div>
+        <div class="content">
+          <load ="partials/shopping-list-sec.html" />
+        </div>
       </div>
     </main>
 
