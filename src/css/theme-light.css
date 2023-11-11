@@ -1,8 +1,5 @@
 /* ------------ BASE ------------ */
 
-body {
-  background-color: var(--light-color);
-}
 /* Header */
 
 /* -------------- BUTTON -------------- */
@@ -18,5 +15,37 @@ body {
 }
 
 .btn__icon {
-  color: var(--light-icon-color);
+  color: #FFDE59;
+}
+
+.nav-shoppinglist-icon {
+  fill: currentColor;
+}
+
+/* .shopping-list {
+    color: #111111;
+} */
+
+header {
+  background-color: #FFFFFF;
+  border: 1.5px solid #111111;
+}
+
+/* body */
+
+body {
+  background-color: #f6f6f6;
+}
+
+.main-categories-list-item:hover,
+.main-categories-list-item:focus {
+  color: #4F2EE8;
+}
+
+.book-title {
+  color: #111111;
+}
+
+.book-author {
+  color: #B4AFAF;
 }
