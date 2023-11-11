@@ -25,8 +25,8 @@
       referrerpolicy="no-referrer"
     />
     <script type="module" crossorigin src="/it-frogs-tp-02/assets/vendor-b82aaa89.js"></script>
-    <script type="module" crossorigin src="/it-frogs-tp-02/assets/theme-dark-light-d09091cc.js"></script>
-    <link rel="stylesheet" href="/it-frogs-tp-02/assets/theme-dark-light-2b18795a.css">
+    <script type="module" crossorigin src="/it-frogs-tp-02/assets/theme-dark-light-55877d0d.js"></script>
+    <link rel="stylesheet" href="/it-frogs-tp-02/assets/theme-dark-light-2c6a41bf.css">
   </head>
   <body>
     <header class="header-section section">
@@ -204,7 +204,36 @@
           </div>
         </div>
         <div class="content">
-          <p class="shopping-list-sec">shopping-list-sec</p>
+          <!-- <p class="shopping-list-sec">shopping-list-sec</p> -->
+<div class="shopping-container">
+  <div class="shopping-list">
+    <h1 class="shopping-title">Shopping <span class="accent">List</span></h1>
+    <div class="list-items js-shopping-list">
+      <div class="js-empty-page hidden">
+        <p class="page-notification">
+          This page is empty, add some books and proceed to order.
+        </p>
+        <picture class="notification-image">
+          <source
+            srcset="/it-frogs-tp-02/assets/empty_page_tablet_1x-a1dce6e7.png 1x, /it-frogs-tp-02/assets/empty_page_tablet_2x-20a66507.png 2x"
+            media="(min-width: 768px)"
+            type="image/png"
+          />
+          <source
+            srcset="/it-frogs-tp-02/assets/empty_page_mobile_1x-04422700.png 1x, /it-frogs-tp-02/assets/empty_page_mobile_2x-9f3f9a1f.png 2x"
+            media="(min-width: 375px)"
+            type="image/png"
+          />
+          <img
+            class="empty_page"
+            src="/it-frogs-tp-02/assets/empty_page_tablet_1x-a1dce6e7.png"
+            alt="books"
+          />
+        </picture>
+      </div>
+    </div>
+  </div>
+</div>
 
         </div>
       </div>
