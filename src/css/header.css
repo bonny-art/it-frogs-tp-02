@@ -1,17 +1,8 @@
-header {
+.nav-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: baseline;
   align-items: center;
-  max-width: 375px;
-  background: var(--header-bg-color);
-  border-radius: 0px 0px 8px 8px;
-  border: 1.5px solid var(--header-border-color);
   padding: 18px 20px;
-  margin: 0 auto;
-}
-
-.header-nav {
-  display: flex;
 }
 
 .header-logo {
@@ -20,82 +11,89 @@ header {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  margin-right: auto;
 }
 
-.header-logo-img {
+.header-logo-icon {
   width: 24px;
   height: 24px;
 }
-
-.header-logo-text {
+.header-logo-title {
   width: 77px;
   height: 13px;
-  fill: var(--logo-stroke-color);
 }
-
-.header-menu-list {
+.nav-menu {
   display: none;
 }
 
-.header-buttons {
-  display: flex;
-  gap: 14px;
-  justify-content: center;
+.nav-shoppinglist-icon {
+  width: 20px;
+  height: 20px;
+}
+.btn {
+  margin-right: 14px;
+}
+.menu-auth {
+  display: none;
   align-items: center;
+  justify-content: center;
+  background: #4f2ee8;
+  border-radius: 36px;
+  padding: 4px 12px;
 }
-
-.header-switcher {
-  cursor: pointer;
-  border: none;
-  background-color: transparent;
+.menu-auth-logo {
+  width: 37px;
+  height: 37px;
+  margin-right: 9px;
 }
-
-.header-switcher-img {
-  width: 40px;
-  height: 24px;
+.menu-username {
+  margin-right: 4px;
 }
-
-.header-user {
-  display: none;
+.menu-auth-icon {
+  width: 23px;
+  height: 26px;
 }
-
-.header-modal-mobile-link {
-  cursor: pointer;
+.nav-mobile-menu {
+  display: flex;
 }
-
-.header-modal-mobile {
-  width: 28px;
-  height: 28px;
-  stroke: #eac645;
+.burger {
+  stroke: #111111;
 }
 
 @media screen and (min-width: 768px) {
-  header {
+  .nav-container {
     max-width: 768px;
-    padding: 14px 32px;
+    padding: 22px 32px;
   }
-
-  .header-nav {
-    gap: 40px;
+  .header-logo {
+    margin-right: 40px;
   }
-
-  .header-menu-list {
+  .nav-menu {
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 24px;
+    padding: 8px 0;
+    margin-right: auto;
   }
-
-  .header-menu-home {
-    color: var(--text-color);
+  .nav-item {
+    font-family: DM Sans;
     font-size: 14px;
-    font-style: normal;
     font-weight: 500;
-    line-height: 128.571%;
-    letter-spacing: -0.56px;
-    text-transform: uppercase;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    text-align: left;
+    border-radius: 36px;
+  }
+  .active-page {
+    background: #eac645;
   }
 
-  .header-menu-btn {
+  .btn {
+    margin-right: 24px;
+  }
+
+  .nav-item {
     display: flex;
     padding: 7px 16px;
     justify-content: center;
@@ -112,24 +110,23 @@ header {
     cursor: pointer;
   }
 
-  .header-menu-shoppinglist-icon {
+  .nav-shoppinglist-icon {
     width: 20px;
     height: 20px;
     fill: var(--text-color);
   }
 
-  .header-user {
+  .menu-auth {
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 36px;
-    background: var(--accent-primary);
     border: none;
     padding: 4px 12px;
   }
 
-  .header-user-logo {
+  .menu-auth-logo {
     width: 37px;
     height: 37px;
     border-radius: 50%;
@@ -137,7 +134,7 @@ header {
   }
 
   .menu-username {
-    color: var(--header-bg-color);
+    color: #ffffff;
     font-size: 22px;
     font-style: normal;
     font-weight: 700;
@@ -146,19 +143,47 @@ header {
     margin-right: 4px;
   }
 
-  .header-user-icon-down {
+  .menu-auth-icon {
     width: 23px;
     height: 26px;
   }
 
-  .header-modal-mobile {
+  .nav-mobile-menu {
     display: none;
   }
 }
 
 @media screen and (min-width: 1440px) {
-  header {
+  .nav-container {
     max-width: 1440px;
     padding: 14px 24px;
   }
+
+  .header-logo {
+    margin-right: 76px;
+  }
+}
+/*============================|dropdawn|===========================*/
+#dropdownMenu {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+#dropdownMenu a {
+  padding: 12px 16px;
+  display: block;
+  text-decoration: none;
+  color: #333;
+}
+
+#dropdownMenu a:hover {
+  background-color: #ddd;
+}
+
+.arrow {
+  margin-left: 5px;
 }
