@@ -2,7 +2,7 @@
   display: flex;
   justify-content: baseline;
   align-items: center;
-  padding: 18px 20px;
+  padding: 18px;
 }
 
 .header-logo {
@@ -33,13 +33,29 @@
 .btn {
   margin-right: 14px;
 }
+.auth-button-box {
+  margin-right: 4px;
+}
 .menu-auth {
-  display: none;
+  display: flex;
+  width: 118px;
+  height: 40px;
   align-items: center;
   justify-content: center;
   background: #4f2ee8;
   border-radius: 36px;
   padding: 4px 12px;
+}
+.js-logout {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  color: #111111;
+  background: #ffffff;
+  z-index: 1;
+}
+.menu-username2 {
+  color: #111111;
 }
 .menu-auth-logo {
   width: 37px;
@@ -61,6 +77,10 @@
   stroke: #111111;
 }
 
+.burger:hover {
+  stroke: #4f2ee8;
+}
+
 @media screen and (min-width: 768px) {
   .nav-container {
     max-width: 768px;
@@ -73,61 +93,59 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 24px;
-    padding: 8px 0;
+    /* gap: 24px; */
+    padding: 0;
     margin-right: auto;
   }
+
   .nav-item {
+    display: flex;
+    padding: 8px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 36px;
+    text-align: left;
+    color: var(--text-color);
     font-family: DM Sans;
     font-size: 14px;
     font-weight: 500;
     line-height: 18px;
     letter-spacing: -0.04em;
     text-align: left;
-    border-radius: 36px;
-  }
-
-  .active-page {
-    background: #eac645;
-  }
-
-  .btn {
-    margin-right: 24px;
-  }
-
-  .nav-item {
-    display: flex;
-    padding: 7px 16px;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    border-radius: 36px;
-
-    color: var(--text-color);
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 128.571%;
     text-transform: uppercase;
     cursor: pointer;
   }
-
+  .active-page {
+    background: #eac645;
+    font-family: DM Sans;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    text-align: left;
+  }
   .nav-shoppinglist-icon {
     width: 20px;
     height: 20px;
     fill: var(--text-color);
   }
-
+  .btn {
+    margin-right: 24px;
+  }
+  .auth-button-box {
+    position: relative;
+  }
   .menu-auth {
     width: 184px;
-    height: 48px;
+    height: 45px;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-radius: 18px;
     border: 1.5px solid #111111;
-    padding: 4px 12px;
+    padding: 0 12px;
   }
 
   .menu-auth-logo {

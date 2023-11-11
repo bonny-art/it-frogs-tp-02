@@ -89,6 +89,7 @@ function handlerActionAuth() {
             updateHeaderUser(getUserNameRes.data().name);
             authModal.classList.add('visually-hidden');
             removeListenersAuthModal();
+            location.reload();
           })
           .catch(getUserNameError => {
             alert(`Get user name error: ${getUserNameError.code}`);
@@ -122,6 +123,7 @@ function handlerActionAuth() {
             updateHeaderUser(name);
             authModal.classList.add('visually-hidden');
             removeListenersAuthModal();
+            location.reload();
           })
           .catch(setUserNameError => {
             alert(`Create account error: ${setUserNameError.code}`);
