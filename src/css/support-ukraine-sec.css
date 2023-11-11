@@ -1,8 +1,14 @@
 .support-img {
   filter: brightness(0) invert(1);
+      max-width: 210px;
+        height: 30px;
 }
 
-.support-container {
+img {
+width: auto;
+}
+
+.support-left {
   border-radius: 16px;
   background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4f2ee8 18.03%, #fff 100%);
 
@@ -20,7 +26,7 @@
     padding-top: 28px;
   }
 
-  .support-container {
+  .support-left {
     width: 356px;
     height: 474px;
   }
@@ -71,6 +77,8 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media only screen and (min-width: 768px) {
@@ -94,5 +102,8 @@
   display: flex;
   align-items: center;
   gap: 16px;
+  transition: all .3s ease 0s;
 }
-
+.support-arrow:hover {
+  background-color: #C8C3EF;
+}
