@@ -183,45 +183,35 @@ localStorage.setItem('books-list', jsonString);
 
 const temp_book_list = JSON.parse(localStorage.getItem('books-list'));
 
-function renderShoppingList() {
-  if (!temp_book_list) {
-    el.emptyPage.classList.remove('hidden');
-  } else {
-    el.shoppingList.insertAdjacentHTML('afterbegin', createBookTemplate());
-  }
-}
-
-renderShoppingList();
-
 function createBookTemplate() {
   const template = temp_book_list.map(
     book => `
-            <div class="book-card" data-book-id="${book._id}">
+            <div class="shopping-book-card" data-book-id="${book._id}">
                 <div class="image-thumb">
                 <img
-                    class="book-cover"
+                    class="shopping-book-cover"
                     src="${book.book_image}"
                     alt="${book.title}"
                     loading="lazy"
                 />
                 </div>
                 <div class="card-info">
-                    <h3 class="book-title">${book.title}</h3>
-                    <p class="book-category">${book.list_name}</p>
-                    <p class="book-description">${book.description}</p>
-                    <p class="book-author">${book.author}</p>
+                    <h3 class="shopping-book-title">${book.title}</h3>
+                    <p class="shopping-book-category">${book.list_name}</p>
+                    <p class="shopping-book-description">${book.description}</p>
+                    <p class="shopping-book-author">${book.author}</p>
                 </div>
                 <button type="button" class="delete-btn js-delete-book">
                     <svg class="delete-svg" width="16" height="16">
-                        <use href="./images/shopping_list_sec/sprite.svg#trash-03"></use>
+                        <use href="/images/shopping_list_sec/sprite.svg#trash-03"></use>
                     </svg>
                 </button>
                 <div class="trade-fairs">
                   <a href="${book.buy_links[0].url}" target="_blank">
-                    <img class="amazon-img" src="./images/shopping_list_sec/amazon.svg" width="32" height="11"/>
+                    <img class="amazon-img" src="/images/shopping_list_sec/amazon.svg" width="32" height="11"/>
                   </a>
                   <a href="${book.buy_links[1].url}" target="_blank">
-                    <img class="apple-books-img" src="./images/shopping_list_sec/appleBooks.svg" width="16" height="16"/>
+                    <img class="apple-books-img" src="/images/shopping_list_sec/appleBooks.svg" width="16" height="16"/>
                   </a>
                 </div>
             </div>
@@ -230,14 +220,27 @@ function createBookTemplate() {
   return template.join('');
 }
 
-el.shoppingList.addEventListener('click', deleteFromCart);
+function renderShoppingList() {
+  if (!temp_book_list) {
+    el.emptyPage.classList.remove('hidden');
+  } else {
+    el.shoppingList.insertAdjacentHTML('afterbegin', createBookTemplate());
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  if (el.shoppingList) {
+    renderShoppingList();
+    el.shoppingList.addEventListener('click', deleteFromCart);
+  }
+});
 
 function deleteFromCart(e) {
   if (!e.target.parentNode.classList.contains('js-delete-book')) {
     return;
   }
 
-  const card = e.target.closest('.book-card');
+  const card = e.target.closest('.shopping-book-card');
   const bookId = card.dataset['bookId'];
   const bookIndex = temp_book_list.find(item => item._id === bookId);
   temp_book_list.splice(temp_book_list.indexOf(bookIndex), 1);
