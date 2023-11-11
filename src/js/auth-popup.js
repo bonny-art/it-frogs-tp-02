@@ -4,14 +4,13 @@ import {
   loginUser,
   removeAccount,
   getUserName,
-  isAuthUser,
 } from './auth-firebase';
 
 import { updateHeaderUser } from './header';
 
 const authModal = document.querySelector('.auth-modal');
 const authClose = document.querySelector('.auth-close-btn');
-const authCallbackForm = document.querySelector('.auth-form');
+const authForm = document.querySelector('.auth-container');
 const authSwitcherSignUp = document.querySelector('.auth-toggler-sign-up');
 const authSwitcherSignIn = document.querySelector('.auth-toggler-sign-in');
 const authName = document.querySelector('#auth-name');
@@ -22,41 +21,42 @@ const authSignIn = document.querySelector('.auth-sign-in');
 const authIsLogged = document.querySelector('auth-logged-container');
 
 function handlerActionAuth() {
+  //прибирає слухачів після закриття модального вікна
   function removeListenersAuthModal() {
     authClose.removeEventListener('click', handlerOnClose);
-    document.removeEventListener('click', clickDocumentAuthCallbackForm);
-    document.removeEventListener('keydown', keydownDocumentAuthCallbackForm);
+    document.removeEventListener('click', clickDocumentAuthForm);
+    document.removeEventListener('keydown', keydownDocumentAuthForm);
     authSwitcherSignUp.removeEventListener('click', clickAuthSwitcherSignUp);
     authSwitcherSignIn.removeEventListener('click', clickAuthSwitcherSignIn);
     authSignIn.removeEventListener('click', clickAuthLogin);
     authSignUp.removeEventListener('click', clickAuthRegistration);
   }
-
+  //ховає модальне вікно
   function handlerOnClose() {
     authModal.classList.add('visually-hidden');
     removeListenersAuthModal();
   }
   authClose.addEventListener('click', handlerOnClose);
-
-  const clickDocumentAuthCallbackForm = evt => {
+  //кліком закриваємо модалку
+  const clickDocumentAuthForm = evt => {
     if (
-      !evt.composedPath().includes(authCallbackForm) &&
+      !evt.composedPath().includes(authForm) &&
       evt.composedPath().includes(authModal)
     ) {
       authModal.classList.add('visually-hidden');
       removeListenersAuthModal();
     }
   };
-  document.addEventListener('click', clickDocumentAuthCallbackForm);
-
-  const keydownDocumentAuthCallbackForm = evt => {
+  document.addEventListener('click', clickDocumentAuthForm);
+  //закриваємо модалку кнопкою
+  const keydownDocumentAuthForm = evt => {
     if (evt.key == 'Escape') {
       authModal.classList.add('visually-hidden');
       removeListenersAuthModal();
     }
   };
-  document.addEventListener('keydown', keydownDocumentAuthCallbackForm);
-
+  document.addEventListener('keydown', keydownDocumentAuthForm);
+  //змінюємо форму по кліку на тоглері
   const clickAuthSwitcherSignUp = () => {
     authSwitcherSignIn.classList.remove('auth-toggler-active');
     authSwitcherSignUp.classList.add('auth-toggler-active');
@@ -74,12 +74,13 @@ function handlerActionAuth() {
     authSignIn.classList.remove('visually-hidden');
   };
   authSwitcherSignIn.addEventListener('click', clickAuthSwitcherSignIn);
-
+  //перевіряємо допустимі знаки у пошті
   function validateEmail(email) {
     let result =
       /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
     return result.test(String(email).toLowerCase());
   }
+  //обробляємо логін
   const login = async (email, password) => {
     loginUser(email, password)
       .then(() => {
@@ -97,7 +98,7 @@ function handlerActionAuth() {
         alert(`Authorization error: ${signInAppError.code}`);
       });
   };
-
+  //лігинімся
   const clickAuthLogin = () => {
     const email = authEmail.value.trim();
     const password = authPassword.value.trim();
@@ -112,7 +113,7 @@ function handlerActionAuth() {
     }
   };
   authSignIn.addEventListener('click', clickAuthLogin);
-
+  //обробка реєстрації
   const registration = async (email, password, name) => {
     registrationUser(email, password)
       .then(() => {
@@ -135,6 +136,7 @@ function handlerActionAuth() {
         alert(`Create account error: ${createAccountError.code}`);
       });
   };
+  //реєструємось
   const clickAuthRegistration = () => {
     const email = authEmail.value.trim();
     const password = authPassword.value.trim();
@@ -153,6 +155,7 @@ function handlerActionAuth() {
   };
   authSignUp.addEventListener('click', clickAuthRegistration);
 }
+//ініціюємо початковий стан модалки
 function initAuthModal() {
   authSwitcherSignUp.classList.remove('.auth-toggler-active');
   authSwitcherSignIn.classList.add('.auth-toggler-active');

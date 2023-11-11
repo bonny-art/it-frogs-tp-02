@@ -52,6 +52,10 @@
   justify-content: center;
   cursor: pointer;
 }
+.auth-close-icon {
+  fill: #111;
+  stroke: #111;
+}
 
 .auth-form-container {
   display: flex;

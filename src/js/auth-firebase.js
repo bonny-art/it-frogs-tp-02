@@ -69,7 +69,7 @@ const getUserEmail = () => {
 const returnAuth = () => {
   return auth;
 };
-function checkAuthenticationStatus() {
+async function checkAuthenticationStatus() {
   onAuthStateChanged(auth, user => {
     if (user) {
       // User is signed in
@@ -80,6 +80,28 @@ function checkAuthenticationStatus() {
       console.log('User is signed out');
       return false;
     }
+  });
+}
+
+function deleteAccount() {
+  const user = auth.currentUser;
+
+  if (user) {
+    deleteUser(user)
+      .then(() => {
+        alert('Аккаунт удален');
+      })
+      .catch(error => {
+        alert(`Ошибка при удалении аккаунта: ${error.message}`);
+      });
+  } else {
+    alert('Пользователь не вошел в систему');
+  }
+}
+
+function logOutUser() {
+  signOut(auth).then(() => {
+    alert('Выход выполнен успешно');
   });
 }
 export {
@@ -94,4 +116,6 @@ export {
   getUserName,
   getUserEmail,
   returnAuth,
+  deleteAccount,
+  logOutUser,
 };
