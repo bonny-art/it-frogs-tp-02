@@ -24,4 +24,5 @@
 
 @import url('./theme-dark-light.css');
 @import url('./theme-light.css');
+/* эта тема "theme-light.css" красит ссылки при ховере  */
 @import url('./theme-dark.css');

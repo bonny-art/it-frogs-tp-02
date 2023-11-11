@@ -6,7 +6,7 @@
 */
 
 // import {  } from './selected-category-sec';
-import Notiflix from 'notiflix';
+// import Notiflix from 'notiflix';
 import { fetchBookList, fetchTopBooks, fetchBooksOfCategory } from './api';
 
 // Получаем ссылку на элемент списка категорий
