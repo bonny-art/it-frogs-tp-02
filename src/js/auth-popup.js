@@ -4,14 +4,13 @@ import {
   loginUser,
   removeAccount,
   getUserName,
-  isAuthUser,
 } from './auth-firebase';
 
 import { updateHeaderUser } from './header';
 
 const authModal = document.querySelector('.auth-modal');
 const authClose = document.querySelector('.auth-close-btn');
-const authCallbackForm = document.querySelector('.auth-form');
+const authForm = document.querySelector('.auth-container');
 const authSwitcherSignUp = document.querySelector('.auth-toggler-sign-up');
 const authSwitcherSignIn = document.querySelector('.auth-toggler-sign-in');
 const authName = document.querySelector('#auth-name');

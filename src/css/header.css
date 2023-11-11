@@ -55,6 +55,7 @@
 }
 .nav-mobile-menu {
   display: flex;
+  border: none;
 }
 .burger {
   stroke: #111111;
@@ -85,6 +86,7 @@
     text-align: left;
     border-radius: 36px;
   }
+
   .active-page {
     background: #eac645;
   }
@@ -117,12 +119,14 @@
   }
 
   .menu-auth {
+    width: 184px;
+    height: 48px;
     cursor: pointer;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    border-radius: 36px;
-    border: none;
+    border-radius: 18px;
+    border: 1.5px solid #111111;
     padding: 4px 12px;
   }
 
@@ -135,17 +139,19 @@
 
   .menu-username {
     color: #ffffff;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: -0.44px;
+    font-family: DM Sans;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    text-align: left;
+
     margin-right: 4px;
   }
 
   .menu-auth-icon {
-    width: 23px;
-    height: 26px;
+    width: 20px;
+    height: 20px;
   }
 
   .nav-mobile-menu {
@@ -162,28 +168,4 @@
   .header-logo {
     margin-right: 76px;
   }
-}
-/*============================|dropdawn|===========================*/
-#dropdownMenu {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-#dropdownMenu a {
-  padding: 12px 16px;
-  display: block;
-  text-decoration: none;
-  color: #333;
-}
-
-#dropdownMenu a:hover {
-  background-color: #ddd;
-}
-
-.arrow {
-  margin-left: 5px;
 }

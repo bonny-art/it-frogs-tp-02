@@ -7,6 +7,18 @@ import {
   logOutUser,
 } from './auth-firebase';
 
+document.addEventListener('DOMContentLoaded', function () {
+  let currentUrl = window.location.href;
+  let menuItems = document.querySelectorAll('.nav-item');
+
+  menuItems.forEach(function (item) {
+    let link = item.querySelector('a');
+    if (link.href === currentUrl) {
+      item.classList.add('active-page');
+    }
+  });
+});
+
 const headerUser = document.querySelector('.menu-auth');
 const authModal = document.querySelector('.auth-modal');
 const headerUserName = document.querySelector('.menu-username');
@@ -25,7 +37,7 @@ const isAuthenticated = checkAuthenticationStatus();
 
 //ініціалізуємо початковий стан кнопки юзера
 function initOnStartUp() {
-  headerUserName.textContent = 'Sign In';
+  headerUserName.textContent = 'Sign up';
   headerUserLogo.classList.add('visually-hidden');
   getNameForUpdateHeaderUser();
 }

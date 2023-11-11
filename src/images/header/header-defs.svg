@@ -14,9 +14,14 @@
             </path>
         </symbol>
         <symbol id="icon-burger-1" viewBox="0 0 32 32">
-            <title>burger-1</title>
             <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.2857"
-                d="M22.666 13.334h-18.666M28 8h-24M28 18.666h-24M22.666 24h-18.666"></path>
+                d="M22.667 13.333h-18.667"></path>
+            <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.2857"
+                d="M28 8h-24"></path>
+            <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.2857"
+                d="M28 18.667h-24"></path>
+            <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.2857"
+                d="M22.667 24h-18.667"></path>
         </symbol>
         <symbol id="icon-close-1" viewBox="0 0 32 32">
             <title>close-1</title>
