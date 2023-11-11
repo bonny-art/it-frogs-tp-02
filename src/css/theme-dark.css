@@ -1,19 +1,98 @@
 body.darkmode {
-  background-color: var(--dark-color);
+    background-color: #202024;
 }
 
 /* Header */
 
 .darkmode .btn {
-  box-shadow: inset 0 4px 30px rgba(0, 0, 0, 0.3),
-    inset 4px 0 8px rgba(0, 0, 0, 0.3), inset 0 -2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 4px 30px rgba(0, 0, 0, 0.3),
+        inset 4px 0 8px rgba(0, 0, 0, 0.3), inset 0 -2px 2px rgba(0, 0, 0, 0.3);
 }
 
 .darkmode .btn__indicator {
-  background-color: var(--dark-color);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    background-color: #202024;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
 
 .darkmode .btn__icon {
-  color: var(--dark-icon-color);
+    color: #fff;
+}
+
+.darkmode .nav-shoppinglist-icon {
+    fill: #FFFFFF;
+}
+
+header {
+    background-color: #111111;
+    border: 1.5px solid #FFFFFF;
+}
+
+/* .darkmode .shopping-list {
+    color: #F3F3F3
+} */
+
+/* body */
+
+.darkmode .main-categories-list:hover,
+.darkmode .main-categories-list:focus {
+    color: #EAC645;
+}
+
+.darkmode .selected-category-title {
+    color: #FFFFFF;
+}
+
+.darkmode .second-half {
+    color: #4F2EE8;
+}
+
+.darkmode .book-title {
+    color: #FFFFFF;
+}
+
+.darkmode .book-author {
+    color: #B4AFAF;
+}
+
+.darkmode .main-categories-box::-webkit-scrollbar-track {
+    background-color: transparent;
+    /* color of the scroll thumb */
+}
+
+.darkmode .main-categories-box::-webkit-scrollbar-thumb {
+    background: rgba(17, 17, 17, 0.6);
+}
+
+/* -------modal-------- */
+/* auth-popup */
+.darkmode .auth-container {
+    background: #202024;
+    border: 2px solid #f6f6f6;
+}
+
+.darkmode .auth-input {
+    background-color: transparent;
+    border: 2px solid #F6F6F6;
+    color: #F6F6F6;
+}
+
+.darkmode .auth-input-icon {
+    stroke: #F6F6F6;
+    fill: transparent;
+}
+
+.darkmode .auth-close-icon {
+    fill: #F6F6F6;
+    stroke: #F6F6F6;
+}
+
+
+.darkmode .auth-sign {
+    background: #F6F6F6;
+    color: #202024;
+}
+
+.darkmode .auth-toggler {
+    background-color: transparent;
+    color: rgba(246, 246, 246, 0.5);
 }
