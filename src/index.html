@@ -26,16 +26,26 @@
     />
   </head>
   <body>
-    <load ="partials/header.html" />
-
-    <main>
-      <div class="side-bar">
-        <load ="partials/category-list-sec.html" />
-        <load ="partials/support-ukraine-sec.html" />
+    <header class="header-section section">
+      <div class="header-container container">
+        <load ="partials/header.html" />
       </div>
-      <div class="main-part">
-        <load ="partials/top-books-sec.html" />
-        <load ="partials/selected-category-sec.html" />
+    </header>
+
+    <main class="main-section section">
+      <div class="main-container container">
+        <div class="sidebar">
+          <div class="categories-container">
+            <load ="partials/category-list-sec.html" />
+          </div>
+          <div class="support-container">
+            <load ="partials/support-ukraine-sec.html" />
+          </div>
+        </div>
+        <div class="content">
+          <load ="partials/top-books-sec.html" />
+          <load ="partials/selected-category-sec.html" />
+        </div>
       </div>
     </main>
 
