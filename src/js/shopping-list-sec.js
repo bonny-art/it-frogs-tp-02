@@ -1,7 +1,5 @@
 import { el } from './refs.js';
-const shoppingList = document.querySelector('.js-shopping-list');
-const emptyPage = document.querySelector('.js-empty-page');
-
+console.log(el.shoppingList);
 const myArray = [
   {
     _id: '643282b1e85766588626a0dc',
@@ -179,18 +177,19 @@ const myArray = [
 
 let jsonString = JSON.stringify(myArray);
 
-localStorage.setItem('myArray', jsonString);
+localStorage.setItem('books-list', jsonString);
 // localStorage.removeItem('myArray');
 
-const temp_book_list = JSON.parse(localStorage.getItem('myArray'));
+const temp_book_list = JSON.parse(localStorage.getItem('books-list'));
 
 function renderShoppingList() {
   if (!temp_book_list) {
-    emptyPage.classList.remove('hidden');
+    el.emptyPage.classList.remove('hidden');
   } else {
-    shoppingList.insertAdjacentHTML('afterbegin', createBookTemplate());
+    el.shoppingList.insertAdjacentHTML('afterbegin', createBookTemplate());
   }
 }
+
 renderShoppingList();
 
 function createBookTemplate() {
@@ -213,17 +212,24 @@ function createBookTemplate() {
                 </div>
                 <button type="button" class="delete-btn js-delete-book">
                     <svg class="delete-svg" width="16" height="16">
-                        <use href=""></use>
+                        <use href="./images/shopping_list_sec/sprite.svg#trash-03"></use>
                     </svg>
                 </button>
-                <div class="trade-fairs"></div>
+                <div class="trade-fairs">
+                  <a href="${book.buy_links[0].url}" target="_blank">
+                    <img class="amazon-img" src="./images/shopping_list_sec/amazon.svg" width="32" height="11"/>
+                  </a>
+                  <a href="${book.buy_links[1].url}" target="_blank">
+                    <img class="apple-books-img" src="./images/shopping_list_sec/appleBooks.svg" width="16" height="16"/>
+                  </a>
+                </div>
             </div>
 `
   );
   return template.join('');
 }
 
-shoppingList.addEventListener('click', deleteFromCart);
+el.shoppingList.addEventListener('click', deleteFromCart);
 
 function deleteFromCart(e) {
   if (!e.target.parentNode.classList.contains('js-delete-book')) {
@@ -234,7 +240,7 @@ function deleteFromCart(e) {
   const bookId = card.dataset['bookId'];
   const bookIndex = temp_book_list.find(item => item._id === bookId);
   temp_book_list.splice(temp_book_list.indexOf(bookIndex), 1);
-  localStorage.setItem('myArray', JSON.stringify(temp_book_list));
-  shoppingList.innerHTML = '';
-  shoppingList.insertAdjacentHTML('afterbegin', createBookTemplate());
+  localStorage.setItem('books-list', JSON.stringify(temp_book_list));
+  el.shoppingList.innerHTML = '';
+  el.shoppingList.insertAdjacentHTML('afterbegin', createBookTemplate());
 }

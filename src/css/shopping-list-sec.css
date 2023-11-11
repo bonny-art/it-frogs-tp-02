@@ -227,6 +227,49 @@
   }
 }
 
+.trade-fairs {
+  position: absolute;
+}
+@media screen and (max-width: 767px) {
+  .trade-fairs {
+    bottom: 14px;
+    right: 14px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .trade-fairs {
+    bottom: 24px;
+    right: 24px;
+  }
+}
+
+.amazon-img {
+  filter: grayscale(100%);
+}
+.amazon-img:hover {
+  filter: grayscale(100%) drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
+}
+@media screen and (min-width: 768px) {
+  .amazon-img {
+    width: 48px;
+    height: 15px;
+  }
+}
+
+.apple-books-img {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+.apple-books-img:hover {
+  filter: grayscale(100%) drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
+}
+@media screen and (min-width: 768px) {
+  .apple-books-img {
+    width: 28px;
+    height: 27px;
+  }
+}
+
 .hidden {
   display: none;
 }
