@@ -19,7 +19,7 @@
 }
 
 .nav-shoppinglist-icon {
-    fill: currentColor;
+  fill: currentColor;
 }
 
 /* .shopping-list {
@@ -34,12 +34,12 @@ header {
 /* body */
 
 body {
-    background-color: #f6f6f6;
+  background-color: #f6f6f6;
 }
 
 .main-categories-list:hover,
 .main-categories-list:focus {
-    color: #4F2EE8;
+  color: #4F2EE8;
 }
 
 .book-title {

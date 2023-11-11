@@ -1,21 +1,21 @@
 body.darkmode {
-  background-color: #202024;
+    background-color: #202024;
 }
 
 /* Header */
 
 .darkmode .btn {
-  box-shadow: inset 0 4px 30px rgba(0, 0, 0, 0.3),
-    inset 4px 0 8px rgba(0, 0, 0, 0.3), inset 0 -2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 4px 30px rgba(0, 0, 0, 0.3),
+        inset 4px 0 8px rgba(0, 0, 0, 0.3), inset 0 -2px 2px rgba(0, 0, 0, 0.3);
 }
 
 .darkmode .btn__indicator {
-  background-color: #202024;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    background-color: #202024;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
 
 .darkmode .btn__icon {
-  color: #fff;
+    color: #fff;
 }
 
 .darkmode .nav-shoppinglist-icon {
@@ -26,6 +26,7 @@ header {
     background-color: #111111;
     border: 1.5px solid #FFFFFF;
 }
+
 /* .darkmode .shopping-list {
     color: #F3F3F3
 } */
