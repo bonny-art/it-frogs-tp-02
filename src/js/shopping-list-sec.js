@@ -188,12 +188,10 @@ function createBookTemplate() {
     book => `
             <div class="shopping-book-card" data-book-id="${book._id}">
                 <div class="image-thumb">
-                <img
-                    class="shopping-book-cover"
-                    src="${book.book_image}"
-                    alt="${book.title}"
-                    loading="lazy"
-                />
+                <picture>
+                  <source srcset="${book.book_image}" type="image/jpg">
+                  <img class="shopping-book-cover" srcset="/images/shopping-list-sec/plug_x2.png 2x, /images/shopping-list-sec/plug_x1.png 1x" src="/images/shopping-list-sec/plug_x1.png" alt="plug">
+                </picture>
                 </div>
                 <div class="card-info">
                     <h3 class="shopping-book-title">${book.title}</h3>
@@ -203,15 +201,15 @@ function createBookTemplate() {
                 </div>
                 <button type="button" class="delete-btn js-delete-book">
                     <svg class="delete-svg" width="16" height="16">
-                        <use href="/images/shopping_list_sec/sprite.svg#trash-03"></use>
+                        <use href="/images/shopping-list-sec/sprite.svg#trash-03"></use>
                     </svg>
                 </button>
                 <div class="trade-fairs">
                   <a href="${book.buy_links[0].url}" target="_blank">
-                    <img class="amazon-img" src="/images/shopping_list_sec/amazon.svg" width="32" height="11"/>
+                    <img class="amazon-img" src="/images/shopping-list-sec/amazon.svg" width="32" height="11"/>
                   </a>
                   <a href="${book.buy_links[1].url}" target="_blank">
-                    <img class="apple-books-img" src="/images/shopping_list_sec/appleBooks.svg" width="16" height="16"/>
+                    <img class="apple-books-img" src="/images/shopping-list-sec/appleBooks.svg" width="16" height="16"/>
                   </a>
                 </div>
             </div>
