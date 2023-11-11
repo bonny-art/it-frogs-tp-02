@@ -22,7 +22,7 @@ body.darkmode {
     fill: #FFFFFF;
 }
 
-header {
+.darkmode header {
     background-color: #111111;
     border: 1.5px solid #FFFFFF;
 }
