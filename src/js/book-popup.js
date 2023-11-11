@@ -2,7 +2,6 @@
 import { fetchBookById } from './api';
 
 // Забираю з HTML елемент модальне вікно та елемент кнопка
-
 const el = {
   modalWindow: document.querySelector('.modal-window'),
   buttonAddToList: document.querySelector('.add-to-list'),
