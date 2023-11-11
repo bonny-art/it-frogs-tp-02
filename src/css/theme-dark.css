@@ -33,12 +33,14 @@ body.darkmode header {
 
 /* body */
 
+
 body.darkmode .main-categories-list {
     color: rgba(255, 255, 255, 0.6);
 }
 
 body.darkmode .main-categories-list-item:hover,
 body.darkmode .main-categories-list-item:focus {
+
     color: #EAC645;
 }
 

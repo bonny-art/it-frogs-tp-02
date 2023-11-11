@@ -4,8 +4,10 @@
  топовых книгах и книгах по категориям.
   |============================
 */
-
 import { fetchBookList, fetchTopBooks, fetchBooksOfCategory } from './api';
+import { createSelectedCategory } from './selected-category-sec';
+
+// import Notiflix from 'notiflix';
 
 // Получаем ссылку на элемент списка категорий
 const mainCategoriesList = document.querySelector('.main-categories-list');
@@ -54,14 +56,16 @@ async function handleCategoryClick(event) {
         const result = await fetchTopBooks();
         xxx(result);
       } else {
-        const result = await fetchBooksOfCategory(event.target.textContent);
+        const result = await createSelectedCategory(event.target.textContent);
         yyy(result, event.target.textContent);
       }
     } catch (error) {
-      console.error('An error:', error);
+      console.error('An error occurred:', error);
     }
   }
 }
+
+// fetchTopBooks fetchBooksOfCategory createSelectedCategory createTopBooks
 
 // ==============================================================
 
