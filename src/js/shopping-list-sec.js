@@ -1,5 +1,6 @@
 import { el } from './refs.js';
-console.log(el.shoppingList);
+console.log('el');
+
 const myArray = [
   {
     _id: '643282b1e85766588626a0dc',
