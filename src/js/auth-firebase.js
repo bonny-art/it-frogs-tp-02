@@ -82,6 +82,28 @@ function checkAuthenticationStatus() {
     }
   });
 }
+
+function deleteAccount() {
+  const user = auth.currentUser;
+
+  if (user) {
+    deleteUser(user)
+      .then(() => {
+        alert('Аккаунт удален');
+      })
+      .catch(error => {
+        alert(`Ошибка при удалении аккаунта: ${error.message}`);
+      });
+  } else {
+    alert('Пользователь не вошел в систему');
+  }
+}
+
+function logOutUser() {
+  signOut(auth).then(() => {
+    alert('Выход выполнен успешно');
+  });
+}
 export {
   checkAuthenticationStatus,
   registrationUser,
@@ -94,4 +116,6 @@ export {
   getUserName,
   getUserEmail,
   returnAuth,
+  deleteAccount,
+  logOutUser,
 };
