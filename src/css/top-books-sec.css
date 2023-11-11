@@ -1,8 +1,9 @@
 .categories-container {
-  background-color: var(--col-bg-light);
+  padding: 100px;
+  background-color: F6F6F6;
 }
 .top-title-boks {
-  color: var(--col-black);
+  color: #111;
   font-family: DM Sans;
   font-size: 48px;
   font-style: normal;
@@ -19,7 +20,6 @@
   height: 256px;
   border-radius: 8px;
   background: url(<path-to-image>), lightgray 50% / cover no-repeat;
-  margin-bottom: 14px;
 }
 .list-item {
   display: flex;
@@ -29,7 +29,7 @@
   width: 180px;
 }
 .top-title {
-  color: var(--col-lt-gray);
+  color: #b4afaf;
 
   font-family: DM Sans;
   font-size: 14px;
@@ -38,7 +38,7 @@
   margin-bottom: 18px;
 }
 .top-bookTitle {
-  color: var(--col-black);
+  color: #111;
 
   font-family: DM Sans;
   font-size: 16px;
@@ -47,13 +47,9 @@
   line-height: 18px; /* 112.5% */
   letter-spacing: -0.64px;
   text-transform: uppercase;
-  margin-bottom: 4px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 .top-bookAuthor {
-  color: var(--col-lt-gray);
+  color: #b4afaf;
   font-family: DM Sans;
   font-size: 12px;
   font-style: italic;
@@ -63,25 +59,12 @@
 }
 
 .top-title-span {
-  color: var(--col-blue);
+  color: #4f2ee8;
 }
 .top-bth {
   border-radius: 40px;
-  border: 2px solid var(--col-blue);
+  border: 2px solid #4f2ee8;
+  padding: 14px 28px;
   padding: 14px 28px;
   gap: 10px;
-}
-.top-button {
-  display: flex;
-  justify-content: flex-end;
-
-  margin-top: 32px;
-  color: var(--col-black);
-  font-family: DM Sans;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 18px;
-  letter-spacing: -0.14px;
-  text-transform: uppercase;
 }
