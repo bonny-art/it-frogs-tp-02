@@ -37,8 +37,8 @@ body {
   background-color: #f6f6f6;
 }
 
-.main-categories-list:hover,
-.main-categories-list:focus {
+.main-categories-list-item:hover,
+.main-categories-list-item:focus {
   color: #4F2EE8;
 }
 
