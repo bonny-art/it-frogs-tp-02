@@ -69,7 +69,7 @@ const getUserEmail = () => {
 const returnAuth = () => {
   return auth;
 };
-function checkAuthenticationStatus() {
+async function checkAuthenticationStatus() {
   onAuthStateChanged(auth, user => {
     if (user) {
       // User is signed in
