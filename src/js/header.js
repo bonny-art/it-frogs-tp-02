@@ -78,4 +78,40 @@ const updateHeaderUser = userName => {
   headerUserName.textContent = userName;
   headerUserLogo.classList.remove('visually-hidden');
 };
-export { updateHeaderUser };
+
+const mobileMenuButton = document.querySelector('.nav-mobile-menu');
+const burgerIcon = document.querySelector('.burger use');
+
+// Відслідковуємо відкриття мобільного меню
+let isMobileMenuOpen = false;
+
+mobileMenuButton.addEventListener('click', toggleMobileMenu);
+// Обробка кліку на бургер
+function toggleMobileMenu() {
+  isMobileMenuOpen = !isMobileMenuOpen;
+
+  //Змінюємо іконку та відкриваємо/закриваємо меню
+  if (isMobileMenuOpen) {
+    burgerIcon.setAttribute(
+      'href',
+      '/images/header/header-defs.svg#icon-close-1'
+    );
+    openMobileMenu();
+  } else {
+    burgerIcon.setAttribute(
+      'href',
+      '/images/header/header-defs.svg#icon-burger-1'
+    );
+    closeMobileMenu();
+  }
+}
+
+function openMobileMenu() {
+  console.log('Мобильное меню открыто');
+}
+
+function closeMobileMenu() {
+  console.log('Мобильное меню закрыто');
+}
+
+export { updateHeaderUser, getNameForUpdateHeaderUser };

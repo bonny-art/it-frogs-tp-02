@@ -83,6 +83,9 @@
 
 .nav-mobile-menu {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
   border: none;
 }
 .burger {
@@ -135,6 +138,7 @@
     line-height: 18px;
     letter-spacing: -0.04em;
     text-align: left;
+    color: var(--col-black);
   }
   .nav-shoppinglist-icon {
     width: 20px;
