@@ -4,6 +4,7 @@
   align-items: center;
   padding: 18px;
   border-radius: 0px 0px 8px 8px;
+  margin: 0 auto;
 }
 
 .header-logo {
@@ -103,7 +104,7 @@
 @media screen and (min-width: 768px) {
   .nav-container {
     max-width: 768px;
-    padding: 22px 32px;
+    padding: 22px;
   }
   .header-logo {
     margin-right: 40px;
@@ -125,22 +126,22 @@
     border-radius: 36px;
     text-align: left;
     color: var(--col-black);
+    font-family: DMSans-Medium;
     font-size: 14px;
-    font-weight: 500;
     line-height: 18px;
     letter-spacing: -0.04em;
     text-align: left;
     text-transform: uppercase;
     cursor: pointer;
   }
+  .nav-item:hover,
+  .nav-item:focus {
+    color: var(--col-blue);
+  }
 
   .active-page {
     background: var(--col-yellow);
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 18px;
-    letter-spacing: -0.04em;
-    text-align: left;
+    font-family: DMSans-Bold;
     color: var(--col-black);
   }
 
@@ -156,12 +157,12 @@
     margin-left: 24px;
   }
   .menu-auth {
-    width: 184px;
-    height: 45px;
-    cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 184px;
+    height: 45px;
+    cursor: pointer;
     border-radius: 18px;
     border: 1.5px solid var(--col-black);
     padding: 0 12px;
@@ -176,13 +177,11 @@
 
   .menu-username {
     color: var(--col-white);
-    font-family: DM Sans;
-    font-size: 14px;
-    font-weight: 500;
+    font-family: DMSans-Bold;
+    font-size: 22px;
     line-height: 18px;
     letter-spacing: -0.04em;
     text-align: left;
-
     margin-right: 4px;
   }
 
@@ -201,7 +200,7 @@
 @media screen and (min-width: 1440px) {
   .nav-container {
     max-width: 1440px;
-    padding: 14px 24px;
+    padding: 14px;
   }
 
   .header-logo {

@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
   getNameForUpdateHeaderUser().then(login => {
-    console.log(login);
+    // console.log(login);
     let menuAuthIcon = document.querySelector('.menu-auth-icon use');
     let authLink = document.querySelector('.auth-link');
     let userSignOut = document.querySelector('.sign-out');
@@ -52,7 +52,7 @@ const logOut = document.querySelector('.js-logout');
 //отримуємо ім'я користувача
 async function getNameForUpdateHeaderUser() {
   const login = await isAuthUser();
-  console.log(login);
+  // console.log(login);
   if (login) {
     getUserName().then(getUserNameRes => {
       updateHeaderUser(getUserNameRes.data().name);
