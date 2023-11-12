@@ -25,8 +25,8 @@
       referrerpolicy="no-referrer"
     />
     <script type="module" crossorigin src="/it-frogs-tp-02/assets/vendor-369467b0.js"></script>
-    <script type="module" crossorigin src="/it-frogs-tp-02/assets/mobile-menu-9c9dde53.js"></script>
-    <link rel="stylesheet" href="/it-frogs-tp-02/assets/mobile-menu-7ee22672.css">
+    <script type="module" crossorigin src="/it-frogs-tp-02/assets/mobile-menu-fded1bbb.js"></script>
+    <link rel="stylesheet" href="/it-frogs-tp-02/assets/mobile-menu-3a89299b.css">
     <link rel="stylesheet" href="/it-frogs-tp-02/assets/vendor-b3ce9496.css">
   </head>
   <body>
@@ -125,12 +125,17 @@
 <div class="shopping-container">
   <div class="shopping-list">
     <h1 class="shopping-title">Shopping <span class="accent">List</span></h1>
-    <div class="list-items js-shopping-list">
-      <div class="js-empty-page hidden">
+    <div class="list-items shopping-list-container">
+      <ul
+        class="js-shopping-list"
+        data-current-page="1"
+        aria-live="polite"
+      ></ul>
+      <div class="js-empty-page empty-page hidden">
         <p class="page-notification">
           This page is empty, add some books and proceed to order.
         </p>
-        <picture class="notification-image">
+        <picture>
           <source
             srcset="/it-frogs-tp-02/assets/empty_page_tablet_1x-a1dce6e7.png 1x, /it-frogs-tp-02/assets/empty_page_tablet_2x-20a66507.png 2x"
             media="(min-width: 768px)"
@@ -142,12 +147,74 @@
             type="image/png"
           />
           <img
-            class="empty_page"
+            class="notification-image"
             src="/it-frogs-tp-02/assets/empty_page_tablet_1x-a1dce6e7.png"
             alt="books"
           />
         </picture>
       </div>
+    </div>
+    <div class="pagination hidden">
+      <nav class="pagination-container">
+        <div class="nav-buttons">
+          <button
+            class="pagination-button"
+            id="to-start-button"
+            aria-label="Previous page"
+            title="Previous page"
+          >
+            <svg class="to-start-svg arrow-svg start-1" width="22" height="22">
+              <use href="/it-frogs-tp-02/assets/sprite-41fa8584.svg#angle-left"></use>
+            </svg>
+            <svg class="to-start-svg arrow-svg start-2" width="22" height="22">
+              <use href="/it-frogs-tp-02/assets/sprite-41fa8584.svg#angle-left"></use>
+            </svg>
+          </button>
+          <button
+            class="pagination-button"
+            id="prev-button"
+            aria-label="Previous page"
+            title="Previous page"
+          >
+            <svg class="prev-svg arrow-svg" width="22" height="22">
+              <use href="/it-frogs-tp-02/assets/sprite-41fa8584.svg#angle-left"></use>
+            </svg>
+          </button>
+        </div>
+
+        <div id="pagination-numbers"></div>
+        <div class="nav-buttons">
+          <button
+            class="pagination-button"
+            id="next-button"
+            aria-label="Next page"
+            title="Next page"
+          >
+            <svg class="next-svg arrow-svg" width="22" height="22">
+              <use
+                href="/it-frogs-tp-02/assets/sprite-41fa8584.svg#angle-right"
+              ></use>
+            </svg>
+          </button>
+          <button
+            class="pagination-button"
+            id="to-end-button"
+            aria-label="Next page"
+            title="Next page"
+          >
+            <svg class="to-end-svg arrow-svg end-1" width="22" height="22">
+              <use
+                href="/it-frogs-tp-02/assets/sprite-41fa8584.svg#angle-right"
+              ></use>
+            </svg>
+            <svg class="to-end-svg arrow-svg end-2" width="22" height="22">
+              <use
+                href="/it-frogs-tp-02/assets/sprite-41fa8584.svg#angle-right"
+              ></use>
+            </svg>
+          </button>
+        </div>
+      </nav>
     </div>
   </div>
 </div>
