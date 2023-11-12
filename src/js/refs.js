@@ -9,7 +9,7 @@ const el = {
   toggleBtn: document.querySelector('.tgl-btn'),
   toggleIcon: document.querySelector('.tgl-btn__icon'),
 
-  bookPopup: document.querySelector('.modal-window'),
+  bookPopup: '',
   buttonAddToList: '',
 };
 
