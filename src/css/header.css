@@ -8,6 +8,8 @@
 
 .header-logo {
   display: flex;
+  width: 109px;
+  height: 28px;
   gap: 8px;
   justify-content: center;
   align-items: center;
@@ -151,7 +153,7 @@
   .auth-button-box {
     position: relative;
     display: block;
-    margin-left: 24hpx;
+    margin-left: 24px;
   }
   .menu-auth {
     width: 184px;
