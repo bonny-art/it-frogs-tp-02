@@ -21,6 +21,7 @@
     "basiclightbox": "^5.0.4",
     "firebase": "^10.5.2",
     "notiflix": "^3.2.6",
+    "swiper": "^11.0.4",
     "vite-plugin-full-reload": "^1.0.5",
     "vite-plugin-html-inject": "^1.0.1"
   }
