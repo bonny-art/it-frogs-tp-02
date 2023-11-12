@@ -8,11 +8,11 @@
         data-current-page="1"
         aria-live="polite"
       ></ul>
-      <div class="js-empty-page hidden">
+      <div class="js-empty-page empty-page hidden">
         <p class="page-notification">
           This page is empty, add some books and proceed to order.
         </p>
-        <picture class="notification-image">
+        <picture>
           <source
             srcset="
               ./images/shopping-list-sec/empty_page_tablet_1x.png 1x,
@@ -30,33 +30,74 @@
             type="image/png"
           />
           <img
-            class="empty_page"
+            class="notification-image"
             src="./images/shopping-list-sec/empty_page_tablet_1x.png"
             alt="books"
           />
         </picture>
       </div>
     </div>
-    <nav class="pagination-container">
-      <button
-        class="pagination-button"
-        id="prev-button"
-        aria-label="Previous page"
-        title="Previous page"
-      >
-        &lt;
-      </button>
+    <div class="pagination hidden">
+      <nav class="pagination-container">
+        <div class="nav-buttons">
+          <button
+            class="pagination-button"
+            id="to-start-button"
+            aria-label="Previous page"
+            title="Previous page"
+          >
+            <svg class="to-start-svg arrow-svg start-1" width="22" height="22">
+              <use href="/images/shopping-list-sec/sprite.svg#angle-left"></use>
+            </svg>
+            <svg class="to-start-svg arrow-svg start-2" width="22" height="22">
+              <use href="/images/shopping-list-sec/sprite.svg#angle-left"></use>
+            </svg>
+          </button>
+          <button
+            class="pagination-button"
+            id="prev-button"
+            aria-label="Previous page"
+            title="Previous page"
+          >
+            <svg class="prev-svg arrow-svg" width="22" height="22">
+              <use href="/images/shopping-list-sec/sprite.svg#angle-left"></use>
+            </svg>
+          </button>
+        </div>
 
-      <div id="pagination-numbers"></div>
-
-      <button
-        class="pagination-button"
-        id="next-button"
-        aria-label="Next page"
-        title="Next page"
-      >
-        &gt;
-      </button>
-    </nav>
+        <div id="pagination-numbers"></div>
+        <div class="nav-buttons">
+          <button
+            class="pagination-button"
+            id="next-button"
+            aria-label="Next page"
+            title="Next page"
+          >
+            <svg class="next-svg arrow-svg" width="22" height="22">
+              <use
+                href="/images/shopping-list-sec/sprite.svg#angle-right"
+              ></use>
+            </svg>
+          </button>
+          <button
+            class="pagination-button"
+            id="to-end-button"
+            aria-label="Next page"
+            title="Next page"
+          >
+            <svg class="to-end-svg arrow-svg end-1" width="22" height="22">
+              <use
+                href="/images/shopping-list-sec/sprite.svg#angle-right"
+              ></use>
+            </svg>
+            <svg class="to-end-svg arrow-svg end-2" width="22" height="22">
+              <use
+                href="/images/shopping-list-sec/sprite.svg#angle-right"
+              ></use>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </div>
   </div>
 </div>

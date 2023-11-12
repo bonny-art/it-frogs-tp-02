@@ -185,6 +185,8 @@
   flex-shrink: 0;
   position: absolute;
   background-color: var(--col-blue);
+  stroke: var(--col-white);
+  fill: var(--col-blue);
   border: none;
   border-radius: 50%;
   padding: 6px;
@@ -256,18 +258,36 @@
   display: none;
 }
 
+.empty-page {
+  margin-top: 120px;
+}
+@media screen and (min-width: 768px) {
+  .empty-page {
+    margin-top: 140px;
+  }
+}
+
 .page-notification {
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
   font-family: DMSans-Regular;
   font-size: 18px;
   line-height: 1.33;
   letter-spacing: -0.36px;
   margin-bottom: 14px;
+  width: 244px;
 }
 @media screen and (min-width: 768px) {
   .page-notification {
     margin-bottom: 20px;
+    width: 349px;
   }
+}
+
+.notification-image {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .pagination-container {
@@ -275,25 +295,97 @@
   align-items: center;
   bottom: 0;
   justify-content: center;
+  gap: 14px;
 }
+@media screen and (min-width: 768px) {
+  .pagination-container {
+    gap: 24px;
+  }
+}
+
+#pagination-numbers {
+  display: flex;
+  gap: 8px;
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+@media screen and (min-width: 768px) {
+  .nav-buttons,
+  #pagination-numbers {
+    gap: 10px;
+  }
+}
+
+.pagination-number {
+  background-color: transparent;
+  font-family: DMSans-Bold;
+  font-size: 18px;
+  line-height: 1.22;
+}
+
 .pagination-number,
 .pagination-button {
-  font-size: 1.1rem;
-  background-color: transparent;
-  border: none;
-  margin: 0.25rem 0.25rem;
-  cursor: pointer;
-  height: 2.5rem;
-  width: 2.5rem;
-  border-radius: 0.2rem;
+  border-style: solid;
+  border-width: 1.5px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
 }
-.pagination-number:hover,
-.pagination-button:not(.disabled):hover {
-  background: #fff;
+.pagination-button {
+  padding: 0;
+  text-align: center;
 }
-.pagination-number.active {
-  color: #fff;
-  background: #0085b6;
+@media screen and (min-width: 768px) {
+  .pagination-number,
+  .pagination-button {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.pagination-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.arrow-svg {
+  flex-shrink: 0;
+}
+.to-end-svg,
+.to-start-svg {
+  position: absolute;
+}
+.start-1,
+.end-1 {
+  top: 8px;
+  left: 5px;
+}
+@media screen and (min-width: 768px) {
+  .start-1,
+  .end-1 {
+    top: 10px;
+    left: 7px;
+  }
+}
+
+.start-2,
+.end-2 {
+  top: 8px;
+  right: 5px;
+}
+@media screen and (min-width: 768px) {
+  .start-2,
+  .end-2 {
+    top: 10px;
+    right: 7px;
+  }
 }
 
 /* light theme colors */
@@ -315,6 +407,29 @@
   filter: grayscale(100%) drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
 }
 
+.pagination-number.active {
+  background-color: var(--col-black);
+  color: var(--col-white);
+}
+
+.pagination-number,
+.pagination-button {
+  border-color: var(--col-black);
+}
+
+.pagination-button.disabled {
+  background-color: var(--col-black);
+}
+.pagination-button.disabled > .arrow-svg {
+  fill: var(--col-lt-gray);
+}
+.pagination-button:not(.disabled) {
+  background-color: var(--col-yellow);
+}
+.arrow-svg {
+  fill: var(--col-black);
+}
+
 /* dark mode colors */
 body.darkmode .shopping-book-card {
   background-color: var(--col-black);
@@ -323,13 +438,31 @@ body.darkmode .shopping-book-card {
 body.darkmode .amazon-img {
   filter: brightness(0) invert(1);
 }
-.amazon-img:hover {
+body.darkmode .amazon-img:hover {
+  filter: brightness(0) invert(1)
+    drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
+}
+
+body.darkmode .apple-books-img {
+  filter: grayscale(100%);
+}
+body.darkmode .apple-books-img:hover {
   filter: grayscale(100%) drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
 }
 
-.apple-books-img {
-  filter: grayscale(100%);
+body.darkmode .pagination-number.active {
+  background-color: var(--col-white);
+  color: var(--col-black);
 }
-.apple-books-img:hover {
-  filter: grayscale(100%) drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
+
+body.darkmode .pagination-number {
+  color: var(--col-white);
+  border-color: var(--col-white);
+}
+
+body.darkmode .pagination-button.disabled {
+  border-color: var(--col-black);
+}
+body.darkmode .pagination-button.disabled > .arrow-svg {
+  fill: var(--col-white);
 }
