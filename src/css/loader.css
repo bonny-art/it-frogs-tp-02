@@ -1,4 +1,5 @@
 .loader-overlay {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -15,9 +16,9 @@
   width: 32px;
   height: 12px;
   position: relative;
-  /* top: 50%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); */
+  transform: translate(-50%, -50%);
   margin: 32px 0 0 0;
   zoom: 1.5;
 }
