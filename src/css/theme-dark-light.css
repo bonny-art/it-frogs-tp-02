@@ -41,5 +41,5 @@
 }
 
 body.darkmode .tgl-btn__indicator {
-  transform: translateX(18px);
+  transform: translateX(20px);
 }
