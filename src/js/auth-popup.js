@@ -8,6 +8,7 @@ import {
 
 import { updateHeaderUser } from './header';
 // import Swal from 'sweetalert2';
+// import Notiflix from 'notiflix';
 
 const authModal = document.querySelector('.auth-modal');
 const authClose = document.querySelector('.auth-close-btn');
@@ -109,6 +110,9 @@ function handlerActionAuth() {
         login(email, password);
       } else {
         alert('The password must be at least 5 characters long!');
+        // Notiflix.Notify.failure(
+        //   'The password must be at least 5 characters long!'
+        // );
         // Swal.fire({
         //   title: 'Error!',
         //   text: 'Do you want to continue',
