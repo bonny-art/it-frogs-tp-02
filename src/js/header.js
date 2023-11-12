@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
   getNameForUpdateHeaderUser().then(login => {
-    console.log(login);
+    // console.log(login);
     let menuAuthIcon = document.querySelector('.menu-auth-icon use');
     let authLink = document.querySelector('.auth-link');
     let userSignOut = document.querySelector('.sign-out');
@@ -52,7 +52,7 @@ const logOut = document.querySelector('.js-logout');
 //отримуємо ім'я користувача
 async function getNameForUpdateHeaderUser() {
   const login = await isAuthUser();
-  console.log(login);
+  // console.log(login);
   if (login) {
     getUserName().then(getUserNameRes => {
       updateHeaderUser(getUserNameRes.data().name);
@@ -78,4 +78,40 @@ const updateHeaderUser = userName => {
   headerUserName.textContent = userName;
   headerUserLogo.classList.remove('visually-hidden');
 };
-export { updateHeaderUser };
+
+const mobileMenuButton = document.querySelector('.nav-mobile-menu');
+const burgerIcon = document.querySelector('.burger use');
+
+// Відслідковуємо відкриття мобільного меню
+let isMobileMenuOpen = false;
+
+mobileMenuButton.addEventListener('click', toggleMobileMenu);
+// Обробка кліку на бургер
+function toggleMobileMenu() {
+  isMobileMenuOpen = !isMobileMenuOpen;
+
+  //Змінюємо іконку та відкриваємо/закриваємо меню
+  if (isMobileMenuOpen) {
+    burgerIcon.setAttribute(
+      'href',
+      '/images/header/header-defs.svg#icon-close-1'
+    );
+    openMobileMenu();
+  } else {
+    burgerIcon.setAttribute(
+      'href',
+      '/images/header/header-defs.svg#icon-burger-1'
+    );
+    closeMobileMenu();
+  }
+}
+
+function openMobileMenu() {
+  console.log('Мобильное меню открыто');
+}
+
+function closeMobileMenu() {
+  console.log('Мобильное меню закрыто');
+}
+
+export { updateHeaderUser, getNameForUpdateHeaderUser };

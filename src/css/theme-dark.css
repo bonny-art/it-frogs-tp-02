@@ -40,6 +40,20 @@ body.darkmode .nav-mobile-menu {
   background-color: var(--col-black);
 }
 
+body.darkmode .nav-item {
+  color: var(--col-white);
+}
+
+body.darkmode .active-page {
+  color: var(--col-black);
+}
+
+body.darkmode .header-logo-title {
+  stroke: var(--col-white);
+  fill: var(--col-white);
+  background: var(--col-bg-dark);
+}
+
 body.darkmode .burger {
   stroke: var(--col-white);
 }
@@ -137,4 +151,9 @@ body.darkmode .auth-sign {
 body.darkmode .auth-toggler {
   background-color: transparent;
   color: rgba(246, 246, 246, 0.5);
+}
+
+body.darkmode .auth-toggler-active {
+  color: var(--col-blue);
+  text-decoration-line: underline;
 }
