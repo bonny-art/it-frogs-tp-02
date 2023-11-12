@@ -2,7 +2,12 @@
 <div class="shopping-container">
   <div class="shopping-list">
     <h1 class="shopping-title">Shopping <span class="accent">List</span></h1>
-    <div class="list-items js-shopping-list">
+    <div class="list-items shopping-list-container">
+      <ul
+        class="js-shopping-list"
+        data-current-page="1"
+        aria-live="polite"
+      ></ul>
       <div class="js-empty-page hidden">
         <p class="page-notification">
           This page is empty, add some books and proceed to order.
@@ -10,27 +15,48 @@
         <picture class="notification-image">
           <source
             srcset="
-              ./images/shopping_list_sec/empty_page_tablet_1x.png 1x,
-              ./images/shopping_list_sec/empty_page_tablet_2x.png 2x
+              ./images/shopping-list-sec/empty_page_tablet_1x.png 1x,
+              ./images/shopping-list-sec/empty_page_tablet_2x.png 2x
             "
             media="(min-width: 768px)"
             type="image/png"
           />
           <source
             srcset="
-              ./images/shopping_list_sec/empty_page_mobile_1x.png 1x,
-              ./images/shopping_list_sec/empty_page_mobile_2x.png 2x
+              ./images/shopping-list-sec/empty_page_mobile_1x.png 1x,
+              ./images/shopping-list-sec/empty_page_mobile_2x.png 2x
             "
             media="(min-width: 375px)"
             type="image/png"
           />
           <img
             class="empty_page"
-            src="./images/shopping_list_sec/empty_page_tablet_1x.png"
+            src="./images/shopping-list-sec/empty_page_tablet_1x.png"
             alt="books"
           />
         </picture>
       </div>
     </div>
+    <nav class="pagination-container">
+      <button
+        class="pagination-button"
+        id="prev-button"
+        aria-label="Previous page"
+        title="Previous page"
+      >
+        &lt;
+      </button>
+
+      <div id="pagination-numbers"></div>
+
+      <button
+        class="pagination-button"
+        id="next-button"
+        aria-label="Next page"
+        title="Next page"
+      >
+        &gt;
+      </button>
+    </nav>
   </div>
 </div>
