@@ -18,19 +18,18 @@
   justify-content: center;
   align-items: center;
   background: var(--col-blue);
-
-  opacity: 0; /* По умолчанию меню скрыто */
+  opacity: 0;
   transition: opacity 0.5s ease;
 }
 
 .auth-modal.visually-hidden {
-  opacity: 0; /* При скрытии устанавливаем прозрачность в 0 */
-  pointer-events: none; /* Делаем элемент некликабельным, когда он скрыт */
+  opacity: 0;
+  pointer-events: none;
 }
 
 .auth-modal:not(.visually-hidden) {
-  opacity: 1; /* При показе устанавливаем прозрачность в 1 */
-  pointer-events: auto; /* Возвращаем возможность кликать на элемент */
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .auth-container {
