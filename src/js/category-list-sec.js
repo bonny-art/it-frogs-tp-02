@@ -35,7 +35,7 @@ const mainCategoriesList = document.querySelector('.main-categories-list');
 
 // Слушатель события для клика по категории:
 
-mainCategoriesList.addEventListener('click', handleCategoryClick(ddd));
+mainCategoriesList.addEventListener('click', handleCategoryClick);
 
 // Обработчик события для клика по категории:
 
@@ -54,16 +54,15 @@ async function handleCategoryClick(event) {
 
     event.target.classList.add('main-categories-list-item-active');
 
-    createTopBooks();
+    // createTopBooks();
 
     try {
       if (event.target.textContent === 'All categories') {
         const result = await fetchTopBooks();
         xxx(result);
       } else {
-        createSelectedCategory();
-        // const result = await fetchBooksOfCategory(event.target.textContent);
-        // yyy(result, event.target.textContent);
+        const result = await createSelectedCategory(event.target.textContent);
+        yyy(result, event.target.textContent);
       }
     } catch (error) {
       console.log('An error occurred:', error);
