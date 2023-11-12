@@ -1,22 +1,70 @@
-/* ------------ BASE ------------ */
+/* :root {
+  --col-lt-gray: #b4afaf;
 
-/* Header */
+  --col-bg-light: #f6f6f6;
+  --col-bg-dark: #202024;
+  
+  --col-white: #ffffff;
+  --col-black: #111111;
 
-/* -------------- BUTTON -------------- */
-.btn {
-  background-color: #fff;
-  box-shadow: inset 0 4px 20px rgba(0, 0, 0, 0.1),
-    inset 0 4px 4px rgba(0, 0, 0, 0.1), inset 0 -2px 2px rgba(0, 0, 0, 0.1);
+  --col-blue: #4f2ee8;
+  --col-yellow: #eac645;
+
+  --grad-toggle-light: linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%);
+  --grad-toggle-dark: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
+} */
+
+body {
+  background-color: var(--col-bg-light);
+  color: var(--col-black);
 }
 
-.btn__indicator {
-  background-color: #fff;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+/* -------------- TOGGLE THEME BUTTON -------------- */
+
+.tgl-btn {
+  background-image: var(--grad-toggle-light);
 }
 
-.btn__icon {
-  color: #FFDE59;
+.tgl-btn__indicator {
+  background-color: var(--col-bg-light);
 }
+
+.tgl-btn__icon {
+  color: var(--col-yellow);
+}
+
+/* -------------- HEADER -------------- */
+
+.nav-container {
+  border: 1.5px solid var(--col-black);
+  background: var(--col-white);
+}
+
+.nav-mobile-menu {
+  background-color: var(--col-white);
+}
+
+.burger {
+  stroke: var(--col-black);
+}
+
+/* -------------- CATEGORIES -------------- */
+
+.main-categories-list-item {
+  color: var(--col-gray-60);
+}
+
+.main-categories-list-item-active {
+  color: var(--col-blue);
+}
+
+/* -------------- TOP -------------- */
+
+.top-title-boks {
+  color: var(--col-black);
+}
+
+/* --------------  -------------- */
 
 .nav-shoppinglist-icon {
   fill: currentColor;
@@ -26,11 +74,6 @@
     color: #111111;
 } */
 
-header {
-  background-color: #FFFFFF;
-  border: 1.5px solid #111111;
-}
-
 /* body */
 
 body {
@@ -39,7 +82,7 @@ body {
 
 .main-categories-list-item:hover,
 .main-categories-list-item:focus {
-  color: #4F2EE8;
+  color: #4f2ee8;
 }
 
 .book-title {
@@ -47,5 +90,5 @@ body {
 }
 
 .book-author {
-  color: #B4AFAF;
+  color: #b4afaf;
 }
