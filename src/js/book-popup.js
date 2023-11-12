@@ -27,15 +27,8 @@ function createBookCard(evt) {
   fetchBookById(bookId)
     .then(book => {
       const { book_image, title, author, description, buy_links } = book;
-      // .then(({ book_image, title, author, description, buy_links }) => {
       const amazon_link = buy_links[0].url;
       const appleBooks_link = buy_links[1].url;
-      // console.log(book_image);
-      // console.log(title);
-      // console.log(author);
-      // console.log(description);
-      // console.log(amazon_link);
-      // console.log(appleBooks_link);
       const localStorage = getFromLocalStorage();
       console.log('localStorage ', localStorage);
       let buttonText;
@@ -62,17 +55,6 @@ function createBookCard(evt) {
     <div class="modal-window">${markup}</div>    
 `);
       instance.show();
-      // el.bookPopup = document.querySelector('.modal-window');
-
-      // el.bookPopup.innerHTML = createMarkup(
-      //   book_image,
-      //   title,
-      //   author,
-      //   description,
-      //   amazon_link,
-      //   appleBooks_link,
-      //   buttonText
-      // );
 
       el.buttonAddToList = document.querySelector('.add-to-list');
       el.buttonAddToList.addEventListener(
@@ -144,9 +126,6 @@ function createMarkup(
 const aaa = document.querySelector('.aaa');
 console.log(aaa);
 aaa.addEventListener('click', createBookCard);
-// createBookCard('643282b2e85766588626a144');
-// createBookCard().bind('643282b2e85766588626a144');
-// createBookCard('643282b1e85766588626a0dc');
 
 function onButtonBookPopupClick() {
   const book = this;
@@ -159,8 +138,6 @@ function onButtonBookPopupClick() {
     el.buttonAddToList.textContent = 'Add to shopping list';
   }
 }
-
-// function getDataFromAPI(id) {
 
 function removeFromLocalStorage({ _id: bookId }) {
   console.log('in remove', bookId);
