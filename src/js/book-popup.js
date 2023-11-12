@@ -1,11 +1,30 @@
 // Імпорт функцій
 import { fetchBookById } from './api';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { BasicLightBox } from '';
+import { el } from './refs';
 
 const STORAGE_KEY = 'booksList';
 
-function createBookCard(bookId) {
+function createBookCard(evt) {
   // Початок відображення спінеру
+
+  if (evt.target === evt.currentTarget) {
+    return;
+  }
+  const currentBook = evt.target.closest('.js-book-on-click');
+  console.log(currentBook);
+  const bookId = currentBook.dataset.id;
+
+  console.log('bookId', bookId);
+
+  const instance = basicLightbox.create(`
+    el.bookPopup
+`);
+
+  instance.show();
+  document.addEventListener('keydown', handlerPress.bind(instance));
+
   fetchBookById(bookId)
     .then(book => {
       const { book_image, title, author, description, buy_links } = book;
@@ -106,8 +125,11 @@ function createMarkup(
     `;
 }
 
+const aaa = document.querySelector('.aaa');
+console.log(aaa);
+aaa.addEventListener('click', createBookCard);
 // createBookCard('643282b2e85766588626a144');
-createBookCard('643282b2e85766588626a144');
+// createBookCard().bind('643282b2e85766588626a144');
 // createBookCard('643282b1e85766588626a0dc');
 
 function onButtonBookPopupClick() {
@@ -129,4 +151,12 @@ function removeFromLocalStorage({ _id: bookId }) {
   const books = getFromLocalStorage();
   const newBooks = books.filter(book => String(book._id) !== bookId);
   addToLocalStorage(newBooks);
+}
+
+function handlerPress(event) {
+  if (event.key !== 'Escape') {
+    return;
+  }
+  this.close();
+  document.removeEventListener('keydown', handlerPress);
 }
