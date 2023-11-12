@@ -3,8 +3,8 @@
   visibility: hidden;
   pointer-events: none;
   position: fixed;
-  top: 85%;
-  right: 2%;
+  bottom: 40px;
+  right: 20px;
   width: 64px;
   height: 64px;
   cursor: pointer;
