@@ -4,12 +4,6 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const STORAGE_KEY = 'booksList';
 
-// Забираю з HTML елемент модальне вікно та елемент кнопка
-const el = {
-  modalWindow: document.querySelector('.modal-window'),
-  buttonAddToList: '',
-};
-
 function createBookCard(bookId) {
   // Початок відображення спінеру
   fetchBookById(bookId)
@@ -35,7 +29,7 @@ function createBookCard(bookId) {
       } else {
         buttonText = 'Remove from the shopping list';
       }
-      el.modalWindow.innerHTML = createMarkup(
+      el.bookPopup.innerHTML = createMarkup(
         book_image,
         title,
         author,
