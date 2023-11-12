@@ -43,8 +43,6 @@ async function handleCategoryClick(event) {
 
     event.target.classList.add('main-categories-list-item-active');
 
-    // createTopBooks();
-
     try {
       if (event.target.textContent.trim() === 'All categories') {
         createTopBooks();
