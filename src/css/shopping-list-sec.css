@@ -229,13 +229,9 @@
 }
 
 .amazon-img {
-  filter: grayscale(100%);
   transition: filter 0.3s ease;
   width: 32px;
   height: 11px;
-}
-.amazon-img:hover {
-  filter: grayscale(100%) drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
 }
 @media screen and (min-width: 768px) {
   .amazon-img {
@@ -245,13 +241,9 @@
 }
 
 .apple-books-img {
-  filter: grayscale(100%);
   transition: filter 0.3s ease;
   width: 16px;
   height: 16px;
-}
-.apple-books-img:hover {
-  filter: grayscale(100%) drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
 }
 @media screen and (min-width: 768px) {
   .apple-books-img {
@@ -305,3 +297,39 @@
 }
 
 /* light theme colors */
+.shopping-book-card {
+  background-color: var(--col-white);
+}
+
+.amazon-img {
+  filter: grayscale(100%);
+}
+.amazon-img:hover {
+  filter: grayscale(100%) drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
+}
+
+.apple-books-img {
+  filter: grayscale(100%);
+}
+.apple-books-img:hover {
+  filter: grayscale(100%) drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
+}
+
+/* dark mode colors */
+body.darkmode .shopping-book-card {
+  background-color: var(--col-black);
+}
+
+body.darkmode .amazon-img {
+  filter: brightness(0) invert(1);
+}
+.amazon-img:hover {
+  filter: grayscale(100%) drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
+}
+
+.apple-books-img {
+  filter: grayscale(100%);
+}
+.apple-books-img:hover {
+  filter: grayscale(100%) drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
+}
