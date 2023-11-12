@@ -31,6 +31,11 @@ body.darkmode .tgl-btn__icon {
 
 /* -------------- HEADER -------------- */
 
+body.darkmode .burger:hover,
+body.darkmode .burger:focus {
+    stroke: var(--col-blue);
+}
+
 body.darkmode .nav-container {
   border: 1.5px solid var(--col-white);
   background: var(--col-black);
@@ -43,6 +48,13 @@ body.darkmode .nav-mobile-menu {
 body.darkmode .nav-item {
   color: var(--col-white);
 }
+
+body.darkmode .nav-item:hover,
+body.darkmode .nav-item:focus {
+    color: var(--col-blue);
+}
+
+
 
 body.darkmode .active-page {
   color: var(--col-black);
@@ -70,19 +82,20 @@ body.darkmode .main-categories-list-item-active {
 
 /* -------------- TOP -------------- */
 
-body.darkmode .top-title-boks {
-  color: var(--col-white);
+body.darkmode .top-title-books {
+    color: var(--col-white);
 }
 
+body.darkmode .top-bookTitle {
+    color: #FFFFFF;
+}
+
+body.darkmode .top-bth {
+    background-color: transparent;
+    color: #FFFFFF;
+}
 /* --------------  -------------- */
 
-body.darkmode .nav-shoppinglist-icon {
-  fill: #ffffff;
-}
-
-/* .darkmode .shopping-list {
-    color: #F3F3F3
-} */
 
 /* body */
 
@@ -93,6 +106,10 @@ body.darkmode .main-categories-list {
 body.darkmode .main-categories-list-item:hover,
 body.darkmode .main-categories-list-item:focus {
   color: #eac645;
+}
+
+body.darkmode .main-categories-box {
+background-color: #202024;
 }
 
 body.darkmode .selected-category-title {
