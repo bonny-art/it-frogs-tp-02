@@ -1,8 +1,12 @@
 // Імпорт функцій
 import { fetchBookById } from './api';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { BasicLightBox } from '';
+import * as basicLightbox from 'basiclightbox';
+import '../../node_modules/basiclightbox/dist/basicLightbox.min.css';
+
 import { el } from './refs';
+
+console.log('el', el);
 
 const STORAGE_KEY = 'booksList';
 
@@ -18,12 +22,7 @@ function createBookCard(evt) {
 
   console.log('bookId', bookId);
 
-  const instance = basicLightbox.create(`
-    el.bookPopup
-`);
-
-  instance.show();
-  document.addEventListener('keydown', handlerPress.bind(instance));
+  console.log('el.bookPopup'), el.bookPopup;
 
   fetchBookById(bookId)
     .then(book => {
@@ -48,7 +47,8 @@ function createBookCard(evt) {
       } else {
         buttonText = 'Remove from the shopping list';
       }
-      el.bookPopup.innerHTML = createMarkup(
+
+      const markup = createMarkup(
         book_image,
         title,
         author,
@@ -57,6 +57,22 @@ function createBookCard(evt) {
         appleBooks_link,
         buttonText
       );
+
+      const instance = basicLightbox.create(`
+    <div class="modal-window">${markup}</div>    
+`);
+      instance.show();
+      // el.bookPopup = document.querySelector('.modal-window');
+
+      // el.bookPopup.innerHTML = createMarkup(
+      //   book_image,
+      //   title,
+      //   author,
+      //   description,
+      //   amazon_link,
+      //   appleBooks_link,
+      //   buttonText
+      // );
 
       el.buttonAddToList = document.querySelector('.add-to-list');
       el.buttonAddToList.addEventListener(
