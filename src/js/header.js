@@ -1,11 +1,5 @@
 import { handlerActionAuth, initAuthModal } from './auth-popup';
-import {
-  isAuthUser,
-  getUserName,
-  checkAuthenticationStatus,
-  deleteAccount,
-  logOutUser,
-} from './auth-firebase';
+import { isAuthUser, getUserName, logOutUser } from './auth-firebase';
 //ініціалізуємо початкові стани хедера
 document.addEventListener('DOMContentLoaded', function () {
   let currentUrl = window.location.href;
@@ -71,7 +65,8 @@ userSignOut.addEventListener('click', () => {
 });
 logOut.addEventListener('click', () => {
   logOutUser();
-  location.reload();
+  // location.reload();
+  window.location.href = 'index.html';
 });
 //оновлюємо напис на кнопці, показуємо фото
 const updateHeaderUser = userName => {
