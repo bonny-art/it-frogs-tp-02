@@ -1,21 +1,24 @@
-.categories-container {
-  padding: 100px;
-  background-color: F6F6F6;
+.top-books-container {
+  /* width: 335px; */
 }
-.top-title-boks {
-  color: #111;
+.categories-container {
+  background-color: var(--col-bg-light);
+}
+.top-title-books {
+  color: var(--col-black);
   font-family: DM Sans;
   font-size: 48px;
   font-style: normal;
   font-weight: 700;
   line-height: 52px; /* 108.333% */
   letter-spacing: -1.92px;
-  margin-bottom: 40px;
+  margin-bottom: 14px;
 }
 .list-top {
   list-style: none;
 }
 .img-top {
+  margin-bottom: 14px;
   width: 180px;
   height: 256px;
   border-radius: 8px;
@@ -27,9 +30,13 @@
 }
 .li-top {
   width: 180px;
+  transition: transform 0.3s ease-in-out; /* Додаємо плавний перехід */
+}
+.li-top:hover {
+  transform: scale(1.05); /* Збільшуємо розмір при наведенні */
 }
 .top-title {
-  color: #b4afaf;
+  color: var(--col-lt-gray);
 
   font-family: DM Sans;
   font-size: 14px;
@@ -38,8 +45,6 @@
   margin-bottom: 18px;
 }
 .top-bookTitle {
-  color: #111;
-
   font-family: DM Sans;
   font-size: 16px;
   font-style: normal;
@@ -47,9 +52,13 @@
   line-height: 18px; /* 112.5% */
   letter-spacing: -0.64px;
   text-transform: uppercase;
+  margin-bottom: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .top-bookAuthor {
-  color: #b4afaf;
+  color: var(--col-lt-gray);
   font-family: DM Sans;
   font-size: 12px;
   font-style: italic;
@@ -59,12 +68,58 @@
 }
 
 .top-title-span {
-  color: #4f2ee8;
+  color: var(--col-blue);
 }
 .top-bth {
   border-radius: 40px;
-  border: 2px solid #4f2ee8;
+  border: 2px solid var(--col-blue);
   padding: 14px 28px;
   padding: 14px 28px;
   gap: 10px;
+  display: flex;
+  justify-content: flex-end;
+
+  margin-top: 32px;
+  color: var(--col-black);
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -0.14px;
+  text-transform: uppercase;
+  transition: transform 0.4s ease-in-out;
+}
+.top-bth:hover {
+  transform: scale(1.1);
+}
+.top-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Темная тема */
+.top-bookTitle {
+  color: var(--col-bg-light);
+}
+.top-bth {
+  color: var(--col-bg-light);
+}
+.top-title-books {
+  color: var(--col-bg-light);
+}
+
+/* светлая тема */
+.top-bookTitle {
+  color: var(--col-black);
+}
+.top-bth {
+  color: var(--col-black);
+}
+.top-title-books {
+  color: var(--col-black);
+}
+@media only screen and (min-width: 320px) {
+}
+@media only screen and (min-width: 320px) {
 }
