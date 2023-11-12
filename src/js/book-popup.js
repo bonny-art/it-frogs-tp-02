@@ -153,3 +153,5 @@ function handlerPress(event) {
   this.close();
   document.removeEventListener('keydown', handlerPress);
 }
+
+export { createBookCard };
