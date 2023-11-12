@@ -66,7 +66,6 @@ userSignOut.addEventListener('click', () => {
 logOut.addEventListener('click', () => {
   logOutUser();
   // location.reload();
-  window.location.href = 'index.html';
 });
 //оновлюємо напис на кнопці, показуємо фото
 const updateHeaderUser = userName => {

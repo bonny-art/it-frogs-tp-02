@@ -7,6 +7,7 @@ import {
 } from './auth-firebase';
 
 import { updateHeaderUser } from './header';
+import Swal from 'sweetalert2';
 
 const authModal = document.querySelector('.auth-modal');
 const authClose = document.querySelector('.auth-close-btn');
@@ -107,7 +108,13 @@ function handlerActionAuth() {
       if (password.length >= 5) {
         login(email, password);
       } else {
-        alert('The password must be at least 5 characters long!');
+        // alert('The password must be at least 5 characters long!');
+        Swal.fire({
+          title: 'Error!',
+          text: 'Do you want to continue',
+          icon: 'error',
+          confirmButtonText: 'Cool',
+        });
       }
     } else {
       alert('Wrong email!');

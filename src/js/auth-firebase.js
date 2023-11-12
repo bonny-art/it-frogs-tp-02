@@ -25,7 +25,9 @@ const db = getFirestore(app);
 const auth = getAuth(app);
 
 const registrationUser = async (email, password) => {
-  return createUserWithEmailAndPassword(auth, email, password);
+  return createUserWithEmailAndPassword(auth, email, password).then(
+    alert('Account created! Welcome!')
+  );
 };
 
 const setUserName = async userName => {
@@ -36,7 +38,9 @@ const setUserName = async userName => {
 };
 
 const loginUser = async (email, password) => {
-  return signInWithEmailAndPassword(auth, email, password);
+  return signInWithEmailAndPassword(auth, email, password).then(
+    alert('Welcome back!')
+  );
 };
 
 const isAuthUser = async () => {
@@ -44,19 +48,15 @@ const isAuthUser = async () => {
   return auth.currentUser === null ? false : true;
 };
 
-const logoutUser = () => {
-  signOut(auth);
-};
-
 const removeAccount = async () => {
   const user = auth.currentUser;
   return deleteUser(user);
 };
 
-const removeAccountInfo = async () => {
-  const user = auth.currentUser;
-  return deleteDoc(doc(db, 'users', user.uid));
-};
+// const removeAccountInfo = async () => {
+//   const user = auth.currentUser;
+//   return deleteDoc(doc(db, 'users', user.uid));
+// };
 
 const getUserName = async () => {
   return getDoc(doc(db, 'users', auth.currentUser.uid));
@@ -69,53 +69,53 @@ const getUserEmail = () => {
 const returnAuth = () => {
   return auth;
 };
-async function checkAuthenticationStatus() {
-  onAuthStateChanged(auth, user => {
-    if (user) {
-      // User is signed in
-      console.log('User is signed in');
-      return true;
-    } else {
-      // User is signed out
-      console.log('User is signed out');
-      return false;
-    }
-  });
-}
+// async function checkAuthenticationStatus() {
+//   onAuthStateChanged(auth, user => {
+//     if (user) {
+//       // User is signed in
+//       console.log('User is signed in');
+//       return true;
+//     } else {
+//       // User is signed out
+//       console.log('User is signed out');
+//       return false;
+//     }
+//   });
+// }
 
-function deleteAccount() {
-  const user = auth.currentUser;
+// function deleteAccount() {
+//   const user = auth.currentUser;
 
-  if (user) {
-    deleteUser(user)
-      .then(() => {
-        alert('Аккаунт удален');
-      })
-      .catch(error => {
-        alert(`Ошибка при удалении аккаунта: ${error.message}`);
-      });
-  } else {
-    alert('Пользователь не вошел в систему');
-  }
-}
+//   if (user) {
+//     deleteUser(user)
+//       .then(() => {
+//         alert('Аккаунт удален');
+//       })
+//       .catch(error => {
+//         alert(`Ошибка при удалении аккаунта: ${error.message}`);
+//       });
+//   } else {
+//     alert('Пользователь не вошел в систему');
+//   }
+// }
 
 function logOutUser() {
   signOut(auth).then(() => {
-    alert('Выход выполнен успешно');
+    alert('Seen later!');
+    window.location.href = 'index.html';
   });
 }
 export {
-  checkAuthenticationStatus,
+  // checkAuthenticationStatus,
   registrationUser,
   setUserName,
   loginUser,
   isAuthUser,
-  // logoutUser,
   removeAccount,
-  removeAccountInfo,
+  // removeAccountInfo,
   getUserName,
   getUserEmail,
   returnAuth,
-  deleteAccount,
+  // deleteAccount,
   logOutUser,
 };
