@@ -13,7 +13,7 @@ async function createTopBooks() {
           <ul class="list-item swiper-wrapper">
             ${book.books.slice(0, 5).map((book, i) => `
               <li class="li-top js-click-on-book swiper-slide" data-id="${index}-${i}">
-               <img class="img-top" src="${book.book_image || './images/shopping_list_sec/empty_page_mobile_2x.png'}" alt="Зображення відсутнє" />
+               <img class="img-top" src="${book.book_image || './images/shopping-list-sec/empty_page_mobile_1x.png'}" alt="Зображення відсутнє" />
                 <p class="top-bookTitle">${book.title}</p>
                 <p class="top-bookAuthor">${book.author}</p>
               </li>`).join("")}
