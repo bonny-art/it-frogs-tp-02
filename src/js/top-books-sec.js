@@ -34,7 +34,7 @@ async function createTopBooks() {
     });
 
   } catch (error) {
-    console.error('Помилка отримання або обробки даних:', error);
+    console.log('Помилка отримання або обробки даних:', error);
     // Notiflix.Notify.failure('Помилка отримання або обробки даних:', error);
   }
   finally {
