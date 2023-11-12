@@ -7,6 +7,8 @@ import {
 } from './auth-firebase';
 
 import { updateHeaderUser } from './header';
+// import Swal from 'sweetalert2';
+// import Notiflix from 'notiflix';
 
 const authModal = document.querySelector('.auth-modal');
 const authClose = document.querySelector('.auth-close-btn');
@@ -108,6 +110,15 @@ function handlerActionAuth() {
         login(email, password);
       } else {
         alert('The password must be at least 5 characters long!');
+        // Notiflix.Notify.failure(
+        //   'The password must be at least 5 characters long!'
+        // );
+        // Swal.fire({
+        //   title: 'Error!',
+        //   text: 'Do you want to continue',
+        //   icon: 'error',
+        //   confirmButtonText: 'Cool',
+        // });
       }
     } else {
       alert('Wrong email!');
@@ -165,5 +176,32 @@ function initAuthModal() {
   authSignUp.classList.add('visually-hidden');
   authSignIn.classList.remove('visually-hidden');
 }
+
+let passwordInput = document.getElementById('auth-password');
+let passwordIcon = document.querySelector(
+  '.auth-input-icon use[href="/images/header/header-defs.svg#icon-lock-1"]'
+);
+let isPasswordVisible = false;
+
+// Змінюємо відображення паролю
+function togglePasswordVisibility() {
+  isPasswordVisible = !isPasswordVisible;
+
+  if (isPasswordVisible) {
+    passwordInput.type = 'text';
+    passwordIcon.setAttribute(
+      'href',
+      '/images/header/header-defs.svg#icon-lock-unlocked'
+    );
+  } else {
+    passwordInput.type = 'password';
+    passwordIcon.setAttribute(
+      'href',
+      '/images/header/header-defs.svg#icon-lock-1'
+    );
+  }
+}
+
+passwordIcon.parentNode.addEventListener('click', togglePasswordVisibility);
 
 export { handlerActionAuth, initAuthModal };

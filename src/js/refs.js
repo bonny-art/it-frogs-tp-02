@@ -1,6 +1,12 @@
 const el = {
+  mainCategoriesList: document.querySelector('.main-categories-list'),
+
   categoryTitle: document.querySelector('.js-category-title'),
-  categoryBox: document.querySelector('.js-category-box'),
+  categoryBox: '',
+
+  list: document.querySelector('.content'),
+
+  topOfCatecory: '',
 
   shoppingList: document.querySelector('.js-shopping-list'),
   emptyPage: document.querySelector('.js-empty-page'),

@@ -1,49 +1,41 @@
-  async function createTopBooks() {
-    try {
-        const reselt = await fetch('https://books-backend.p.goit.global/books/top-books');
-        const bookData = await reselt.json();
-        console.log(bookData);
+async function createTopBooks() {
+  try {
+    const result = await fetch('https://books-backend.p.goit.global/books/top-books');
+    const bookData = await result.json();
+    console.log(bookData);
 
-        const markup = bookData.map((book) => `<div>
+    const markup = bookData.map((book, index) => `
+      <div>
         <h3 class="top-title">${book.list_name}</h3>
-<ul class="list-item ">
-  <li class="li-top">
-    <img class="img-top" src="${book.books[0].book_image}" alt="" />
-    <p class="top-bookTitle">${book.books[0].title}</p>
-    <p class="top-bookAuthor">${book.books[0].author}</p>
-  </li>
-  <li class="li-top">
-    <img class="img-top" src="${book.books[1].book_image}" alt="" />
-    <p class="top-bookTitle">${book.books[1].title}</p>
-    <p class="top-bookAuthor">${book.books[1].author}</p>
-  </li>
-  <li class="li-top">
-    <img class="img-top" src="${book.books[2].book_image}" alt="" />
-    <p class="top-bookTitle">${book.books[2].title}</p>
-    <p class="top-bookAuthor">${book.books[2].author}</p>
-  </li>
-  <li class="li-top">
-    <img class="img-top" src="${book.books[3].book_image}" alt="" />
-    <p class="top-bookTitle">${book.books[3].title}</p>
-    <p class="top-bookAuthor">${book.books[3].author}</p>
-  </li>
-  <li class="li-top">
-    <img class="img-top" src="${book.books[4].book_image}" alt="" />
-    <p class="top-bookTitle">${book.books[4].title}</p>
-    <p class="top-bookAuthor">${book.books[4].author}</p>
-  </li>
-</ul>
-<div class="top-button"><button class="top-bth" type="submit">see more</button></div>
-        </div>`).join("");
+        <div class="swiper">
+          <ul class="list-item swiper-wrapper">
+            ${book.books.slice(0, 5).map((book, i) => `
+              <li class="li-top js-click-on-book swiper-slide" data-id="${index}-${i}">
+                <img class="img-top" src="${book.book_image}" alt="" />
+                <p class="top-bookTitle">${book.title}</p>
+                <p class="top-bookAuthor">${book.author}</p>
+              </li>`).join("")}
+          </ul>
+        </div>
+        <div class="top-button">
+          <button class="top-bth top-bth-js" type="submit">see more</button>
+        </div>
+      </div>`).join("");
 
-        
-        const list = document.getElementById('list');
+    const list = document.getElementById('list');
+    list.innerHTML = markup;
 
-        // Додаємо всі розмітки до елемента списку
-        list.innerHTML = markup;
-    } catch (error) {
-        console.error('Помилка отримання або обробки даних:', error);
-    }
+  } catch (error) {
+    console.error('Помилка отримання або обробки даних:', error);
+    // Notiflix.Notify.failure('Помилка отримання або обробки даних:', error);
+  }
+
+  const button = document.querySelector(".top-bth-js");
+  button.addEventListener("click", handleClick);
+}
+
+function handleClick() {
+  location.reload();
 }
 
 createTopBooks();

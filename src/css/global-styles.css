@@ -177,3 +177,7 @@ body {
     flex-grow: 1;
   }
 }
+
+.js-book-on-click {
+  cursor: pointer;
+}
