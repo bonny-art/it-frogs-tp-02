@@ -7,6 +7,7 @@ const el = {
   list: document.querySelector('.content'),
 
   topOfCatecory: '',
+  buttonSeeMore:'',
 
   shoppingList: document.querySelector('.js-shopping-list'),
   emptyPage: document.querySelector('.js-empty-page'),
