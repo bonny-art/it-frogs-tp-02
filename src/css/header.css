@@ -93,7 +93,8 @@
   cursor: pointer;
   margin-left: 14px;
 }
-.burger:hover {
+.burger:hover,
+.burger:focus {
   stroke: var(--col-blue);
 }
 /*============================|Tablet media|===========================*/

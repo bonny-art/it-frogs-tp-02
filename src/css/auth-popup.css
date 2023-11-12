@@ -83,6 +83,7 @@
 
 .auth-input {
   width: 100%;
+  height: 50px;
   padding: 16px 52px 16px 24px;
   align-items: center;
   background-color: transparent;
