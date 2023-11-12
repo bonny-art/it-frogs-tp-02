@@ -3,6 +3,8 @@
   justify-content: baseline;
   align-items: center;
   padding: 18px;
+
+  border-radius: 0px 0px 8px 8px;
 }
 
 .header-logo {
@@ -73,9 +75,9 @@
   display: flex;
   border: none;
 }
-.burger {
+/* .burger {
   stroke: #111111;
-}
+} */
 
 .burger:hover {
   stroke: #4f2ee8;
