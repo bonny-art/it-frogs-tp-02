@@ -83,4 +83,4 @@ import{a as S,i as ve,g as be,b as ke,c as Le,d as ee,s as we,e as Se,f as Ee,h 
                 </div>
             </li>
 `).join("")}function bt(e){if(!e.target.parentNode.classList.contains("js-delete-book"))return;const t=e.target.closest(".shopping-book-card"),o=t.dataset.bookId,n=h.findIndex(s=>s._id===o);n!=-1&&(console.log(n),h.splice(n,1),localStorage.setItem("booksList",JSON.stringify(h)),t.remove(),p(f))}const fe=document.getElementById("open-mobile-menu"),J=document.querySelector(".js-mobile-menu"),ye=document.querySelector(".button-home"),kt=document.querySelector(".button-shopping-list"),Lt=document.querySelector(".button-log-out");console.log(fe);console.log(J);console.log(ye);fe.addEventListener("click",wt);ye.addEventListener("click",St);kt.addEventListener("click",Et);Lt.addEventListener("click",xt);function wt(e){J.style.display="block"}function St(e){window.location.href="/index.html",J.style.display="none"}function Et(e){window.location.href="shopping-list.html"}function xt(e){le(),window.location.href="/index.html"}
-//# sourceMappingURL=mobile-menu-c52b6ce4.js.map
+//# sourceMappingURL=mobile-menu-36e44f21.js.map
