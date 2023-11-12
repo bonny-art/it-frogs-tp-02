@@ -24,9 +24,9 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <script type="module" crossorigin src="/it-frogs-tp-02/assets/vendor-369467b0.js"></script>
-    <script type="module" crossorigin src="/it-frogs-tp-02/assets/mobile-menu-4e55090b.js"></script>
-    <link rel="stylesheet" href="/it-frogs-tp-02/assets/mobile-menu-d3b1dcf0.css">
+    <script type="module" crossorigin src="/it-frogs-tp-02/assets/vendor-551e154b.js"></script>
+    <script type="module" crossorigin src="/it-frogs-tp-02/assets/btn-scroll-up-eafbbc1e.js"></script>
+    <link rel="stylesheet" href="/it-frogs-tp-02/assets/btn-scroll-up-7d933647.css">
     <link rel="stylesheet" href="/it-frogs-tp-02/assets/vendor-b3ce9496.css">
   </head>
   <body>
@@ -120,7 +120,7 @@
 </div>
           </div>
         </div>
-        <div class="content">
+        <div class="shopping-content">
           <!-- <p class="shopping-list-sec">shopping-list-sec</p> -->
 <div class="shopping-container">
   <div class="shopping-list">
@@ -225,24 +225,35 @@
 
     <p class="mobile-menu">mobile-menu</p>
 
-<!-- <button id="open-mobile-menu" data-modal="1" type="button">Мобильное меню</button> -->
+<button id="open-mobile-menu" data-modal="1" type="button">Мобильное меню</button>
 
 <div class="js-mobile-menu" data-modal="1">
-  <div class="modal"></div>
+
+
   <div class="user">
     <img src="" alt="" />
-    <span class="user-name">Stephen</span>
+    <span class="user-name"></span>
   </div>
+  
+
+
   <div class="buttons">
-    <button class="button-home button" type="button">HOME</button>
+    <button class="button-home button" type="button">Home</button>
     <button class="button-shopping-list button" type="button">
-      SHOPPING LIST
+      Shopping list<svg class="mob-shoppinglist-icon">
+        <use href="/it-frogs-tp-02/assets/header-defs-006b49d6.svg#icon-uil_cart"></use>
+      </svg>
     </button>
-  </div>
-  <div class="images">
+    
+    <!-- /images/header/header-defs.svg#icon-uil_cart -->
+    <!-- /images/header/header-defs.svg#icon-arrow-narrow-right-1 -->
   </div>
 
-  <button class="button-log-out button" type="button">Log out</button>
+  <button class="button-log-out button" type="button">Log out<svg class="mob-log-out-icon">
+    <use href="/it-frogs-tp-02/assets/header-defs-006b49d6.svg#icon-arrow-narrow-right-1"></use>
+  </svg></button>
+  <div class="modal"></div>
+
 </div>
 
     <div class="auth-modal visually-hidden">

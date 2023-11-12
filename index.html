@@ -24,10 +24,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <script type="module" crossorigin src="/it-frogs-tp-02/assets/vendor-369467b0.js"></script>
-    <script type="module" crossorigin src="/it-frogs-tp-02/assets/mobile-menu-4e55090b.js"></script>
+    <script type="module" crossorigin src="/it-frogs-tp-02/assets/vendor-551e154b.js"></script>
+    <script type="module" crossorigin src="/it-frogs-tp-02/assets/btn-scroll-up-eafbbc1e.js"></script>
     <link rel="stylesheet" href="/it-frogs-tp-02/assets/vendor-b3ce9496.css">
-    <link rel="stylesheet" href="/it-frogs-tp-02/assets/mobile-menu-d3b1dcf0.css">
+    <link rel="stylesheet" href="/it-frogs-tp-02/assets/btn-scroll-up-7d933647.css">
   </head>
   <body>
     <header class="header-section section">
@@ -95,34 +95,8 @@
       <div class="main-container container">
         <div class="sidebar">
           <div class="categories-container">
-            <p class="category-list-sec">category-list-sec</p>
-
-<div class="main-categories-box">
-  <ul class="main-categories-list">
-    <li class="main-categories-list-item main-categories-list-item-active">
-      All categories
-    </li>
-    <li class="main-categories-list-item">Hardcover Fiction</li>
-    <li class="main-categories-list-item">Childrens Middle Grade Hardcover</li>
-    <li class="main-categories-list-item">Audio Nonfiction</li>
-    <li class="main-categories-list-item">Advice How-To and Miscellaneous</li>
-    <li class="main-categories-list-item">Picture Books</li>
-    <li class="main-categories-list-item">
-      Combined Print and E-Book Nonfiction
-    </li>
-    <li class="main-categories-list-item">Combined Print and E-Book Fiction</li>
-    <li class="main-categories-list-item">Audio Fiction</li>
-    <li class="main-categories-list-item">Hardcover Nonfiction</li>
-    <li class="main-categories-list-item">Trade Fiction Paperback</li>
-    <li class="main-categories-list-item">Graphic Books and Manga</li>
-    <li class="main-categories-list-item">Young Adult Hardcover</li>
-    <li class="main-categories-list-item">Mass Market Monthly</li>
-    <li class="main-categories-list-item">Business Books</li>
-    <li class="main-categories-list-item">Paperback Nonfiction</li>
-    <li class="main-categories-list-item">Series Books</li>
-    <li class="main-categories-list-item">Middle Grade Paperback Monthly</li>
-    <li class="main-categories-list-item">Young Adult Paperback Monthly</li>
-  </ul>
+            <div class="main-categories-box">
+  <ul class="main-categories-list"></ul>
 </div>
 
           </div>
@@ -152,44 +126,41 @@
 </div>
           </div>
         </div>
-        <div class="content">
-          <div class="top-books-container">
-  <h1 class="top-title-books">
-    Best Sellers <span class="top-title-span">Books</span>
-  </h1>
-  <div class="list-top" id="list"></div>
-  <div></div>
-</div>
-
-          <div class="selected-category">
-  <h1 class="selected-category-title js-category-title"></h1>
-  <ul class="selected-category-list js-category-box"></ul>
-</div>
-
-        </div>
+        <div class="content"></div>
       </div>
     </main>
 
     <p class="mobile-menu">mobile-menu</p>
 
-<!-- <button id="open-mobile-menu" data-modal="1" type="button">Мобильное меню</button> -->
+<button id="open-mobile-menu" data-modal="1" type="button">Мобильное меню</button>
 
 <div class="js-mobile-menu" data-modal="1">
-  <div class="modal"></div>
+
+
   <div class="user">
     <img src="" alt="" />
-    <span class="user-name">Stephen</span>
+    <span class="user-name"></span>
   </div>
+  
+
+
   <div class="buttons">
-    <button class="button-home button" type="button">HOME</button>
+    <button class="button-home button" type="button">Home</button>
     <button class="button-shopping-list button" type="button">
-      SHOPPING LIST
+      Shopping list<svg class="mob-shoppinglist-icon">
+        <use href="/it-frogs-tp-02/assets/header-defs-006b49d6.svg#icon-uil_cart"></use>
+      </svg>
     </button>
-  </div>
-  <div class="images">
+    
+    <!-- /images/header/header-defs.svg#icon-uil_cart -->
+    <!-- /images/header/header-defs.svg#icon-arrow-narrow-right-1 -->
   </div>
 
-  <button class="button-log-out button" type="button">Log out</button>
+  <button class="button-log-out button" type="button">Log out<svg class="mob-log-out-icon">
+    <use href="/it-frogs-tp-02/assets/header-defs-006b49d6.svg#icon-arrow-narrow-right-1"></use>
+  </svg></button>
+  <div class="modal"></div>
+
 </div>
 
     <div class="auth-modal visually-hidden">
@@ -272,7 +243,6 @@
 </div>
 
     <!-- Load JS file -->
-    
     
   </body>
 </html>
