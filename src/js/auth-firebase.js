@@ -25,9 +25,7 @@ const db = getFirestore(app);
 const auth = getAuth(app);
 
 const registrationUser = async (email, password) => {
-  return createUserWithEmailAndPassword(auth, email, password).then(
-    alert('Account created! Welcome!')
-  );
+  return createUserWithEmailAndPassword(auth, email, password);
 };
 
 const setUserName = async userName => {
@@ -38,9 +36,7 @@ const setUserName = async userName => {
 };
 
 const loginUser = async (email, password) => {
-  return signInWithEmailAndPassword(auth, email, password).then(
-    alert('Welcome back!')
-  );
+  return signInWithEmailAndPassword(auth, email, password);
 };
 
 const isAuthUser = async () => {
@@ -100,10 +96,7 @@ const returnAuth = () => {
 // }
 
 function logOutUser() {
-  signOut(auth).then(() => {
-    alert('Seen later!');
-    window.location.href = 'index.html';
-  });
+  signOut(auth).then((window.location.href = 'index.html'));
 }
 export {
   // checkAuthenticationStatus,
