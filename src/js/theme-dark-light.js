@@ -1,6 +1,4 @@
-const body = document.querySelector('body');
-const btn = document.querySelector('.btn');
-const icon = document.querySelector('.btn__icon');
+import { el } from './refs';
 
 //to save the dark mode use the object "local storage".
 
@@ -16,35 +14,35 @@ export function loadDarkMode() {
   //if the dark mode was never activated
   if (!darkmode) {
     storeDarkMode(false);
-    icon.classList.add('fa-sun');
+    el.toggleIcon.classList.add('fa-sun');
   } else if (darkmode == 'true') {
     //if the dark mode is activated
-    body.classList.add('darkmode');
-    icon.classList.add('fa-moon');
+    el.body.classList.add('darkmode');
+    el.toggleIcon.classList.add('fa-moon');
   } else if (darkmode == 'false') {
     //if the dark mode exists but is disabled
-    icon.classList.add('fa-sun');
+    el.toggleIcon.classList.add('fa-sun');
   }
 }
 
 loadDarkMode();
 
-btn.addEventListener('click', function () {
-  body.classList.toggle('darkmode');
-  icon.classList.add('animated');
+el.toggleBtn.addEventListener('click', function () {
+  el.body.classList.toggle('darkmode');
+  el.toggleIcon.classList.add('animated');
 
   //save true or false
-  storeDarkMode(body.classList.contains('darkmode'));
+  storeDarkMode(el.body.classList.contains('darkmode'));
 
-  if (body.classList.contains('darkmode')) {
-    icon.classList.remove('fa-sun');
-    icon.classList.add('fa-moon');
+  if (el.body.classList.contains('darkmode')) {
+    el.toggleIcon.classList.remove('fa-sun');
+    el.toggleIcon.classList.add('fa-moon');
   } else {
-    icon.classList.remove('fa-moon');
-    icon.classList.add('fa-sun');
+    el.toggleIcon.classList.remove('fa-moon');
+    el.toggleIcon.classList.add('fa-sun');
   }
 
   setTimeout(function () {
-    icon.classList.remove('animated');
+    el.toggleIcon.classList.remove('animated');
   }, 500);
 });

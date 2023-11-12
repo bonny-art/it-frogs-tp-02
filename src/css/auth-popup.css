@@ -17,7 +17,7 @@
   height: 100%;
   justify-content: center;
   align-items: center;
-  background: #4f2ee8;
+  background: var(--col-blue);
 }
 
 .auth-container {
@@ -27,12 +27,10 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 295px;
-  background: #f6f6f6;
+  background: var(--col-bg-light);
   padding: 40px 20px;
-
   border-radius: 18px;
-  border: 2px solid #111;
-  /* border: 2px solid #f6f6f6; */
+  border: 2px solid var(--col-bg-light);
   display: flex;
   flex-direction: column;
   /* align-items: center; */
@@ -53,10 +51,10 @@
   cursor: pointer;
 }
 .auth-close-icon {
-  stroke: #111;
+  stroke: var(--col-black);
 }
 .auth-close-icon:hover {
-  stroke: #4f2ee8;
+  stroke: var(--col-blue);
 }
 
 .auth-form-container {
@@ -85,11 +83,12 @@
 
 .auth-input {
   width: 100%;
+  height: 50px;
   padding: 16px 52px 16px 24px;
   align-items: center;
   background-color: transparent;
   border-radius: 40px;
-  border: 2px solid #111;
+  border: 2px solid var(--col-black);
   font-family: DM Sans;
   font-size: 16px;
   font-style: normal;
@@ -98,11 +97,11 @@
   letter-spacing: -0.16px;
   text-transform: uppercase;
   outline: transparent;
-  color: #111;
+  color: var(--col-black);
 }
 
 .auth-input-icon {
-  stroke: #111;
+  stroke: var(--col-black);
   fill: transparent;
   position: absolute;
   right: 24px;
@@ -114,9 +113,9 @@
   width: 100%;
   padding: 16px 0;
   border-radius: 40px;
-  background: #111;
+  background: var(--col-black);
   text-align: center;
-  color: #f3f3f3;
+  color: var(--col-bg-light);
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -140,21 +139,22 @@
   font-weight: 700;
   line-height: 128.571%;
   letter-spacing: -0.14px;
-  color: rgba(17, 17, 17, 0.5);
+  background: rgba(245, 245, 245, 0.5);
+
   text-transform: uppercase;
   cursor: pointer;
   border: none;
 }
 
 .auth-toggler-active {
-  color: #4f2ee8;
+  color: var(--col-blue);
   text-decoration-line: underline;
 }
 
 @media screen and (min-width: 768px) {
   .auth-container {
     width: 579px;
-    background: #f6f6f6;
+    background: var(--col-bg-light);
     padding: 80px 40px 40px;
   }
 
@@ -171,7 +171,7 @@
   }
 
   .auth-input-icon {
-    stroke: #111;
+    stroke: var(--col-black);
     fill: transparent;
     position: absolute;
     right: 24px;
@@ -206,3 +206,19 @@
     letter-spacing: -0.18px;
   }
 }
+/*============================|dark theme|===========================*/
+/* .auth-container.darkmode {
+  border: 2px solid var(--col-black);
+  background: var(--col-bg-dark);
+}
+.auth-input-icon.darkmode {
+  stroke: var(--col-white);
+}
+.auth-input.darkmode {
+  border: 2px solid var(--col-white);
+  color: var(--col-white);
+}
+.auth-sign.darkmode {
+  background: var(--col-bg-light);
+  color: var(--col-black);
+} */

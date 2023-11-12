@@ -110,7 +110,7 @@ export {
   setUserName,
   loginUser,
   isAuthUser,
-  logoutUser,
+  // logoutUser,
   removeAccount,
   removeAccountInfo,
   getUserName,
