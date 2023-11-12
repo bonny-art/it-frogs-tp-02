@@ -140,6 +140,7 @@
     text-align: left;
     color: var(--col-black);
   }
+
   .nav-shoppinglist-icon {
     width: 20px;
     height: 20px;
@@ -208,11 +209,12 @@
 /*============================|Dark Mode Styles|===========================*/
 
 /*============================| Dark Mode Logo |===========================*/
-.header-logo-title.darkmode {
+/* .header-logo-title.darkmode {
   stroke: var(--col-white);
+  fill: var(--col-white);
   background: var(--col-bg-dark);
-}
+} */
 /*============================|Dark Mode Menu|===========================*/
-.nav-item.darkmode {
+/* .nav-item.darkmode {
   color: var(--col-white);
-}
+} */

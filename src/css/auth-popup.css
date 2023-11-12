@@ -30,8 +30,7 @@
   background: var(--col-bg-light);
   padding: 40px 20px;
   border-radius: 18px;
-  border: 2px solid var(--col-black);
-  /* border: 2px solid var(--col-bg-light); */
+  border: 2px solid var(--col-bg-light);
   display: flex;
   flex-direction: column;
   /* align-items: center; */
@@ -206,3 +205,19 @@
     letter-spacing: -0.18px;
   }
 }
+/*============================|dark theme|===========================*/
+/* .auth-container.darkmode {
+  border: 2px solid var(--col-black);
+  background: var(--col-bg-dark);
+}
+.auth-input-icon.darkmode {
+  stroke: var(--col-white);
+}
+.auth-input.darkmode {
+  border: 2px solid var(--col-white);
+  color: var(--col-white);
+}
+.auth-sign.darkmode {
+  background: var(--col-bg-light);
+  color: var(--col-black);
+} */
