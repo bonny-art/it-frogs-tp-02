@@ -5,7 +5,10 @@
   |============================
 */
 import { fetchBookList, fetchTopBooks, fetchBooksOfCategory } from './api';
-import { createSelectedCategory } from './selected-category-sec';
+import {
+  createSelectedCategory,
+  createTopBooks,
+} from './selected-category-sec';
 
 // import Notiflix from 'notiflix';
 
@@ -26,13 +29,13 @@ const mainCategoriesList = document.querySelector('.main-categories-list');
       '<li class="main-categories-list-item main-categories-list-item-active">All categories</li>' +
       markup;
   } catch (error) {
-    console.error('An error:', error);
+    console.log('An error:', error);
   }
 })();
 
 // Слушатель события для клика по категории:
 
-mainCategoriesList.addEventListener('click', handleCategoryClick);
+mainCategoriesList.addEventListener('click', handleCategoryClick(ddd));
 
 // Обработчик события для клика по категории:
 
@@ -51,16 +54,19 @@ async function handleCategoryClick(event) {
 
     event.target.classList.add('main-categories-list-item-active');
 
+    createTopBooks();
+
     try {
       if (event.target.textContent === 'All categories') {
         const result = await fetchTopBooks();
         xxx(result);
       } else {
-        const result = await createSelectedCategory(event.target.textContent);
-        yyy(result, event.target.textContent);
+        createSelectedCategory();
+        // const result = await fetchBooksOfCategory(event.target.textContent);
+        // yyy(result, event.target.textContent);
       }
     } catch (error) {
-      console.error('An error occurred:', error);
+      console.log('An error occurred:', error);
     }
   }
 }
