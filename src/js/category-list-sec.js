@@ -12,10 +12,12 @@ import { el } from './refs';
       return;
     }
     const result = await fetchBookList();
-    const markup = result
-      .map(
-        item => `<li class="main-categories-list-item">${item.list_name}</li>`
-      )
+
+    // Сортировка категорий в алфавитном порядке
+    const sortedCategories = result.map(item => item.list_name).sort();
+
+    const markup = sortedCategories
+      .map(category => `<li class="main-categories-list-item">${category}</li>`)
       .join('');
 
     el.mainCategoriesList.innerHTML =
