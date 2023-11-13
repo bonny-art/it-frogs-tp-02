@@ -3,9 +3,11 @@ import { createBookCard } from './book-popup';
 import { el } from './refs';
 import { createSelectedCategory } from './selected-category-sec';
 import Notiflix from 'notiflix';
+import { showLoader, hideLoader } from './loader'
 createTopBooks();
 
 function createTopBooks() {
+  showLoader();
   fetchTopBooks()
     .then(bookData => {
       const markup = bookData.map((book) => `
@@ -58,7 +60,9 @@ function createTopBooks() {
       // alert ('Помилка отримання або обробки даних:')
       // Notiflix.Notify.Failure('Что-то пошло не так!');
     })
-    .finally(() => {});
+    .finally(() => {
+      hideLoader()
+    });
 }
 
 function handleSeeMore(ev) {
