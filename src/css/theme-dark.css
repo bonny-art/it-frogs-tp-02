@@ -35,6 +35,10 @@ body.darkmode .burger:hover,
 body.darkmode .burger:focus {
   stroke: var(--col-blue);
 }
+body.darkmode .close-burger:hover,
+body.darkmode .close-burger:focus {
+  stroke: var(--col-blue);
+}
 
 body.darkmode .nav-container {
   border: 1.5px solid var(--col-white);
@@ -67,6 +71,9 @@ body.darkmode .header-logo-title {
 body.darkmode .burger {
   stroke: var(--col-white);
 }
+body.darkmode .close-burger {
+  stroke: var(--col-white);
+}
 
 /* -------------- CATEGORIES -------------- */
 
@@ -92,7 +99,6 @@ body.darkmode .top-bth {
   background-color: transparent;
   color: #ffffff;
 }
-
 /* --------------  -------------- */
 
 /* body */
@@ -145,7 +151,8 @@ body.darkmode .amazon-img {
 }
 
 body.darkmode .amazon-img:hover {
-  filter: brightness(0) invert(1) drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
+  filter: brightness(0) invert(1)
+    drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
 }
 
 body.darkmode .apple-books-img {
@@ -170,7 +177,7 @@ body.darkmode .pagination-button.disabled {
   border-color: var(--col-black);
 }
 
-body.darkmode .pagination-button.disabled>.arrow-svg {
+body.darkmode .pagination-button.disabled > .arrow-svg {
   fill: var(--col-white);
 }
 
@@ -224,4 +231,13 @@ body.darkmode .auth-toggler {
 body.darkmode .auth-toggler-active {
   color: var(--col-blue);
   text-decoration-line: underline;
+}
+/*============================|LOADER|===========================*/
+
+body.darkmode .loader-overlay {
+  background: #202024;
+}
+
+body.darkmode .book-loader {
+  --color: #eac645;
 }
