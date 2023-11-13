@@ -202,6 +202,6 @@ function togglePasswordVisibility() {
   }
 }
 
-passwordIcon.parentNode.addEventListener('click', togglePasswordVisibility);
+// passwordIcon.parentNode.addEventListener('click', togglePasswordVisibility);
 
 export { handlerActionAuth, initAuthModal };
