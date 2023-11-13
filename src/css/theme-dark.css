@@ -232,3 +232,12 @@ body.darkmode .auth-toggler-active {
   color: var(--col-blue);
   text-decoration-line: underline;
 }
+/*============================|LOADER|===========================*/
+
+body.darkmode .loader-overlay {
+  background: #202024;
+}
+
+body.darkmode .book-loader {
+  --color: #eac645;
+}
