@@ -26,7 +26,7 @@ function handlerActionAuth() {
   //прибирає слухачів після закриття модального вікна
   function removeListenersAuthModal() {
     authClose.removeEventListener('click', handlerOnClose);
-    document.removeEventListener('click', clickDocumentAuthForm);
+    // document.removeEventListener('click', clickDocumentAuthForm);
     document.removeEventListener('keydown', keydownDocumentAuthForm);
     authSwitcherSignUp.removeEventListener('click', clickAuthSwitcherSignUp);
     authSwitcherSignIn.removeEventListener('click', clickAuthSwitcherSignIn);
@@ -39,17 +39,18 @@ function handlerActionAuth() {
     removeListenersAuthModal();
   }
   authClose.addEventListener('click', handlerOnClose);
-  //кліком закриваємо модалку
-  const clickDocumentAuthForm = evt => {
-    if (
-      !evt.composedPath().includes(authForm) &&
-      evt.composedPath().includes(authModal)
-    ) {
-      authModal.classList.add('visually-hidden');
-      removeListenersAuthModal();
-    }
-  };
-  document.addEventListener('click', clickDocumentAuthForm);
+  // //кліком закриваємо модалку
+  // const clickDocumentAuthForm = evt => {
+  //   if (
+  //     !evt.composedPath().includes(authForm) &&
+  //     evt.composedPath().includes(authModal)
+  //   ) {
+  //     authModal.classList.add('visually-hidden');
+  //     removeListenersAuthModal();
+  //   }
+  // };
+  // document.addEventListener('click', clickDocumentAuthForm);
+
   //закриваємо модалку кнопкою
   const keydownDocumentAuthForm = evt => {
     if (evt.key == 'Escape') {
