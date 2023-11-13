@@ -40,7 +40,12 @@
     width: 335px;
     height: 485px;
     border-radius: 8px;
-   
+    background-color: var(--col-bg-light);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url('../images/fon.jpg');
+    
   }
 
   .selected-category-book-title{
@@ -72,11 +77,11 @@
 @media only screen and (max-width: 374.98px) {
 
   .card-wrapper {
-    width: 280px;
+    width: 320px;
   }
 
   .selected-category-book-img {
-    width: 280px;
+    width: 320px;
     height: 450px;
   }
 }
@@ -213,4 +218,5 @@
   line-height: 1.13;
   /* 128.571% */
   letter-spacing: -0.56px;
-  text-transform: uppercase;}
+  text-transform: uppercase;
+}

@@ -23,17 +23,19 @@ async function createSelectedCategory(category) {
       
     el.categoryBox = document.querySelector('.js-category-box');
     el.categoryBox.addEventListener('click', createBookCard);
-    hideLoader();
+    
   } catch (error) {
     console.log(error);
     Swal.fire({
          title: 'Error!',
          text: 'Something went wrong! Try reload the page.',
          confirmButtonText: 'OK',
-         imageUrl: "./images/header/sad.svg",
+         imageUrl: "./images/sad.svg",
          imageWidth: 40
 })
     // Swal.fire('Oops...', 'Something went wrong!', 'error')
+  } finally {
+    hideLoader();
   }
 }
 
@@ -56,7 +58,7 @@ function createMarkupCategory(arr) {
     .map(({ author, title, book_image, _id }) => {
       return `<li class="card-wrapper  js-book-on-click" data-id="${_id}">
                  <div class="selected-category-img-box">
-                   <img class="selected-category-img" src="${book_image}" alt="${title}">
+                   <img class="selected-category-img" src="{book_image}" alt="${title}">
                    <div class="selected-category-overlay">
                    <p class="selected-category-overlay-text">quick view</p>
                    </div>
