@@ -108,12 +108,16 @@ function createMarkup(
         <p class="popup-descr">${descr}</p>
         <ul class="popup-store-list">
           <li class="popup-store popup-store-amazon">
-            <a href="${amazonLink}">
+            <a href="${amazonLink}"
+            target="_blank"
+              rel="noopener noreferrer">
             <img src="../images/book-popup/amazon.svg" alt="" />
             </a>
           </li>
           <li class="popup-store popup-store-apple">
-            <a href="${appleBooksLink}">
+            <a href="${appleBooksLink}"
+            target="_blank"
+              rel="noopener noreferrer">
             <img src="../images/book-popup/appleBooks.svg" alt="" />
             </a>
           </li>

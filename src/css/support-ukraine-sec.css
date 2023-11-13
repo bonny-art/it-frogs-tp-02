@@ -1,20 +1,22 @@
-.support-img {
-  filter: brightness(0) invert(1);
-      max-width: 210px;
-        height: 30px;
+:root {
+  --violet: #4f2ee8;
+  --white: #fff;
+  --lightviolet: #C8C3EF;
 }
 
-img {
-width: auto;
+.support-img {
+  filter: brightness(0) invert(1);
+  max-width: 149px;
+  max-height: 30px;
+  width: auto;
 }
 
 .support-left {
   border-radius: 16px;
-  background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4f2ee8 18.03%, #fff 100%);
+  background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, var(--violet) 18.03%, #fff 100%);
 
   box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.10);
-  width: 335px;
-  height: 460px;
+  max-width: 335px;
 }
 
 .support-container-wrap {
@@ -27,13 +29,13 @@ width: auto;
   }
 
   .support-left {
-    width: 356px;
+    width: 335px;
     height: 474px;
   }
 }
 
 .support-title {
-  color: #fff;
+  color: var(--white);
   font-size: 22px;
   line-height: 1.09;
   letter-spacing: -0.88px;
@@ -55,7 +57,7 @@ width: auto;
 
 .support-coat-of-arms {
   display: block;
-  fill: #fff;
+  fill: var(--white);
 }
 
 .support-list {
@@ -72,13 +74,13 @@ width: auto;
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: var(--white);
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
   cursor: pointer;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media only screen and (min-width: 768px) {
@@ -98,12 +100,13 @@ width: auto;
 }
 
 .support-link {
-  color: #fff;
+  color: var(--white);
   display: flex;
   align-items: center;
   gap: 16px;
   transition: all .3s ease 0s;
 }
+
 .support-arrow:hover {
-  background-color: #C8C3EF;
+  background-color: var(--lightviolet);
 }
