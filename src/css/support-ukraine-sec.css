@@ -8,9 +8,6 @@
   filter: brightness(0) invert(1);
   max-width: 149px;
   max-height: 30px;
-}
-
-img {
   width: auto;
 }
 
