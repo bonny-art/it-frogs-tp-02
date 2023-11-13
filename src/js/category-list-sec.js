@@ -1,6 +1,7 @@
 import { fetchBookList, fetchTopBooks, fetchBooksOfCategory } from './api';
 import { createSelectedCategory } from './selected-category-sec';
 import { createTopBooks } from './top-books-sec';
+import { showLoader, hideLoader } from './loader';
 import { el } from './refs';
 
 // "async" запрос данных о списке книг с сервера и
@@ -11,6 +12,10 @@ import { el } from './refs';
     if (document.getElementById('index') === null) {
       return;
     }
+
+    // Показываем лоадер перед загрузкой данных
+    showLoader();
+
     const result = await fetchBookList();
 
     // Сортировка категорий в алфавитном порядке
@@ -24,11 +29,16 @@ import { el } from './refs';
       '<li class="main-categories-list-item main-categories-list-item-active">All categories</li>' +
       markup;
 
+    // Скрываем лоадер после загрузки данных
+    hideLoader();
+
     // Слушатель события для клика по категории:
 
     el.mainCategoriesList.addEventListener('click', handleCategoryClick);
   } catch (error) {
     console.log('An error:', error);
+
+    hideLoader();
   }
 })();
 
@@ -50,11 +60,16 @@ async function handleCategoryClick(event) {
     event.target.classList.add('main-categories-list-item-active');
 
     try {
+      // Показываем лоадер перед загрузкой данных
+      showLoader();
       if (event.target.textContent.trim() === 'All categories') {
         createTopBooks();
       } else {
         createSelectedCategory(event.target.textContent);
       }
+      // Скрываем лоадер после загрузки данных
+
+      hideLoader();
     } catch (error) {
       console.log('An error occurred:', error);
     }
