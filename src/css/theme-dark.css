@@ -33,7 +33,7 @@ body.darkmode .tgl-btn__icon {
 
 body.darkmode .burger:hover,
 body.darkmode .burger:focus {
-    stroke: var(--col-blue);
+  stroke: var(--col-blue);
 }
 
 body.darkmode .nav-container {
@@ -51,7 +51,7 @@ body.darkmode .nav-item {
 
 body.darkmode .nav-item:hover,
 body.darkmode .nav-item:focus {
-    color: var(--col-blue);
+  color: var(--col-blue);
 }
 
 
@@ -80,20 +80,25 @@ body.darkmode .main-categories-list-item-active {
   color: var(--col-yellow);
 }
 
+body.darkmode .main-categories-box::-webkit-scrollbar-thumb {
+  background: var(--col-gray-60);
+}
+
 /* -------------- TOP -------------- */
 
 body.darkmode .top-title-books {
-    color: var(--col-white);
+  color: var(--col-white);
 }
 
 body.darkmode .top-bookTitle {
-    color: #FFFFFF;
+  color: #FFFFFF;
 }
 
 body.darkmode .top-bth {
-    background-color: transparent;
-    color: #FFFFFF;
+  background-color: transparent;
+  color: #FFFFFF;
 }
+
 /* --------------  -------------- */
 
 
@@ -109,7 +114,7 @@ body.darkmode .main-categories-list-item:focus {
 }
 
 body.darkmode .main-categories-box {
-background-color: #202024;
+  background-color: #202024;
 }
 
 body.darkmode .selected-category-title {
@@ -139,12 +144,12 @@ body.darkmode .main-categories-box::-webkit-scrollbar-thumb {
 
 /* selected category sec */
 body.darkmode .selected-category-book-title {
-    color: var(--col-white);
+  color: var(--col-white);
 }
 
 /* ------- pop up --------- */
 body.darkmode .popup-button {
-    color: var(--col-white);
+  color: var(--col-white);
 }
 
 /* -------modal-------- */
