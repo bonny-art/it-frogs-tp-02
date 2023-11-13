@@ -1,7 +1,8 @@
 import { fetchBooksOfCategory } from './api.js';
 import { createBookCard } from './book-popup';
 import { el } from './refs.js';
-import { showLoader, hideLoader } from './loader.js'
+import { showLoader, hideLoader } from './loader.js';
+import Swal from 'sweetalert2';
 
 
 
@@ -13,7 +14,6 @@ async function createSelectedCategory(category) {
   try {
     showLoader();
     const arrOfBooks = await fetchBooksOfCategory(category);
-    hideLoader();
     const markUp = createMarkupCategory(arrOfBooks);
     const styledTitle = styleSectionTitle(category);
 
@@ -23,9 +23,17 @@ async function createSelectedCategory(category) {
       
     el.categoryBox = document.querySelector('.js-category-box');
     el.categoryBox.addEventListener('click', createBookCard);
+    hideLoader();
   } catch (error) {
     console.log(error);
-    // Notiflix.Notify.info('Sorry, there are no books matching your search query. Please try again.')
+    Swal.fire({
+         title: 'Error!',
+         text: 'Something went wrong! Try reload the page.',
+         confirmButtonText: 'OK',
+         imageUrl: "./images/header/sad.svg",
+         imageWidth: 40
+})
+    // Swal.fire('Oops...', 'Something went wrong!', 'error')
   }
 }
 
@@ -47,7 +55,12 @@ function createMarkupCategory(arr) {
   return arr
     .map(({ author, title, book_image, _id }) => {
       return `<li class="card-wrapper  js-book-on-click" data-id="${_id}">
-                 <img class="selected-category-img" src="${book_image}" alt="${title}">
+                 <div class="selected-category-img-box">
+                   <img class="selected-category-img" src="${book_image}" alt="${title}">
+                   <div class="selected-category-overlay">
+                   <p class="selected-category-overlay-text">quick view</p>
+                   </div>
+                 </div>
                  <h2 class="selected-category-book-title">${title}</h2>
                  <p class="selected-category-book-author">${author}</p>
                 </li>
@@ -56,7 +69,7 @@ function createMarkupCategory(arr) {
     .join('');
 }
 
-createSelectedCategory("Trade Fiction Paperback");
+
 
 
 export { createSelectedCategory };
