@@ -7,7 +7,7 @@ const el = {
   list: document.querySelector('.content'),
 
   topOfCatecory: '',
-  buttonSeeMore:'',
+  buttonSeeMore: '',
 
   shoppingList: document.querySelector('.js-shopping-list'),
   emptyPage: document.querySelector('.js-empty-page'),
@@ -18,6 +18,17 @@ const el = {
 
   bookPopup: '',
   buttonAddToList: '',
+
+  // shoing list
+
+  // shoping list pagination
+
+  paginationContainer: document.querySelector('.pagination'),
+  paginationNumbers: document.getElementById('pagination-numbers'),
+  nextButton: document.getElementById('next-button'),
+  prevButton: document.getElementById('prev-button'),
+  toEnd: document.getElementById('to-end-button'),
+  toStart: document.getElementById('to-start-button'),
 };
 
 export { el };
