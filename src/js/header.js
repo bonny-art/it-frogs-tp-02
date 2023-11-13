@@ -75,8 +75,9 @@ const updateHeaderUser = userName => {
 };
 
 const mobileMenuButton = document.querySelector('.nav-mobile-menu');
-const burgerIcon = document.querySelector('.burger use');
-
+const burgerIcon = document.querySelector('.burger');
+const closeIcon = document.querySelector('.close-burger');
+closeIcon.classList.add('visually-hidden');
 // Відслідковуємо відкриття мобільного меню
 let isMobileMenuOpen = false;
 
@@ -87,16 +88,20 @@ function toggleMobileMenu() {
 
   //Змінюємо іконку та відкриваємо/закриваємо меню
   if (isMobileMenuOpen) {
-    burgerIcon.setAttribute(
-      'href',
-      '/images/header/header-defs.svg#icon-close-1'
-    );
+    // burgerIcon.setAttribute(
+    //   'href',
+    //   '/images/header/header-defs.svg#icon-close-1'
+    // );
+    closeIcon.classList.remove('visually-hidden');
+    burgerIcon.classList.add('visually-hidden');
     openMobileMenu();
   } else {
-    burgerIcon.setAttribute(
-      'href',
-      '/images/header/header-defs.svg#icon-burger-1'
-    );
+    // burgerIcon.setAttribute(
+    //   'href',
+    //   '/images/header/header-defs.svg#icon-burger-1'
+    // );
+    closeIcon.classList.add('visually-hidden');
+    burgerIcon.classList.remove('visually-hidden');
     closeMobileMenu();
   }
 }
