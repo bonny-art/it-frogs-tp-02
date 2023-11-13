@@ -18,6 +18,7 @@ const el = {
 
   bookPopup: '',
   buttonAddToList: '',
+  closeModalButton: '',
 
   // shoing list
 
