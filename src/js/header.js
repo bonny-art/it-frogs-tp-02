@@ -43,6 +43,10 @@ const headerUserName = document.querySelector('.user-signed');
 const headerUserLogo = document.querySelector('.menu-auth-logo');
 const userSignOut = document.querySelector('.sign-out');
 const logOut = document.querySelector('.js-logout');
+const authUp = document.querySelector('.auth-up');
+const authDown = document.querySelector('.auth-down');
+authUp.classList.add('visually-hidden');
+authDown.classList.remove('visually-hidden');
 
 //отримуємо ім'я користувача
 async function getNameForUpdateHeaderUser() {
@@ -62,7 +66,9 @@ headerUser.addEventListener('click', () => {
   handlerActionAuth();
 });
 userSignOut.addEventListener('click', () => {
-  logOut.classList.remove('visually-hidden');
+  logOut.classList.toggle('visually-hidden');
+  authDown.classList.toggle('visually-hidden');
+  authUp.classList.toggle('visually-hidden');
 });
 logOut.addEventListener('click', () => {
   logOutUser();
