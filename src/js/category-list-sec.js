@@ -12,10 +12,12 @@ import { el } from './refs';
       return;
     }
     const result = await fetchBookList();
-    const markup = result
-      .map(
-        item => `<li class="main-categories-list-item">${item.list_name}</li>`
-      )
+
+    // Сортировка категорий в алфавитном порядке
+    const sortedCategories = result.map(item => item.list_name).sort();
+
+    const markup = sortedCategories
+      .map(category => `<li class="main-categories-list-item">${category}</li>`)
       .join('');
 
     el.mainCategoriesList.innerHTML =
@@ -58,3 +60,55 @@ async function handleCategoryClick(event) {
     }
   }
 }
+
+// =====================================================
+
+// import { fetchBookList, fetchTopBooks, fetchBooksOfCategory } from './api';
+// import { createSelectedCategory } from './selected-category-sec';
+// import { createTopBooks } from './top-books-sec';
+// import { el } from './refs';
+
+// (async () => {
+//   try {
+//     if (document.getElementById('index') === null) {
+//       return;
+//     }
+//     const result = await fetchBookList();
+
+//     // Сортировка категорий в алфавитном порядке
+//     const sortedCategories = result.map(item => item.list_name).sort();
+
+//     const markup = sortedCategories
+//       .map(category => `<li class="main-categories-list-item">${category}</li>`)
+//       .join('');
+
+//     el.mainCategoriesList.innerHTML =
+//       '<li class="main-categories-list-item main-categories-list-item-active">All categories</li>' +
+//       markup;
+
+//     // Слушатель события для клика по категории:
+//     el.mainCategoriesList.addEventListener('click', handleCategoryClick);
+//   } catch (error) {
+//     console.log('An error:', error);
+//   }
+// })();
+
+// async function handleCategoryClick(event) {
+//   if (event.target.classList.contains('main-categories-list-item')) {
+//     for (const item of el.mainCategoriesList.children) {
+//       item.classList.remove('main-categories-list-item-active');
+//     }
+
+//     event.target.classList.add('main-categories-list-item-active');
+
+//     try {
+//       if (event.target.textContent.trim() === 'All categories') {
+//         createTopBooks();
+//       } else {
+//         createSelectedCategory(event.target.textContent);
+//       }
+//     } catch (error) {
+//       console.log('An error occurred:', error);
+//     }
+//   }
+// }
