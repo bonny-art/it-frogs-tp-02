@@ -68,6 +68,7 @@ async function handleCategoryClick(event) {
         createSelectedCategory(event.target.textContent);
       }
       // Скрываем лоадер после загрузки данных
+
       hideLoader();
     } catch (error) {
       console.log('An error occurred:', error);
