@@ -8,6 +8,9 @@ import { el } from './refs';
 
 (async () => {
   try {
+    if (document.getElementById('index') === null) {
+      return;
+    }
     const result = await fetchBookList();
     const markup = result
       .map(
@@ -18,14 +21,14 @@ import { el } from './refs';
     el.mainCategoriesList.innerHTML =
       '<li class="main-categories-list-item main-categories-list-item-active">All categories</li>' +
       markup;
+
+    // Слушатель события для клика по категории:
+
+    el.mainCategoriesList.addEventListener('click', handleCategoryClick);
   } catch (error) {
     console.log('An error:', error);
   }
 })();
-
-// Слушатель события для клика по категории:
-
-el.mainCategoriesList.addEventListener('click', handleCategoryClick);
 
 // Обработчик события для клика по категории:
 
@@ -51,7 +54,7 @@ async function handleCategoryClick(event) {
         createSelectedCategory(event.target.textContent);
       }
     } catch (error) {
-      console.error('An error occurred:', error);
+      console.log('An error occurred:', error);
     }
   }
 }
