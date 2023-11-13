@@ -1,5 +1,4 @@
 import { el } from './refs';
-localStorage.removeItem('books-list');
 
 const tempBookList = getFromLocalStorage();
 let perPageLimit = getPerPageLimit();
@@ -137,6 +136,10 @@ window.addEventListener('resize', () => {
 });
 
 function setCurrentPage(pageNum) {
+  if (document.getElementById('shopping') === null) {
+    return;
+  }
+
   currentPage = pageNum;
 
   handleActivePageNumber();
@@ -235,7 +238,7 @@ function createBookTemplate(bookList) {
                 <div class="image-thumb">
                 <picture>
                   <source srcset="${book.book_image}" type="image/jpg">
-                  <img class="shopping-book-cover" srcset="/images/shopping-list-sec/plug_x2.png 2x, /images/shopping-list-sec/plug_x1.png 1x" src="/images/shopping-list-sec/plug_x1.png" alt="plug">
+                  <img class="shopping-book-cover" srcset="./images/shopping-list-sec/plug_x2.png 2x, ./images/shopping-list-sec/plug_x1.png 1x" src="./images/shopping-list-sec/plug_x1.png" alt="plug">
                 </picture>
                 </div>
                 <div class="card-info">
@@ -246,15 +249,15 @@ function createBookTemplate(bookList) {
                 </div>
                 <button type="button" class="delete-btn js-delete-book">
                     <svg class="delete-svg" width="16" height="16">
-                        <use href="/images/shopping-list-sec/sprite.svg#trash"></use>
+                        <use href="./images/shopping-list-sec/sprite.svg#trash"></use>
                     </svg>
                 </button>
                 <div class="trade-fairs">
                   <a href="${book.buy_links[0].url}" target="_blank">
-                    <img class="amazon-img" src="/images/shopping-list-sec/amazon.svg" width="32" height="11"/>
+                    <img class="amazon-img" src="./images/shopping-list-sec/amazon.svg" width="32" height="11"/>
                   </a>
                   <a href="${book.buy_links[1].url}" target="_blank">
-                    <img class="apple-books-img" src="/images/shopping-list-sec/appleBooks.svg" width="16" height="16"/>
+                    <img class="apple-books-img" src="./images/shopping-list-sec/appleBooks.svg" width="16" height="16"/>
                   </a>
                 </div>
             </li>
