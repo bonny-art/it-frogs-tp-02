@@ -2,7 +2,8 @@ import { el } from './refs';
 localStorage.removeItem('books-list');
 
 const tempBookList = getFromLocalStorage();
-const perPageLimit = handlePerPageLimit();
+let perPageLimit = getPerPageLimit();
+let visibleButtons;
 let pageAmount = Math.ceil(tempBookList.length / perPageLimit);
 
 let currentPage;
@@ -49,7 +50,7 @@ function getFromLocalStorage() {
   }
 }
 
-window.addEventListener('resize', getPerPageLimit);
+// window.addEventListener('resize', getPerPageLimit);
 function getPerPageLimit() {
   if (window.innerWidth <= 767) {
     return 4;
@@ -58,12 +59,12 @@ function getPerPageLimit() {
   }
 }
 
-function handlePerPageLimit() {
-  const result = getPerPageLimit();
-  return result;
-}
+// function handlePerPageLimit() {
+//   const result = getPerPageLimit();
+//   return result;
+// }
 
-window.addEventListener('resize', getVisibleButtons);
+// window.addEventListener('resize', getVisibleButtons);
 function getVisibleButtons() {
   if (window.innerWidth <= 767) {
     return 2;
@@ -72,10 +73,10 @@ function getVisibleButtons() {
   }
 }
 
-function handleVisibleButtons() {
-  const result = getVisibleButtons();
-  return result;
-}
+// function handleVisibleButtons() {
+//   const result = getVisibleButtons();
+//   return result;
+// }
 
 function getItemsInBatch(startIndex, batchSize) {
   if (tempBookList) {
@@ -129,6 +130,12 @@ function enableButton(button) {
   button.removeAttribute('disabled');
 }
 
+window.addEventListener('resize', () => {
+  perPageLimit = getPerPageLimit();
+  visibleButtons = getVisibleButtons();
+  setCurrentPage(currentPage);
+});
+
 function setCurrentPage(pageNum) {
   currentPage = pageNum;
 
@@ -172,7 +179,8 @@ function handleActivePageNumber() {
 }
 
 function renderPagination() {
-  const maxVisibleButtons = handleVisibleButtons();
+  // const maxVisibleButtons = handleVisibleButtons();
+  const maxVisibleButtons = getVisibleButtons();
   el.paginationNumbers.innerHTML = '';
   pageAmount = Math.ceil(tempBookList.length / perPageLimit);
 
@@ -214,7 +222,7 @@ function renderPagination() {
         setCurrentPage(currentPage + 1);
       });
 
-      paginationNumbers.appendChild(ellipsisButton);
+      el.paginationNumbers.appendChild(ellipsisButton);
     }
   }
   handleActivePageNumber();
