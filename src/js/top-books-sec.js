@@ -44,14 +44,14 @@ function createTopBooks() {
     });
     })
     .catch(error => {
-      console.error('Помилка отримання або обробки даних:', error);
+      console.log('Помилка отримання або обробки даних:', error);
     })
     .finally(() => {});
 }
 
 function handleSeeMore(ev) {
     
-    console.log("123123",ev.currentTarget);
+    
     const categoryTittle = ev.target.dataset.category.trim();
     // для проверки работает она или нет поставил перезагружаться по нажатию
     createSelectedCategory(categoryTittle);
