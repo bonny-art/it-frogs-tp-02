@@ -96,3 +96,74 @@ body {
   color: #b4afaf;
 }
 
+/* ------------ shopping list ----------- */
+/* light theme colors */
+.shopping-book-card {
+  background-color: var(--col-white);
+  border: 2px solid rgba(79, 46, 232, 0.4);
+}
+
+.amazon-img {
+  filter: grayscale(100%);
+}
+
+.amazon-img:hover {
+  filter: grayscale(100%) drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
+}
+
+.apple-books-img {
+  filter: grayscale(100%);
+}
+
+.apple-books-img:hover {
+  filter: grayscale(100%) drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
+}
+
+.pagination-number.active {
+  background-color: var(--col-black);
+  color: var(--col-white);
+}
+
+.pagination-number,
+.pagination-button {
+  border-color: var(--col-black);
+}
+
+.pagination-button.disabled {
+  background-color: var(--col-black);
+}
+
+.pagination-button.disabled>.arrow-svg {
+  fill: var(--col-lt-gray);
+}
+
+.pagination-button:not(.disabled) {
+  background-color: var(--col-yellow);
+}
+
+.arrow-svg {
+  fill: var(--col-black);
+}
+
+.shopping-book-category {
+  color: var(--col-lt-gray);
+}
+
+.shopping-book-author {
+  color: var(--col-lt-gray);
+}
+
+.page-notification {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* ------- pop up --------- */
+.popup-button {
+  border: 2px solid var(--col-blue);
+  background-color: transparent;
+  color: var(--col-black);
+}
+
+.popup-descr {
+  color: var(--col-black);
+}

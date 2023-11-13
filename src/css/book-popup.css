@@ -1,3 +1,193 @@
 .book-popup {
   background-color: teal;
 }
+
+.popup-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  justify-content: space-between;
+  width: 335px;
+  max-height: 90vh;
+  border-radius: 18px;
+  border: 2px solid;
+  padding: 40px 24px;
+  overflow-y: auto;
+}
+
+.popup-info {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.popup-cover {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.popup-img {
+}
+
+.popup-about {
+}
+
+.popup-title {
+  font-family: DMSans-Bold;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 1.13;
+  letter-spacing: -0.04em;
+  margin-bottom: 4px;
+}
+
+.popup-author {
+  font-family: DMSans-Regular;
+  font-size: 12px;
+  font-style: italic;
+  line-height: 1.17;
+  letter-spacing: -0.04em;
+  margin-bottom: 18px;
+}
+
+.popup-descr {
+  font-family: DMSans-Regular;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: -0.04em;
+  margin-bottom: 14px;
+}
+
+.popup-store-list {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.popup-store {
+}
+
+.popup-store .popup-store-amazon {
+  width: 62px;
+}
+
+.popup-store .popup-store-apple {
+  width: 33px;
+}
+
+.popup-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 40px;
+  border: 2px solid;
+  font-size: 14px;
+  font-family: DMSans-Bold;
+  text-transform: uppercase;
+  line-height: 1.29;
+  min-width: 215px;
+  min-height: 50px;
+}
+
+/**
+  |============================
+  | light theme
+  |============================
+*/
+
+.popup-modal {
+  border-color: var(--col-black);
+  background: var(--col-white);
+}
+
+.popup-info {
+}
+
+.popup-cover {
+}
+
+.popup-img {
+}
+
+.popup-about {
+}
+
+.popup-title {
+  color: var(--col-black);
+}
+
+.popup-author {
+  color: var(--col-lt-gray);
+}
+
+.popup-descr {
+  color: var(--col-black);
+}
+
+.popup-store-list {
+}
+
+.popup-store {
+}
+
+.popup-store .popup-store-amazon {
+}
+
+.popup-store .popup-store-apple {
+}
+
+.popup-button {
+  border-color: var(--col-blue);
+}
+
+/**
+  |============================
+  | Black theme body.darkmode ***
+  |============================
+*/
+body.darkmode .popup-modal {
+  border-color: var(--col-white);
+  background: var(--col-bg-dark);
+}
+
+body.darkmode .popup-info {
+}
+
+body.darkmode .popup-cover {
+}
+
+body.darkmode .popup-img {
+}
+
+body.darkmode .popup-about {
+}
+
+body.darkmode .popup-title {
+  color: var(--col-white);
+}
+
+body.darkmode .popup-author {
+  color: var(--col-lt-gray);
+}
+
+body.darkmode .popup-descr {
+  color: var(--col-white);
+}
+
+body.darkmode .popup-store-list {
+}
+
+body.darkmode .popup-store {
+}
+
+body.darkmode .popup-store .popup-store-amazon {
+}
+
+body.darkmode .popup-store .popup-store-apple {
+}
+
+body.darkmode .popup-button {
+  border-color: var(--col-blue);
+}
