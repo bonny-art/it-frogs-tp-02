@@ -3,9 +3,10 @@
   justify-content: baseline;
   align-items: center;
   width: 100%;
-  padding: 18px;
-  border-radius: 0px 0px 8px 8px;
+  padding: 18px 0;
+  /* border-radius: 0px 0px 8px 8px; */
   margin: 0 auto;
+  z-index: 10;
 }
 
 .header-logo {
@@ -48,8 +49,8 @@
 
 .menu-auth {
   display: flex;
-  width: 118px;
-  height: 40px;
+  width: 184px;
+  height: 45px;
   align-items: center;
   justify-content: center;
   background: var(--col-blue);
@@ -83,6 +84,7 @@
 .menu-auth-icon {
   width: 23px;
   height: 26px;
+  fill: var(--col-white);
 }
 
 .nav-mobile-menu {
@@ -96,6 +98,7 @@
 .burger {
   stroke: var(--col-black);
   cursor: pointer;
+  transition: stroke 0.4s ease-in-out;
   /* margin-left: 14px; */
 }
 .burger:hover,
@@ -105,6 +108,7 @@
 .close {
   stroke: var(--col-black);
   cursor: pointer;
+  transition: stroke 0.4s ease-in-out;
   /* margin-left: 14px; */
 }
 .close:hover,
@@ -115,7 +119,7 @@
 @media screen and (min-width: 768px) {
   .nav-container {
     max-width: 768px;
-    padding: 22px;
+    padding: 14px 0;
   }
   .header-logo {
     margin-right: 40px;
@@ -144,6 +148,7 @@
     text-align: left;
     text-transform: uppercase;
     cursor: pointer;
+    transition: color 0.4s ease-in-out;
   }
   .nav-item:hover,
   .nav-item:focus {
@@ -211,7 +216,7 @@
 @media screen and (min-width: 1440px) {
   .nav-container {
     max-width: 1440px;
-    padding: 14px;
+    padding: 14px 0;
   }
 
   .header-logo {
