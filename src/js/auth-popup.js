@@ -122,7 +122,7 @@ function handlerActionAuth() {
       // alert('Wrong email!');
       Swal.fire({
         title: 'Error!',
-        text: 'Wrong email!',
+        text: 'Wrong email or not valid!',
         icon: 'error',
         confirmButtonText: 'Cool',
       });
@@ -176,7 +176,7 @@ function handlerActionAuth() {
       // alert('Wrong email!');
       Swal.fire({
         title: 'Error!',
-        text: 'Wrong email!',
+        text: 'Wrong email or not valid!',
         icon: 'error',
         confirmButtonText: 'Cool',
       });
