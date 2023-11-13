@@ -199,13 +199,7 @@ function togglePasswordVisibility() {
   }
 }
 
-passwordIconLocked.parentNode.addEventListener(
-  'click',
-  togglePasswordVisibility
-);
-passwordIconOpened.parentNode.addEventListener(
-  'click',
-  togglePasswordVisibility
-);
+passwordIconLocked.addEventListener('click', togglePasswordVisibility);
+passwordIconOpened.addEventListener('click', togglePasswordVisibility);
 
 export { handlerActionAuth, initAuthModal };
