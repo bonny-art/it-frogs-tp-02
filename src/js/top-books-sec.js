@@ -2,13 +2,13 @@ import { fetchTopBooks } from './api';
 import { createBookCard } from './book-popup';
 import { el } from './refs';
 import { createSelectedCategory } from './selected-category-sec';
-
+import Notiflix from 'notiflix';
 createTopBooks();
 
 function createTopBooks() {
   fetchTopBooks()
     .then(bookData => {
-      const markup = bookData.map((book, index) => `
+      const markup = bookData.map((book) => `
       <div>
         <h3 class="top-title">${book.list_name}</h3>
         <div class="swiper">
@@ -17,7 +17,9 @@ function createTopBooks() {
               <li class="li-top js-book-on-click swiper-slide" data-id="${book._id}">
                <div class="card-container">
           <div class="card">
-            <img class="img-top" src="${book.book_image || './images/shopping-list-sec/empty_page_mobile_1x.png'}" alt="Зображення відсутнє" />
+            <img class="img-top" src="${book.book_image || './images/shopping-list-sec/plug_x1.png'}"
+     srcset="${book.book_image || './images/shopping-list-sec/plug_x1.png'} 1x, 
+             ${book.book_image || './images/shopping-list-sec/plug_x2.png'} 2x"  alt="Зображення відсутнє" />
 
             <div class="overlay">
                <p class="quick-view">quick view</p>
@@ -53,6 +55,8 @@ function createTopBooks() {
     })
     .catch(error => {
       console.log('Помилка отримання або обробки даних:', error);
+      // alert ('Помилка отримання або обробки даних:')
+      // Notiflix.Notify.Failure('Что-то пошло не так!');
     })
     .finally(() => {});
 }
@@ -61,7 +65,7 @@ function handleSeeMore(ev) {
     
     
     const categoryTittle = ev.target.dataset.category.trim();
-    // для проверки работает она или нет поставил перезагружаться по нажатию
+    
     createSelectedCategory(categoryTittle);
 }
 export { createTopBooks };
