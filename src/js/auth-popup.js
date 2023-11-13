@@ -178,7 +178,8 @@ function initAuthModal() {
 }
 
 let passwordInput = document.getElementById('auth-password');
-let passwordIcon = document.querySelector('.auth-input-icon.hidden-pass-icon');
+let passwordIconLocked = document.querySelector('.locked-pass-icon');
+let passwordIconOpened = document.querySelector('.opened-pass-icon');
 let isPasswordVisible = false;
 
 // Змінюємо відображення паролю
@@ -187,23 +188,22 @@ function togglePasswordVisibility() {
 
   if (isPasswordVisible) {
     passwordInput.type = 'text';
-    // passwordInput.classList.remove('hidden-pass-icon');
-    // passwordInput.classList.add('shown-pass-icon');
-    passwordIcon.setAttribute(
-      'href',
-      '/images/header/header-defs.svg#icon-lock-unlocked'
-    );
+    passwordIconLocked.classList.add('visually-hidden');
+    passwordIconOpened.classList.remove('visually-hidden');
   } else {
     passwordInput.type = 'password';
-    // passwordInput.classList.remove('shownhidden-pass-icon');
-    // passwordInput.classList.add('hidden-pass-icon');
-    passwordIcon.setAttribute(
-      'href',
-      '/images/header/header-defs.svg#icon-lock-1'
-    );
+    passwordIconLocked.classList.remove('visually-hidden');
+    passwordIconOpened.classList.add('visually-hidden');
   }
 }
 
-passwordIcon.parentNode.addEventListener('click', togglePasswordVisibility);
+passwordIconLocked.parentNode.addEventListener(
+  'click',
+  togglePasswordVisibility
+);
+passwordIconOpened.parentNode.addEventListener(
+  'click',
+  togglePasswordVisibility
+);
 
 export { handlerActionAuth, initAuthModal };
