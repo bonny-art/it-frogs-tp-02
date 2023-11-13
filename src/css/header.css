@@ -28,7 +28,7 @@
   width: 77px;
   height: 13px;
   stroke: var(--col-black);
-  background: var(--col-bg-light);
+  /* background: var(--col-bg-light); */
 }
 
 .nav-menu {

@@ -1,21 +1,32 @@
 <p class="mobile-menu">mobile-menu</p>
 
-<!-- <button id="open-mobile-menu" data-modal="1" type="button">Мобильное меню</button> -->
+<button id="open-mobile-menu" data-modal="1" type="button">Мобильное меню</button>
 
 <div class="js-mobile-menu" data-modal="1">
-  <div class="modal"></div>
+
+
   <div class="user">
     <img src="" alt="" />
-    <span class="user-name">Stephen</span>
+    <span class="user-name"></span>
   </div>
+  
+
+
   <div class="buttons">
-    <button class="button-home button" type="button">HOME</button>
+    <button class="button-home button" type="button">Home</button>
     <button class="button-shopping-list button" type="button">
-      SHOPPING LIST
+      Shopping list<svg class="mob-shoppinglist-icon">
+        <use href="/images/header/header-defs.svg#icon-uil_cart"></use>
+      </svg>
     </button>
-  </div>
-  <div class="images">
+    
+    <!-- /images/header/header-defs.svg#icon-uil_cart -->
+    <!-- /images/header/header-defs.svg#icon-arrow-narrow-right-1 -->
   </div>
 
-  <button class="button-log-out button" type="button">Log out</button>
+  <button class="button-log-out button" type="button">Log out<svg class="mob-log-out-icon">
+    <use href="/images/header/header-defs.svg#icon-arrow-narrow-right-1"></use>
+  </svg></button>
+  <div class="modal"></div>
+
 </div>

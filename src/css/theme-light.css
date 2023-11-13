@@ -34,6 +34,9 @@ body {
 }
 
 /* -------------- HEADER -------------- */
+.header-logo-title {
+  background: var(--col-white);
+}
 
 .nav-container {
   border: 1.5px solid var(--col-black);
@@ -60,8 +63,10 @@ body {
 
 /* -------------- TOP -------------- */
 
-.top-title-boks {
-  color: var(--col-black);
+
+ .top-bth {
+  background-color: transparent;
+  color: #111111;
 }
 
 /* --------------  -------------- */
@@ -70,9 +75,7 @@ body {
   fill: currentColor;
 }
 
-/* .shopping-list {
-    color: #111111;
-} */
+
 
 /* body */
 
@@ -92,3 +95,4 @@ body {
 .book-author {
   color: #b4afaf;
 }
+

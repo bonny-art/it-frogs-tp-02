@@ -22,8 +22,6 @@ function createBookCard(evt) {
 
   console.log('bookId', bookId);
 
-  console.log('el.bookPopup'), el.bookPopup;
-
   fetchBookById(bookId)
     .then(book => {
       const { book_image, title, author, description, buy_links } = book;
@@ -52,15 +50,16 @@ function createBookCard(evt) {
       );
 
       const instance = basicLightbox.create(`
-    <div class="modal-window">${markup}</div>    
+    <div class="popup-modal">${markup}</div>    
 `);
       instance.show();
 
-      el.buttonAddToList = document.querySelector('.add-to-list');
+      el.buttonAddToList = document.querySelector('.popup-button');
       el.buttonAddToList.addEventListener(
         'click',
         onButtonBookPopupClick.bind(book)
       );
+      document.addEventListener('keydown', handlerPress.bind(instance));
     })
     .catch(error => {
       alert(`Error: ${error}`);
@@ -99,27 +98,29 @@ function createMarkup(
   buttonText
 ) {
   return `
-    <div class="book-image">
-      <img class="img-book-cover" src="${bookCover}" alt="${title}" />
+    <div class="popup-info">
+      <div class="popup-cover">
+        <img class="popup-img" src="${bookCover}" alt="${title}" />
+      </div>
+      <div class="popup-about">
+        <h2 class="popup-title">${title}</h2>
+        <p class="popup-author">${author}</p>
+        <p class="popup-descr">${descr}</p>
+        <ul class="popup-store-list">
+          <li class="popup-store popup-store-amazon">
+            <a href="${amazonLink}">
+            <img src="../images/book-popup/amazon.svg" alt="" />
+            </a>
+          </li>
+          <li class="popup-store popup-store-apple">
+            <a href="${appleBooksLink}">
+            <img src="../images/book-popup/appleBooks.svg" alt="" />
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div>
-      <h2 class="book-title">${title}</h2>
-      <p class="book-author">${author}</p>
-      <p class="book-descr">${descr}</p>
-    <ul>
-      <li>
-        <a href="${amazonLink}">
-        <img src="../images/book-popup/amazon.svg" alt="" />
-        </a>
-      </li>
-      <li>
-        <a href="${appleBooksLink}">
-        <img src="../images/book-popup/appleBooks.svg" alt="" />
-        </a>
-      </li>
-    </ul>
-    </div>
-    <button class="add-to-list">${buttonText}</button>
+    <button class="popup-button">${buttonText}</button>
     `;
 }
 
@@ -153,3 +154,5 @@ function handlerPress(event) {
   this.close();
   document.removeEventListener('keydown', handlerPress);
 }
+
+export { createBookCard };
