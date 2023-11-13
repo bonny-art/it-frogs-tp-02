@@ -178,9 +178,7 @@ function initAuthModal() {
 }
 
 let passwordInput = document.getElementById('auth-password');
-let passwordIcon = document.querySelector(
-  '.auth-input-icon use[href="/images/header/header-defs.svg#icon-lock-1"]'
-);
+let passwordIcon = document.querySelector('.auth-input-icon.hidden-pass-icon');
 let isPasswordVisible = false;
 
 // Змінюємо відображення паролю
@@ -189,12 +187,16 @@ function togglePasswordVisibility() {
 
   if (isPasswordVisible) {
     passwordInput.type = 'text';
+    // passwordInput.classList.remove('hidden-pass-icon');
+    // passwordInput.classList.add('shown-pass-icon');
     passwordIcon.setAttribute(
       'href',
       '/images/header/header-defs.svg#icon-lock-unlocked'
     );
   } else {
     passwordInput.type = 'password';
+    // passwordInput.classList.remove('shownhidden-pass-icon');
+    // passwordInput.classList.add('hidden-pass-icon');
     passwordIcon.setAttribute(
       'href',
       '/images/header/header-defs.svg#icon-lock-1'

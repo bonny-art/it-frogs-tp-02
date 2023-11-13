@@ -2,6 +2,7 @@
 //   location.reload();
 // });
 
+import './js/test';
 import './js/theme-dark-light';
 import './js/api';
 import './js/refs';
