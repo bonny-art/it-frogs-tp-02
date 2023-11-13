@@ -15,14 +15,22 @@ function createTopBooks() {
           <ul class="list-item swiper-wrapper">
             ${book.books.slice(0, 5).map((book) => `
               <li class="li-top js-book-on-click swiper-slide" data-id="${book._id}">
-               <img class="img-top" src="${book.book_image || './images/shopping-list-sec/empty_page_mobile_1x.png'}" alt="Зображення відсутнє" />
+               <div class="card-container">
+          <div class="card">
+            <img class="img-top" src="${book.book_image || './images/shopping-list-sec/empty_page_mobile_1x.png'}" alt="Зображення відсутнє" />
+
+            <div class="overlay">
+               <p class="quick-view">quick view</p>
+             </div>
+          </div>
+       </div>
                 <p class="top-bookTitle">${book.title}</p>
                 <p class="top-bookAuthor">${book.author}</p>
               </li>`).join("")}
           </ul>
         </div>
       </div>
-      <div class="top-button">
+        <div class="top-button">
           <button class="top-bth top-bth-js" data-category="${book.list_name}" type="submit">see more</button>
         </div>
       `).join("");
