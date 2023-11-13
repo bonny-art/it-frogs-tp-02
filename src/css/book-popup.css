@@ -13,6 +13,7 @@
   border: 2px solid;
   padding: 40px 24px;
   overflow-y: auto;
+  position: relative;
 }
 
 .popup-info {
@@ -91,6 +92,33 @@
   min-height: 50px;
 }
 
+.popup-close-button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: none;
+}
+
+.popup-icon {
+}
+
+.popup-close-button:hover,
+.popup-close-button:focus {
+  border: none;
+}
+
+.popup-close-button:hover .popup-icon,
+.popup-close-button:focus .popup-icon {
+}
+
 /**
   |============================
   | light theme
@@ -142,6 +170,25 @@
   border-color: var(--col-blue);
 }
 
+.popup-close-button {
+  background-color: transparent;
+}
+
+.popup-icon {
+  stroke: var(--col-black);
+}
+
+.popup-close-button:hover,
+.popup-close-button:focus {
+  background-color: var(--ocean-color);
+  border: none;
+}
+
+.popup-close-button:hover .popup-icon,
+.popup-close-button:focus .popup-icon {
+  fill: var(--white-color);
+}
+
 /**
   |============================
   | Black theme body.darkmode ***
@@ -190,4 +237,22 @@ body.darkmode .popup-store .popup-store-apple {
 
 body.darkmode .popup-button {
   border-color: var(--col-blue);
+}
+
+body.darkmode .popup-button {
+  border-color: var(--col-blue);
+}
+
+body.darkmode .popup-close-button {
+  background-color: var(--cornflower-color);
+}
+
+body.darkmode .popup-icon {
+  stroke: var(--col-white);
+}
+
+body.darkmode .popup-close-button:hover,
+.popup-close-button:focus {
+  background-color: var(--ocean-color);
+  border: none;
 }

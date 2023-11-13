@@ -3,6 +3,7 @@ import { fetchBookById } from './api';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import * as basicLightbox from 'basiclightbox';
 import '../../node_modules/basiclightbox/dist/basicLightbox.min.css';
+import icons from '/images/book-popup/icons.svg';
 
 import { el } from './refs';
 
@@ -55,11 +56,16 @@ function createBookCard(evt) {
       instance.show();
 
       el.buttonAddToList = document.querySelector('.popup-button');
+      el.closeModalButton = document.querySelector('.popup-close-button');
       el.buttonAddToList.addEventListener(
         'click',
         onButtonBookPopupClick.bind(book)
       );
       document.addEventListener('keydown', handlerPress.bind(instance));
+      el.closeModalButton.addEventListener(
+        'click',
+        handlerClose.bind(instance)
+      );
     })
     .catch(error => {
       alert(`Error: ${error}`);
@@ -125,6 +131,11 @@ function createMarkup(
       </div>
     </div>
     <button class="popup-button">${buttonText}</button>
+    <button class="popup-close-button" type="button" data-modal-close>
+      <svg class="popup-icon" width="8" height="8">
+        <use href="${icons}#close-btn"></use>
+      </svg>
+    </button>
     `;
 }
 
@@ -151,12 +162,17 @@ function removeFromLocalStorage({ _id: bookId }) {
   addToLocalStorage(newBooks);
 }
 
+//Закриття модального вікна
 function handlerPress(event) {
   if (event.key !== 'Escape') {
     return;
   }
   this.close();
   document.removeEventListener('keydown', handlerPress);
+}
+
+function handlerClose() {
+  this.close();
 }
 
 export { createBookCard };
