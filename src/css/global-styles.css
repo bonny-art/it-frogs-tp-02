@@ -185,3 +185,7 @@ body {
 .js-book-on-click {
   cursor: pointer;
 }
+
+.is-hidden {
+  display: none;
+}

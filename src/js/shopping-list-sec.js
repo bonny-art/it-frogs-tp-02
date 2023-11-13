@@ -1,13 +1,17 @@
 import { el } from './refs';
-localStorage.removeItem('books-list');
 
 const tempBookList = getFromLocalStorage();
-const perPageLimit = handlePerPageLimit();
+let perPageLimit = getPerPageLimit();
+let visibleButtons;
 let pageAmount = Math.ceil(tempBookList.length / perPageLimit);
 
 let currentPage;
 
 window.addEventListener('load', () => {
+  if (document.getElementById('shopping') === null) {
+    return;
+  }
+
   setCurrentPage(1);
 
   el.prevButton.addEventListener('click', () => {
@@ -45,7 +49,7 @@ function getFromLocalStorage() {
   }
 }
 
-window.addEventListener('resize', getPerPageLimit);
+// window.addEventListener('resize', getPerPageLimit);
 function getPerPageLimit() {
   if (window.innerWidth <= 767) {
     return 4;
@@ -54,12 +58,12 @@ function getPerPageLimit() {
   }
 }
 
-function handlePerPageLimit() {
-  const result = getPerPageLimit();
-  return result;
-}
+// function handlePerPageLimit() {
+//   const result = getPerPageLimit();
+//   return result;
+// }
 
-window.addEventListener('resize', getVisibleButtons);
+// window.addEventListener('resize', getVisibleButtons);
 function getVisibleButtons() {
   if (window.innerWidth <= 767) {
     return 2;
@@ -68,10 +72,10 @@ function getVisibleButtons() {
   }
 }
 
-function handleVisibleButtons() {
-  const result = getVisibleButtons();
-  return result;
-}
+// function handleVisibleButtons() {
+//   const result = getVisibleButtons();
+//   return result;
+// }
 
 function getItemsInBatch(startIndex, batchSize) {
   if (tempBookList) {
@@ -98,16 +102,6 @@ function getPaginationNumbers(startNum, endNum) {
   }
 }
 
-function disableButton(button) {
-  button.classList.add('disabled');
-  button.setAttribute('disabled', true);
-}
-
-function enableButton(button) {
-  button.classList.remove('disabled');
-  button.removeAttribute('disabled');
-}
-
 function handlePageButtonsStatus() {
   if (currentPage === 1) {
     disableButton(el.prevButton);
@@ -125,15 +119,36 @@ function handlePageButtonsStatus() {
   }
 }
 
+function disableButton(button) {
+  button.classList.add('disabled');
+  button.setAttribute('disabled', true);
+}
+
+function enableButton(button) {
+  button.classList.remove('disabled');
+  button.removeAttribute('disabled');
+}
+
+window.addEventListener('resize', () => {
+  perPageLimit = getPerPageLimit();
+  visibleButtons = getVisibleButtons();
+  setCurrentPage(currentPage);
+});
+
 function setCurrentPage(pageNum) {
+  if (document.getElementById('shopping') === null) {
+    return;
+  }
+
   currentPage = pageNum;
 
-  handlePageButtonsStatus();
   handleActivePageNumber();
+  handlePageButtonsStatus();
 
   const startIndex = (pageNum - 1) * perPageLimit;
+  const currRange = pageNum * perPageLimit;
 
-  const listBatch = getItemsInBatch(startIndex, perPageLimit);
+  const listBatch = getItemsInBatch(startIndex, currRange);
 
   if (listBatch.length != 0) {
     el.shoppingList.innerHTML = '';
@@ -144,7 +159,7 @@ function setCurrentPage(pageNum) {
     el.shoppingList.addEventListener('click', deleteFromCart);
   }
   if (pageAmount === 1) {
-    paginationContainer.style.display = 'none';
+    el.paginationContainer.style.display = 'none';
   }
   if (tempBookList.length === 0) {
     el.paginationContainer.classList.add('hidden');
@@ -167,9 +182,9 @@ function handleActivePageNumber() {
 }
 
 function renderPagination() {
-  const paginationNumbers = document.getElementById('pagination-numbers');
-  const maxVisibleButtons = handleVisibleButtons();
-  paginationNumbers.innerHTML = '';
+  // const maxVisibleButtons = handleVisibleButtons();
+  const maxVisibleButtons = getVisibleButtons();
+  el.paginationNumbers.innerHTML = '';
   pageAmount = Math.ceil(tempBookList.length / perPageLimit);
 
   if (currentPage > pageAmount) {
@@ -195,7 +210,7 @@ function renderPagination() {
         setCurrentPage(startPage - 1);
       });
 
-      paginationNumbers.appendChild(ellipsisButton);
+      el.paginationNumbers.appendChild(ellipsisButton);
     }
 
     getPaginationNumbers(startPage, endPage);
@@ -210,7 +225,7 @@ function renderPagination() {
         setCurrentPage(currentPage + 1);
       });
 
-      paginationNumbers.appendChild(ellipsisButton);
+      el.paginationNumbers.appendChild(ellipsisButton);
     }
   }
   handleActivePageNumber();
@@ -223,7 +238,7 @@ function createBookTemplate(bookList) {
                 <div class="image-thumb">
                 <picture>
                   <source srcset="${book.book_image}" type="image/jpg">
-                  <img class="shopping-book-cover" srcset="/images/shopping-list-sec/plug_x2.png 2x, /images/shopping-list-sec/plug_x1.png 1x" src="/images/shopping-list-sec/plug_x1.png" alt="plug">
+                  <img class="shopping-book-cover" srcset="./images/shopping-list-sec/plug_x2.png 2x, ./images/shopping-list-sec/plug_x1.png 1x" src="./images/shopping-list-sec/plug_x1.png" alt="plug">
                 </picture>
                 </div>
                 <div class="card-info">
@@ -234,15 +249,15 @@ function createBookTemplate(bookList) {
                 </div>
                 <button type="button" class="delete-btn js-delete-book">
                     <svg class="delete-svg" width="16" height="16">
-                        <use href="/images/shopping-list-sec/sprite.svg#trash"></use>
+                        <use href="./images/shopping-list-sec/sprite.svg#trash"></use>
                     </svg>
                 </button>
                 <div class="trade-fairs">
                   <a href="${book.buy_links[0].url}" target="_blank">
-                    <img class="amazon-img" src="/images/shopping-list-sec/amazon.svg" width="32" height="11"/>
+                    <img class="amazon-img" src="./images/shopping-list-sec/amazon.svg" width="32" height="11"/>
                   </a>
                   <a href="${book.buy_links[1].url}" target="_blank">
-                    <img class="apple-books-img" src="/images/shopping-list-sec/appleBooks.svg" width="16" height="16"/>
+                    <img class="apple-books-img" src="./images/shopping-list-sec/appleBooks.svg" width="16" height="16"/>
                   </a>
                 </div>
             </li>
