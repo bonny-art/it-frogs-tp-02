@@ -8,6 +8,10 @@ let pageAmount = Math.ceil(tempBookList.length / perPageLimit);
 let currentPage;
 
 window.addEventListener('load', () => {
+  if (document.getElementById('shopping') === null) {
+    return;
+  }
+
   setCurrentPage(1);
 
   el.prevButton.addEventListener('click', () => {
@@ -98,16 +102,6 @@ function getPaginationNumbers(startNum, endNum) {
   }
 }
 
-function disableButton(button) {
-  button.classList.add('disabled');
-  button.setAttribute('disabled', true);
-}
-
-function enableButton(button) {
-  button.classList.remove('disabled');
-  button.removeAttribute('disabled');
-}
-
 function handlePageButtonsStatus() {
   if (currentPage === 1) {
     disableButton(el.prevButton);
@@ -125,15 +119,26 @@ function handlePageButtonsStatus() {
   }
 }
 
+function disableButton(button) {
+  button.classList.add('disabled');
+  button.setAttribute('disabled', true);
+}
+
+function enableButton(button) {
+  button.classList.remove('disabled');
+  button.removeAttribute('disabled');
+}
+
 function setCurrentPage(pageNum) {
   currentPage = pageNum;
 
-  handlePageButtonsStatus();
   handleActivePageNumber();
+  handlePageButtonsStatus();
 
   const startIndex = (pageNum - 1) * perPageLimit;
+  const currRange = pageNum * perPageLimit;
 
-  const listBatch = getItemsInBatch(startIndex, perPageLimit);
+  const listBatch = getItemsInBatch(startIndex, currRange);
 
   if (listBatch.length != 0) {
     el.shoppingList.innerHTML = '';
@@ -167,9 +172,8 @@ function handleActivePageNumber() {
 }
 
 function renderPagination() {
-  const paginationNumbers = document.getElementById('pagination-numbers');
   const maxVisibleButtons = handleVisibleButtons();
-  paginationNumbers.innerHTML = '';
+  el.paginationNumbers.innerHTML = '';
   pageAmount = Math.ceil(tempBookList.length / perPageLimit);
 
   if (currentPage > pageAmount) {
@@ -195,7 +199,7 @@ function renderPagination() {
         setCurrentPage(startPage - 1);
       });
 
-      paginationNumbers.appendChild(ellipsisButton);
+      el.paginationNumbers.appendChild(ellipsisButton);
     }
 
     getPaginationNumbers(startPage, endPage);
