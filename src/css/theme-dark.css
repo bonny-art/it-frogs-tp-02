@@ -137,6 +137,16 @@ body.darkmode .main-categories-box::-webkit-scrollbar-thumb {
   background: rgba(17, 17, 17, 0.6);
 }
 
+/* selected category sec */
+body.darkmode .selected-category-book-title {
+    color: var(--col-white);
+}
+
+/* ------- pop up --------- */
+body.darkmode .popup-button {
+    color: var(--col-white);
+}
+
 /* -------modal-------- */
 /* auth-popup */
 body.darkmode .auth-container {
