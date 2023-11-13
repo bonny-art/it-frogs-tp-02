@@ -5,12 +5,14 @@
 .popup-modal {
   display: flex;
   flex-direction: column;
+  gap: 44px;
   justify-content: space-between;
   width: 335px;
-  min-height: 762px;
+  max-height: 90vh;
   border-radius: 18px;
   border: 2px solid;
   padding: 40px 24px;
+  overflow-y: auto;
 }
 
 .popup-info {
@@ -86,7 +88,7 @@
   text-transform: uppercase;
   line-height: 1.29;
   min-width: 215px;
-  height: 50px;
+  min-height: 50px;
 }
 
 /**
