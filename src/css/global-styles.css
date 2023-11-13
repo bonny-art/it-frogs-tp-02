@@ -176,6 +176,10 @@ body {
   .content {
     flex-grow: 1;
   }
+
+  .shopping-content {
+    flex-grow: 1;
+  }
 }
 
 .js-book-on-click {

@@ -5,26 +5,32 @@ import { el } from './refs';
 
 // "async" запрос данных о списке книг с сервера и
 // формируем HTML-разметку для списка категорий, а разметку вставляем в item
+
 (async () => {
   try {
+    if (document.getElementById('index') === null) {
+      return;
+    }
     const result = await fetchBookList();
-    const markup = result
-      .map(
-        item => `<li class="main-categories-list-item">${item.list_name}</li>`
-      )
+
+    // Сортировка категорий в алфавитном порядке
+    const sortedCategories = result.map(item => item.list_name).sort();
+
+    const markup = sortedCategories
+      .map(category => `<li class="main-categories-list-item">${category}</li>`)
       .join('');
 
     el.mainCategoriesList.innerHTML =
       '<li class="main-categories-list-item main-categories-list-item-active">All categories</li>' +
       markup;
+
+    // Слушатель события для клика по категории:
+
+    el.mainCategoriesList.addEventListener('click', handleCategoryClick);
   } catch (error) {
-    console.error('An error:', error);
+    console.log('An error:', error);
   }
 })();
-
-// Слушатель события для клика по категории:
-
-el.mainCategoriesList.addEventListener('click', handleCategoryClick);
 
 // Обработчик события для клика по категории:
 
@@ -50,7 +56,7 @@ async function handleCategoryClick(event) {
         createSelectedCategory(event.target.textContent);
       }
     } catch (error) {
-      console.error('An error occurred:', error);
+      console.log('An error occurred:', error);
     }
   }
 }

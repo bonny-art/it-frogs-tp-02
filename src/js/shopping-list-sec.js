@@ -1,12 +1,40 @@
-import { el } from './refs.js';
-const paginationContainer = document.querySelector('.pagination');
-const paginationNumbers = document.getElementById('pagination-numbers');
-const nextButton = document.getElementById('next-button');
-const prevButton = document.getElementById('prev-button');
-const toEnd = document.getElementById('to-end-button');
-const toStart = document.getElementById('to-start-button');
-
+import { el } from './refs';
 localStorage.removeItem('books-list');
+
+const tempBookList = getFromLocalStorage();
+const perPageLimit = handlePerPageLimit();
+let pageAmount = Math.ceil(tempBookList.length / perPageLimit);
+
+let currentPage;
+
+window.addEventListener('load', () => {
+  setCurrentPage(1);
+
+  el.prevButton.addEventListener('click', () => {
+    setCurrentPage(currentPage - 1);
+  });
+  el.nextButton.addEventListener('click', () => {
+    setCurrentPage(currentPage + 1);
+  });
+  el.toEnd.addEventListener('click', () => {
+    setCurrentPage(pageAmount);
+  });
+  el.toStart.addEventListener('click', () => {
+    setCurrentPage(1);
+  });
+
+  document
+    .getElementById('pagination-numbers')
+    .addEventListener('click', switchPage);
+});
+
+function switchPage(e) {
+  const button = e.target;
+  if (button.classList.contains('pagination-page-number')) {
+    const pageIndex = Number(button.getAttribute('page-index'));
+    setCurrentPage(pageIndex);
+  }
+}
 
 function getFromLocalStorage() {
   const tempBookList = JSON.parse(localStorage.getItem('booksList'));
@@ -17,9 +45,8 @@ function getFromLocalStorage() {
   }
 }
 
-const tempBookList = getFromLocalStorage();
-
-function getPaginationLimit() {
+window.addEventListener('resize', getPerPageLimit);
+function getPerPageLimit() {
   if (window.innerWidth <= 767) {
     return 4;
   } else {
@@ -27,29 +54,46 @@ function getPaginationLimit() {
   }
 }
 
+function handlePerPageLimit() {
+  const result = getPerPageLimit();
+  return result;
+}
+
+window.addEventListener('resize', getVisibleButtons);
+function getVisibleButtons() {
+  if (window.innerWidth <= 767) {
+    return 2;
+  } else {
+    return 3;
+  }
+}
+
+function handleVisibleButtons() {
+  const result = getVisibleButtons();
+  return result;
+}
+
 function getItemsInBatch(startIndex, batchSize) {
   if (tempBookList) {
-    return tempBookList.slice(startIndex, startIndex + batchSize);
+    return tempBookList.slice(startIndex, batchSize);
   } else {
     return [];
   }
 }
 
-const paginationLimit = getPaginationLimit();
-const pageCount = Math.ceil(tempBookList.length / paginationLimit);
-let currentPage;
-
 function appendPageNumber(index) {
   const pageNumber = document.createElement('button');
-  pageNumber.className = 'pagination-number';
+  pageNumber.classList.add('pagination-page-number');
+  pageNumber.classList.add('pagination-number');
   pageNumber.innerHTML = index;
   pageNumber.setAttribute('page-index', index);
   pageNumber.setAttribute('aria-label', 'Page ' + index);
-  paginationNumbers.appendChild(pageNumber);
+
+  el.paginationNumbers.appendChild(pageNumber);
 }
 
-function getPaginationNumbers() {
-  for (let i = 1; i <= pageCount; i++) {
+function getPaginationNumbers(startNum, endNum) {
+  for (let i = startNum; i <= endNum; i++) {
     appendPageNumber(i);
   }
 }
@@ -66,71 +110,49 @@ function enableButton(button) {
 
 function handlePageButtonsStatus() {
   if (currentPage === 1) {
-    disableButton(prevButton);
-    disableButton(toStart);
+    disableButton(el.prevButton);
+    disableButton(el.toStart);
   } else {
-    enableButton(prevButton);
-    enableButton(toStart);
+    enableButton(el.prevButton);
+    enableButton(el.toStart);
   }
-  if (pageCount === currentPage) {
-    disableButton(nextButton);
-    disableButton(toEnd);
+  if (pageAmount === currentPage) {
+    disableButton(el.nextButton);
+    disableButton(el.toEnd);
   } else {
-    enableButton(nextButton);
-    enableButton(toEnd);
+    enableButton(el.nextButton);
+    enableButton(el.toEnd);
   }
 }
-
-window.addEventListener('load', () => {
-  getPaginationNumbers();
-  setCurrentPage(1);
-
-  prevButton.addEventListener('click', () => {
-    setCurrentPage(currentPage - 1);
-  });
-  nextButton.addEventListener('click', () => {
-    setCurrentPage(currentPage + 1);
-  });
-  toEnd.addEventListener('click', () => {
-    setCurrentPage(pageCount);
-  });
-  toStart.addEventListener('click', () => {
-    setCurrentPage(1);
-  });
-
-  document.querySelectorAll('.pagination-number').forEach(button => {
-    const pageIndex = Number(button.getAttribute('page-index'));
-    if (pageIndex) {
-      button.addEventListener('click', () => {
-        setCurrentPage(pageIndex);
-      });
-    }
-  });
-});
 
 function setCurrentPage(pageNum) {
   currentPage = pageNum;
 
-  handleActivePageNumber();
   handlePageButtonsStatus();
+  handleActivePageNumber();
 
-  const prevRange = (pageNum - 1) * paginationLimit;
-  const currRange = pageNum * paginationLimit;
+  const startIndex = (pageNum - 1) * perPageLimit;
 
-  const listBatch = getItemsInBatch(prevRange, currRange);
+  const listBatch = getItemsInBatch(startIndex, perPageLimit);
 
-  if (listBatch.length > 0 || tempBookList.length > 0) {
+  if (listBatch.length != 0) {
     el.shoppingList.innerHTML = '';
     el.shoppingList.insertAdjacentHTML(
       'afterbegin',
       createBookTemplate(listBatch)
     );
     el.shoppingList.addEventListener('click', deleteFromCart);
-    paginationContainer.classList.remove('hidden');
-  } else {
-    el.emptyPage.classList.remove('hidden');
-    paginationContainer.classList.add('hidden');
   }
+  if (pageAmount === 1) {
+    el.paginationContainer.style.display = 'none';
+  }
+  if (tempBookList.length === 0) {
+    el.paginationContainer.classList.add('hidden');
+    el.emptyPage.classList.remove('hidden');
+  } else {
+    el.paginationContainer.classList.remove('hidden');
+  }
+  renderPagination();
 }
 
 function handleActivePageNumber() {
@@ -142,6 +164,56 @@ function handleActivePageNumber() {
       button.classList.add('active');
     }
   });
+}
+
+function renderPagination() {
+  const paginationNumbers = document.getElementById('pagination-numbers');
+  const maxVisibleButtons = handleVisibleButtons();
+  paginationNumbers.innerHTML = '';
+  pageAmount = Math.ceil(tempBookList.length / perPageLimit);
+
+  if (currentPage > pageAmount) {
+    setCurrentPage(pageAmount);
+  }
+
+  if (pageAmount <= maxVisibleButtons) {
+    getPaginationNumbers(1, pageAmount);
+  } else {
+    const startPage = Math.max(
+      currentPage - Math.floor(maxVisibleButtons / 2),
+      1
+    );
+    const endPage = Math.min(startPage + maxVisibleButtons - 1, pageAmount);
+
+    if (startPage > 1) {
+      const ellipsisButton = document.createElement('button');
+
+      ellipsisButton.className = 'pagination-number';
+      ellipsisButton.textContent = '...';
+
+      ellipsisButton.addEventListener('click', () => {
+        setCurrentPage(startPage - 1);
+      });
+
+      paginationNumbers.appendChild(ellipsisButton);
+    }
+
+    getPaginationNumbers(startPage, endPage);
+
+    if (endPage < pageAmount) {
+      const ellipsisButton = document.createElement('button');
+
+      ellipsisButton.className = 'pagination-number';
+      ellipsisButton.textContent = '...';
+
+      ellipsisButton.addEventListener('click', () => {
+        setCurrentPage(currentPage + 1);
+      });
+
+      paginationNumbers.appendChild(ellipsisButton);
+    }
+  }
+  handleActivePageNumber();
 }
 
 function createBookTemplate(bookList) {
@@ -180,21 +252,30 @@ function createBookTemplate(bookList) {
 }
 
 function deleteFromCart(e) {
-  if (!e.target.parentNode.classList.contains('js-delete-book')) {
+  const button = e.target.closest('.js-delete-book');
+
+  if (!button) {
     return;
   }
 
-  const card = e.target.closest('.shopping-book-card');
+  const card = button.closest('.shopping-book-card');
   const bookId = card.dataset['bookId'];
   const bookIndex = tempBookList.findIndex(item => item._id === bookId);
 
   if (bookIndex != -1) {
-    console.log(bookIndex);
     tempBookList.splice(bookIndex, 1);
     localStorage.setItem('booksList', JSON.stringify(tempBookList));
 
     card.remove();
 
+    const cardsOnCurrentPage =
+      perPageLimit - (tempBookList.length % perPageLimit);
+
+    if (cardsOnCurrentPage === perPageLimit && currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+
     setCurrentPage(currentPage);
+    renderPagination();
   }
 }
