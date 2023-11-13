@@ -78,10 +78,6 @@ body.darkmode .main-categories-list-item-active {
   color: var(--col-yellow);
 }
 
-body.darkmode .main-categories-box::-webkit-scrollbar-thumb {
-  background: var(--col-gray-60);
-}
-
 /* -------------- TOP -------------- */
 
 body.darkmode .top-title-books {
