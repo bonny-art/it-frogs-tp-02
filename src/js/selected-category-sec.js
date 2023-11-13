@@ -44,11 +44,9 @@ function createMarkupCategory(arr) {
   return arr
     .map(({ author, title, book_image, _id }) => {
       return `<li class="card-wrapper  js-book-on-click" data-id="${_id}">
-                   <div selected-category-book-img">
-                      <img src="${book_image}" alt="${title}">
-                   </div>
-                   <h2 class="selected-category-book-title">${title}</h2>
-                   <p class="selected-category-book-author">${author}</p>
+                 <img class="selected-category-img" src="${book_image}" alt="${title}">
+                 <h2 class="selected-category-book-title">${title}</h2>
+                 <p class="selected-category-book-author">${author}</p>
                 </li>
    `;
     })
