@@ -189,7 +189,7 @@ body {
 .is-hidden {
   display: none;
 }
-
+/* 
 .parrent {
   background-color: red;
 }
@@ -197,4 +197,4 @@ body {
 .test-input-icon {
   stroke: #111111;
   fill: white;
-}
+} */
