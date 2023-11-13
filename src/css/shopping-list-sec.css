@@ -27,7 +27,6 @@
 }
 
 .shopping-book-card {
-  border: 2px solid rgba(79, 46, 232, 0.4);
   border-radius: 16px;
   height: auto;
   display: flex;
@@ -102,7 +101,6 @@
 
 .shopping-book-category {
   position: absolute;
-  color: var(--col-lt-gray);
   font-family: DMSans-Regular;
   font-size: 12px;
   line-height: 1.1667;
@@ -160,7 +158,6 @@
 
 .shopping-book-author {
   position: absolute;
-  color: var(--col-lt-gray);
   font-family: DMSans-Regular-Italic;
   font-size: 12px;
   line-height: 1.166;
@@ -388,81 +385,3 @@
   }
 }
 
-/* light theme colors */
-.shopping-book-card {
-  background-color: var(--col-white);
-}
-
-.amazon-img {
-  filter: grayscale(100%);
-}
-.amazon-img:hover {
-  filter: grayscale(100%) drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
-}
-
-.apple-books-img {
-  filter: grayscale(100%);
-}
-.apple-books-img:hover {
-  filter: grayscale(100%) drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
-}
-
-.pagination-number.active {
-  background-color: var(--col-black);
-  color: var(--col-white);
-}
-
-.pagination-number,
-.pagination-button {
-  border-color: var(--col-black);
-}
-
-.pagination-button.disabled {
-  background-color: var(--col-black);
-}
-.pagination-button.disabled > .arrow-svg {
-  fill: var(--col-lt-gray);
-}
-.pagination-button:not(.disabled) {
-  background-color: var(--col-yellow);
-}
-.arrow-svg {
-  fill: var(--col-black);
-}
-
-/* dark mode colors */
-body.darkmode .shopping-book-card {
-  background-color: var(--col-black);
-}
-
-body.darkmode .amazon-img {
-  filter: brightness(0) invert(1);
-}
-body.darkmode .amazon-img:hover {
-  filter: brightness(0) invert(1)
-    drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
-}
-
-body.darkmode .apple-books-img {
-  filter: grayscale(100%);
-}
-body.darkmode .apple-books-img:hover {
-  filter: grayscale(100%) drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
-}
-
-body.darkmode .pagination-number.active {
-  background-color: var(--col-white);
-  color: var(--col-black);
-}
-
-body.darkmode .pagination-number {
-  color: var(--col-white);
-  border-color: var(--col-white);
-}
-
-body.darkmode .pagination-button.disabled {
-  border-color: var(--col-black);
-}
-body.darkmode .pagination-button.disabled > .arrow-svg {
-  fill: var(--col-white);
-}

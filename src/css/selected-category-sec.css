@@ -57,7 +57,6 @@
   }
 
   .selected-category-book-author{
-    color: #B4AFAF;
     font-family: DMSans-Regular;
     font-size: 12px;
     font-style: italic;
@@ -133,41 +132,13 @@
 }
 
 
-.second-half {
-  color: #4F2EE8;
-}
-
-
-/**
-  |============================
-  | світла тема
-  |============================
-*/
-
-.selected-category-title{
-  color: #111;
-}
-
-.selected-category-book-title{
-  color: #111;
-}
 
 
 
-/**
-  |============================
-  | темна тема
-  |============================
-*/
 
 
-/* .selected-category-title{
-  color: #FFF;
-}
 
-.selected-category-book-title{
-  color: #FFF;
-} */
+
 
 
 

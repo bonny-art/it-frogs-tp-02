@@ -94,12 +94,6 @@
   | light theme
   |============================
 */
-
-.popup-modal {
-  border-color: var(--col-black);
-  background: var(--col-white);
-}
-
 .popup-info {
 }
 
@@ -110,18 +104,6 @@
 }
 
 .popup-about {
-}
-
-.popup-title {
-  color: var(--col-black);
-}
-
-.popup-author {
-  color: var(--col-lt-gray);
-}
-
-.popup-descr {
-  color: var(--col-black);
 }
 
 .popup-store-list {
@@ -136,19 +118,12 @@
 .popup-store .popup-store-apple {
 }
 
-.popup-button {
-  border-color: var(--col-blue);
-}
 
 /**
   |============================
   | Black theme body.darkmode ***
   |============================
 */
-body.darkmode .popup-modal {
-  border-color: var(--col-white);
-  background: var(--col-bg-dark);
-}
 
 body.darkmode .popup-info {
 }
@@ -162,18 +137,6 @@ body.darkmode .popup-img {
 body.darkmode .popup-about {
 }
 
-body.darkmode .popup-title {
-  color: var(--col-white);
-}
-
-body.darkmode .popup-author {
-  color: var(--col-lt-gray);
-}
-
-body.darkmode .popup-descr {
-  color: var(--col-white);
-}
-
 body.darkmode .popup-store-list {
 }
 
@@ -184,8 +147,4 @@ body.darkmode .popup-store .popup-store-amazon {
 }
 
 body.darkmode .popup-store .popup-store-apple {
-}
-
-body.darkmode .popup-button {
-  border-color: var(--col-blue);
 }
