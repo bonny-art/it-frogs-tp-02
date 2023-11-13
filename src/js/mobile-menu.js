@@ -8,7 +8,7 @@ const btnLogOut = document.querySelector('.button-log-out');
 // console.log(btnOpenMenu);
 // console.log(mobMenu);
 // console.log(btnHome);
-
+console.log('hello');
 btnOpenMenu.addEventListener('click', openMobMenu);
 btnHome.addEventListener('click', goHome);
 btnShoppingList.addEventListener('click', openShoppingList);
