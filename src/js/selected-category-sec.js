@@ -1,6 +1,7 @@
 import { fetchBooksOfCategory } from './api.js';
 import { createBookCard } from './book-popup';
 import { el } from './refs.js';
+import { showLoader, hideLoader } from './loader.js'
 
 
 
@@ -10,7 +11,9 @@ import { el } from './refs.js';
  */
 async function createSelectedCategory(category) {
   try {
+    showLoader();
     const arrOfBooks = await fetchBooksOfCategory(category);
+    hideLoader();
     const markUp = createMarkupCategory(arrOfBooks);
     const styledTitle = styleSectionTitle(category);
 
@@ -53,7 +56,7 @@ function createMarkupCategory(arr) {
     .join('');
 }
 
-createSelectedCategory();
+createSelectedCategory("Trade Fiction Paperback");
 
 
 export { createSelectedCategory };
