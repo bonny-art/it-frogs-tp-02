@@ -5,6 +5,7 @@ import { el } from './refs';
 
 // "async" запрос данных о списке книг с сервера и
 // формируем HTML-разметку для списка категорий, а разметку вставляем в item
+
 (async () => {
   try {
     const result = await fetchBookList();
