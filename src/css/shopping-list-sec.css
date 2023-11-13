@@ -27,7 +27,8 @@
 }
 
 .shopping-book-card {
-  border: 2px solid rgba(79, 46, 232, 0.4);
+  border-width: 2px;
+  border-style: solid;
   border-radius: 16px;
   height: auto;
   display: flex;
@@ -102,7 +103,6 @@
 
 .shopping-book-category {
   position: absolute;
-  color: var(--col-lt-gray);
   font-family: DMSans-Regular;
   font-size: 12px;
   line-height: 1.1667;
@@ -160,7 +160,6 @@
 
 .shopping-book-author {
   position: absolute;
-  color: var(--col-lt-gray);
   font-family: DMSans-Regular-Italic;
   font-size: 12px;
   line-height: 1.166;

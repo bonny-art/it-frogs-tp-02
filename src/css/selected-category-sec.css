@@ -171,4 +171,46 @@
 
 
 
+/**
+  |============================
+  | overlay
+  |============================
+*/
 
+.selected-category-img-box{
+  width: 100%;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.selected-category-img-box:hover .selected-category-overlay{
+  transform: translateY(0);
+}
+
+.selected-category-overlay{
+  border-radius: 0px 0px 8px 8px;
+  background: #EAC645;
+  display: flex;
+  height: 70px;
+  width: 100%;
+  padding: 0px 52px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  
+  transform: translateY(100%);
+  transition: transform 250ms ease-in-out;
+}
+
+
+
+.selected-category-overlay-text{
+  font-family: DMSans-Medium;
+  font-size: 14px;
+  line-height: 1.13;
+  /* 128.571% */
+  letter-spacing: -0.56px;
+  text-transform: uppercase;}
