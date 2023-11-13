@@ -144,7 +144,7 @@ function setCurrentPage(pageNum) {
     el.shoppingList.addEventListener('click', deleteFromCart);
   }
   if (pageAmount === 1) {
-    paginationContainer.style.display = 'none';
+    el.paginationContainer.style.display = 'none';
   }
   if (tempBookList.length === 0) {
     el.paginationContainer.classList.add('hidden');
