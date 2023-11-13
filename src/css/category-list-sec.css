@@ -1,3 +1,9 @@
+.category-list-sec {
+  background-color: teal;
+  color: yellowgreen;
+}
+
+
 .main-categories-box {
   display: block;
   overflow-y: scroll;
@@ -5,7 +11,7 @@
 }
 
 .main-categories-box::-webkit-scrollbar {
-  width: 10px;
+  width: 16px;
   /* width of the entire scrollbar */
 }
 
@@ -21,7 +27,6 @@
   height: 114px;
   border-radius: 12px;
   background: #e0e0e0;
-
 }
 
 /* перетаскиваемый маркер прокрутки */
@@ -74,8 +79,15 @@
   }
 }
 
-
-/* .category-list-sec {
-  background-color: teal;
-  color: yellowgreen;
+/* .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 } */
