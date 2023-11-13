@@ -96,3 +96,13 @@ body {
   color: #b4afaf;
 }
 
+/* ------- pop up --------- */
+.popup-button {
+  border: 2px solid var(--col-blue);
+  background-color: transparent;
+  color: var(--col-black);
+}
+
+.popup-descr {
+  color: var(--col-black);
+}
