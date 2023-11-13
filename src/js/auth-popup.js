@@ -170,6 +170,8 @@ function handlerActionAuth() {
 }
 //ініціюємо початковий стан модалки
 function initAuthModal() {
+  passwordIconLocked.classList.remove('visually-hidden');
+  passwordIconOpened.classList.add('visually-hidden');
   authSwitcherSignUp.classList.remove('.auth-toggler-active');
   authSwitcherSignIn.classList.add('.auth-toggler-active');
   authName.classList.add('visually-hidden');
