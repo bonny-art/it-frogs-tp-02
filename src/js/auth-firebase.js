@@ -19,15 +19,14 @@ const firebaseConfig = {
   messagingSenderId: '589688307018',
   appId: '1:589688307018:web:e010a81c7decb75d56d5b3',
 };
+import Swal from 'sweetalert2';
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
 const registrationUser = async (email, password) => {
-  return createUserWithEmailAndPassword(auth, email, password).then(
-    alert('Account created! Welcome!')
-  );
+  return createUserWithEmailAndPassword(auth, email, password);
 };
 
 const setUserName = async userName => {
@@ -38,9 +37,7 @@ const setUserName = async userName => {
 };
 
 const loginUser = async (email, password) => {
-  return signInWithEmailAndPassword(auth, email, password).then(
-    alert('Welcome back!')
-  );
+  return signInWithEmailAndPassword(auth, email, password);
 };
 
 const isAuthUser = async () => {
@@ -101,8 +98,17 @@ const returnAuth = () => {
 
 function logOutUser() {
   signOut(auth).then(() => {
-    alert('Seen later!');
-    window.location.href = 'index.html';
+    // alert('Seen later!');
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Seen later!',
+      showConfirmButton: false,
+      timer: 1500,
+    });
+    setTimeout(() => {
+      window.location.href = 'index.html';
+    }, 1500);
   });
 }
 export {

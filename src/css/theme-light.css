@@ -50,6 +50,9 @@ body {
 .burger {
   stroke: var(--col-black);
 }
+.close-burger {
+  stroke: var(--col-black);
+}
 
 /* -------------- CATEGORIES -------------- */
 
@@ -63,8 +66,7 @@ body {
 
 /* -------------- TOP -------------- */
 
-
- .top-bth {
+.top-bth {
   background-color: transparent;
   color: #111111;
 }
@@ -74,8 +76,6 @@ body {
 .nav-shoppinglist-icon {
   fill: currentColor;
 }
-
-
 
 /* body */
 
@@ -133,7 +133,7 @@ body {
   background-color: var(--col-black);
 }
 
-.pagination-button.disabled>.arrow-svg {
+.pagination-button.disabled > .arrow-svg {
   fill: var(--col-lt-gray);
 }
 

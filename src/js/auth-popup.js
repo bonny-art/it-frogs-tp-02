@@ -7,7 +7,7 @@ import {
 } from './auth-firebase';
 
 import { updateHeaderUser } from './header';
-// import Swal from 'sweetalert2';
+import Swal from 'sweetalert2';
 // import Notiflix from 'notiflix';
 
 const authModal = document.querySelector('.auth-modal');
@@ -26,7 +26,7 @@ function handlerActionAuth() {
   //прибирає слухачів після закриття модального вікна
   function removeListenersAuthModal() {
     authClose.removeEventListener('click', handlerOnClose);
-    document.removeEventListener('click', clickDocumentAuthForm);
+    // document.removeEventListener('click', clickDocumentAuthForm);
     document.removeEventListener('keydown', keydownDocumentAuthForm);
     authSwitcherSignUp.removeEventListener('click', clickAuthSwitcherSignUp);
     authSwitcherSignIn.removeEventListener('click', clickAuthSwitcherSignIn);
@@ -39,17 +39,18 @@ function handlerActionAuth() {
     removeListenersAuthModal();
   }
   authClose.addEventListener('click', handlerOnClose);
-  //кліком закриваємо модалку
-  const clickDocumentAuthForm = evt => {
-    if (
-      !evt.composedPath().includes(authForm) &&
-      evt.composedPath().includes(authModal)
-    ) {
-      authModal.classList.add('visually-hidden');
-      removeListenersAuthModal();
-    }
-  };
-  document.addEventListener('click', clickDocumentAuthForm);
+  // //кліком закриваємо модалку
+  // const clickDocumentAuthForm = evt => {
+  //   if (
+  //     !evt.composedPath().includes(authForm) &&
+  //     evt.composedPath().includes(authModal)
+  //   ) {
+  //     authModal.classList.add('visually-hidden');
+  //     removeListenersAuthModal();
+  //   }
+  // };
+  // document.addEventListener('click', clickDocumentAuthForm);
+
   //закриваємо модалку кнопкою
   const keydownDocumentAuthForm = evt => {
     if (evt.key == 'Escape') {
@@ -109,19 +110,22 @@ function handlerActionAuth() {
       if (password.length >= 5) {
         login(email, password);
       } else {
-        alert('The password must be at least 5 characters long!');
-        // Notiflix.Notify.failure(
-        //   'The password must be at least 5 characters long!'
-        // );
-        // Swal.fire({
-        //   title: 'Error!',
-        //   text: 'Do you want to continue',
-        //   icon: 'error',
-        //   confirmButtonText: 'Cool',
-        // });
+        // alert('The password must be at least 5 characters long!');
+        Swal.fire({
+          title: 'Error!',
+          text: 'The password must be at least 5 characters long!',
+          icon: 'error',
+          confirmButtonText: 'Cool',
+        });
       }
     } else {
-      alert('Wrong email!');
+      // alert('Wrong email!');
+      Swal.fire({
+        title: 'Error!',
+        text: 'Wrong email or not valid!',
+        icon: 'error',
+        confirmButtonText: 'Cool',
+      });
     }
   };
   authSignIn.addEventListener('click', clickAuthLogin);
@@ -160,10 +164,22 @@ function handlerActionAuth() {
           registration(email, password, name);
         }
       } else {
-        alert('The password must be at least 5 characters long!');
+        // alert('The password must be at least 5 characters long!');
+        Swal.fire({
+          title: 'Error!',
+          text: 'The password must be at least 5 characters long!',
+          icon: 'error',
+          confirmButtonText: 'Cool',
+        });
       }
     } else {
-      alert('Wrong email!');
+      // alert('Wrong email!');
+      Swal.fire({
+        title: 'Error!',
+        text: 'Wrong email or not valid!',
+        icon: 'error',
+        confirmButtonText: 'Cool',
+      });
     }
   };
   authSignUp.addEventListener('click', clickAuthRegistration);
