@@ -9,7 +9,6 @@ axios.defaults.baseURL = 'https://books-backend.p.goit.global/books/';
 
 async function fetchBookList() {
   const resp = await axios.get(`category-list`).then(resp => resp.data);
-  console.log('список категорій', resp);
   return resp;
 }
 fetchBookList();
@@ -23,7 +22,7 @@ fetchBookList();
  */
 async function fetchTopBooks() {
   const resp = await axios.get(`top-books`).then(resp => resp.data);
-  console.log('топ 5 в кожній категорії', resp);
+  
   return resp;
 }
 fetchTopBooks();
@@ -40,7 +39,7 @@ async function fetchBooksOfCategory(category) {
   const resp = await axios
     .get(`category?category=${category}`)
     .then(resp => resp.data);
-  console.log('книги з вибраної категорії', resp);
+  
   return resp;
 }
 fetchBooksOfCategory('Childrens Middle Grade Hardcover');
@@ -57,7 +56,7 @@ fetchBooksOfCategory('Childrens Middle Grade Hardcover');
  */
 async function fetchBookById(bookId) {
   const resp = await axios.get(`${bookId}`).then(resp => resp.data);
-  console.log(`вибрана книга`, resp);
+  
   return resp;
 }
 fetchBookById('643282b1e85766588626a0dc');
