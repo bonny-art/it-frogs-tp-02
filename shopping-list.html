@@ -25,8 +25,8 @@
       referrerpolicy="no-referrer"
     />
     <script type="module" crossorigin src="/it-frogs-tp-02/assets/vendor-551e154b.js"></script>
-    <script type="module" crossorigin src="/it-frogs-tp-02/assets/btn-scroll-up-ea77264b.js"></script>
-    <link rel="stylesheet" href="/it-frogs-tp-02/assets/btn-scroll-up-08944d3d.css">
+    <script type="module" crossorigin src="/it-frogs-tp-02/assets/btn-scroll-up-3855496e.js"></script>
+    <link rel="stylesheet" href="/it-frogs-tp-02/assets/btn-scroll-up-6ca9ae7b.css">
     <link rel="stylesheet" href="/it-frogs-tp-02/assets/vendor-b3ce9496.css">
   </head>
   <body id="shopping">
@@ -257,42 +257,65 @@
 </div>
 
     <div class="auth-modal visually-hidden">
-    <div class="auth-container">
-        <button class="auth-logout visually-hidden" type="button">LogOut</button>
-        <button class="auth-close-btn" type="button">
-            <svg class="auth-close-icon" width="28" height="28">
-                <use href="/it-frogs-tp-02/assets/header-defs-006b49d6.svg#icon-close-1"></use>
-            </svg>
+  <div class="auth-container">
+    <button class="auth-logout visually-hidden" type="button">LogOut</button>
+    <button class="auth-close-btn" type="button">
+      <svg class="auth-close-icon" width="28" height="28">
+        <use href="/it-frogs-tp-02/assets/header-defs-006b49d6.svg#icon-close-1"></use>
+      </svg>
+    </button>
+    <form class="auth-form">
+      <div class="auth-form-container">
+        <div class="auth-field-input">
+          <input
+            type="text"
+            class="auth-input"
+            id="auth-name"
+            placeholder="NAME"
+          />
+        </div>
+        <div class="auth-field-input">
+          <input
+            type="email"
+            class="auth-input"
+            id="auth-email"
+            placeholder="EMAIL"
+          />
+          <svg class="auth-input-icon">
+            <use href="/it-frogs-tp-02/assets/header-defs-006b49d6.svg#icon-mail-1"></use>
+          </svg>
+        </div>
+        <div class="auth-field-input">
+          <input
+            type="password"
+            class="auth-input"
+            id="auth-password"
+            placeholder="PASSWORD"
+          />
+          <svg class="auth-input-icon hidden-pass-icon">
+            <use href="/it-frogs-tp-02/assets/header-defs-006b49d6.svg#icon-lock-1"></use>
+          </svg>
+        </div>
+      </div>
+      <button class="auth-sign auth-sign-up visually-hidden" type="button">
+        sign up
+      </button>
+      <button class="auth-sign auth-sign-in" type="button">sign in</button>
+      <div class="auth-toggler">
+        <button class="auth-toggler auth-toggler-sign-up" type="button">
+          sign up
         </button>
-        <form class="auth-form">
-            <div class="auth-form-container">
-                <div class="auth-field-input">
-                    <input type="text" class="auth-input" id="auth-name" placeholder="NAME" />
-                </div>
-                <div class="auth-field-input">
-                    <input type="email" class="auth-input" id="auth-email" placeholder="EMAIL" />
-                    <svg class="auth-input-icon">
-                        <use href="/it-frogs-tp-02/assets/header-defs-006b49d6.svg#icon-mail-1"></use>
-                    </svg>
-                </div>
-                <div class="auth-field-input">
-                    <input type="password" class="auth-input" id="auth-password" placeholder="PASSWORD" />
-                    <svg class="auth-input-icon">
-                        <use href="/it-frogs-tp-02/assets/header-defs-006b49d6.svg#icon-lock-1"></use>
-                    </svg>
-                </div>
-            </div>
-            <button class="auth-sign auth-sign-up visually-hidden" type="button">sign up</button>
-            <button class="auth-sign auth-sign-in" type="button">sign in</button>
-            <div class="auth-toggler">
-                <button class="auth-toggler auth-toggler-sign-up" type="button">sign up</button>
-                <button class="auth-toggler auth-toggler-sign-in auth-toggler-active" type="button">
-                    sign in
-                </button>
-            </div>
-        </form>
-    </div>
+        <button
+          class="auth-toggler auth-toggler-sign-in auth-toggler-active"
+          type="button"
+        >
+          sign in
+        </button>
+      </div>
+    </form>
+  </div>
 </div>
+
     <div class="aaa">
   <button class="js-book-on-click" data-id="643282b2e85766588626a144">
     aaaaaa
