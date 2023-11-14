@@ -91,6 +91,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    width: 37%;
     max-width: 123px;
   }
 }
@@ -115,6 +116,7 @@
     white-space: nowrap;
     left: 128px;
     top: 36px;
+    width: 43%;
     max-width: 144px;
   }
 }
@@ -138,6 +140,7 @@
 }
 @media screen and (max-width: 767px) {
   .shopping-book-description {
+    width: 50%;
     max-width: 178px;
     max-height: 68px;
     left: 128px;
@@ -172,6 +175,7 @@
     white-space: nowrap;
     bottom: 14px;
     left: 128px;
+    width: 29%;
     max-width: 120px;
   }
 }
@@ -342,6 +346,7 @@
   border-style: solid;
   border-width: 1.5px;
   width: 38px;
+  max-width: 38px;
   height: 38px;
   border-radius: 50%;
 }
