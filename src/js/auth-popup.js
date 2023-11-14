@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
 
 const authModal = document.querySelector('.auth-modal');
 const authClose = document.querySelector('.auth-close-btn');
-const authForm = document.querySelector('.auth-container');
+// const authForm = document.querySelector('.auth-container');
 const authSwitcherSignUp = document.querySelector('.auth-toggler-sign-up');
 const authSwitcherSignIn = document.querySelector('.auth-toggler-sign-in');
 const authName = document.querySelector('#auth-name');
@@ -20,13 +20,12 @@ const authEmail = document.querySelector('#auth-email');
 const authPassword = document.querySelector('#auth-password');
 const authSignUp = document.querySelector('.auth-sign-up');
 const authSignIn = document.querySelector('.auth-sign-in');
-const authIsLogged = document.querySelector('auth-logged-container');
+// const authIsLogged = document.querySelector('auth-logged-container');
 
 function handlerActionAuth() {
   //прибирає слухачів після закриття модального вікна
   function removeListenersAuthModal() {
     authClose.removeEventListener('click', handlerOnClose);
-    // document.removeEventListener('click', clickDocumentAuthForm);
     document.removeEventListener('keydown', keydownDocumentAuthForm);
     authSwitcherSignUp.removeEventListener('click', clickAuthSwitcherSignUp);
     authSwitcherSignIn.removeEventListener('click', clickAuthSwitcherSignIn);
@@ -35,25 +34,16 @@ function handlerActionAuth() {
   }
   //ховає модальне вікно
   function handlerOnClose() {
+    document.body.classList.remove('modal-open');
     authModal.classList.add('visually-hidden');
     removeListenersAuthModal();
   }
   authClose.addEventListener('click', handlerOnClose);
-  // //кліком закриваємо модалку
-  // const clickDocumentAuthForm = evt => {
-  //   if (
-  //     !evt.composedPath().includes(authForm) &&
-  //     evt.composedPath().includes(authModal)
-  //   ) {
-  //     authModal.classList.add('visually-hidden');
-  //     removeListenersAuthModal();
-  //   }
-  // };
-  // document.addEventListener('click', clickDocumentAuthForm);
 
   //закриваємо модалку кнопкою
   const keydownDocumentAuthForm = evt => {
     if (evt.key == 'Escape') {
+      document.body.classList.remove('modal-open');
       authModal.classList.add('visually-hidden');
       removeListenersAuthModal();
     }
@@ -89,20 +79,41 @@ function handlerActionAuth() {
       .then(() => {
         getUserName()
           .then(getUserNameRes => {
+            const message = `${getUserNameRes.data().name}!`;
+            Swal.fire({
+              title: message,
+              text: 'welcome back!',
+              icon: 'success',
+              confirmButtonText: 'Ok',
+            });
             updateHeaderUser(getUserNameRes.data().name);
             authModal.classList.add('visually-hidden');
-            removeListenersAuthModal();
-            location.reload();
+            setTimeout(() => {
+              removeListenersAuthModal();
+              location.reload();
+            }, 2000);
           })
           .catch(getUserNameError => {
-            alert(`Get user name error: ${getUserNameError.code}`);
+            const message = `${getUserNameError.code}`;
+            Swal.fire({
+              title: 'Get user name error:',
+              text: message,
+              icon: 'error',
+              confirmButtonText: 'Ok',
+            });
           });
       })
       .catch(signInAppError => {
-        alert(`Authorization error: ${signInAppError.code}`);
+        const message = `${signInAppError.code}`;
+        Swal.fire({
+          title: 'Authorization error:',
+          text: message,
+          icon: 'error',
+          confirmButtonText: 'Ok',
+        });
       });
   };
-  //лігинімся
+  //логінімся
   const clickAuthLogin = () => {
     const email = authEmail.value.trim();
     const password = authPassword.value.trim();
@@ -115,7 +126,7 @@ function handlerActionAuth() {
           title: 'Error!',
           text: 'The password must be at least 5 characters long!',
           icon: 'error',
-          confirmButtonText: 'Cool',
+          confirmButtonText: 'Ok',
         });
       }
     } else {
@@ -124,33 +135,61 @@ function handlerActionAuth() {
         title: 'Error!',
         text: 'Wrong email or not valid!',
         icon: 'error',
-        confirmButtonText: 'Cool',
+        confirmButtonText: 'Ok',
       });
     }
   };
   authSignIn.addEventListener('click', clickAuthLogin);
+
   //обробка реєстрації
   const registration = async (email, password, name) => {
     registrationUser(email, password)
       .then(() => {
         setUserName(name)
           .then(() => {
+            const message = `${name},`;
+            Swal.fire({
+              title: message,
+              text: 'Your account has been created! Welcome!',
+              icon: 'success',
+              confirmButtonText: 'Ok',
+            });
             updateHeaderUser(name);
             authModal.classList.add('visually-hidden');
-            removeListenersAuthModal();
-            location.reload();
+            setTimeout(() => {
+              removeListenersAuthModal();
+              location.reload();
+            }, 2000);
           })
           .catch(setUserNameError => {
-            alert(`Create account error: ${setUserNameError.code}`);
+            const message = `${createAccountError.code}`;
+            Swal.fire({
+              title: 'Create account error: ',
+              text: message,
+              icon: 'error',
+              confirmButtonText: 'Ok',
+            });
             removeAccount()
               .then(() => {})
               .catch(removeAccountError => {
-                alert(`Create account error: ${removeAccountError.code}`);
+                const message = `${removeAccountError.code}`;
+                Swal.fire({
+                  title: 'Create account error: ',
+                  text: message,
+                  icon: 'error',
+                  confirmButtonText: 'Ok',
+                });
               });
           });
       })
       .catch(createAccountError => {
-        alert(`Create account error: ${createAccountError.code}`);
+        const message = `${createAccountError.code}`;
+        Swal.fire({
+          title: 'Create account error: ',
+          text: message,
+          icon: 'error',
+          confirmButtonText: 'Ok',
+        });
       });
   };
   //реєструємось
@@ -158,18 +197,19 @@ function handlerActionAuth() {
     const email = authEmail.value.trim();
     const password = authPassword.value.trim();
     const name = authName.value.trim();
+    const displayName = name.length > 0 ? name : 'Anonim';
     if (validateEmail(email)) {
       if (password.length >= 5) {
-        if (name.length > 0) {
-          registration(email, password, name);
-        }
+        // if (name.length > 0) {
+        registration(email, password, displayName);
+        // }
       } else {
         // alert('The password must be at least 5 characters long!');
         Swal.fire({
           title: 'Error!',
           text: 'The password must be at least 5 characters long!',
           icon: 'error',
-          confirmButtonText: 'Cool',
+          confirmButtonText: 'Ok',
         });
       }
     } else {
@@ -178,7 +218,7 @@ function handlerActionAuth() {
         title: 'Error!',
         text: 'Wrong email or not valid!',
         icon: 'error',
-        confirmButtonText: 'Cool',
+        confirmButtonText: 'Ok',
       });
     }
   };

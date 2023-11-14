@@ -71,6 +71,15 @@ body.darkmode .header-logo-title {
   background: var(--col-bg-dark);
 }
 
+body.darkmode .js-logout {
+  background: var(--col-bg-dark);
+  border: 1px solid var(--col-white);
+}
+
+body.darkmode .menu-username2 {
+  color: var(--col-white);
+}
+
 body.darkmode .burger {
   stroke: var(--col-white);
 }
@@ -195,45 +204,46 @@ body.darkmode .selected-category-book-title {
 
 /* ------- pop up --------- */
 body.darkmode .popup-under-button {
-    color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 body.darkmode .popup-icon {
-    stroke: var(--col-white);
+  stroke: var(--col-white);
 }
 
 body.darkmode .popup-icon:hover,
 body.darkmode .popup-icon:focus {
-    stroke: var(--col-blue);
+  stroke: var(--col-blue);
 }
 
 body.darkmode .popup-modal {
-    border: 2px solid var(--col-white);
-    background: var(--col-bg-dark);
+  border: 2px solid var(--col-white);
+  background: var(--col-bg-dark);
 }
 
 body.darkmode .popup-title {
-    color: var(--col-white);
+  color: var(--col-white);
 }
 
 body.darkmode .popup-descr {
-    color: var(--col-white);
+  color: var(--col-white);
 }
 
 body.darkmode .popup-store-icon.popup-store-icon-amazon {
-    filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1);
 }
 
 body.darkmode .popup-store-icon.popup-store-icon-apple {
-    filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 
 body.darkmode .popup-store-icon.popup-store-icon-amazon:hover {
-    filter: brightness(0) invert(1) drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
+  filter: brightness(0) invert(1)
+    drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
 }
 
 body.darkmode .popup-button {
-    color: var(--col-white);
+  color: var(--col-white);
 }
 
 /* -------modal-------- */
@@ -275,18 +285,18 @@ body.darkmode .auth-toggler-active {
 }
 
 body.darkmode .locked-pass-icon {
-    stroke: #f6f6f6;
-    fill: transparent;
+  stroke: #f6f6f6;
+  fill: transparent;
 }
 
 body.darkmode .opened-pass-icon {
-    stroke: #f6f6f6;
-    fill: transparent;
+  stroke: #f6f6f6;
+  fill: transparent;
 }
 
 body.darkmode .auth-close-icon:hover,
 body.darkmode .auth-close-icon:focus {
-    stroke: var(--col-blue);
+  stroke: var(--col-blue);
 }
 
 /*============================|LOADER|===========================*/

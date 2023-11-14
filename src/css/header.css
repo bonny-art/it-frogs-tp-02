@@ -6,7 +6,6 @@
   padding: 18px 0;
   /* border-radius: 0px 0px 8px 8px; */
   margin: 0 auto;
-  z-index: 10;
 }
 
 .header-logo {
@@ -67,18 +66,30 @@
   z-index: 1;
 }
 
-.menu-username2 {
-  color: var(--col-black);
-}
-
 .menu-auth-logo {
   width: 37px;
   height: 37px;
   margin-right: 9px;
+  border: 1px solid var(--col-black);
 }
 
 .menu-username {
   margin-right: 4px;
+}
+
+.menu-username2,
+.menu-username3 {
+  font-family: DMSans;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+  text-align: left;
+}
+.menu-username2 {
+  color: var(--col-black);
+}
+.menu-username3 {
+  color: var(--col-white);
 }
 
 .menu-auth-icon {
