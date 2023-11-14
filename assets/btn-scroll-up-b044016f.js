@@ -3,7 +3,7 @@ import{a as B,i as Fe,g as Pe,b as Qe,c as $e,d as le,s as Oe,S as v,e as Ne,f a
 `,{onShow:L=>{document.body.style.overflow="hidden"},onClose:L=>{document.body.style.overflow="visible"}});b.show(),s.bookPopupImage=document.querySelector(".popup-img"),s.bookPopupImage.onerror=function(){s.bookPopupImage.src=ht,console.log(s.bookPopupImage)},s.buttonAddToList=document.querySelector(".popup-button"),s.buttonAddToList.addEventListener("click",yt.bind(n)),document.addEventListener("keydown",D.bind(b)),s.closeModalButton=document.querySelector(".popup-close-button"),s.closeModalButton.addEventListener("click",Lt.bind(b)),Q().then(L=>{L?s.buttonAddToList.classList.remove("visually-hidden"):s.buttonAddToList.classList.add("visually-hidden")}),s.textUnderRemoveButton=document.querySelector(".popup-under-button"),s.buttonAddToList.textContent==="Add to shopping list"?s.textUnderRemoveButton.classList.add("is-hidden"):s.textUnderRemoveButton.classList.remove("is-hidden")}).catch(n=>{alert(`Error: ${n}`)}).finally(()=>{})}function ft(e){const t=X();t.push(e),Be(t)}function X(){try{const e=localStorage.getItem(Ee);return e?JSON.parse(e):[]}catch(e){console.log(e.message)}}function Be(e){localStorage.setItem(Ee,JSON.stringify(e))}function vt(e,t,o,n,i,a,c){return`
     <div class="popup-info">
       <div class="popup-cover">
-        <img class="popup-img" src="${e}1" alt="${t}" />
+        <img class="popup-img" src="${e}" alt="${t}" />
       </div>
       <div class="popup-about">
         <h2 class="popup-title">${t}</h2>
@@ -114,4 +114,4 @@ import{a as B,i as Fe,g as Pe,b as Qe,c as $e,d as le,s as Oe,S as v,e as Ne,f a
                 </div>
             </li>
 `).join("")}function no(e){const t=e.target.closest(".js-delete-book");if(!t)return;const o=t.closest(".shopping-book-card"),n=o.dataset.bookId,i=m.findIndex(a=>a._id===n);i!=-1&&(m.splice(i,1),localStorage.setItem("booksList",JSON.stringify(m)),o.remove(),h-m.length%h===h&&u>1&&g(u-1),g(u),Ke())}const J=document.querySelector("#scrollToTopButton");window.addEventListener("scroll",()=>{window.pageYOffset>500?J.classList.add("show"):J.classList.remove("show")});J.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"})});
-//# sourceMappingURL=btn-scroll-up-423123c3.js.map
+//# sourceMappingURL=btn-scroll-up-b044016f.js.map
