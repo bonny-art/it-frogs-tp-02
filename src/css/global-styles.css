@@ -62,6 +62,18 @@ header {
   position: relative;
   z-index: 50;
 }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
 .header-container {
   border-radius: 0px 0px 8px 8px;
 }
