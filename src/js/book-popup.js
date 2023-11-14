@@ -4,6 +4,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import * as basicLightbox from 'basiclightbox';
 import '../../node_modules/basiclightbox/dist/basicLightbox.min.css';
 import icons from '/images/book-popup/icons.svg';
+import { getNameForUpdateHeaderUser } from './header';
 
 import { el } from './refs';
 
@@ -18,10 +19,8 @@ function createBookCard(evt) {
     return;
   }
   const currentBook = evt.target.closest('.js-book-on-click');
-  console.log(currentBook);
-  const bookId = currentBook.dataset.id;
 
-  console.log('bookId', bookId);
+  const bookId = currentBook.dataset.id;
 
   fetchBookById(bookId)
     .then(book => {
@@ -30,7 +29,9 @@ function createBookCard(evt) {
       const appleBooks_link = buy_links[1].url;
       const localStorage = getFromLocalStorage();
       console.log('localStorage ', localStorage);
+
       let buttonText;
+
       if (
         localStorage.length === 0 ||
         !localStorage.find(book => book._id === bookId)
@@ -50,22 +51,51 @@ function createBookCard(evt) {
         buttonText
       );
 
-      const instance = basicLightbox.create(`
+      const instance = basicLightbox.create(
+        `
     <div class="popup-modal">${markup}</div>    
-`);
+`,
+        {
+          onShow: instance => {
+            document.body.style.overflow = 'hidden';
+          },
+          onClose: instance => {
+            document.body.style.overflow = 'visible';
+          },
+        }
+      );
+
       instance.show();
 
       el.buttonAddToList = document.querySelector('.popup-button');
-      el.closeModalButton = document.querySelector('.popup-close-button');
       el.buttonAddToList.addEventListener(
         'click',
         onButtonBookPopupClick.bind(book)
       );
+
       document.addEventListener('keydown', handlerPress.bind(instance));
+
+      el.closeModalButton = document.querySelector('.popup-close-button');
       el.closeModalButton.addEventListener(
         'click',
         handlerClose.bind(instance)
       );
+
+      // Функція схову кнопку для неавторизованих користувачів
+      getNameForUpdateHeaderUser().then(login => {
+        if (login) {
+          el.buttonAddToList.classList.remove('visually-hidden');
+        } else {
+          el.buttonAddToList.classList.add('visually-hidden');
+        }
+      });
+
+      el.textUnderRemoveButton = document.querySelector('.popup-under-button');
+      if (el.buttonAddToList.textContent === 'Add to shopping list') {
+        el.textUnderRemoveButton.classList.add('is-hidden');
+      } else {
+        el.textUnderRemoveButton.classList.remove('is-hidden');
+      }
     })
     .catch(error => {
       alert(`Error: ${error}`);
@@ -130,7 +160,13 @@ function createMarkup(
         </ul>
       </div>
     </div>
-    <button class="popup-button">${buttonText}</button>
+    <div class="popup-shopping-list">
+      <button class="popup-button">${buttonText}</button>
+      <p class="popup-under-button">
+         Сongratulations! You have added the book to the shopping list. To delete,
+        press the button “Remove from the shopping list”.
+     </p>
+    </div>
     <button class="popup-close-button" type="button" data-modal-close>
       <svg class="popup-icon" width="8" height="8">
         <use href="${icons}#close-btn"></use>
@@ -139,24 +175,20 @@ function createMarkup(
     `;
 }
 
-const aaa = document.querySelector('.aaa');
-console.log(aaa);
-aaa.addEventListener('click', createBookCard);
-
 function onButtonBookPopupClick() {
   const book = this;
-  console.log(book);
   if (el.buttonAddToList.textContent === 'Add to shopping list') {
     setToLocalStorage(book);
     el.buttonAddToList.textContent = 'Remove from the shopping list';
+    el.textUnderRemoveButton.classList.remove('is-hidden');
   } else {
     removeFromLocalStorage(book);
     el.buttonAddToList.textContent = 'Add to shopping list';
+    el.textUnderRemoveButton.classList.add('is-hidden');
   }
 }
 
 function removeFromLocalStorage({ _id: bookId }) {
-  console.log('in remove', bookId);
   const books = getFromLocalStorage();
   const newBooks = books.filter(book => String(book._id) !== bookId);
   addToLocalStorage(newBooks);
@@ -173,6 +205,7 @@ function handlerPress(event) {
 
 function handlerClose() {
   this.close();
+  el.closeModalButton.removeEventListener('click', handlerPress);
 }
 
 export { createBookCard };

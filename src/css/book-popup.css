@@ -77,6 +77,12 @@
   width: 33px;
 }
 
+.popup-shopping-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .popup-button {
   display: flex;
   justify-content: center;
@@ -90,6 +96,15 @@
   line-height: 1.29;
   min-width: 215px;
   min-height: 50px;
+}
+
+.popup-under-button {
+  color: rgba(17, 17, 17, 0.5);
+  text-align: center;
+  font-family: DMSans-Regular;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
 }
 
 .popup-close-button {
@@ -108,6 +123,8 @@
 }
 
 .popup-icon {
+  width: 12px;
+  height: 12px;
 }
 
 .popup-close-button:hover,
