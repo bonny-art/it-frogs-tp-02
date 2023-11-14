@@ -34,17 +34,20 @@ body {
 }
 
 /* -------------- HEADER -------------- */
+
+.header-container {
+  border: 1.5px solid var(--col-black);
+  background-color: var(--col-white);
+}
 .header-logo-title {
   background: var(--col-white);
 }
 
 .nav-container {
-  border: 1.5px solid var(--col-black);
   background: var(--col-white);
 }
 
 .nav-mobile-menu {
-  background-color: var(--col-white);
 }
 
 .burger {
