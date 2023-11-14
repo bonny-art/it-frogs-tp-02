@@ -1,6 +1,6 @@
 import { el } from './refs';
-import plugx2 from '/images/shopping-list-sec/plug_x2.png';
-import plugx1 from '/images/shopping-list-sec/plug_x1.png';
+import plugx2 from './../images/shopping-list-sec/plug_x2.png';
+import plugx1 from './../images/shopping-list-sec/plug_x1.png';
 import trash from '/images/shopping-list-sec/sprite.svg';
 import amazon from '/images/shopping-list-sec/amazon.svg';
 import appleBooks from '/images/shopping-list-sec/appleBooks.svg';
@@ -45,6 +45,15 @@ function switchPage(e) {
   }
 }
 
+function loadFallbackImage(e) {
+  e.target.classList.add('hidden');
+  let img = document.createElement('img');
+  img.srcset = `${plugx2} 2x, ${plugx1} 1x`;
+  img.src = `${plugx1}`;
+  img.alt = 'plug';
+  document.querySelector('.image-thumb').appendChild(img);
+}
+
 function getFromLocalStorage() {
   const tempBookList = JSON.parse(localStorage.getItem('booksList'));
   if (tempBookList) {
@@ -54,7 +63,6 @@ function getFromLocalStorage() {
   }
 }
 
-// window.addEventListener('resize', getPerPageLimit);
 function getPerPageLimit() {
   if (window.innerWidth <= 767) {
     return 4;
@@ -63,12 +71,6 @@ function getPerPageLimit() {
   }
 }
 
-// function handlePerPageLimit() {
-//   const result = getPerPageLimit();
-//   return result;
-// }
-
-// window.addEventListener('resize', getVisibleButtons);
 function getVisibleButtons() {
   if (window.innerWidth <= 767) {
     return 2;
@@ -76,11 +78,6 @@ function getVisibleButtons() {
     return 3;
   }
 }
-
-// function handleVisibleButtons() {
-//   const result = getVisibleButtons();
-//   return result;
-// }
 
 function getItemsInBatch(startIndex, batchSize) {
   if (tempBookList) {
@@ -173,6 +170,11 @@ function setCurrentPage(pageNum) {
     el.paginationContainer.classList.remove('hidden');
   }
   renderPagination();
+  document
+    .querySelectorAll('.shopping-book-cover')
+    .forEach(bookCover =>
+      bookCover.addEventListener('error', loadFallbackImage)
+    );
 }
 
 function handleActivePageNumber() {
@@ -187,7 +189,6 @@ function handleActivePageNumber() {
 }
 
 function renderPagination() {
-  // const maxVisibleButtons = handleVisibleButtons();
   const maxVisibleButtons = getVisibleButtons();
   el.paginationNumbers.innerHTML = '';
   pageAmount = Math.ceil(tempBookList.length / perPageLimit);
@@ -241,10 +242,7 @@ function createBookTemplate(bookList) {
     book => `
             <li class="shopping-book-card" data-book-id="${book._id}">
                 <div class="image-thumb">
-                <picture>
-                  <source srcset="${book.book_image}" type="image/jpg">
-                  <img class="shopping-book-cover" srcset="${plugx2} 2x, ${plugx1} 1x" src="${plugx2}" alt="plug">
-                </picture>
+                  <img class="shopping-book-cover" src="${book.book_image}" alt="${book.title}"/>
                 </div>
                 <div class="card-info">
                     <h3 class="shopping-book-title">${book.title}</h3>
