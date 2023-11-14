@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   menuItems.forEach(function (item) {
     let link = item.querySelector('a');
-    if (link.href === currentUrl) {
+    if (currentUrl.includes(link.href) || link.href.includes(currentUrl)) {
       item.classList.add('active-page');
     }
   });
