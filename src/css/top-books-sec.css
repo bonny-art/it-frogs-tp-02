@@ -274,7 +274,7 @@ loader
     padding: 25px;
   }
 }
-.card:hover .overlay {
+.li-top:hover .overlay {
   transform: translateY(0);
   opacity: 1;
 }
