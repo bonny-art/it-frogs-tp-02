@@ -23,7 +23,7 @@
   
   .card-wrapper{
    
-     cursor: pointer;
+    cursor: pointer;
     transition: transform 0.3s ease-in-out;
     
   }
@@ -176,7 +176,7 @@
   overflow: hidden;
 }
 
-.selected-category-img-box:hover .selected-category-overlay{
+.card-wrapper:hover .selected-category-overlay{
   transform: translateY(0);
 }
 
