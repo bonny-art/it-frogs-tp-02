@@ -19,7 +19,7 @@ const el = {
   bookPopup: '',
   buttonAddToList: '',
   closeModalButton: '',
-
+  textUnderRemoveButton: '',
   // shoing list
 
   // shoping list pagination
