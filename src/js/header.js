@@ -43,6 +43,10 @@ const headerUserName = document.querySelector('.user-signed');
 const headerUserLogo = document.querySelector('.menu-auth-logo');
 const userSignOut = document.querySelector('.sign-out');
 const logOut = document.querySelector('.js-logout');
+const authUp = document.querySelector('.auth-up');
+const authDown = document.querySelector('.auth-down');
+authUp.classList.add('visually-hidden');
+authDown.classList.remove('visually-hidden');
 
 //отримуємо ім'я користувача
 async function getNameForUpdateHeaderUser() {
@@ -57,12 +61,16 @@ async function getNameForUpdateHeaderUser() {
 }
 //запуск модального вікна
 headerUser.addEventListener('click', () => {
+  document.body.classList.add('modal-open');
   authModal.classList.remove('visually-hidden');
   initAuthModal();
   handlerActionAuth();
 });
+
 userSignOut.addEventListener('click', () => {
-  logOut.classList.remove('visually-hidden');
+  logOut.classList.toggle('visually-hidden');
+  authDown.classList.toggle('visually-hidden');
+  authUp.classList.toggle('visually-hidden');
 });
 logOut.addEventListener('click', () => {
   logOutUser();
@@ -94,6 +102,7 @@ function toggleMobileMenu() {
     // );
     closeIcon.classList.remove('visually-hidden');
     burgerIcon.classList.add('visually-hidden');
+    document.body.classList.add('modal-open');
     openMobileMenu();
   } else {
     // burgerIcon.setAttribute(
@@ -102,6 +111,7 @@ function toggleMobileMenu() {
     // );
     closeIcon.classList.add('visually-hidden');
     burgerIcon.classList.remove('visually-hidden');
+    document.body.classList.remove('modal-open');
     closeMobileMenu();
   }
 }

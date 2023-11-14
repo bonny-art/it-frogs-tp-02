@@ -34,17 +34,19 @@ body {
 }
 
 /* -------------- HEADER -------------- */
+
+.header-container {
+  border: 1.5px solid var(--col-black);
+  background-color: var(--col-white);
+}
 .header-logo-title {
   background: var(--col-white);
 }
 
 .nav-container {
-  border: 1.5px solid var(--col-black);
-  background: var(--col-white);
 }
 
 .nav-mobile-menu {
-  background-color: var(--col-white);
 }
 
 .burger {
@@ -167,3 +169,52 @@ body {
 .popup-descr {
   color: var(--col-black);
 }
+
+.popup-icon {
+  stroke: var(--col-black);
+}
+
+.popup-icon:hover,
+.popup-icon:focus {
+  stroke: var(--col-blue);
+}
+
+.popup-under-button {
+  color: rgba(17, 17, 17, 0.5);
+}
+
+.popup-modal {
+  border: 2px solid var(--col-black);
+  background: var(--col-white);
+}
+
+.popup-title {
+  color: var(--col-black);
+}
+
+.popup-author {
+  color: var(--col-lt-gray);
+}
+
+.popup-descr {
+  color: var(--col-black);
+}
+
+.popup-store-icon {
+  filter: grayscale(100%);
+}
+
+.popup-store-icon:hover {
+  filter: grayscale(100%) drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
+}
+
+.popup-button {
+  border: 2px solid var(--col-blue);
+  background-color: transparent;
+  color: var(--col-black);
+}
+
+.popup-close-button {
+  background-color: transparent;
+}
+

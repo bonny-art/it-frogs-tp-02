@@ -102,13 +102,13 @@ function logOutUser() {
     Swal.fire({
       position: 'center',
       icon: 'success',
-      title: 'Seen later!',
+      title: 'Good luck, see later!',
       showConfirmButton: false,
-      timer: 1500,
+      timer: 2000,
     });
     setTimeout(() => {
       window.location.href = 'index.html';
-    }, 1500);
+    }, 2000);
   });
 }
 export {

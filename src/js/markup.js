@@ -1,5 +1,6 @@
 import getRefs from './refs';
 const refs = getRefs();
+import { supportItems } from './support.js';
 
 import saveChildren from './../images/support/save-children@1x.png';
 import saveChildrens from './../images/support/save-children@2x.png';
@@ -20,6 +21,46 @@ import worldVisions from './../images/support/world-vision@2x.png';
 import unitedImage from './../images/support/united24@1x.png';
 import unitedImages from './../images/support/united24@2x.png';
 
+const arrImg1x = [];
+const arrImg2x = [];
+
+arrImg1x.push(
+  saveChildren,
+  hopeImage,
+  medicalCorp,
+  razomImage,
+  againstHunger,
+  prytulaImage,
+  sansFrontier,
+  worldVision,
+  unitedImage
+);
+
+arrImg2x.push(
+  saveChildrens,
+  hopeImages,
+  medicalCorps,
+  razomImages,
+  againstHungers,
+  prytulaImages,
+  sansFrontiers,
+  worldVisions,
+  unitedImages
+);
+
+const aaa = getImages(arrImg1x, arrImg2x, supportItems);
+
+function getImages(arrImg1x, arrImg2x, supportItems) {
+  for (let i = 0; i < arrImg1x.length; i += 1) {
+    supportItems[i].id = i + 1;
+    supportItems[i].img = arrImg1x[i];
+    supportItems[i].img1x = arrImg1x[i];
+    supportItems[i].img2x = arrImg2x[i];
+  }
+
+  return supportItems;
+}
+
 function insertCategoryBlocks(category) {
   return refs.bookCollectionWrapper.insertAdjacentHTML(
     'beforeend',
@@ -31,61 +72,13 @@ function insertCategoryBlocks(category) {
 export function createMarkup(arr) {
   return arr
     .map(
-      ({ id, title, url }) => `
+      ({ id, img, img1x, img2x, title, url }) => `
         <li class="support-items">
             <a class="support-link" href="${url}" target="_blank" rel="noopener noreferrer">
                 <span>0${id}</span>
-                <img class="support-img" src="${saveChildren}" alt="${title}" srcset="${saveChildren} 1x, ${saveChildrens} 2x" height="32">
+                <img class="support-img" src="${img}" alt="${title}" srcset="${img1x} 1x, ${img2x} 2x" height="32">
             </a>
-        </li>
-                <li class="support-items">
-            <a class="support-link" href="${url}" target="_blank" rel="noopener noreferrer">
-                <span>0${id}</span>
-                <img class="support-img" src="${hopeImage}" alt="${title}" srcset="${hopeImage} 1x, ${hopeImages} 2x" height="32">
-            </a>
-        </li>
-                        <li class="support-items">
-            <a class="support-link" href="${url}" target="_blank" rel="noopener noreferrer">
-                <span>0${id}</span>
-                <img class="support-img" src="${medicalCorp}" alt="${title}" srcset="${medicalCorp} 1x, ${medicalCorps} 2x" height="32">
-            </a>
-        </li>
-                                <li class="support-items">
-            <a class="support-link" href="${url}" target="_blank" rel="noopener noreferrer">
-                <span>0${id}</span>
-                <img class="support-img" src="${razomImage}" alt="${title}" srcset="${razomImage} 1x, ${razomImages} 2x" height="32">
-            </a>
-        </li>
-                                        <li class="support-items">
-            <a class="support-link" href="${url}" target="_blank" rel="noopener noreferrer">
-                <span>0${id}</span>
-                <img class="support-img" src="${againstHunger}" alt="${title}" srcset="${againstHunger} 1x, ${againstHungers} 2x" height="32">
-            </a>
-        </li>
-                                                <li class="support-items">
-            <a class="support-link" href="${url}" target="_blank" rel="noopener noreferrer">
-                <span>0${id}</span>
-                <img class="support-img" src="${prytulaImage}" alt="${title}" srcset="${prytulaImage} 1x, ${prytulaImages} 2x" height="32">
-            </a>
-        </li>
-                                                        <li class="support-items">
-            <a class="support-link" href="${url}" target="_blank" rel="noopener noreferrer">
-                <span>0${id}</span>
-                <img class="support-img" src="${sansFrontier}" alt="${title}" srcset="${sansFrontier} 1x, ${sansFrontiers} 2x" height="32">
-            </a>
-        </li>
-                                                                <li class="support-items">
-            <a class="support-link" href="${url}" target="_blank" rel="noopener noreferrer">
-                <span>0${id}</span>
-                <img class="support-img" src="${worldVision}" alt="${title}" srcset="${worldVision} 1x, ${worldVisions} 2x" height="32">
-            </a>
-        </li>
-                                                                        <li class="support-items">
-            <a class="support-link" href="${url}" target="_blank" rel="noopener noreferrer">
-                <span>0${id}</span>
-                <img class="support-img" src="${unitedImage}" alt="${title}" srcset="${unitedImage} 1x, ${unitedImages} 2x" height="32">
-            </a>
-        </li>
+        </li>                
         `
     )
     .join('');

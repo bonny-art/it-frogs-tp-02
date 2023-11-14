@@ -8,19 +8,23 @@
   border: 0;
   clip: rect(0 0 0 0);
 }
+body.modal-open {
+  overflow: hidden;
+}
+
 .auth-modal {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: var(--bg-modal-box);
   width: 100%;
   height: 100%;
   justify-content: center;
   align-items: center;
   background: var(--col-blue);
-
+  overflow: hidden;
   opacity: 0; /* По умолчанию меню скрыто */
   transition: opacity 0.5s ease;
+  z-index: 999;
 }
 
 .auth-modal.visually-hidden {
@@ -32,7 +36,19 @@
   opacity: 1; /* При показе устанавливаем прозрачность в 1 */
   pointer-events: auto; /* Возвращаем возможность кликать на элемент */
 }
-
+.auth-splat {
+  position: absolute;
+  width: 1421px;
+  height: 1421px;
+  top: -918px;
+  left: -846px;
+  border-radius: 50%;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(204, 236, 231, 0.5),
+    rgba(255, 255, 255, 0) 100%
+  );
+}
 .auth-container {
   opacity: 1;
   position: absolute;
@@ -125,6 +141,14 @@
 .locked-pass-icon,
 .opened-pass-icon {
   cursor: pointer;
+  stroke: var(--col-black);
+}
+
+.locked-pass-icon:hover,
+.locked-pass-icon:focus,
+.opened-pass-icon:hover,
+.opened-pass-icon:focus {
+  stroke: var(--col-blue);
 }
 
 .auth-sign {
@@ -140,7 +164,7 @@
   font-weight: 700;
   line-height: 112.5%;
   letter-spacing: -0.16px;
-  /* text-transform: uppercase; */
+  text-transform: uppercase;
   margin-bottom: 14px;
   cursor: pointer;
 }
@@ -161,7 +185,7 @@
   letter-spacing: -0.14px;
   background: rgba(245, 245, 245, 0.5);
 
-  /* text-transform: uppercase; */
+  text-transform: uppercase;
   cursor: pointer;
   border: none;
 }

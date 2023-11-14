@@ -58,6 +58,13 @@
 body {
   font-family: DMSans-Regular;
 }
+header {
+  position: relative;
+  z-index: 50;
+}
+.header-container {
+  border-radius: 0px 0px 8px 8px;
+}
 
 .main-section {
   padding: 40px 0 80px;

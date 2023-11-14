@@ -7,12 +7,13 @@
   flex-direction: column;
   gap: 44px;
   justify-content: space-between;
-  width: 335px;
-  max-height: 90vh;
+  max-width: 335px;
+  max-height: 95vh;
   border-radius: 18px;
   border: 2px solid;
   padding: 40px 24px;
   overflow-y: auto;
+  position: relative;
 }
 
 .popup-info {
@@ -35,16 +36,14 @@
 .popup-title {
   font-family: DMSans-Bold;
   font-size: 16px;
-  font-style: normal;
   line-height: 1.13;
   letter-spacing: -0.04em;
   margin-bottom: 4px;
 }
 
 .popup-author {
-  font-family: DMSans-Regular;
+  font-family: DMSans-Regular-Italic;
   font-size: 12px;
-  font-style: italic;
   line-height: 1.17;
   letter-spacing: -0.04em;
   margin-bottom: 18px;
@@ -53,7 +52,6 @@
 .popup-descr {
   font-family: DMSans-Regular;
   font-size: 14px;
-  font-style: normal;
   line-height: 1.29;
   letter-spacing: -0.04em;
   margin-bottom: 14px;
@@ -63,6 +61,7 @@
   display: flex;
   flex-direction: row;
   gap: 20px;
+  align-items: center;
 }
 
 .popup-store {
@@ -74,6 +73,12 @@
 
 .popup-store .popup-store-apple {
   width: 33px;
+}
+
+.popup-shopping-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .popup-button {
@@ -91,17 +96,127 @@
   min-height: 50px;
 }
 
+.popup-under-button {
+  text-align: center;
+  font-family: DMSans-Regular;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+}
+
+.popup-close-button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 24px;
+  height: 24px;
+  border: none;
+}
+
+.popup-icon {
+  width: 12px;
+  height: 12px;
+}
+
+.popup-close-button:hover,
+.popup-close-button:focus {
+  border: none;
+}
+
+.popup-close-button:hover .popup-icon,
+.popup-close-button:focus .popup-icon {
+}
+
+/**
+  |============================
+  | 768
+  |============================
+*/
+
+@media only screen and (min-width: 768px) {
+  .popup-modal {
+    min-width: 583px;
+    padding: 40px;
+    gap: 40px;
+  }
+
+  .popup-info {
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .popup-cover {
+    min-width: 192px;
+    max-width: 192px;
+  }
+
+  .popup-title {
+    font-family: DMSans-Bold;
+    font-size: 24px;
+    line-height: 1.17;
+
+    margin-bottom: 8px;
+  }
+
+  .popup-author {
+    font-family: DMSans-Regular-Italic;
+    font-size: 14px;
+    line-height: 1.29;
+    letter-spacing: -0.04em;
+    margin-bottom: 20px;
+  }
+
+  .popup-descr {
+    margin-bottom: 20px;
+  }
+
+  .popup-button {
+    font-size: 18px;
+    line-height: 1.33;
+
+    min-width: 503px;
+    min-height: 68px;
+  }
+
+  .popup-under-button {
+    font-size: 12px;
+    line-height: 1.17;
+  }
+
+  .popup-close-button {
+    top: 24px;
+    right: 24px;
+
+    width: 28px;
+    height: 28px;
+    border: none;
+  }
+
+  .popup-icon {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/**
+  |============================
+  | 1440
+  |============================
+*/
+
+@media only screen and (min-width: 1440px) {
+}
+
 /**
   |============================
   | light theme
   |============================
 */
-
-.popup-modal {
-  border-color: var(--col-black);
-  background: var(--col-white);
-}
-
 .popup-info {
 }
 
@@ -112,18 +227,6 @@
 }
 
 .popup-about {
-}
-
-.popup-title {
-  color: var(--col-black);
-}
-
-.popup-author {
-  color: var(--col-lt-gray);
-}
-
-.popup-descr {
-  color: var(--col-black);
 }
 
 .popup-store-list {
@@ -137,9 +240,16 @@
 
 .popup-store .popup-store-apple {
 }
+/* передивись var(--ocean-color); */
+.popup-close-button:hover,
+.popup-close-button:focus {
+  background-color: var(--ocean-color);
+  border: none;
+}
 
-.popup-button {
-  border-color: var(--col-blue);
+.popup-close-button:hover .popup-icon,
+.popup-close-button:focus .popup-icon {
+  fill: var(--white-color);
 }
 
 /**
@@ -147,10 +257,6 @@
   | Black theme body.darkmode ***
   |============================
 */
-body.darkmode .popup-modal {
-  border-color: var(--col-white);
-  background: var(--col-bg-dark);
-}
 
 body.darkmode .popup-info {
 }
@@ -162,18 +268,6 @@ body.darkmode .popup-img {
 }
 
 body.darkmode .popup-about {
-}
-
-body.darkmode .popup-title {
-  color: var(--col-white);
-}
-
-body.darkmode .popup-author {
-  color: var(--col-lt-gray);
-}
-
-body.darkmode .popup-descr {
-  color: var(--col-white);
 }
 
 body.darkmode .popup-store-list {
@@ -188,6 +282,16 @@ body.darkmode .popup-store .popup-store-amazon {
 body.darkmode .popup-store .popup-store-apple {
 }
 
-body.darkmode .popup-button {
-  border-color: var(--col-blue);
+body.darkmode .popup-store-icon.popup-store-icon-apple:hover {
+  filter: grayscale(100%) drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
+}
+
+body.darkmode .popup-close-button {
+  background-color: var(--cornflower-color);
+}
+
+body.darkmode .popup-close-button:hover,
+.popup-close-button:focus {
+  background-color: var(--ocean-color);
+  border: none;
 }

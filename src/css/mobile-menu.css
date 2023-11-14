@@ -1,114 +1,143 @@
-.mobile-menu {
-  background-color: violet;
-}
+@media screen and (max-width: 767px) {
+  .js-mobile-menu {
+    /* visibility: hidden; */
+    /* display: block; */
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 5;
+    cursor: pointer;
+    overflow: hidden;
+    background: radial-gradient(
+      189.32% 190.93% at 59.76% -23.42%,
+      #4f2ee8 18.03%,
+      #fff 100%
+    );
+    box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.1);
+  }
 
-.js-mobile-menu {
-  /* visibility: hidden; */
-  /* display: block; */
-  display: none;
-  position: fixed;
-  top: 64px;
-  left: 0;
-  width: 100%;
-  /* height: 90%; */
-  z-index: 1;
-  cursor: pointer;
-  /* overflow: hidden; */
+  .modal {
+    position: absolute;
+    top: 500px;
+    left: 0px;
+    /* width: 120%; */
+    /* height: 100%; */
+    width: 450px;
+    height: 439px;
+    transform: rotate(-15deg);
+    background: url(./images/mobile-menu/img-mob-@1x.webp);
+    background-repeat: no-repeat;
+    background-clip: padding-box;
+  }
+  @media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .modal {
+    background: url(./images/mobile-menu/img-mob-@2x.webp);
+  }
+}
+  .user {
+    margin-top: 20px;
+    margin-bottom: 126px;
+    margin-left: 20px;
+  }
+  /* стилизация кнопок */
+  .button {
+    display: block;
+  }
+  .buttons {
+    margin-top: 247px;
+    /* margin-bottom: 125px; */
+    margin-left: 129px;
+  }
+  .mob-menu-auth {
+    margin-left: 20px;
+    margin-top: 104px;
+    display: flex;
+    width: 118px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    background: var(--col-blue);
+    border-radius: 36px;
+    padding: 4px 12px;
+  }
+  .mob-menu-username {
+    margin-right: 4px;
+  }
+  .mob-menu-auth-logo {
+    width: 37px;
+    height: 37px;
+    margin-right: 9px;
+  }
+  .mob-menu-auth-icon {
+    width: 23px;
+    height: 26px;
+  }
+  .button-home {
+    margin-bottom: 16px;
+    width: 72px;
+    height: 34px;
+    font-family: DMSans-Bold;
+    font-size: 14px;
+    line-height: 18px;
+    border-radius: 36px;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    border: none;
+    padding: 8px, 16px, 8px, 16px;
+    background-color: var(--col-yellow);
+    ;
+  }
+  .button-shopping-list {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background-color: transparent;
+    color: var(--col-white);
+    /* width: 118px; */
+    height: 20px;
+    font-family: DMSans-Medium;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.04em;
 
-  background: radial-gradient(
-    189.32% 190.93% at 59.76% -23.42%,
-    #4f2ee8 18.03%,
-    #fff 100%
-  );
-
-  box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.1);
-}
-
-.modal {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  transform: rotate(-15deg);
-  background: url(../images/mobile-menu/bg-img-@1x.webp);
-  background-size: 44%;
-  background-repeat: no-repeat;
-  background-position: 200px 0px;
-}
-.user {
-  margin-top: 20px;
-  margin-bottom: 126px;
-  margin-left: 20px;
-}
-/* стилизация кнопок */
-.button {
-  display: block;
-}
-.buttons {
-  margin-bottom: 125px;
-  margin-left: 129px;
-}
-.button-home {
-  margin-bottom: 16px;
-  width: 72px;
-  height: 34px;
-  font-family: DM Sans;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 18px;
-  border-radius: 36px;
-  letter-spacing: -0.04em;
-  text-transform: uppercase;
-  border: none;
-  padding: 8px, 16px, 8px, 16px;
-  background-color: #eac645;
-}
-.button-shopping-list {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  background-color: transparent;
-  color: var(--col-white);
-  /* width: 118px; */
-  height: 20px;
-  font-family: DM Sans;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: -0.04em;
-
-  text-transform: uppercase;
-  cursor: pointer;
-  border: none;
-}
-.mob-shoppinglist-icon {
-  width: 20px;
-  height: 20px;
-  fill: var(--col-white);
-}
-.button-log-out {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: left;
-  gap: 4px;
-  border: 1.5px;
-  border-color: #111111;
-  border-radius: 18px;
-  background-color: #ffffff;
-  width: 118px;
-  height: 48px;
-  font-family: DM Sans;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: -0.04em;
-
-  cursor: pointer;
-  position: absolute;
-  bottom: 0%;
-  left: 0%;
-}
-.mob-log-out-icon {
-  width: 20px;
-  height: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+  }
+  .mob-shoppinglist-icon {
+    width: 20px;
+    height: 20px;
+    fill: var(--col-white);
+  }
+  .button-log-out {
+    position: absolute;
+    bottom: 80px;
+    left: 20px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    gap: 4px;
+    border: 1.5px;
+    border-color: #111111;
+    border-radius: 18px;
+    background-color: var(--col-white);
+    width: 118px;
+    height: 48px;
+    font-family: DMSans-Medium;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    cursor: pointer;
+  }
+  .mob-log-out-icon {
+    width: 20px;
+    height: 20px;
+  }
 }

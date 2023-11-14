@@ -31,6 +31,11 @@ body.darkmode .tgl-btn__icon {
 
 /* -------------- HEADER -------------- */
 
+body.darkmode .header-container {
+  border-color: var(--col-white);
+  background: var(--col-black);
+}
+
 body.darkmode .burger:hover,
 body.darkmode .burger:focus {
   stroke: var(--col-blue);
@@ -41,8 +46,6 @@ body.darkmode .close-burger:focus {
 }
 
 body.darkmode .nav-container {
-  border: 1.5px solid var(--col-white);
-  background: var(--col-black);
 }
 
 body.darkmode .nav-mobile-menu {
@@ -66,6 +69,15 @@ body.darkmode .header-logo-title {
   stroke: var(--col-white);
   fill: var(--col-white);
   background: var(--col-bg-dark);
+}
+
+body.darkmode .js-logout {
+  background: var(--col-bg-dark);
+  border: 1px solid var(--col-white);
+}
+
+body.darkmode .menu-username2 {
+  color: var(--col-white);
 }
 
 body.darkmode .burger {
@@ -191,6 +203,45 @@ body.darkmode .selected-category-book-title {
 }
 
 /* ------- pop up --------- */
+body.darkmode .popup-under-button {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+body.darkmode .popup-icon {
+  stroke: var(--col-white);
+}
+
+body.darkmode .popup-icon:hover,
+body.darkmode .popup-icon:focus {
+  stroke: var(--col-blue);
+}
+
+body.darkmode .popup-modal {
+  border: 2px solid var(--col-white);
+  background: var(--col-bg-dark);
+}
+
+body.darkmode .popup-title {
+  color: var(--col-white);
+}
+
+body.darkmode .popup-descr {
+  color: var(--col-white);
+}
+
+body.darkmode .popup-store-icon.popup-store-icon-amazon {
+  filter: brightness(0) invert(1);
+}
+
+body.darkmode .popup-store-icon.popup-store-icon-apple {
+  filter: grayscale(100%);
+}
+
+body.darkmode .popup-store-icon.popup-store-icon-amazon:hover {
+  filter: brightness(0) invert(1)
+    drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
+}
+
 body.darkmode .popup-button {
   color: var(--col-white);
 }
@@ -232,6 +283,22 @@ body.darkmode .auth-toggler-active {
   color: var(--col-blue);
   text-decoration-line: underline;
 }
+
+body.darkmode .locked-pass-icon {
+  stroke: #f6f6f6;
+  fill: transparent;
+}
+
+body.darkmode .opened-pass-icon {
+  stroke: #f6f6f6;
+  fill: transparent;
+}
+
+body.darkmode .auth-close-icon:hover,
+body.darkmode .auth-close-icon:focus {
+  stroke: var(--col-blue);
+}
+
 /*============================|LOADER|===========================*/
 
 body.darkmode .loader-overlay {
