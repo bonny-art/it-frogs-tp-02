@@ -58,7 +58,7 @@ function openShoppingList(evt) {
 
 function logOut(evt) {
   logOutUser();
-  window.location.href = '/index.html';
+  // window.location.href = '/index.html';
 }
 
 // const authModal = document.querySelector('.auth-modal');
