@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   menuItems.forEach(function (item) {
     let link = item.querySelector('a');
-    if (currentUrl.includes(link.href)) {
+    if (link.href === currentUrl) {
       item.classList.add('active-page');
     }
   });
@@ -72,10 +72,11 @@ userSignOut.addEventListener('click', () => {
   authDown.classList.toggle('visually-hidden');
   authUp.classList.toggle('visually-hidden');
 });
+
 logOut.addEventListener('click', () => {
   logOutUser();
-  // location.reload();
 });
+
 //оновлюємо напис на кнопці, показуємо фото
 const updateHeaderUser = userName => {
   headerUserName.textContent = userName;

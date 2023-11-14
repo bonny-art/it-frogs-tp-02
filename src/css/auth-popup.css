@@ -1,4 +1,4 @@
-.visually-hidden {
+/* .visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -7,7 +7,8 @@
   overflow: hidden;
   border: 0;
   clip: rect(0 0 0 0);
-}
+} */
+
 body.modal-open {
   overflow: hidden;
 }
