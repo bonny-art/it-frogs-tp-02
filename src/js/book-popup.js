@@ -75,8 +75,11 @@ function createBookCard(evt) {
       el.bookPopupImage = document.querySelector('.popup-img');
       el.bookPopupImage.onerror = function () {
         el.bookPopupImage.src = notDownloaded1x;
-        console.log(el.bookPopupImage);
+        el.bookPopupImage.srcset = `${notDownloaded1x} 1x, ${notDownloaded2x} 2x`;
       };
+
+      // <img class="popup-img" src="${bookCover}" alt="${title}" />
+      // <img class="support-img" src="${img}" alt="${title}" srcset="${img1x} 1x, ${img2x} 2x">
 
       el.buttonAddToList = document.querySelector('.popup-button');
       el.buttonAddToList.addEventListener(
@@ -135,6 +138,7 @@ function addToLocalStorage(arr) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(arr));
 }
 
+// Створення розмітки
 function createMarkup(
   bookCover,
   title,

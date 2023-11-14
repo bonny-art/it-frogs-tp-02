@@ -8,7 +8,7 @@
   gap: 44px;
   justify-content: space-between;
   max-width: 335px;
-  max-height: 95vh;
+  max-height: 90vh;
   border-radius: 18px;
   border: 2px solid;
   padding: 40px 24px;
@@ -243,13 +243,11 @@
 /* передивись var(--ocean-color); */
 .popup-close-button:hover,
 .popup-close-button:focus {
-  background-color: var(--ocean-color);
-  border: none;
 }
 
 .popup-close-button:hover .popup-icon,
 .popup-close-button:focus .popup-icon {
-  fill: var(--white-color);
+  stroke: var(--col-blue);
 }
 
 /**
@@ -287,11 +285,9 @@ body.darkmode .popup-store-icon.popup-store-icon-apple:hover {
 }
 
 body.darkmode .popup-close-button {
-  background-color: var(--cornflower-color);
 }
 
-body.darkmode .popup-close-button:hover,
-.popup-close-button:focus {
-  background-color: var(--ocean-color);
-  border: none;
+body.darkmode .popup-close-button:hover .popup-icon,
+body.darkmode .popup-close-button:focus .popup-icon {
+  stroke: var(--col-yellow);
 }
