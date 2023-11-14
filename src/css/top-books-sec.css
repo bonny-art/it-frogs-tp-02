@@ -42,7 +42,7 @@
   }
 }
 .img-top {
-  width: 335px;
+  width: 100%;
   height: 485px;
   border-radius: 8px;
   background: url(<path-to-image>), lightgray 50% / cover no-repeat;
@@ -68,7 +68,7 @@
 .li-top {
   width: 335px;
   height: 535px;
-  /* width: 180px; */
+  max-width: 320px;
   transition: transform 0.3s ease-in-out;
 }
 @media only screen and (min-width: 768px) {
@@ -83,16 +83,13 @@
     height: 306px;
   }
 }
+
 @media only screen and (min-width: 1440px) {
   .li-top:hover {
     transform: scale(1.05);
-    -webkit-transform: scale(1.2);
-    -ms-transform: scale(1.2);
-    transform: scale(1.1);
-    transition: 0.7s ease;
-    border-radius: 8px;
   }
 }
+
 .top-title {
   color: var(--col-lt-gray);
   font-family: DM Sans;
@@ -187,6 +184,7 @@
     overflow: visible;
   }
 }
+
 /*
 
 
@@ -238,12 +236,6 @@ loader
 }
 .top-title-books {
   color: var(--col-black);
-}
-@media only screen and (min-width: 320px) {
-}
-@media only screen and (min-width: 768px) {
-}
-@media only screen and (min-width: 1440px) {
 }
 
 /* выезжающая карточка quick view */
