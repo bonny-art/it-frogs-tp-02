@@ -97,7 +97,6 @@
 }
 
 .popup-under-button {
-  color: rgba(17, 17, 17, 0.5);
   text-align: center;
   font-family: DMSans-Regular;
   font-size: 10px;
@@ -218,12 +217,6 @@
   | light theme
   |============================
 */
-
-.popup-modal {
-  border-color: var(--col-black);
-  background: var(--col-white);
-}
-
 .popup-info {
 }
 
@@ -234,18 +227,6 @@
 }
 
 .popup-about {
-}
-
-.popup-title {
-  color: var(--col-black);
-}
-
-.popup-author {
-  color: var(--col-lt-gray);
-}
-
-.popup-descr {
-  color: var(--col-black);
 }
 
 .popup-store-list {
@@ -259,26 +240,7 @@
 
 .popup-store .popup-store-apple {
 }
-
-.popup-store-icon {
-  filter: grayscale(100%);
-}
-
-.popup-store-icon:hover {
-  filter: grayscale(100%) drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
-}
-
-.popup-button {
-  border-color: var(--col-blue);
-}
-
-.popup-close-button {
-  background-color: transparent;
-}
-popup-icon {
-  stroke: var(--col-black);
-}
-
+/* передивись var(--ocean-color); */
 .popup-close-button:hover,
 .popup-close-button:focus {
   background-color: var(--ocean-color);
@@ -295,10 +257,6 @@ popup-icon {
   | Black theme body.darkmode ***
   |============================
 */
-body.darkmode .popup-modal {
-  border-color: var(--col-white);
-  background: var(--col-bg-dark);
-}
 
 body.darkmode .popup-info {
 }
@@ -310,18 +268,6 @@ body.darkmode .popup-img {
 }
 
 body.darkmode .popup-about {
-}
-
-body.darkmode .popup-title {
-  color: var(--col-white);
-}
-
-body.darkmode .popup-author {
-  color: var(--col-lt-gray);
-}
-
-body.darkmode .popup-descr {
-  color: var(--col-white);
 }
 
 body.darkmode .popup-store-list {
@@ -336,37 +282,12 @@ body.darkmode .popup-store .popup-store-amazon {
 body.darkmode .popup-store .popup-store-apple {
 }
 
-body.darkmode .popup-store-icon.popup-store-icon-amazon {
-  filter: brightness(0) invert(1);
-}
-
-body.darkmode .popup-store-icon.popup-store-icon-apple {
-  filter: grayscale(100%);
-}
-
-body.darkmode .popup-store-icon.popup-store-icon-amazon:hover {
-  filter: brightness(0) invert(1)
-    drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
-}
-
 body.darkmode .popup-store-icon.popup-store-icon-apple:hover {
   filter: grayscale(100%) drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
 }
 
-body.darkmode .popup-button {
-  border-color: var(--col-blue);
-}
-
-body.darkmode .popup-button {
-  border-color: var(--col-blue);
-}
-
 body.darkmode .popup-close-button {
   background-color: var(--cornflower-color);
-}
-
-body.darkmode .popup-icon {
-  stroke: var(--col-white);
 }
 
 body.darkmode .popup-close-button:hover,
