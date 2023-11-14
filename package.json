@@ -22,7 +22,7 @@
     "firebase": "^10.5.2",
     "notiflix": "^3.2.6",
     "sweetalert": "^2.1.2",
-    "sweetalert2": "^11.9.0",
+    "sweetalert2": "^11.9.1",
     "swiper": "^11.0.4",
     "vite-plugin-full-reload": "^1.0.5",
     "vite-plugin-html-inject": "^1.0.1"
