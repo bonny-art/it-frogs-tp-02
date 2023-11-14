@@ -20,6 +20,8 @@ const el = {
   buttonAddToList: '',
   closeModalButton: '',
   textUnderRemoveButton: '',
+  bookPopupImage: '',
+  bookPopupCover: '',
   // shoing list
 
   // shoping list pagination

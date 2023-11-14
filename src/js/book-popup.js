@@ -1,9 +1,14 @@
 // Імпорт функцій
 import { fetchBookById } from './api';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
 import * as basicLightbox from 'basiclightbox';
 import '../../node_modules/basiclightbox/dist/basicLightbox.min.css';
 import icons from '/images/book-popup/icons.svg';
+import amazon from '/images/book-popup/amazon.svg';
+import appleBooks from '/images/book-popup/appleBooks.svg';
+import notDownloaded1x from '/images/book-popup/not-downloaded@1x.jpg';
+import notDownloaded2x from '/images/book-popup/not-downloaded@2x.jpg';
+
 import { getNameForUpdateHeaderUser } from './header';
 
 import { el } from './refs';
@@ -64,6 +69,14 @@ function createBookCard(evt) {
       );
 
       instance.show();
+
+      // вішаємо на картинку обробник, чи вона завантажилась
+
+      el.bookPopupImage = document.querySelector('.popup-img');
+      el.bookPopupImage.onerror = function () {
+        el.bookPopupImage.src = notDownloaded1x;
+        console.log(el.bookPopupImage);
+      };
 
       el.buttonAddToList = document.querySelector('.popup-button');
       el.buttonAddToList.addEventListener(
@@ -134,7 +147,7 @@ function createMarkup(
   return `
     <div class="popup-info">
       <div class="popup-cover">
-        <img class="popup-img" src="${bookCover}" alt="${title}" />
+        <img class="popup-img" src="${bookCover}1" alt="${title}" />
       </div>
       <div class="popup-about">
         <h2 class="popup-title">${title}</h2>
@@ -145,14 +158,14 @@ function createMarkup(
             <a href="${amazonLink}"
             target="_blank"
               rel="noopener noreferrer">
-            <img src="../images/book-popup/amazon.svg" alt="" />
+            <img class="popup-store-icon popup-store-icon-amazon" src="${amazon}" alt="Amazon" />
             </a>
           </li>
           <li class="popup-store popup-store-apple">
             <a href="${appleBooksLink}"
             target="_blank"
               rel="noopener noreferrer">
-            <img src="../images/book-popup/appleBooks.svg" alt="" />
+            <img class="popup-store-icon popup-store-icon-apple" src="${appleBooks}" alt="AppleBook" />
             </a>
           </li>
         </ul>
