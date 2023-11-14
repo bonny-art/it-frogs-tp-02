@@ -23,11 +23,7 @@
   
   .card-wrapper{
    
-    width: 335px;
-    cursor: pointer;
-    /* white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; */
+     cursor: pointer;
     transition: transform 0.3s ease-in-out;
     
   }
@@ -36,9 +32,11 @@
     transform: scale(1.05);
   }
   
+ 
+
   .selected-category-img {
-    width: 335px;
-    height: 485px;
+    width: 100%;
+    height: 100%;
     border-radius: 8px;
     background-color: var(--col-bg-light);
     background-repeat: no-repeat;
@@ -74,17 +72,6 @@
  
 }
 
-@media only screen and (max-width: 374.98px) {
-
-  .card-wrapper {
-    width: 320px;
-  }
-
-  .selected-category-book-img {
-    width: 320px;
-    height: 450px;
-  }
-}
 
 /*  TABLET */
 
