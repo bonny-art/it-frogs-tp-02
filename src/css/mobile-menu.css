@@ -19,25 +19,36 @@
     box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.1);
   }
 
-  .modal {
+  /* .modal { */
+    /* z-index: 6;
     position: absolute;
     top: 500px;
-    left: 0px;
+    left: 0px; */
     /* width: 120%; */
     /* height: 100%; */
-    width: 450px;
-    height: 439px;
-    transform: rotate(-15deg);
-    background: url(./images/mobile-menu/img-mob-@1x.webp);
+    /* width: 450px;
+    height: 439px; */
+    /* transform: rotate(-15deg); */
+    /* background: url(../images/mobile-menu/img-mob-@1x.webp);
     background-repeat: no-repeat;
-    background-clip: padding-box;
-  }
-  @media (min-device-pixel-ratio: 2),
+    background-clip: padding-box; */
+  /* } */
+  /* @media (min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .modal {
     background: url(./images/mobile-menu/img-mob-@2x.webp);
   }
+} */
+.bg-img-modal{
+  width: 115%;
+  /* width: 450px; */
+  /* height: 439px; */
+  position: absolute;
+  top: 490px;
+  left: -7px;
+  transform: rotate(-15deg);
+
 }
   .user {
     margin-top: 20px;
@@ -49,7 +60,7 @@
     display: block;
   }
   .buttons {
-    margin-top: 247px;
+    margin-top: 183px;
     /* margin-bottom: 125px; */
     margin-left: 129px;
   }
@@ -116,7 +127,7 @@
   }
   .button-log-out {
     position: absolute;
-    bottom: 80px;
+    bottom: 20px;
     left: 20px;
     z-index: 1;
     display: flex;
