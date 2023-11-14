@@ -284,14 +284,16 @@ body.darkmode .auth-toggler-active {
   text-decoration-line: underline;
 }
 
-body.darkmode .locked-pass-icon {
-  stroke: #f6f6f6;
-  fill: transparent;
-}
-
+body.darkmode .locked-pass-icon,
 body.darkmode .opened-pass-icon {
   stroke: #f6f6f6;
-  fill: transparent;
+}
+
+body.darkmode .locked-pass-icon:hover,
+body.darkmode .locked-pass-icon:focus,
+body.darkmode .opened-pass-icon:hover,
+body.darkmode .opened-pass-icon:focus {
+  stroke: var(--col-blue);
 }
 
 body.darkmode .auth-close-icon:hover,
