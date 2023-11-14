@@ -2,8 +2,10 @@ import { fetchTopBooks } from './api';
 import { createBookCard } from './book-popup';
 import { el } from './refs';
 import { createSelectedCategory } from './selected-category-sec';
-import Notiflix from 'notiflix';
+// import Notiflix from 'notiflix';
 import { showLoader, hideLoader } from './loader'
+import Swiper from 'swiper';
+import Swal from 'sweetalert2';
 createTopBooks();
 
 function createTopBooks() {
@@ -21,7 +23,7 @@ function createTopBooks() {
           <div class="card">
             <img class="img-top" src="${book.book_image || './images/shopping-list-sec/plug_x1.png'}"
      srcset="${book.book_image || './images/shopping-list-sec/plug_x1.png'} 1x, 
-             ${book.book_image || './images/shopping-list-sec/plug_x2.png'} 2x"  alt="Зображення відсутнє" />
+             ${book.book_image || './images/shopping-list-sec/plug_x2.png'} 2x"  alt="Зображення відсутнє" onerror="this.onerror=null; this.src='./images/shopping-list-sec/plug_x1.png';" />
 
             <div class="overlay">
                <p class="quick-view">quick view</p>
@@ -56,10 +58,15 @@ function createTopBooks() {
     });
     })
     .catch(error => {
-      console.log('Помилка отримання або обробки даних:', error);
-      // alert ('Помилка отримання або обробки даних:')
-      // Notiflix.Notify.Failure('Что-то пошло не так!');
-    })
+  Swal.fire({
+         title: 'Error!',
+         text: 'Something went wrong! Try reload the page.',
+         confirmButtonText: 'OK',
+         imageUrl: "./images/sad.svg",
+         imageWidth: 40
+})
+  // Далее вы можете использовать markupCatch по вашему усмотрению
+})
     .finally(() => {
       hideLoader()
     });
@@ -73,3 +80,4 @@ function handleSeeMore(ev) {
     createSelectedCategory(categoryTittle);
 }
 export { createTopBooks };
+
