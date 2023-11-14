@@ -58,7 +58,13 @@ function createTopBooks() {
     });
     })
     .catch(error => {
-  Swal.fire({
+  const markupCatch = `
+    <div>
+      <img src="./images/shopping-list-sec/empty_page_mobile_1x.png"
+      srcset="./images/shopping-list-sec/empty_page_mobile_1x.png 1x,./images/shopping-list-sec/empty_page_mobile_2x.png 2x" alt="">
+    </div>`;
+      el.list.innerHTML = markupCatch;
+      Swal.fire({
          title: 'Error!',
          text: 'Something went wrong! Try reload the page.',
          confirmButtonText: 'OK',
