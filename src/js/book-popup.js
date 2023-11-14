@@ -8,8 +8,6 @@ import { getNameForUpdateHeaderUser } from './header';
 
 import { el } from './refs';
 
-console.log('el', el);
-
 const STORAGE_KEY = 'booksList';
 
 function createBookCard(evt) {
