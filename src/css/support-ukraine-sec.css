@@ -96,7 +96,7 @@
 
 .support-button {
   width: 100%;
-  fill: #4f2ee8;
+  fill: var(--violet);
 }
 
 .support-link {
