@@ -61,10 +61,12 @@ async function getNameForUpdateHeaderUser() {
 }
 //запуск модального вікна
 headerUser.addEventListener('click', () => {
+  document.body.classList.add('modal-open');
   authModal.classList.remove('visually-hidden');
   initAuthModal();
   handlerActionAuth();
 });
+
 userSignOut.addEventListener('click', () => {
   logOut.classList.toggle('visually-hidden');
   authDown.classList.toggle('visually-hidden');
@@ -100,6 +102,7 @@ function toggleMobileMenu() {
     // );
     closeIcon.classList.remove('visually-hidden');
     burgerIcon.classList.add('visually-hidden');
+    document.body.classList.add('modal-open');
     openMobileMenu();
   } else {
     // burgerIcon.setAttribute(
@@ -108,6 +111,7 @@ function toggleMobileMenu() {
     // );
     closeIcon.classList.add('visually-hidden');
     burgerIcon.classList.remove('visually-hidden');
+    document.body.classList.remove('modal-open');
     closeMobileMenu();
   }
 }
