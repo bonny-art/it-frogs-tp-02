@@ -291,6 +291,12 @@
 .notification-image {
   margin-left: auto;
   margin-right: auto;
+  width: 265px;
+}
+@media screen and (min-width: 768px) {
+  .notification-image {
+    width: 322px;
+  }
 }
 
 .pagination-container {
