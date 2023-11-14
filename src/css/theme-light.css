@@ -169,3 +169,12 @@ body {
 .popup-descr {
   color: var(--col-black);
 }
+
+.popup-icon {
+  stroke: var(--col-black);
+}
+
+.popup-icon:hover,
+.popup-icon:focus {
+  stroke: var(--col-blue);
+}
