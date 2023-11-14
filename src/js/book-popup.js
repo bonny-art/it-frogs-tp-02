@@ -147,7 +147,7 @@ function createMarkup(
   return `
     <div class="popup-info">
       <div class="popup-cover">
-        <img class="popup-img" src="${bookCover}1" alt="${title}" />
+        <img class="popup-img" src="${bookCover}" alt="${title}" />
       </div>
       <div class="popup-about">
         <h2 class="popup-title">${title}</h2>
