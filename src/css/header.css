@@ -96,6 +96,7 @@
   width: 23px;
   height: 26px;
   fill: var(--col-white);
+  /* stroke: #eac645; */
 }
 
 .nav-mobile-menu {
