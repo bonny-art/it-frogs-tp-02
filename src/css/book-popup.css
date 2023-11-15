@@ -85,6 +85,11 @@
   line-height: 1.29;
   min-width: 215px;
   min-height: 50px;
+  transition: transform 0.4s ease-in-out;
+}
+
+.popup-button:hover {
+  transform: scale(1.05);
 }
 
 .popup-under-button {
@@ -168,12 +173,10 @@
 
     min-width: 503px;
     min-height: 68px;
-    transition: transform 0.4s ease-in-out;
   }
 
   .popup-button:hover,
   .popup-button:focus {
-    transform: scale(1.05);
   }
 
   .popup-under-button {
