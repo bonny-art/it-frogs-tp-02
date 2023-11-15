@@ -218,3 +218,7 @@ body {
   background-color: transparent;
 }
 
+.popup-close-button:hover .popup-icon,
+.popup-close-button:focus .popup-icon {
+  stroke: var(--col-blue);
+}
