@@ -1,6 +1,6 @@
 import { handlerActionAuth, initAuthModal } from './auth-popup';
 import { isAuthUser, getUserName, logOutUser } from './auth-firebase';
-import { svgSprite } from '/images/header/header-defs.svg';
+import svgSprite from '/images/header/header-defs.svg';
 
 //ініціалізуємо початкові стани хедера
 document.addEventListener('DOMContentLoaded', function () {
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let userSignOut = document.querySelector('.sign-out');
     let headerUser = document.querySelector('.sign-up');
     if (login) {
-      menuAuthIcon.setAttribute('href', `${svgSprite}#icon-fi-ss-caret-down-1`);
+      menuAuthIcon.setAttribute('href', `${svgSprite}#icon-down-1`);
       authLink.classList.remove('visually-hidden');
       userSignOut.classList.remove('visually-hidden');
       headerUser.classList.add('visually-hidden');
@@ -117,13 +117,13 @@ function toggleMobileMenu() {
 
 function openMobileMenu() {
   let mobMenu = document.querySelector('.js-mobile-menu');
-  console.log('Мобильное меню открыто');
+  // console.log('Мобильное меню открыто');
   mobMenu.style.display = 'block';
 }
 
 function closeMobileMenu() {
   let mobMenu = document.querySelector('.js-mobile-menu');
-  console.log('Мобильное меню закрыто');
+  // console.log('Мобильное меню закрыто');
   mobMenu.style.display = 'none';
 }
 
