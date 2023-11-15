@@ -204,3 +204,27 @@
 
 @media only screen and (min-width: 1440px) {
 }
+
+/**
+  |============================
+  | light theme
+  |============================
+*/
+
+.popup-button:hover,
+.popup-button:focus {
+  /* box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19); */
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+/**
+  |============================
+  | Black theme body.darkmode ***
+  |============================
+*/
+
+body.darkmode .popup-button:hover,
+body.darkmode .popup-button:focus {
+  box-shadow: 0 4px 4px 0 rgba(255, 255, 255, 0.05),
+    0 17px 50px 0 rgba(255, 255, 255, 0.15);
+}
