@@ -4,10 +4,13 @@ import { fetchBookById } from './api';
 import * as basicLightbox from 'basiclightbox';
 import '../../node_modules/basiclightbox/dist/basicLightbox.min.css';
 import icons from '/images/book-popup/icons.svg';
-import amazon from '/images/book-popup/amazon.svg';
-import appleBooks from '/images/book-popup/appleBooks.svg';
 import notDownloaded1x from '/images/book-popup/not-downloaded@1x.jpg';
 import notDownloaded2x from '/images/book-popup/not-downloaded@2x.jpg';
+import amazon from '/images/book-popup/amazon@1x.png';
+import amazon2x from '/images/book-popup/amazon@2x.png';
+import appleBooks from '/images/book-popup/apple@1x.png';
+import appleBooks2x from '/images/book-popup/apple@2x.png';
+import Swal from 'sweetalert2';
 
 import { getNameForUpdateHeaderUser } from './header';
 
@@ -31,7 +34,13 @@ function createBookCard(evt) {
       const amazon_link = buy_links[0].url;
       const appleBooks_link = buy_links[1].url;
       const localStorage = getFromLocalStorage();
-      console.log('localStorage ', localStorage);
+      Swal.fire({
+        title: 'Error!',
+        text: 'Something went wrong! Try reload the page.',
+        confirmButtonText: 'OK',
+        imageUrl: './images/sad.svg',
+        imageWidth: 40,
+      });
 
       let buttonText;
 
@@ -77,9 +86,6 @@ function createBookCard(evt) {
         el.bookPopupImage.src = notDownloaded1x;
         el.bookPopupImage.srcset = `${notDownloaded1x} 1x, ${notDownloaded2x} 2x`;
       };
-
-      // <img class="popup-img" src="${bookCover}" alt="${title}" />
-      // <img class="support-img" src="${img}" alt="${title}" srcset="${img1x} 1x, ${img2x} 2x">
 
       el.buttonAddToList = document.querySelector('.popup-button');
       el.buttonAddToList.addEventListener(
@@ -130,7 +136,13 @@ function getFromLocalStorage() {
     const data = localStorage.getItem(STORAGE_KEY);
     return data ? JSON.parse(data) : [];
   } catch (error) {
-    console.log(error.message);
+    Swal.fire({
+      title: 'Error!',
+      text: 'Something went wrong! Try reload the page.',
+      confirmButtonText: 'OK',
+      imageUrl: './images/sad.svg',
+      imageWidth: 40,
+    });
   }
 }
 
@@ -162,14 +174,14 @@ function createMarkup(
             <a href="${amazonLink}"
             target="_blank"
               rel="noopener noreferrer">
-            <img class="popup-store-icon popup-store-icon-amazon" src="${amazon}" alt="Amazon" />
+            <img class="popup-store-icon popup-store-icon-amazon" src="${amazon}" alt="Amazon" srcset="${amazon} 1x, ${amazon2x} 2x"/>
             </a>
           </li>
           <li class="popup-store popup-store-apple">
             <a href="${appleBooksLink}"
             target="_blank"
               rel="noopener noreferrer">
-            <img class="popup-store-icon popup-store-icon-apple" src="${appleBooks}" alt="AppleBook" />
+            <img class="popup-store-icon popup-store-icon-apple" src="${appleBooks}" alt="AppleBook" srcset="${appleBooks} 1x, ${appleBooks2x} 2x"/>
             </a>
           </li>
         </ul>

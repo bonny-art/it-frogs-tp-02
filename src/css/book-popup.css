@@ -27,12 +27,6 @@
   overflow: hidden;
 }
 
-.popup-img {
-}
-
-.popup-about {
-}
-
 .popup-title {
   font-family: DMSans-Bold;
   font-size: 16px;
@@ -62,9 +56,6 @@
   flex-direction: row;
   gap: 20px;
   align-items: center;
-}
-
-.popup-store {
 }
 
 .popup-store .popup-store-amazon {
@@ -128,10 +119,6 @@
   border: none;
 }
 
-.popup-close-button:hover .popup-icon,
-.popup-close-button:focus .popup-icon {
-}
-
 /**
   |============================
   | 768
@@ -181,6 +168,12 @@
 
     min-width: 503px;
     min-height: 68px;
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .popup-button:hover,
+  .popup-button:focus {
+    transform: scale(1.05);
   }
 
   .popup-under-button {
