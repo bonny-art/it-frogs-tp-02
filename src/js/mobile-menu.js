@@ -2,6 +2,7 @@ import { doc } from 'firebase/firestore';
 import { logOutUser } from './auth-firebase';
 import { handlerActionAuth, initAuthModal } from './auth-popup';
 import { getNameForUpdateHeaderUser } from './header';
+// import svgSprite from '/images/mobile-menu/mobile-menu-defs.svg';
 
 const mobMenu = document.querySelector('.js-mobile-menu');
 const btnHome = document.querySelector('.button-home');
@@ -18,8 +19,9 @@ btnShoppingList.addEventListener('click', openShoppingList);
 btnLogOut.addEventListener('click', logOut);
 // btnSignUp.addEventListener('click', handlerBtnSingUp);
 
-console.log(getNameForUpdateHeaderUser());
-
+// console.log(getNameForUpdateHeaderUser());
+let mobLogOutIcon = document.querySelector('.mob-log-out-icon')
+console.log(mobLogOutIcon);
 getNameForUpdateHeaderUser().then(login => {
   if (login) {
     btnSignUp.classList.add('visually-hidden');
@@ -27,6 +29,10 @@ getNameForUpdateHeaderUser().then(login => {
     btnShoppingList.classList.remove('visually-hidden');
     btnLogOut.classList.remove('visually-hidden');
     mobUserName.classList.remove('visually-hidden');
+    // mobLogOutIcon.setAttribute(
+    //   'href',
+    //   `${svgSprite}#icon-arrow-narrow-right-1`
+    // );
   } else {
     btnHome.classList.add('visually-hidden');
     btnShoppingList.classList.add('visually-hidden');
@@ -34,6 +40,7 @@ getNameForUpdateHeaderUser().then(login => {
     btnSignUp.classList.remove('visually-hidden');
     mobUserName.classList.add('visually-hidden');
     mobSignIn.classList.add('visually-hidden');
+   
   }
 });
 getNameForUpdateHeaderUser();
