@@ -25,9 +25,9 @@
       referrerpolicy="no-referrer"
     />
     <script type="module" crossorigin src="/it-frogs-tp-02/assets/vendor-ebbe3804.js"></script>
-    <script type="module" crossorigin src="/it-frogs-tp-02/assets/btn-scroll-up-c2444e27.js"></script>
+    <script type="module" crossorigin src="/it-frogs-tp-02/assets/btn-scroll-up-72713635.js"></script>
     <link rel="stylesheet" href="/it-frogs-tp-02/assets/vendor-b3ce9496.css">
-    <link rel="stylesheet" href="/it-frogs-tp-02/assets/btn-scroll-up-ea3290ad.css">
+    <link rel="stylesheet" href="/it-frogs-tp-02/assets/btn-scroll-up-1a309826.css">
   </head>
   <body id="index">
     <header class="header-section section">
@@ -155,9 +155,10 @@
 
     <!-- <button id="open-mobile-menu" data-modal="1" type="button">Мобильное меню</button> -->
 <!-- <div class="mobile-menu-container"></div> -->
-<div class="js-mobile-menu" data-modal="1">
+
+<div class="js-mobile-menu visually-hidden" data-modal="1">
   <button class="mob-menu-auth mob-sign-up" type="button">
-    <span class="mob-menu-username">Sign up</span>
+    <span class="mob-menu-user">Sign up</span>
     <svg class="mob-menu-auth-icon">
       <use
         class="mob-menu-auth-icon"
@@ -166,15 +167,24 @@
     </svg>
   </button>
 
-  <button class="mob-menu-auth mob-user-signed" type="button">
+  <button class="mob-menu-auth-signed mob-sign-in" type="button">
     <img
       class="mob-menu-auth-logo"
       src="data:image/png;base64,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"
       alt="user logo"
     />
+    <span class="mob-menu-username mob-user-signed"></span>
   </button>
 
-  <div class="wrap">
+  <!-- <button class="mob-menu-auth mob-user-signed" type="button">
+    <img
+      class="mob-menu-auth-logo"
+      src="/images/header/foto.png"
+      alt="user logo"
+    />
+  </button> -->
+
+  <div class="wrap-buttons">
     <div class="buttons">
       <button class="button-home button" type="button">Home</button>
       <button class="button-shopping-list button" type="button">
@@ -186,11 +196,14 @@
     <!-- /images/header/header-defs.svg#icon-uil_cart -->
     <!-- /images/header/header-defs.svg#icon-arrow-narrow-right-1 -->
   </div>
-  <img
+  <!-- <img
     class="bg-img-modal"
-    srcset="/it-frogs-tp-02/assets/img-mob-@1x-2a723774.webp , /it-frogs-tp-02/assets/img-mob-@2x-1e511a2c.webp "
+    srcset="
+      ./images/mobile-menu/img-mob-@1x.webp,
+      ./images/mobile-menu/img-mob-@2x.webp
+    "
     alt="Description"
-  />
+  /> -->
   <!-- <img class="bg-img-modal" src="./images/mobile-menu/img-mob-@1x.webp" alt=""> -->
   <button class="button-log-out button" type="button">
     Log out<svg class="mob-log-out-icon">
@@ -199,6 +212,7 @@
       ></use>
     </svg>
   </button>
+  <div class="wrap-image"></div>
 </div>
 
     <div class="auth-modal visually-hidden">
