@@ -259,6 +259,12 @@ body.darkmode .popup-close-button:focus .popup-icon {
   stroke: var(--col-yellow);
 }
 
+body.darkmode .popup-button:hover,
+body.darkmode .popup-button:focus {
+  box-shadow: 0 4px 4px 0 rgba(255, 255, 255, 0.05),
+    0 17px 50px 0 rgba(255, 255, 255, 0.15);
+}
+
 /* -------modal-------- */
 /* auth-popup */
 body.darkmode .auth-container {
