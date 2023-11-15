@@ -20,7 +20,7 @@ function createTopBooks() {
             ${book.books.slice(0, 5).map((book) => `
               <li class="li-top js-book-on-click swiper-slide" data-id="${book._id}">
                 <!-- Ваш код для карточки тут -->
-                <div class="card-container">
+                
                   <div class="card">
                     <img class="img-top" src="${book.book_image || './images/shopping-list-sec/plug_x1.png'}"
                          srcset="${book.book_image || './images/shopping-list-sec/plug_x1.png'} 1x, 
@@ -29,7 +29,7 @@ function createTopBooks() {
                       <p class="quick-view">quick view</p>
                     </div>
                   </div>
-                </div>
+                
                 <p class="top-bookTitle">${book.title}</p>
                 <p class="top-bookAuthor">${book.author}</p>
                 <!-- Кінець вашого коду для карточки -->
@@ -66,7 +66,17 @@ function createTopBooks() {
     });
   })
   .catch(error => {
-    // ... (ваш код для обробки помилки)
+    const markupCatch = `
+    <div>
+      <img src="./images/shopping-list-sec/empty_page_mobile_1x.png"
+      srcset="./images/shopping-list-sec/empty_page_mobile_1x.png 1x,./images/shopping-list-sec/empty_page_mobile_2x.png 2x" alt="">
+    </div>`;
+      el.list.innerHTML = markupCatch;
+      Swal.fire({
+         title: 'Error!',
+         text: 'Something went wrong! Try reload the page.',
+         confirmButtonText: 'OK',
+})
   })
   .finally(() => {
     hideLoader();
