@@ -1,5 +1,5 @@
 <div class="nav-container">
-  <a class="header-logo" href="index.html">
+  <a class="header-logo" href="index.html" aria-label="Bookshelf home page">
     <svg class="header-logo-icon">
       <use href="/images/header/header-defs.svg#icon-logo-1"></use>
     </svg>
@@ -28,7 +28,11 @@
         ></use>
       </svg>
     </button>
-    <button class="menu-auth sign-out visually-hidden" type="button">
+    <button
+      class="menu-auth sign-out visually-hidden"
+      type="button"
+      aria-labelledby="signed-username"
+    >
       <img
         class="menu-auth-logo"
         src="/images/header/foto.png"
@@ -52,7 +56,11 @@
     </button>
   </div>
 
-  <button class="nav-mobile-menu">
+  <button
+    class="nav-mobile-menu"
+    type="button"
+    aria-labelledby="open-mobile-menu"
+  >
     <svg class="burger" width="28" height="28">
       <use href="/images/header/header-defs.svg#icon-burger-1"></use>
     </svg>
