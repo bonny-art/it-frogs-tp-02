@@ -17,10 +17,8 @@ btnShoppingList.addEventListener('click', openShoppingList);
 btnLogOut.addEventListener('click', logOut);
 // btnSignUp.addEventListener('click', handlerBtnSingUp);
 
-// function handlerBtnSingUp(){
-//     initAuthModal();
-//     handlerActionAuth();
-// }
+console.log(getNameForUpdateHeaderUser());
+
 getNameForUpdateHeaderUser().then(login => {
   if (login) {
     btnSignUp.classList.add('visually-hidden');
@@ -28,8 +26,6 @@ getNameForUpdateHeaderUser().then(login => {
     btnShoppingList.classList.remove('visually-hidden');
     btnLogOut.classList.remove('visually-hidden');
     mobUserName.classList.remove('visually-hidden');
-    console.log(mobUserName);
-
   } else {
     btnHome.classList.add('visually-hidden');
     btnShoppingList.classList.add('visually-hidden');
@@ -38,11 +34,11 @@ getNameForUpdateHeaderUser().then(login => {
     mobUserName.classList.add('visually-hidden');
   }
 });
-getNameForUpdateHeaderUser()
+getNameForUpdateHeaderUser();
 const authModal = document.querySelector('.auth-modal');
 btnSignUp.addEventListener('click', () => {
   authModal.classList.remove('visually-hidden');
-mobMenu.style.display = 'none';
+  mobMenu.style.display = 'none';
   initAuthModal();
   handlerActionAuth();
 });
