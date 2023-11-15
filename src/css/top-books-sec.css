@@ -28,7 +28,8 @@
   color: var(--col-blue);
 }
 .list-top {
-  width: 335px;
+  /* width: 335px; */
+  max-width: 100%;
   list-style: none;
 }
 @media only screen and (min-width: 768px) {
@@ -63,7 +64,6 @@
 }
 .list-item {
   display: flex;
-  gap: 24px;
 }
 .li-top {
   width: 335px;
@@ -274,7 +274,7 @@ loader
     padding: 25px;
   }
 }
-.card:hover .overlay {
+.li-top:hover .overlay {
   transform: translateY(0);
   opacity: 1;
 }

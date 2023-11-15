@@ -11,7 +11,7 @@ async function fetchBookList() {
   const resp = await axios.get(`category-list`).then(resp => resp.data);
   return resp;
 }
-fetchBookList();
+// fetchBookList();
 
 /**
  * запит на отримання топ 5 книг у кожній категорії
@@ -22,7 +22,7 @@ async function fetchTopBooks() {
 
   return resp;
 }
-fetchTopBooks();
+// fetchTopBooks();
 
 /**
  * функція приймає назву категорії (формат стрінг), повертає масив книг з повною інформацією
@@ -32,10 +32,9 @@ async function fetchBooksOfCategory(category) {
   const resp = await axios
     .get(`category?category=${category}`)
     .then(resp => resp.data);
-
   return resp;
 }
-fetchBooksOfCategory('Childrens Middle Grade Hardcover');
+// fetchBooksOfCategory('Childrens Middle Grade Hardcover');
 
 /**
  * функція приймає ID обраної книги у форматі стрінги і повертає масив інфо
@@ -47,6 +46,6 @@ async function fetchBookById(bookId) {
 
   return resp;
 }
-fetchBookById('643282b1e85766588626a0dc');
+// fetchBookById('643282b1e85766588626a0dc');
 
 export { fetchBookById, fetchBookList, fetchTopBooks, fetchBooksOfCategory };
