@@ -128,14 +128,6 @@ body.darkmode .main-categories-box {
   background-color: #202024;
 }
 
-body.darkmode .selected-category-title {
-  color: #ffffff;
-}
-
-body.darkmode .second-half {
-  color: #4f2ee8;
-}
-
 body.darkmode .book-title {
   color: #ffffff;
 }
@@ -200,6 +192,14 @@ body.darkmode .page-notification {
 /* selected category sec */
 body.darkmode .selected-category-book-title {
   color: var(--col-white);
+}
+
+body.darkmode .selected-category-title {
+    color: #ffffff;
+} 
+
+body.darkmode .second-half {
+    color: #4f2ee8;
 }
 
 /* ------- pop up --------- */

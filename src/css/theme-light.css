@@ -159,6 +159,27 @@ body {
   color: rgba(0, 0, 0, 0.6);
 }
 
+/* ------------ selected-category-sec ------------ */
+.selected-category-title {
+  color: #111;
+}
+
+.selected-category-book-title {
+  color: #111;
+}
+
+.second-half {
+  color: #4F2EE8;
+}
+
+.selected-category-book-author {
+  color: #B4AFAF;
+}
+
+.selected-category-img {
+  background-color: var(--col-bg-light);
+}
+
 /* ------- pop up --------- */
 .popup-button {
   border: 2px solid var(--col-blue);
