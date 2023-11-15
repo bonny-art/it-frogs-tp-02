@@ -6,6 +6,7 @@ import { createSelectedCategory } from './selected-category-sec';
 import { showLoader, hideLoader } from './loader'
 import Swiper from 'swiper';
 import Swal from 'sweetalert2';
+
 createTopBooks();
 
 function createTopBooks() {
@@ -14,32 +15,33 @@ function createTopBooks() {
   .then(bookData => {
     const markup = bookData.map((book) => `
       <div>
-        <h3 class="top-title">${book.list_name}</h3>
-        <div class="swiper">
-          <ul class="list-item swiper-wrapper">
-            ${book.books.slice(0, 5).map((book) => `
-              <li class="li-top js-book-on-click swiper-slide" data-id="${book._id}">
-                <!-- Ваш код для карточки тут -->
+    <h3 class="top-title">${book.list_name}</h3>
+    <div class="swiper">
+      <ul class="list-item swiper-wrapper">
+        ${book.books.slice(0, 5).map((book) => `
+          <li class="li-top js-book-on-click swiper-slide" data-id="${book._id}">
+            <!-- Ваш код для карточки тут -->
+            
+              <div class="card">
+                <img class="img-top" src="${book.book_image || './images/shopping-list-sec/plug_x1.png'}"
+                     srcset="${book.book_image || './images/shopping-list-sec/plug_x1.png'} 1x, 
+                             ${book.book_image || './images/shopping-list-sec/plug_x2.png'} 2x"  alt="Зображення відсутнє" onerror="this.onerror=null; this.src='./images/shopping-list-sec/plug_x1.png';" />
+                <div class="overlay">
                 
-                  <div class="card">
-                    <img class="img-top" src="${book.book_image || './images/shopping-list-sec/plug_x1.png'}"
-                         srcset="${book.book_image || './images/shopping-list-sec/plug_x1.png'} 1x, 
-                                 ${book.book_image || './images/shopping-list-sec/plug_x2.png'} 2x"  alt="Зображення відсутнє" onerror="this.onerror=null; this.src='./images/shopping-list-sec/plug_x1.png';" />
-                    <div class="overlay">
-                      <p class="quick-view">quick view</p>
-                    </div>
-                  </div>
-                
-                <p class="top-bookTitle">${book.title}</p>
-                <p class="top-bookAuthor">${book.author}</p>
-                <!-- Кінець вашого коду для карточки -->
-              </li>`).join("")}
-          </ul>
-        </div>
-        <div class="top-button">
-          <button class="top-bth top-bth-js" data-category="${book.list_name}" type="submit">see more</button>
-        </div>
-      </div>`).join("");
+                  <p class="quick-view">quick view</p>
+                </div>
+              </div>
+            
+            <p class="top-bookTitle">${book.title}</p>
+            <p class="top-bookAuthor">${book.author}</p>
+          </li>`).join("")}
+      </ul>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="top-button">
+      <button class="top-bth top-bth-js" data-category="${book.list_name}" type="submit">see more</button>
+    </div>
+  </div>`).join("");
 
     el.list.innerHTML =
       '<h1 class="top-title-boks">Best Sellers <span class="top-title-span">Books</span></h1><div class="list-top" id="list">' +
@@ -51,7 +53,22 @@ function createTopBooks() {
       new Swiper(container, {
         slidesPerView: 'auto',
         spaceBetween: 24,
-        // Додаткові налаштування Swiper за необхідності
+        pagination: {
+          el: '.swiper-pagination',
+          clickable:true,
+        },
+        breakpoints: {
+           0: {
+           slidesPerView: 1,
+          },
+          768: {
+           slidesPerView: 3,
+          },
+          1440: {
+           slidesPerView: 5,
+         }
+        },
+         
       });
     });
 
