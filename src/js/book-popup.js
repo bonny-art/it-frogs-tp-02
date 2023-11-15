@@ -34,13 +34,6 @@ function createBookCard(evt) {
       const amazon_link = buy_links[0].url;
       const appleBooks_link = buy_links[1].url;
       const localStorage = getFromLocalStorage();
-      Swal.fire({
-        title: 'Error!',
-        text: 'Something went wrong! Try reload the page.',
-        confirmButtonText: 'OK',
-        imageUrl: './images/sad.svg',
-        imageWidth: 40,
-      });
 
       let buttonText;
 
@@ -118,7 +111,12 @@ function createBookCard(evt) {
       }
     })
     .catch(error => {
-      alert(`Error: ${error}`);
+      Swal.fire({
+        title: 'Something went wrong!',
+        text: 'Try reload the page.',
+        icon: 'error',
+        confirmButtonText: 'Ok',
+      });
     })
     .finally(() => {
       // Відключення спінеру
@@ -137,11 +135,10 @@ function getFromLocalStorage() {
     return data ? JSON.parse(data) : [];
   } catch (error) {
     Swal.fire({
-      title: 'Error!',
-      text: 'Something went wrong! Try reload the page.',
-      confirmButtonText: 'OK',
-      imageUrl: './images/sad.svg',
-      imageWidth: 40,
+      title: 'Something went wrong!',
+      text: 'Try reload the page.',
+      icon: 'error',
+      confirmButtonText: 'Ok',
     });
   }
 }
