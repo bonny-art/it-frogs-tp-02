@@ -7,7 +7,7 @@
   margin-bottom: 40px;
 }
 
-@media screen and(min-width: 375px) {
+@media screen and (min-width: 375px) {
   .shopping-title {
     font-size: 32px;
     line-height: 1.1875;
