@@ -27,12 +27,6 @@
   overflow: hidden;
 }
 
-.popup-img {
-}
-
-.popup-about {
-}
-
 .popup-title {
   font-family: DMSans-Bold;
   font-size: 16px;
@@ -62,9 +56,6 @@
   flex-direction: row;
   gap: 20px;
   align-items: center;
-}
-
-.popup-store {
 }
 
 .popup-store .popup-store-amazon {
@@ -126,10 +117,6 @@
 .popup-close-button:hover,
 .popup-close-button:focus {
   border: none;
-}
-
-.popup-close-button:hover .popup-icon,
-.popup-close-button:focus .popup-icon {
 }
 
 /**
@@ -223,38 +210,11 @@
   | light theme
   |============================
 */
-.popup-info {
-}
-
-.popup-cover {
-}
-
-.popup-img {
-}
-
-.popup-about {
-}
-
-.popup-store-list {
-}
-
-.popup-store {
-}
-
-.popup-store .popup-store-amazon {
-}
-
-.popup-store .popup-store-apple {
-}
 
 .popup-button:hover,
 .popup-button:focus {
   /* box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19); */
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-}
-
-.popup-close-button:hover,
-.popup-close-button:focus {
 }
 
 /**
@@ -263,35 +223,8 @@
   |============================
 */
 
-body.darkmode .popup-info {
-}
-
-body.darkmode .popup-cover {
-}
-
-body.darkmode .popup-img {
-}
-
-body.darkmode .popup-about {
-}
-
-body.darkmode .popup-store-list {
-}
-
-body.darkmode .popup-store {
-}
-
-body.darkmode .popup-store .popup-store-amazon {
-}
-
-body.darkmode .popup-store .popup-store-apple {
-}
-
 body.darkmode .popup-button:hover,
 body.darkmode .popup-button:focus {
   box-shadow: 0 4px 4px 0 rgba(255, 255, 255, 0.05),
     0 17px 50px 0 rgba(255, 255, 255, 0.15);
-}
-
-body.darkmode .popup-close-button {
 }
