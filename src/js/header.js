@@ -1,18 +1,31 @@
 import { handlerActionAuth, initAuthModal } from './auth-popup';
 import { isAuthUser, getUserName, logOutUser } from './auth-firebase';
 import svgSprite from '/images/header/header-defs.svg';
+import { el } from '../js/refs';
 
 //ініціалізуємо початкові стани хедера
 document.addEventListener('DOMContentLoaded', function () {
   let currentUrl = window.location.href;
   let menuItems = document.querySelectorAll('.nav-item');
 
-  menuItems.forEach(function (item) {
-    let link = item.querySelector('a');
-    if (link.href === currentUrl) {
-      item.classList.add('active-page');
-    }
-  });
+  switch (el.body.id) {
+    case 'index':
+      menuItems[0].classList.add('active-page');
+      break;
+    case 'shopping':
+      menuItems[1].classList.add('active-page');
+      break;
+
+    default:
+      menuItems[0].classList.add('active-page');
+  }
+
+  // menuItems.forEach(item => {
+  //   if (link.href === currentUrl) {
+  //     item.classList.add('active-page');
+  //   }
+  // });
+
   getNameForUpdateHeaderUser().then(login => {
     // console.log(login);
     let menuAuthIcon = document.querySelector('.menu-auth-icon use');
