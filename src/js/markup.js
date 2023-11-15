@@ -2,50 +2,50 @@ import getRefs from './refs';
 const refs = getRefs();
 import { supportItems } from './support.js';
 
-import saveChildren from './../images/support/save-children@1x.png';
-import saveChildrens from './../images/support/save-children@2x.png';
-import hopeImage from './../images/support/hope@1x.png';
-import hopeImages from './../images/support/hope@2x.png';
-import medicalCorp from './../images/support/medical-corps@1x.png';
-import medicalCorps from './../images/support/medical-corps@2x.png';
-import razomImage from './../images/support/razom@1x.png';
-import razomImages from './../images/support/razom@2x.png';
-import againstHunger from './../images/support/against-hunger@1x.png';
-import againstHungers from './../images/support/against-hunger@2x.png';
-import prytulaImage from './../images/support/prytula@1x.png';
-import prytulaImages from './../images/support/prytula@2x.png';
-import sansFrontier from './../images/support/sans-frontiers@1x.png';
-import sansFrontiers from './../images/support/sans-frontiers@2x.png';
-import worldVision from './../images/support/world-vision@1x.png';
-import worldVisions from './../images/support/world-vision@2x.png';
-import unitedImage from './../images/support/united24@1x.png';
-import unitedImages from './../images/support/united24@2x.png';
+import foundation11x from './../images/support/foundation-1@1x.png';
+import foundation12x from './../images/support/foundation-1@2x.png';
+import foundation21x from './../images/support/foundation-2@1x.png';
+import foundation22x from './../images/support/foundation-2@2x.png';
+import foundation31x from './../images/support/foundation-3@1x.png';
+import foundation32x from './../images/support/foundation-3@2x.png';
+import foundation41x from './../images/support/foundation-4@1x.png';
+import foundation42x from './../images/support/foundation-4@2x.png';
+import foundation51x from './../images/support/foundation-5@1x.png';
+import foundation52x from './../images/support/foundation-5@2x.png';
+import foundation61x from './../images/support/foundation-6@1x.png';
+import foundation62x from './../images/support/foundation-6@2x.png';
+import foundation71x from './../images/support/foundation-7@1x.png';
+import foundation72x from './../images/support/foundation-7@2x.png';
+import foundation81x from './../images/support/foundation-8@1x.png';
+import foundation82x from './../images/support/foundation-8@2x.png';
+import foundation91x from './../images/support/foundation-9@1x.png';
+import foundation92x from './../images/support/foundation-9@2x.png';
 
 const arrImg1x = [];
 const arrImg2x = [];
 
 arrImg1x.push(
-  saveChildren,
-  hopeImage,
-  medicalCorp,
-  razomImage,
-  againstHunger,
-  prytulaImage,
-  sansFrontier,
-  worldVision,
-  unitedImage
+  foundation11x,
+  foundation21x,
+  foundation31x,
+  foundation41x,
+  foundation51x,
+  foundation61x,
+  foundation71x,
+  foundation81x,
+  foundation91x
 );
 
 arrImg2x.push(
-  saveChildrens,
-  hopeImages,
-  medicalCorps,
-  razomImages,
-  againstHungers,
-  prytulaImages,
-  sansFrontiers,
-  worldVisions,
-  unitedImages
+  foundation12x,
+  foundation22x,
+  foundation32x,
+  foundation42x,
+  foundation52x,
+  foundation62x,
+  foundation72x,
+  foundation82x,
+  foundation92x
 );
 
 const aaa = getImages(arrImg1x, arrImg2x, supportItems);
