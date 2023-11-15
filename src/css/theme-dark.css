@@ -111,6 +111,10 @@ body.darkmode .top-bth {
   background-color: transparent;
   color: #ffffff;
 }
+body.darkmode .top-bth:hover {
+  box-shadow: 0 4px 4px 0 rgba(255, 255, 255, 0.05),
+    0 17px 50px 0 rgba(255, 255, 255, 0.15);
+}
 /* --------------  -------------- */
 
 /* body */
@@ -126,14 +130,6 @@ body.darkmode .main-categories-list-item:focus {
 
 body.darkmode .main-categories-box {
   background-color: #202024;
-}
-
-body.darkmode .selected-category-title {
-  color: #ffffff;
-}
-
-body.darkmode .second-half {
-  color: #4f2ee8;
 }
 
 body.darkmode .book-title {
@@ -202,6 +198,14 @@ body.darkmode .selected-category-book-title {
   color: var(--col-white);
 }
 
+body.darkmode .selected-category-title {
+  color: #ffffff;
+}
+
+body.darkmode .second-half {
+  color: #4f2ee8;
+}
+
 /* ------- pop up --------- */
 body.darkmode .popup-under-button {
   color: rgba(255, 255, 255, 0.5);
@@ -238,7 +242,7 @@ body.darkmode .popup-store-icon.popup-store-icon-apple {
 }
 
 body.darkmode .popup-store-icon.popup-store-icon-apple:hover {
-    filter: grayscale(100%) drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
+  filter: grayscale(100%) drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
 }
 
 body.darkmode .popup-store-icon.popup-store-icon-amazon:hover {
@@ -252,7 +256,7 @@ body.darkmode .popup-button {
 
 body.darkmode .popup-close-button:hover .popup-icon,
 body.darkmode .popup-close-button:focus .popup-icon {
-    stroke: var(--col-yellow);
+  stroke: var(--col-yellow);
 }
 
 /* -------modal-------- */
