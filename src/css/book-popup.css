@@ -240,14 +240,9 @@
 
 .popup-store .popup-store-apple {
 }
-/* передивись var(--ocean-color); */
+
 .popup-close-button:hover,
 .popup-close-button:focus {
-}
-
-.popup-close-button:hover .popup-icon,
-.popup-close-button:focus .popup-icon {
-  stroke: var(--col-blue);
 }
 
 /**
@@ -280,14 +275,5 @@ body.darkmode .popup-store .popup-store-amazon {
 body.darkmode .popup-store .popup-store-apple {
 }
 
-body.darkmode .popup-store-icon.popup-store-icon-apple:hover {
-  filter: grayscale(100%) drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
-}
-
 body.darkmode .popup-close-button {
-}
-
-body.darkmode .popup-close-button:hover .popup-icon,
-body.darkmode .popup-close-button:focus .popup-icon {
-  stroke: var(--col-yellow);
 }
