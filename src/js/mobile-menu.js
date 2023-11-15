@@ -9,6 +9,7 @@ const btnShoppingList = document.querySelector('.button-shopping-list');
 const btnLogOut = document.querySelector('.button-log-out');
 const mobUserName = document.querySelector('.mob-user-signed');
 const btnSignUp = document.querySelector('.mob-sign-up');
+const mobSignIn = document.querySelector('.mob-sign-in');
 // console.log(btnOpenMenu);
 // console.log(mobMenu);
 // console.log(btnHome);
@@ -32,6 +33,7 @@ getNameForUpdateHeaderUser().then(login => {
     btnLogOut.classList.add('visually-hidden');
     btnSignUp.classList.remove('visually-hidden');
     mobUserName.classList.add('visually-hidden');
+    mobSignIn.classList.add('visually-hidden');
   }
 });
 getNameForUpdateHeaderUser();

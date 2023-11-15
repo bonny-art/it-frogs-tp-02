@@ -1,6 +1,5 @@
-@media screen and (max-width: 767px) {
   .js-mobile-menu {
-    display: none;
+    display: block;
     position: absolute;
     top: 0;
     left: 0;
@@ -16,6 +15,8 @@
     );
     box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.1);
   }
+  @media screen and (min-width: 768px) {
+ 
   .wrap {
     display: flex;
     justify-content: center;
@@ -56,8 +57,33 @@
     border-radius: 36px;
     padding: 4px 12px;
   }
+
+  .mob-menu-auth-signed {
+    margin-left: 20px;
+    margin-top: 84px;
+    display: flex;
+    width: 133px;
+    height: 37px;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    /* border-radius: 36px; */
+    padding: 4px 12px;
+    cursor: default;
+    pointer-events: none;
+  } 
+  /* .mob-menu-username {
+    margin-right: 4px;
+  } */
   .mob-menu-username {
     margin-right: 4px;
+    font-family: DMSans-Bold;
+    font-size: 22px;
+    line-height: 29px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    color: var(--col-white);
   }
   .mob-menu-auth-logo {
     width: 37px;

@@ -1,6 +1,8 @@
 <!-- <button id="open-mobile-menu" data-modal="1" type="button">Мобильное меню</button> -->
 <!-- <div class="mobile-menu-container"></div> -->
-<div class="js-mobile-menu" data-modal="1">
+
+<div class="js-mobile-menu visually-hidden " data-modal="1">
+
   <button class="mob-menu-auth mob-sign-up" type="button">
     <span class="mob-menu-username">Sign up</span>
     <svg class="mob-menu-auth-icon">
@@ -11,13 +13,22 @@
     </svg>
   </button>
 
-  <button class="mob-menu-auth mob-user-signed" type="button">
+  <button class="mob-menu-auth-signed mob-sign-in" type="button">
     <img
       class="mob-menu-auth-logo"
       src="/images/header/foto.png"
       alt="user logo"
     />
+    <span class="mob-menu-username mob-user-signed"></span>
   </button>
+
+  <!-- <button class="mob-menu-auth mob-user-signed" type="button">
+    <img
+      class="mob-menu-auth-logo"
+      src="/images/header/foto.png"
+      alt="user logo"
+    />
+  </button> -->
 
   <div class="wrap">
     <div class="buttons">
