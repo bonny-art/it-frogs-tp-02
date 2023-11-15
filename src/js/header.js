@@ -5,7 +5,7 @@ import { el } from '../js/refs';
 
 //ініціалізуємо початкові стани хедера
 document.addEventListener('DOMContentLoaded', function () {
-  let currentUrl = window.location.href;
+  // let currentUrl = window.location.href;
   let menuItems = document.querySelectorAll('.nav-item');
 
   switch (el.body.id) {
