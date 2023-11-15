@@ -6,10 +6,10 @@ import '../../node_modules/basiclightbox/dist/basicLightbox.min.css';
 import icons from '/images/book-popup/icons.svg';
 import notDownloaded1x from '/images/book-popup/not-downloaded@1x.jpg';
 import notDownloaded2x from '/images/book-popup/not-downloaded@2x.jpg';
-import amazon from '/images/book-popup/amazon@1x.png';
-import amazon2x from '/images/book-popup/amazon@2x.png';
-import appleBooks from '/images/book-popup/apple@1x.png';
-import appleBooks2x from '/images/book-popup/apple@2x.png';
+import amazon from '/images/book-popup/amazon@1x.webp';
+import amazon2x from '/images/book-popup/amazon@2x.webp';
+import appleBooks from '/images/book-popup/apple@1x.webp';
+import appleBooks2x from '/images/book-popup/apple@2x.webp';
 import Swal from 'sweetalert2';
 
 import { getNameForUpdateHeaderUser } from './header';
