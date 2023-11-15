@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
 const headerUser = document.querySelector('.sign-up');
 const authModal = document.querySelector('.auth-modal');
 const headerUserName = document.querySelector('.user-signed');
+const mobMenuUsername = document.querySelector('.mob-user-signed');
 const headerUserLogo = document.querySelector('.menu-auth-logo');
 const userSignOut = document.querySelector('.sign-out');
 const logOut = document.querySelector('.js-logout');
@@ -91,6 +92,7 @@ logOut.addEventListener('click', () => {
 //оновлюємо напис на кнопці, показуємо фото
 const updateHeaderUser = userName => {
   headerUserName.textContent = userName;
+  mobMenuUsername.textContent = userName;
   headerUserLogo.classList.remove('visually-hidden');
 };
 
@@ -131,13 +133,13 @@ function toggleMobileMenu() {
 function openMobileMenu() {
   let mobMenu = document.querySelector('.js-mobile-menu');
   // console.log('Мобильное меню открыто');
-  mobMenu.style.display = 'block';
+  mobMenu.classList.remove('visually-hidden');
 }
 
 function closeMobileMenu() {
   let mobMenu = document.querySelector('.js-mobile-menu');
   // console.log('Мобильное меню закрыто');
-  mobMenu.style.display = 'none';
+  mobMenu.classList.add('visually-hidden');
 }
 
 export { updateHeaderUser, getNameForUpdateHeaderUser };
