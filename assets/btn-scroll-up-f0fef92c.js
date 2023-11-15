@@ -114,4 +114,4 @@ import{a as S,i as Fe,g as Ke,b as Pe,c as $e,d as de,s as Oe,S as u,e as Qe,f a
                 </div>
             </li>
 `).join("")}function lo(e){const t=e.target.closest(".js-delete-book");if(!t)return;const n=t.closest(".shopping-book-card"),s=n.dataset.bookId,i=f.findIndex(a=>a._id===s);i!=-1&&(f.splice(i,1),localStorage.setItem("booksList",JSON.stringify(f)),n.remove(),v-f.length%v===v&&g>1&&p(g-1),p(g),Te())}const W=document.querySelector("#scrollToTopButton");window.addEventListener("scroll",()=>{window.pageYOffset>500?W.classList.add("show"):W.classList.remove("show")});W.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"})});
-//# sourceMappingURL=btn-scroll-up-5b1fae87.js.map
+//# sourceMappingURL=btn-scroll-up-f0fef92c.js.map
