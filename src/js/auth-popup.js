@@ -82,7 +82,7 @@ function handlerActionAuth() {
             const message = `${getUserNameRes.data().name}!`;
             Swal.fire({
               title: message,
-              text: 'welcome back!',
+              text: 'Welcome back!',
               icon: 'success',
               confirmButtonText: 'Ok',
             });
