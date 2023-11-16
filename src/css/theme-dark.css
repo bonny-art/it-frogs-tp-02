@@ -63,7 +63,10 @@ body.darkmode .nav-item:hover,
 body.darkmode .nav-item:focus {
   color: var(--col-yellow);
 }
-
+body.darkmode .active-page:hover,
+body.darkmode .active-page:focus {
+  color: var(--col-blue);
+}
 body.darkmode .active-page {
   color: var(--col-black);
 }
