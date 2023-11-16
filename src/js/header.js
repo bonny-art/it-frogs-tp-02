@@ -116,11 +116,13 @@ mobileMenuButton.addEventListener('click', toggleMobileMenu);
 function openMobileMenu() {
   let mobMenu = document.querySelector('.js-mobile-menu');
   mobMenu.classList.remove('visually-hidden');
+  document.body.style.overflow = 'hidden';
 }
 
 function closeMobileMenu() {
   let mobMenu = document.querySelector('.js-mobile-menu');
   mobMenu.classList.add('visually-hidden');
+  document.body.style.overflow = 'visible';
 }
 
 export { updateHeaderUser, getNameForUpdateHeaderUser };
