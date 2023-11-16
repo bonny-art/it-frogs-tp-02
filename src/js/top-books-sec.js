@@ -108,8 +108,8 @@ function createTopBooks() {
       }
       const markupCatch = `
     <div>
-      <img src="./images/shopping-list-sec/empty_page_mobile_1x.png"
-      srcset="./images/shopping-list-sec/empty_page_mobile_1x.png 1x,./images/shopping-list-sec/empty_page_mobile_2x.png 2x" alt="">
+      <img src="./images/shopping-list-sec/empty_page_tablet_1x.webp.png"
+      srcset="./images/shopping-list-sec/empty_page_tablet_1x.webp 1x,./images/shopping-list-sec/empty_page_tablet_2x.webp 2x" alt="">
     </div>`;
       el.list.innerHTML = markupCatch;
       Swal.fire({
