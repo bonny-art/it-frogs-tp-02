@@ -16,14 +16,24 @@
   );
   box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.1);
 }
+.mob-menu-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  /* gap: 16px; */
+  padding: 0;
+  margin: 0 auto;
+}
 .mob-nav-menu {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: baseline;
+  align-items: center;
   gap: 16px;
   padding: 0;
-  margin: 0 auto 0 128px;
+  margin: 0 auto;
+  /* margin-left: 128px; */
 }
 
 .mob-nav-item {
