@@ -20,6 +20,7 @@
     "axios": "^1.6.1",
     "basiclightbox": "^5.0.4",
     "firebase": "^10.5.2",
+    "modern-normalize": "^2.0.0",
     "notiflix": "^3.2.6",
     "sweetalert": "^2.1.2",
     "sweetalert2": "^11.9.0",
