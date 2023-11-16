@@ -58,7 +58,7 @@ body.darkmode .nav-item {
 
 body.darkmode .nav-item:hover,
 body.darkmode .nav-item:focus {
-  color: var(--col-blue);
+  color: var(--col-yellow);
 }
 
 body.darkmode .active-page {
