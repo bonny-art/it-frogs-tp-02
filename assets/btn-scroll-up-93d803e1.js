@@ -65,7 +65,7 @@ import{a as k,i as qe,g as Fe,b as Te,c as Xe,d as ue,s as je,S as c,e as Ne,f a
               <div class="card">
                 <img class="img-top" src="${i.book_image||"./images/shopping-list-sec/plug_x1.png"}"
                      srcset="${i.book_image||"./images/shopping-list-sec/plug_x1.png"} 1x, 
-                             ${i.book_image||"./images/shopping-list-sec/plug_x2.png"} 2x"  alt="Зображення відсутнє" onerror="this.onerror=null; this.src='./images/shopping-list-sec/plug_x1.png';" />
+                             ${i.book_image||"./images/shopping-list-sec/plug_x2.png"} 2x"  width="335" height="485" alt="Зображення відсутнє" onerror="this.onerror=null; this.src='./images/shopping-list-sec/plug_x1.png';"  />
                 <div class="overlay">
                 
                   <p class="quick-view">quick view</p>
@@ -118,4 +118,4 @@ import{a as k,i as qe,g as Fe,b as Te,c as Xe,d as ue,s as je,S as c,e as Ne,f a
                 </div>
             </li>
 `).join("")}function go(e){const t=e.target.closest(".js-delete-book");if(!t)return;const n=t.closest(".shopping-book-card"),s=n.dataset.bookId,i=h.findIndex(a=>a._id===s);i!=-1&&(h.splice(i,1),localStorage.setItem("booksList",JSON.stringify(h)),n.remove(),f-h.length%f===f&&u>1&&g(u-1),g(u),Me())}const K=document.querySelector("#scrollToTopButton");window.addEventListener("scroll",()=>{window.pageYOffset>500?K.classList.add("show"):K.classList.remove("show")});K.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"})});
-//# sourceMappingURL=btn-scroll-up-773e7fec.js.map
+//# sourceMappingURL=btn-scroll-up-93d803e1.js.map
