@@ -112,9 +112,10 @@ function createTopBooks() {
     </div>`;
       el.list.innerHTML = markupCatch;
       Swal.fire({
-        title: 'Error!',
-        text: 'Something went wrong! Try reload the page.',
-        confirmButtonText: 'OK',
+        title: 'Something went wrong!',
+        text: 'Try reload the page.',
+        icon: 'error',
+        confirmButtonText: 'Ok',
       });
     })
     .finally(() => {

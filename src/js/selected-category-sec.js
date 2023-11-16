@@ -31,13 +31,11 @@ async function createSelectedCategory(category) {
     el.list.innerHTML = `<img src="./images/shopping-list-sec/empty_page_tablet_2x.png"
                         alt="Empty page image"
                         />`;
-
     Swal.fire({
-      title: 'Error!',
-      text: 'Something went wrong! Try reload the page.',
-      confirmButtonText: 'OK',
-      imageUrl: './images/sad.svg',
-      imageWidth: 40,
+      title: 'Something went wrong!',
+      text: 'Try reload the page.',
+      icon: 'error',
+      confirmButtonText: 'Ok',
     });
   } finally {
     hideLoader();
