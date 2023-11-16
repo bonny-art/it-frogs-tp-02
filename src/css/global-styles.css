@@ -74,8 +74,11 @@ header {
   clip: rect(0 0 0 0);
 }
 
-.header-container {
+.header-section {
   border-radius: 0px 0px 8px 8px;
+}
+
+.header-container {
 }
 
 .main-section {

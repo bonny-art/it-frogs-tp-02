@@ -35,9 +35,12 @@ body {
 
 /* -------------- HEADER -------------- */
 
-.header-container {
+.header-section {
   border: 1.5px solid var(--col-black);
   background-color: var(--col-white);
+}
+
+.header-container {
 }
 .header-logo-title {
   background: var(--col-white);
@@ -169,11 +172,11 @@ body {
 }
 
 .second-half {
-  color: #4F2EE8;
+  color: #4f2ee8;
 }
 
 .selected-category-book-author {
-  color: #B4AFAF;
+  color: #b4afaf;
 }
 
 .selected-category-img {

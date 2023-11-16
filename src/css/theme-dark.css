@@ -31,9 +31,12 @@ body.darkmode .tgl-btn__icon {
 
 /* -------------- HEADER -------------- */
 
-body.darkmode .header-container {
+body.darkmode .header-section {
   border-color: var(--col-white);
   background: var(--col-black);
+}
+
+body.darkmode .header-container {
 }
 
 body.darkmode .burger:hover,
