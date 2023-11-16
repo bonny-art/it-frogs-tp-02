@@ -7,7 +7,9 @@ import { showLoader, hideLoader } from './loader';
 import Swiper from 'swiper';
 import Swal from 'sweetalert2';
 
-createTopBooks();
+if (document.getElementById('index') !== null) {
+  createTopBooks();
+}
 
 function createTopBooks() {
   showLoader();
@@ -17,7 +19,7 @@ function createTopBooks() {
         .map(
           book => `
       <div>
-    <h3 class="top-title">${book.list_name}</h3>
+    <h2 class="top-title">${book.list_name}</h2>
     <div class="swiper">
       <ul class="list-item swiper-wrapper">
         ${book.books
@@ -26,9 +28,7 @@ function createTopBooks() {
             book => `
           <li class="li-top js-book-on-click swiper-slide" data-id="${
             book._id
-          }">
-            <!-- Ваш код для карточки тут -->
-            
+          }"> 
               <div class="card">
                 <img class="img-top" src="${
                   book.book_image || './images/shopping-list-sec/plug_x1.png'
@@ -103,6 +103,9 @@ function createTopBooks() {
       });
     })
     .catch(error => {
+         if (document.getElementById('index') === null) {
+        return;
+      }
       const markupCatch = `
     <div>
       <img src="./images/shopping-list-sec/empty_page_mobile_1x.png"
