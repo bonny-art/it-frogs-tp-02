@@ -30,17 +30,15 @@ function createTopBooks() {
             book._id
           }"> 
               <div class="card">
-                <img class="img-top" src="${
-                  book.book_image || './images/shopping-list-sec/plug_x1.png'
-                }"
-                     srcset="${
-                       book.book_image ||
-                       './images/shopping-list-sec/plug_x1.png'
-                     } 1x, 
-                             ${
-                               book.book_image ||
-                               './images/shopping-list-sec/plug_x2.png'
-                             } 2x" alt="Зображення відсутнє" onerror="this.onerror=null; this.src='./images/shopping-list-sec/plug_x1.png';"  />
+               <img class="img-top" 
+     src="${book.bok_image || './images/shopping-list-sec/plug_x1.webp'}"
+     srcset="${book.bok_image || './images/shopping-list-sec/plug_x1.webp'} 1x, 
+             ${book.bok_image || './images/shopping-list-sec/plug_x2.webp'} 2x"
+     sizes="(max-width: 600px) 300px,
+            (max-width: 1200px) 600px,
+            1000px"
+     alt="Зображення відсутнє" 
+     onerror="this.onerror=null; this.src='./images/shopping-list-sec/plug_x1.webp'; this.srcset='./images/shopping-list-sec/plug_x2.webp';"  />
                 <div class="overlay">
                 
                   <p class="quick-view">quick view</p>
