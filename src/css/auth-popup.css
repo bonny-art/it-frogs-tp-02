@@ -1,14 +1,3 @@
-/* .visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  border: 0;
-  clip: rect(0 0 0 0);
-} */
-
 body.modal-open {
   overflow: hidden;
 }
@@ -23,19 +12,19 @@ body.modal-open {
   align-items: center;
   background: var(--col-blue);
   overflow: hidden;
-  opacity: 0; /* По умолчанию меню скрыто */
+  opacity: 0;
   transition: opacity 0.5s ease;
   z-index: 999;
 }
 
 .auth-modal.visually-hidden {
-  opacity: 0; /* При скрытии устанавливаем прозрачность в 0 */
-  pointer-events: none; /* Делаем элемент некликабельным, когда он скрыт */
+  opacity: 0;
+  pointer-events: none;
 }
 
 .auth-modal:not(.visually-hidden) {
-  opacity: 1; /* При показе устанавливаем прозрачность в 1 */
-  pointer-events: auto; /* Возвращаем возможность кликать на элемент */
+  opacity: 1;
+  pointer-events: auto;
 }
 .auth-splat {
   position: absolute;
@@ -63,7 +52,6 @@ body.modal-open {
   border: 2px solid var(--col-bg-light);
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
 }
 
 .auth-close-btn {
@@ -125,7 +113,6 @@ body.modal-open {
   font-weight: 700;
   line-height: 112.5%;
   letter-spacing: -0.16px;
-  /* text-transform: uppercase; */
   outline: transparent;
   color: var(--col-black);
 }
@@ -252,19 +239,3 @@ body.modal-open {
     letter-spacing: -0.18px;
   }
 }
-/*============================|dark theme|===========================*/
-/* .auth-container.darkmode {
-  border: 2px solid var(--col-black);
-  background: var(--col-bg-dark);
-}
-.auth-input-icon.darkmode {
-  stroke: var(--col-white);
-}
-.auth-input.darkmode {
-  border: 2px solid var(--col-white);
-  color: var(--col-white);
-}
-.auth-sign.darkmode {
-  background: var(--col-bg-light);
-  color: var(--col-black);
-} */

@@ -19,11 +19,6 @@
     #ffffff 100%
   );
 
-  /* font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400; */
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -78,9 +73,6 @@ header {
   border-radius: 0px 0px 8px 8px;
 }
 
-.header-container {
-}
-
 .main-section {
   padding: 40px 0 80px;
 }
@@ -110,15 +102,6 @@ header {
 
 .sidebar-shopping {
   display: none;
-}
-
-.categories-container {
-}
-
-.support-container {
-}
-
-.content {
 }
 
 @media only screen and (min-width: 768px) {

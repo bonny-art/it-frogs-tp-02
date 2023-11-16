@@ -6,14 +6,11 @@ import {
   getUserName,
 } from './auth-firebase';
 import { authErrors, getErrorMessage } from './auth-errors';
-
 import { updateHeaderUser } from './header';
 import Swal from 'sweetalert2';
-// import Notiflix from 'notiflix';
 
 const authModal = document.querySelector('.auth-modal');
 const authClose = document.querySelector('.auth-close-btn');
-// const authForm = document.querySelector('.auth-container');
 const authSwitcherSignUp = document.querySelector('.auth-toggler-sign-up');
 const authSwitcherSignIn = document.querySelector('.auth-toggler-sign-in');
 const authName = document.querySelector('#auth-name');
@@ -21,7 +18,6 @@ const authEmail = document.querySelector('#auth-email');
 const authPassword = document.querySelector('#auth-password');
 const authSignUp = document.querySelector('.auth-sign-up');
 const authSignIn = document.querySelector('.auth-sign-in');
-// const authIsLogged = document.querySelector('auth-logged-container');
 
 function handlerActionAuth() {
   //прибирає слухачів після закриття модального вікна
@@ -44,10 +40,8 @@ function handlerActionAuth() {
   //закриваємо модалку кнопкою
   const keydownDocumentAuthForm = evt => {
     if (evt.key === 'Enter') {
-      evt.preventDefault(); // Prevent the default Enter key behavior (e.g., submitting forms)
+      evt.preventDefault();
       const activeButton = document.querySelector('.auth-toggler-active');
-
-      // Determine which button is active and trigger the corresponding action
       if (activeButton === authSwitcherSignIn) {
         clickAuthLogin();
       } else if (activeButton === authSwitcherSignUp) {
@@ -60,6 +54,7 @@ function handlerActionAuth() {
     }
   };
   document.addEventListener('keydown', keydownDocumentAuthForm);
+
   //змінюємо форму по кліку на тоглері
   const clickAuthSwitcherSignUp = () => {
     authSwitcherSignIn.classList.remove('auth-toggler-active');
@@ -78,12 +73,14 @@ function handlerActionAuth() {
     authSignIn.classList.remove('visually-hidden');
   };
   authSwitcherSignIn.addEventListener('click', clickAuthSwitcherSignIn);
+
   //перевіряємо допустимі знаки у пошті
   function validateEmail(email) {
     let result =
       /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
     return result.test(String(email).toLowerCase());
   }
+
   //обробляємо логін
   const login = async (email, password) => {
     loginUser(email, password)
@@ -142,7 +139,6 @@ function handlerActionAuth() {
         });
       }
     } else {
-      // alert('Wrong email!');
       Swal.fire({
         title: 'Error!',
         text: 'Wrong email or not valid!',
@@ -215,11 +211,8 @@ function handlerActionAuth() {
     const displayName = name.length > 0 ? name : 'Anonim';
     if (validateEmail(email)) {
       if (password.length >= 5) {
-        // if (name.length > 0) {
         registration(email, password, displayName);
-        // }
       } else {
-        // alert('The password must be at least 5 characters long!');
         Swal.fire({
           title: 'Error!',
           text: 'The password must be at least 5 characters long!',
@@ -228,7 +221,6 @@ function handlerActionAuth() {
         });
       }
     } else {
-      // alert('Wrong email!');
       Swal.fire({
         title: 'Error!',
         text: 'Wrong email or not valid!',

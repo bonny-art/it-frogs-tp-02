@@ -3,12 +3,11 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  onAuthStateChanged,
   signOut,
   deleteUser,
 } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
-import { doc, setDoc, getDoc, updateDoc, deleteDoc } from 'firebase/firestore';
+import { doc, setDoc, getDoc } from 'firebase/firestore';
 const firebaseConfig = {
   apiKey: 'AIzaSyCSIOIvaBcm09OifpCpfKPAwnfy_t377rM',
   authDomain: 'testfirebase-422a2.firebaseapp.com',
@@ -50,11 +49,6 @@ const removeAccount = async () => {
   return deleteUser(user);
 };
 
-// const removeAccountInfo = async () => {
-//   const user = auth.currentUser;
-//   return deleteDoc(doc(db, 'users', user.uid));
-// };
-
 const getUserName = async () => {
   return getDoc(doc(db, 'users', auth.currentUser.uid));
 };
@@ -66,39 +60,9 @@ const getUserEmail = () => {
 const returnAuth = () => {
   return auth;
 };
-// async function checkAuthenticationStatus() {
-//   onAuthStateChanged(auth, user => {
-//     if (user) {
-//       // User is signed in
-//       console.log('User is signed in');
-//       return true;
-//     } else {
-//       // User is signed out
-//       console.log('User is signed out');
-//       return false;
-//     }
-//   });
-// }
-
-// function deleteAccount() {
-//   const user = auth.currentUser;
-
-//   if (user) {
-//     deleteUser(user)
-//       .then(() => {
-//         alert('Аккаунт удален');
-//       })
-//       .catch(error => {
-//         alert(`Ошибка при удалении аккаунта: ${error.message}`);
-//       });
-//   } else {
-//     alert('Пользователь не вошел в систему');
-//   }
-// }
 
 function logOutUser() {
   signOut(auth).then(() => {
-    // alert('Seen later!');
     Swal.fire({
       position: 'center',
       icon: 'success',
@@ -112,16 +76,13 @@ function logOutUser() {
   });
 }
 export {
-  // checkAuthenticationStatus,
   registrationUser,
   setUserName,
   loginUser,
   isAuthUser,
   removeAccount,
-  // removeAccountInfo,
   getUserName,
   getUserEmail,
   returnAuth,
-  // deleteAccount,
   logOutUser,
 };

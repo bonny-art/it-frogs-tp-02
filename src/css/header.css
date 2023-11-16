@@ -4,7 +4,6 @@
   align-items: center;
   width: 100%;
   padding: 18px 0;
-  /* border-radius: 0px 0px 8px 8px; */
   margin: 0 auto;
 }
 
@@ -28,7 +27,6 @@
   width: 77px;
   height: 13px;
   stroke: var(--col-black);
-  /* background: var(--col-bg-light); */
 }
 
 .nav-menu {
@@ -118,7 +116,6 @@
   fill: var(--col-white);
   cursor: pointer;
   transition: stroke 0.4s ease-in-out;
-  /* margin-left: 14px; */
 }
 .burger:hover,
 .burger:focus {
@@ -129,7 +126,6 @@
   fill: var(--col-white);
   cursor: pointer;
   transition: stroke 0.4s ease-in-out;
-  /* margin-left: 14px; */
 }
 .close:hover,
 .close:focus {
@@ -249,16 +245,3 @@
     margin-right: 76px;
   }
 }
-
-/*============================|Dark Mode Styles|===========================*/
-
-/*============================| Dark Mode Logo |===========================*/
-/* .header-logo-title.darkmode {
-  stroke: var(--col-white);
-  fill: var(--col-white);
-  background: var(--col-bg-dark);
-} */
-/*============================|Dark Mode Menu|===========================*/
-/* .nav-item.darkmode {
-  color: var(--col-white);
-} */

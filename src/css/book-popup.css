@@ -1,7 +1,3 @@
-.book-popup {
-  background-color: teal;
-}
-
 .popup-modal {
   display: flex;
   flex-direction: column;
@@ -175,10 +171,6 @@
     min-height: 68px;
   }
 
-  .popup-button:hover,
-  .popup-button:focus {
-  }
-
   .popup-under-button {
     font-size: 12px;
     line-height: 1.17;
@@ -197,13 +189,4 @@
     width: 14px;
     height: 14px;
   }
-}
-
-/**
-  |============================
-  | 1440
-  |============================
-*/
-
-@media only screen and (min-width: 1440px) {
 }

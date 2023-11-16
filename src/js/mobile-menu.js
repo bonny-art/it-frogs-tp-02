@@ -11,8 +11,6 @@ const mobSignIn = document.querySelector('.mob-sign-in');
 const shoppingListLink = document.querySelector('.mob-auth-link');
 btnLogOut.addEventListener('click', logOut);
 
-// let mobLogOutIcon = document.querySelector('.mob-log-out-icon');
-
 getNameForUpdateHeaderUser().then(login => {
   if (login) {
     btnSignUp.classList.add('visually-hidden');

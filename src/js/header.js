@@ -5,7 +5,6 @@ import { el } from '../js/refs';
 
 //ініціалізуємо початкові стани хедера
 document.addEventListener('DOMContentLoaded', function () {
-  // let currentUrl = window.location.href;
   let menuItems = document.querySelectorAll('.nav-item');
 
   switch (el.body.id) {
@@ -20,14 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
       menuItems[0].classList.add('active-page');
   }
 
-  // menuItems.forEach(item => {
-  //   if (link.href === currentUrl) {
-  //     item.classList.add('active-page');
-  //   }
-  // });
-
   getNameForUpdateHeaderUser().then(login => {
-    // console.log(login);
     let menuAuthIcon = document.querySelector('.menu-auth-icon use');
     let authLink = document.querySelector('.auth-link');
     let userSignOut = document.querySelector('.sign-out');
@@ -63,7 +55,6 @@ authDown.classList.remove('visually-hidden');
 //отримуємо ім'я користувача
 async function getNameForUpdateHeaderUser() {
   const login = await isAuthUser();
-  // console.log(login);
   if (login) {
     getUserName().then(getUserNameRes => {
       updateHeaderUser(getUserNameRes.data().name);
@@ -100,45 +91,35 @@ const mobileMenuButton = document.querySelector('.nav-mobile-menu');
 const burgerIcon = document.querySelector('.burger');
 const closeIcon = document.querySelector('.close-burger');
 closeIcon.classList.add('visually-hidden');
+
 // Відслідковуємо відкриття мобільного меню
 let isMobileMenuOpen = false;
 
-mobileMenuButton.addEventListener('click', toggleMobileMenu);
 // Обробка кліку на бургер
 function toggleMobileMenu() {
   isMobileMenuOpen = !isMobileMenuOpen;
-
   //Змінюємо іконку та відкриваємо/закриваємо меню
   if (isMobileMenuOpen) {
-    // burgerIcon.setAttribute(
-    //   'href',
-    //   '/images/header/header-defs.svg#icon-close-1'
-    // );
     closeIcon.classList.remove('visually-hidden');
     burgerIcon.classList.add('visually-hidden');
     document.body.classList.add('modal-open');
     openMobileMenu();
   } else {
-    // burgerIcon.setAttribute(
-    //   'href',
-    //   '/images/header/header-defs.svg#icon-burger-1'
-    // );
     closeIcon.classList.add('visually-hidden');
     burgerIcon.classList.remove('visually-hidden');
     document.body.classList.remove('modal-open');
     closeMobileMenu();
   }
 }
+mobileMenuButton.addEventListener('click', toggleMobileMenu);
 
 function openMobileMenu() {
   let mobMenu = document.querySelector('.js-mobile-menu');
-  // console.log('Мобильное меню открыто');
   mobMenu.classList.remove('visually-hidden');
 }
 
 function closeMobileMenu() {
   let mobMenu = document.querySelector('.js-mobile-menu');
-  // console.log('Мобильное меню закрыто');
   mobMenu.classList.add('visually-hidden');
 }
 

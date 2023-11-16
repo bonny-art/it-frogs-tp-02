@@ -1,19 +1,3 @@
-/* :root {
-  --col-lt-gray: #b4afaf;
-
-  --col-bg-light: #f6f6f6;
-  --col-bg-dark: #202024;
-  
-  --col-white: #ffffff;
-  --col-black: #111111;
-
-  --col-blue: #4f2ee8;
-  --col-yellow: #eac645;
-
-  --grad-toggle-light: linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%);
-  --grad-toggle-dark: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
-} */
-
 body {
   background-color: var(--col-bg-light);
   color: var(--col-black);
@@ -40,16 +24,8 @@ body {
   background-color: var(--col-white);
 }
 
-.header-container {
-}
 .header-logo-title {
   background: var(--col-white);
-}
-
-.nav-container {
-}
-
-.nav-mobile-menu {
 }
 
 .burger {
@@ -249,6 +225,5 @@ body {
 
 .popup-button:hover,
 .popup-button:focus {
-  /* box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19); */
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }

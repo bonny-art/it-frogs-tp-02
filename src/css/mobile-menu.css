@@ -20,8 +20,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-items: center; */
-  /* gap: 16px; */
   padding: 0;
   margin: 0 auto;
 }
@@ -33,7 +31,6 @@
   gap: 16px;
   padding: 0;
   margin: 0 auto;
-  /* margin-left: 128px; */
 }
 
 .mob-nav-item {
@@ -128,7 +125,6 @@
   justify-content: center;
   background: transparent;
   border: none;
-  /* border-radius: 36px; */
   padding: 4px 12px;
   cursor: default;
   pointer-events: none;
@@ -160,13 +156,11 @@
   position: absolute;
   bottom: 20px;
   left: 20px;
-  /* z-index: 1; */
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: left;
   gap: 4px;
-  /* border: 1.5px; */
   border-color: var(--col-black);
   border-radius: 18px;
   background-color: var(--col-white);
