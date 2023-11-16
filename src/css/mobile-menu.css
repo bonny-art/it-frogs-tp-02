@@ -90,18 +90,19 @@
   margin-top: 104px;
   margin-bottom: 126px;
   display: flex;
-  width: 184px;
+  width: 118px;
   height: 48px;
   align-items: center;
   justify-content: center;
   background: var(--col-blue);
   border-radius: 36px;
   padding: 14px;
-  border: 1.5px solid #111111;
+  border: 1.5px solid var(--col-black);
 }
 .mob-menu-auth-icon {
   width: 20px;
   height: 20px;
+  stroke: var(--col-yellow);
 }
 
 .mob-menu-auth-signed {
@@ -128,6 +129,7 @@
   letter-spacing: -0.04em;
   text-align: left;
   color: var(--col-white);
+  margin-right: 7px;
 }
 .mob-menu-username {
   font-family: DMSans-Bold;
@@ -146,8 +148,7 @@
   position: absolute;
   bottom: 20px;
   left: 20px;
-  /* margin-top: 426px; */
-  z-index: 1;
+  /* z-index: 1; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -168,5 +169,5 @@
 .mob-log-out-icon {
   width: 20px;
   height: 20px;
-  fill: var(--col-yellow);
+  stroke: var(--col-yellow);
 }
