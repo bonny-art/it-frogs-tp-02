@@ -96,9 +96,14 @@ function createBookCard(evt) {
 
       // Функція схову кнопку для неавторизованих користувачів
       getNameForUpdateHeaderUser().then(login => {
+        const addToListButtonBox = document.querySelector(
+          '.popup-shopping-list'
+        );
         if (login) {
+          addToListButtonBox.classList.remove('visually-hidden');
           el.buttonAddToList.classList.remove('visually-hidden');
         } else {
+          addToListButtonBox.classList.add('visually-hidden');
           el.buttonAddToList.classList.add('visually-hidden');
         }
       });
