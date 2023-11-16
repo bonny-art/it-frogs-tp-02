@@ -72,7 +72,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   border-radius: 40px;
   border: 2px solid;
   font-size: 14px;
@@ -100,7 +99,6 @@
   position: absolute;
   top: 12px;
   right: 12px;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -147,8 +145,8 @@
     font-family: DMSans-Bold;
     font-size: 24px;
     line-height: 1.17;
-
     margin-bottom: 8px;
+    padding-right: 2px;
   }
 
   .popup-author {
@@ -179,7 +177,6 @@
   .popup-close-button {
     top: 24px;
     right: 24px;
-
     width: 28px;
     height: 28px;
     border: none;
