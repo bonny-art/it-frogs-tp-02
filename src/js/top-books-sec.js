@@ -31,9 +31,9 @@ function createTopBooks() {
           }"> 
               <div class="card">
                <img class="img-top" 
-     src="${book.bok_image || './images/shopping-list-sec/plug_x1.webp'}"
-     srcset="${book.bok_image || './images/shopping-list-sec/plug_x1.webp'} 1x, 
-             ${book.bok_image || './images/shopping-list-sec/plug_x2.webp'} 2x"
+     src="${book.book_image || './images/shopping-list-sec/plug_x1.webp'}"
+     srcset="${book.book_image || './images/shopping-list-sec/plug_x1.webp'} 1x, 
+             ${book.book_image || './images/shopping-list-sec/plug_x2.webp'} 2x"
      sizes="(max-width: 600px) 300px,
             (max-width: 1200px) 600px,
             1000px"
