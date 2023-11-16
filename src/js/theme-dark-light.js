@@ -1,7 +1,6 @@
 import { el } from './refs';
 
 //to save the dark mode use the object "local storage".
-
 //function that stores the value true if the dark mode is activated or false if it's not.
 export function storeDarkMode(value) {
   localStorage.setItem('darkmode', value);

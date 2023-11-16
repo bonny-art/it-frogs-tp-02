@@ -22,7 +22,7 @@ const el = {
   textUnderRemoveButton: '',
   bookPopupImage: '',
   bookPopupCover: '',
-  // shoing list
+  // shoping list
 
   // shoping list pagination
 

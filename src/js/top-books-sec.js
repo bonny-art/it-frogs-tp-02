@@ -2,13 +2,12 @@ import { fetchTopBooks } from './api';
 import { createBookCard } from './book-popup';
 import { el } from './refs';
 import { createSelectedCategory } from './selected-category-sec';
-// import Notiflix from 'notiflix';
 import { showLoader, hideLoader } from './loader';
 import Swiper from 'swiper';
 import Swal from 'sweetalert2';
 
 if (document.getElementById('index') !== null) {
-  createTopBooks();
+  createTopBooks();
 }
 
 function createTopBooks() {
@@ -32,7 +31,9 @@ function createTopBooks() {
               <div class="card">
                <img class="img-top" 
      src="${book.book_image || './images/shopping-list-sec/plug_x1.webp'}"
-     srcset="${book.book_image || './images/shopping-list-sec/plug_x1.webp'} 1x, 
+     srcset="${
+       book.book_image || './images/shopping-list-sec/plug_x1.webp'
+     } 1x, 
              ${book.book_image || './images/shopping-list-sec/plug_x2.webp'} 2x"
      sizes="(max-width: 600px) 300px,
             (max-width: 1200px) 600px,
@@ -101,7 +102,7 @@ function createTopBooks() {
       });
     })
     .catch(error => {
-         if (document.getElementById('index') === null) {
+      if (document.getElementById('index') === null) {
         return;
       }
       const markupCatch = `

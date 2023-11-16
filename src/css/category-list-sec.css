@@ -21,7 +21,6 @@
   height: 114px;
   border-radius: 12px;
   background: #e0e0e0;
-
 }
 
 /* перетаскиваемый маркер прокрутки */
@@ -31,7 +30,6 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-
 }
 
 .main-categories-list {
@@ -73,9 +71,3 @@
     gap: 24px;
   }
 }
-
-
-/* .category-list-sec {
-  background-color: teal;
-  color: yellowgreen;
-} */
