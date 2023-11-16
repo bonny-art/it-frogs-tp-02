@@ -220,6 +220,11 @@
     text-align: left;
     margin-right: 4px;
   }
+  .menu-username2,
+  .menu-username3 {
+    font-family: DMSans-Medium;
+    font-size: 14px;
+  }
 
   .menu-auth-icon {
     width: 20px;

@@ -2,60 +2,41 @@
 <!-- <div class="mobile-menu-container"></div> -->
 
 <div class="js-mobile-menu visually-hidden" data-modal="1">
-  <button class="mob-menu-auth mob-sign-up" type="button">
-    <span class="mob-menu-user">Sign up</span>
-    <svg class="mob-menu-auth-icon">
-      <use
-        class="mob-menu-auth-icon"
-        href="/images/header/header-defs.svg#icon-arrow-narrow-right-1"
-      ></use>
-    </svg>
-  </button>
-
-  <button class="mob-menu-auth-signed mob-sign-in" type="button">
-    <img
-      class="mob-menu-auth-logo"
-      src="/images/header/foto.png"
-      alt="user logo"
-    />
-    <span class="mob-menu-username mob-user-signed"></span>
-  </button>
-
-  <!-- <button class="mob-menu-auth mob-user-signed" type="button">
-    <img
-      class="mob-menu-auth-logo"
-      src="/images/header/foto.png"
-      alt="user logo"
-    />
-  </button> -->
-
-  <div class="wrap-buttons">
-    <div class="buttons">
-      <button class="button-home button" type="button">Home</button>
-      <button class="button-shopping-list button" type="button">
-        Shopping list<svg class="mob-shoppinglist-icon">
+  <div class="mob-menu-container">
+    <button class="mob-menu-auth mob-sign-up" type="button">
+      <span class="mob-menu-user">Sign up</span>
+      <svg class="mob-menu-auth-icon">
+        <use
+          href="/images/header/header-defs.svg#icon-arrow-narrow-right-1"
+        ></use>
+      </svg>
+    </button>
+    <button class="mob-menu-auth-signed mob-sign-in" type="button">
+      <img
+        class="mob-menu-auth-logo"
+        src="/images/header/foto.png"
+        alt="user logo"
+      />
+      <span class="mob-menu-username mob-user-signed"></span>
+    </button>
+    <ul class="mob-nav-menu">
+      <li class="mob-nav-item">
+        <a href="index.html">Home</a>
+      </li>
+      <li class="mob-nav-item mob-auth-link visually-hidden">
+        <a href="shopping-list.html"> Shopping list </a>
+        <svg class="nav-shoppinglist-icon">
           <use href="/images/header/header-defs.svg#icon-uil_cart"></use>
         </svg>
-      </button>
-    </div>
-    <!-- /images/header/header-defs.svg#icon-uil_cart -->
-    <!-- /images/header/header-defs.svg#icon-arrow-narrow-right-1 -->
+      </li>
+    </ul>
+    <button class="button-log-out" type="button">
+      Log out<svg class="mob-log-out-icon">
+        <use
+          href="/images/header/header-defs.svg#icon-arrow-narrow-right-1"
+        ></use>
+      </svg>
+    </button>
+    <div class="wrap-image"></div>
   </div>
-  <!-- <img
-    class="bg-img-modal"
-    srcset="
-      ./images/mobile-menu/img-mob-@1x.webp,
-      ./images/mobile-menu/img-mob-@2x.webp
-    "
-    alt="Description"
-  /> -->
-  <!-- <img class="bg-img-modal" src="./images/mobile-menu/img-mob-@1x.webp" alt=""> -->
-  <button class="button-log-out button" type="button">
-    Log out<svg class="mob-log-out-icon">
-      <use
-        href="/images/header/header-defs.svg#icon-arrow-narrow-right-1"
-      ></use>
-    </svg>
-  </button>
-  <div class="wrap-image"></div>
 </div>
