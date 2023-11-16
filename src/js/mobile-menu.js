@@ -1,6 +1,7 @@
 import { logOutUser } from './auth-firebase';
 import { handlerActionAuth, initAuthModal } from './auth-popup';
 import { getNameForUpdateHeaderUser } from './header';
+import { el } from '../js/refs';
 
 const mobMenu = document.querySelector('.js-mobile-menu');
 const btnLogOut = document.querySelector('.button-log-out');
@@ -10,24 +11,8 @@ const mobSignIn = document.querySelector('.mob-sign-in');
 const shoppingListLink = document.querySelector('.mob-auth-link');
 btnLogOut.addEventListener('click', logOut);
 
-let mobLogOutIcon = document.querySelector('.mob-log-out-icon');
+// let mobLogOutIcon = document.querySelector('.mob-log-out-icon');
 
-document.addEventListener('DOMContentLoaded', function () {
-  let menuItems = document.querySelectorAll('.mob-nav-item');
-  switch (el.body.id) {
-    case 'index':
-      menuItems[0].classList.add('mob-active-page');
-      break;
-    case 'shopping':
-      menuItems[1].classList.add('mob-active-page');
-      break;
-
-    default:
-      menuItems[0].classList.add('mob-active-page');
-  }
-});
-
-// console.log(mobLogOutIcon);
 getNameForUpdateHeaderUser().then(login => {
   if (login) {
     btnSignUp.classList.add('visually-hidden');
@@ -54,3 +39,18 @@ btnSignUp.addEventListener('click', () => {
 function logOut(evt) {
   logOutUser();
 }
+
+(function () {
+  let menuItems = document.querySelectorAll('.mob-nav-item');
+  switch (el.body.id) {
+    case 'index.html':
+      menuItems[0].classList.add('mob-active-page');
+      break;
+    case 'shopping':
+      menuItems[1].classList.add('mob-active-page');
+      break;
+
+    default:
+      menuItems[0].classList.add('mob-active-page');
+  }
+})();
