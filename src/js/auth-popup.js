@@ -43,7 +43,17 @@ function handlerActionAuth() {
 
   //закриваємо модалку кнопкою
   const keydownDocumentAuthForm = evt => {
-    if (evt.key == 'Escape') {
+    if (evt.key === 'Enter') {
+      evt.preventDefault(); // Prevent the default Enter key behavior (e.g., submitting forms)
+      const activeButton = document.querySelector('.auth-toggler-active');
+
+      // Determine which button is active and trigger the corresponding action
+      if (activeButton === authSwitcherSignIn) {
+        clickAuthLogin();
+      } else if (activeButton === authSwitcherSignUp) {
+        clickAuthRegistration();
+      }
+    } else if (evt.key === 'Escape') {
       document.body.classList.remove('modal-open');
       authModal.classList.add('visually-hidden');
       removeListenersAuthModal();
