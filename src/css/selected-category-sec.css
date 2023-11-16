@@ -141,7 +141,7 @@
   bottom: 0;
   left: 0;
   
-  transform: translateY(100%);
+  transform: translateY(105%);
   transition: transform 250ms ease-in-out;
 }
 
