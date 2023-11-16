@@ -1,9 +1,11 @@
 import { el } from './refs';
-import plugx2 from './../images/shopping-list-sec/plug_x2.png';
-import plugx1 from './../images/shopping-list-sec/plug_x1.png';
+import plugx2 from './../images/shopping-list-sec/plug_x2.webp';
+import plugx1 from './../images/shopping-list-sec/plug_x1.webp';
 import trash from '/images/shopping-list-sec/sprite.svg';
-import amazon from '/images/shopping-list-sec/amazon.svg';
-import appleBooks from '/images/shopping-list-sec/appleBooks.svg';
+import amazon from '/images/book-popup/amazon@1x.webp';
+import amazonx2 from '/images/book-popup/amazon@2x.webp';
+import appleBooks from '/images/book-popup/apple@1x.webp';
+import appleBooksx2 from '/images/book-popup/apple@2x.webp';
 
 const tempBookList = getFromLocalStorage();
 let perPageLimit = getPerPageLimit();
@@ -256,11 +258,11 @@ function createBookTemplate(bookList) {
                     </svg>
                 </button>
                 <div class="trade-fairs">
-                  <a href="${book.buy_links[0].url}" target="_blank">
-                    <img class="amazon-img" src="${amazon}" width="32" height="11"/>
+                  <a href="${book.buy_links[0].url}" target="_blank" rel="noopener noreferrer">
+                    <img class="amazon-img" srcset="${amazon} 1x, ${amazonx2} 2x" width="32" height="11"/>
                   </a>
-                  <a href="${book.buy_links[1].url}" target="_blank">
-                    <img class="apple-books-img" src="${appleBooks}" width="16" height="16"/>
+                  <a href="${book.buy_links[1].url}" target="_blank" rel="noopener noreferrer">
+                    <img class="apple-books-img" srcset="${appleBooks} 1x, ${appleBooksx2} 2x" width="16" height="16"/>
                   </a>
                 </div>
             </li>

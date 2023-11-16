@@ -4,13 +4,12 @@
 
 
 
-@media only screen and (min-width: 320px) {
+
    
   .selected-category-title{
     font-family: DMSans-Bold;
     font-size: 32px;   
     line-height: 1.13;
-      /* 118.75% */
     letter-spacing: -1.28px;
     margin-bottom: 40px;
   }
@@ -22,10 +21,8 @@
   }
   
   .card-wrapper{
-   
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
-    
   }
    
   .card-wrapper:hover{
@@ -36,11 +33,7 @@
     width: 100%;
     height: 100%;
     border-radius: 8px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    /* background-image: url('../images/fon.jpg'); */
-    
+     
   }
 
   .selected-category-book-title{
@@ -61,12 +54,11 @@
     font-size: 12px;
     font-style: italic;
     line-height: 1.12;
-      /* 116.667% */
     letter-spacing: -0.48px;
   }
 
  
-}
+
 
 
 /*  TABLET */
@@ -77,7 +69,6 @@
   .selected-category-title{
     font-size: 48px;
     line-height: 0.11;
-      /* 108.333% */
     letter-spacing: -1.92px;
   }
 
@@ -160,7 +151,6 @@
   font-family: DMSans-Medium;
   font-size: 14px;
   line-height: 1.13;
-  /* 128.571% */
   letter-spacing: -0.56px;
   text-transform: uppercase;
 }

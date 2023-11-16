@@ -1,9 +1,9 @@
 .categories-container {
   background-color: var(--col-bg-light);
 }
-.top-title-books {
+.top-title-boks {
   width: 260px;
-  font-family: DM Sans;
+  font-family: DMSans-Bold;
   font-size: 32px;
   font-style: normal;
   font-weight: 700;
@@ -12,7 +12,7 @@
   margin-bottom: 40px;
 }
 @media only screen and (min-width: 768px) {
-  .top-title-books {
+  .top-title-boks {
     font-size: 48px;
     line-height: 52px;
     letter-spacing: -1.92px;
@@ -20,7 +20,7 @@
   }
 }
 @media only screen and (min-width: 1440px) {
-  .top-title-books {
+  .top-title-boks {
     margin-bottom: 14px;
   }
 }
@@ -87,11 +87,11 @@
 
 .top-title {
   color: var(--col-lt-gray);
-  font-family: DM Sans;
+  font-family: DMSans-Regular;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 18px; /* 128.571% */
+  line-height: 18px;
   letter-spacing: 0.42px;
   text-transform: uppercase;
   margin-bottom: 18px;
@@ -104,7 +104,7 @@
 
 .top-bookTitle {
   margin-top: 14px;
-  font-family: DM Sans;
+  font-family: DMSans-Bold;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -138,7 +138,7 @@
   margin-top: 8px;
   margin-bottom: 40px;
   color: var(--col-black);
-  font-family: DM Sans;
+  font-family: DMSans-Bold;
   font-size: 14px;
   font-style: normal;
   font-weight: 700;
@@ -190,6 +190,7 @@
   position: absolute;
   bottom: 0;
   left: 0;
+  border-radius: 8px;
   width: 100%;
   background-color: var(--col-yellow);
   color: #fff;
