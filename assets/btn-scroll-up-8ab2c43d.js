@@ -124,4 +124,4 @@ import{a as T,i as Fe,g as He,b as je,c as Xe,d as ge,s as Ne,S as l,e as Ge,f a
                 </div>
             </li>
 `).join("")}function go(e){const t=e.target.closest(".js-delete-book");if(!t)return;const i=t.closest(".shopping-book-card"),n=i.dataset.bookId,s=v.findIndex(a=>a._id===n);s!=-1&&(v.splice(s,1),localStorage.setItem("booksList",JSON.stringify(v)),i.remove(),y-v.length%y===y&&u>1&&g(u-1),g(u),qe())}const Z=document.querySelector("#scrollToTopButton");window.addEventListener("scroll",()=>{window.pageYOffset>500?Z.classList.add("show"):Z.classList.remove("show")});Z.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"})});
-//# sourceMappingURL=btn-scroll-up-c20bc766.js.map
+//# sourceMappingURL=btn-scroll-up-8ab2c43d.js.map
