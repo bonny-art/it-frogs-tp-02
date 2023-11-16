@@ -160,7 +160,7 @@ function createMarkup(
   return `
     <div class="popup-info">
       <div class="popup-cover">
-        <img class="popup-img" src="${bookCover}" alt="${title}" />
+        <img class="popup-img" src="${bookCover}" alt="${title}" width="62" height="19" width="287" />
       </div>
       <div class="popup-about">
         <h2 class="popup-title">${title}</h2>
@@ -171,14 +171,14 @@ function createMarkup(
             <a href="${amazonLink}"
             target="_blank"
               rel="noopener noreferrer">
-            <img class="popup-store-icon popup-store-icon-amazon" src="${amazon}" alt="Amazon" srcset="${amazon} 1x, ${amazon2x} 2x"/>
+            <img class="popup-store-icon popup-store-icon-amazon" src="${amazon}" alt="Amazon" srcset="${amazon} 1x, ${amazon2x} 2x" width="62" height="19" />
             </a>
           </li>
           <li class="popup-store popup-store-apple">
             <a href="${appleBooksLink}"
             target="_blank"
               rel="noopener noreferrer">
-            <img class="popup-store-icon popup-store-icon-apple" src="${appleBooks}" alt="AppleBook" srcset="${appleBooks} 1x, ${appleBooks2x} 2x"/>
+            <img class="popup-store-icon popup-store-icon-apple" src="${appleBooks}" alt="AppleBook" srcset="${appleBooks} 1x, ${appleBooks2x} 2x" width="33" height="32" />
             </a>
           </li>
         </ul>
