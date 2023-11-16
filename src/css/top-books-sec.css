@@ -180,6 +180,8 @@
 /* выезжающая карточка quick view */
 
 .card {
+  width: 100%;
+  border-radius: 8px;
   position: relative;
   overflow: hidden;
 }
