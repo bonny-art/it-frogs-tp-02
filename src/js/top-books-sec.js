@@ -40,7 +40,7 @@ function createTopBooks() {
                              ${
                                book.book_image ||
                                './images/shopping-list-sec/plug_x2.png'
-                             } 2x"  alt="Зображення відсутнє" onerror="this.onerror=null; this.src='./images/shopping-list-sec/plug_x1.png';" />
+                             } 2x"  width="335" height="485" alt="Зображення відсутнє" onerror="this.onerror=null; this.src='./images/shopping-list-sec/plug_x1.png';"  />
                 <div class="overlay">
                 
                   <p class="quick-view">quick view</p>
