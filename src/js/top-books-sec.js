@@ -12,6 +12,7 @@ if (document.getElementById('index') !== null) {
 
 function createTopBooks() {
   showLoader();
+
   fetchTopBooks()
     .then(bookData => {
       const markup = bookData
