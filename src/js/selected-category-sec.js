@@ -110,25 +110,33 @@ import Swal from 'sweetalert2';
  * Функція приймає параметром назву категорії у вигляді стрінги, робить запит на бекенд, створює розмітку і рендерить
  * @param {string} category
  */
+
 async function createSelectedCategory(category) {
   try {
+
+    // show loader
+
     showLoader();
     const arrOfBooks = await fetchBooksOfCategory(category);
     const markUp = createMarkupCategory(arrOfBooks);
     const styledTitle = styleSectionTitle(category);
 
     el.list.innerHTML =
-      `<h1 class="selected-category-title js-category-title">${styledTitle}</h1><ul class="selected-category-list js-category-box">` +
-      markUp + '</ul>';
+      `<h1 class="selected-category-title js-category-title">${styledTitle}</h1>
+       <ul class="selected-category-list js-category-box">` +
+             markUp +
+       '</ul>';
       
     el.categoryBox = document.querySelector('.js-category-box');
     el.categoryBox.addEventListener('click', createBookCard);
     
   } catch (error) {
+
     console.log(error);
     el.list.innerHTML = `<img src="./images/shopping-list-sec/empty_page_tablet_2x.png"
                         alt="Empty page image"
                         />`;
+    
     Swal.fire({
          title: 'Error!',
          text: 'Something went wrong! Try reload the page.',
@@ -141,6 +149,8 @@ async function createSelectedCategory(category) {
   }
 }
 
+
+// стилізація назви секції
 
 function styleSectionTitle(title) {
   const words = title.split(' ');
