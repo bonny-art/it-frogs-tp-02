@@ -5,6 +5,7 @@ import {
   removeAccount,
   getUserName,
 } from './auth-firebase';
+import { authErrors, getErrorMessage } from './auth-errors';
 
 import { updateHeaderUser } from './header';
 import Swal from 'sweetalert2';
@@ -95,9 +96,10 @@ function handlerActionAuth() {
           })
           .catch(getUserNameError => {
             const message = `${getUserNameError.code}`;
+            const errorMessageText = getErrorMessage(message);
             Swal.fire({
-              title: 'Get user name error:',
-              text: message,
+              title: 'Get username error!',
+              text: errorMessageText,
               icon: 'error',
               confirmButtonText: 'Ok',
             });
@@ -105,9 +107,10 @@ function handlerActionAuth() {
       })
       .catch(signInAppError => {
         const message = `${signInAppError.code}`;
+        const errorMessageText = getErrorMessage(message);
         Swal.fire({
-          title: 'Authorization error:',
-          text: message,
+          title: 'Authorization error!',
+          text: errorMessageText,
           icon: 'error',
           confirmButtonText: 'Ok',
         });
@@ -121,7 +124,6 @@ function handlerActionAuth() {
       if (password.length >= 5) {
         login(email, password);
       } else {
-        // alert('The password must be at least 5 characters long!');
         Swal.fire({
           title: 'Error!',
           text: 'The password must be at least 5 characters long!',
@@ -163,9 +165,10 @@ function handlerActionAuth() {
           })
           .catch(setUserNameError => {
             const message = `${createAccountError.code}`;
+            const errorMessageText = getErrorMessage(message);
             Swal.fire({
-              title: 'Create account error: ',
-              text: message,
+              title: 'Create account error! ',
+              text: errorMessageText,
               icon: 'error',
               confirmButtonText: 'Ok',
             });
@@ -173,9 +176,10 @@ function handlerActionAuth() {
               .then(() => {})
               .catch(removeAccountError => {
                 const message = `${removeAccountError.code}`;
+                const errorMessageText = getErrorMessage(message);
                 Swal.fire({
-                  title: 'Create account error: ',
-                  text: message,
+                  title: 'Create account error! ',
+                  text: errorMessageText,
                   icon: 'error',
                   confirmButtonText: 'Ok',
                 });
@@ -184,9 +188,10 @@ function handlerActionAuth() {
       })
       .catch(createAccountError => {
         const message = `${createAccountError.code}`;
+        const errorMessageText = getErrorMessage(message);
         Swal.fire({
-          title: 'Create account error: ',
-          text: message,
+          title: 'Create account error!',
+          text: errorMessageText,
           icon: 'error',
           confirmButtonText: 'Ok',
         });
