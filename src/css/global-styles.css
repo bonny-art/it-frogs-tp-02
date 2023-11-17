@@ -28,26 +28,26 @@
 
 @font-face {
   font-family: DMSans-Regular;
-  src: url(../fonts/DMSans-VariableFont.ttf);
+  src: url(../fonts/DMSans-Regular.woff2);
   font-weight: 400;
 }
 
 @font-face {
   font-family: DMSans-Medium;
-  src: url(../fonts/DMSans-VariableFont.ttf);
+  src: url(../fonts/DMSans-Medium.woff2);
   font-weight: 500;
 }
 
 @font-face {
   font-family: DMSans-Bold;
-  src: url(../fonts/DMSans-VariableFont.ttf);
+  src: url(../fonts/DMSans-Bold.woff2);
   font-weight: 700;
 }
 
 @font-face {
   font-family: DMSans-Regular-Italic;
-  src: url(../fonts/DMSans-Italic-VariableFont.ttf);
-  font-weight: 500;
+  src: url(../fonts/DMSans-Italic.woff2);
+  font-weight: 400;
 }
 
 body {
