@@ -55,7 +55,7 @@
 @media only screen and (min-width: 768px) {
   .selected-category-title {
     font-size: 48px;
-    line-height: 0.11;
+    line-height: 1.08;
     letter-spacing: -1.92px;
   }
 

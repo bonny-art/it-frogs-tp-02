@@ -178,7 +178,7 @@ header {
     min-width: 100%;
   }
 
-  .content {
+  .content-wrapper {
     flex-grow: 1;
   }
 
