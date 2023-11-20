@@ -1,4 +1,4 @@
-# BookShelf Team JS Project
+# "BookShelf" Team JS Project
 
 Цей проект було створено командою "IT-Frogs"
 
